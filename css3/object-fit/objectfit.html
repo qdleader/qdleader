@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		ul li {
+			width: 400px;
+			height: 300px;
+			background:#ED225D;
+			margin-bottom: 50px;
+		}
+		ul li img {
+			display: block;
+			width: 400px;
+			height: 300px;
+		}
+		.fill {
+			object-fit: fill;
+		}
+		.contain {
+			object-fit: contain;
+		}
+		.cover {
+			object-fit: cover;
+		}
+		.none {
+			object-fit: none;
+		}
+		.scale-down {
+			object-fit: scale-down;
+		}
+	</style>
+		<img src="../1.png" class="fill">
+		<span>原图</span>
+	<ul>
+
+		<li>
+			<img src="../1.png" class="fill">
+			<span>object-fit:fill</span>
+		</li>
+				<li>
+			<img src="../1.png" class="contain">
+			<span>object-fit:contain</span>
+		</li>
+				<li>
+			<img src="../1.png" class="cover">
+			<span>object-fit:cover</span>
+		</li>
+				<li>
+			<img src="../1.png" class="none">
+			<span>object-fit:none</span>
+		</li>
+				<li>
+			<img src="../1.png" class="scale-down">
+			<span>object-fit:scale-down</span>
+		</li>
+	</ul>
+	<body>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>
