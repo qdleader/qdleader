@@ -10,19 +10,22 @@
 			下载时候选择图形化工具，挺好用的，下载完后打开界面如图
 			![](windows本地搭建easy-mock环境_files/1.jpg)
 			
+			进来后因为没有设置密码直接点击，connect就可以
 			
+			然后你就连上啦。
 
-   3、Redis安装（Redis安装包地址：https://github.com/MicrosoftArchive/redis/releases）
-
-       下载一个MSI，然后安装
-
-    　　 注意事项： 
-
-       安装成功后找到安装的文件夹
-
-　　通过命令设置密码，cmd进入Redis客户端（确保服务启动），输入命令redis-cli.exe（也可双击redis-cli.exe），命令config set requirepass mypasswd 设置密码
-
-    　然后再计算机的服务应用程序中找到Redis启动 或者   通过命令redis-server.exe启动服务
+   3、Redis安装
+   
+   我推荐一个傻瓜式安装redis的方法。
+   首先下载phpstudy，[地址](https://www.xp.cn/download.html)然后里面后好多你用的工具可以统一下载和管理。特别方便。
+   这里直接点立即下载就可以。
+   
+   ![](windows本地搭建easy-mock环境_files/1.jpg)
+   
+   找到redis直接安装就可以。
+   
+   ![](windows本地搭建easy-mock环境_files/2.jpg)
+   然后在首页点击启动就可以。
 
    4、安装下载easy mock  
 
@@ -41,7 +44,7 @@
 
        下载完成后运行环境变量  cross-env NODE_ENV=production pm2 start app.js
 
-      
+      ![](windows本地搭建easy-mock环境_files/3.jpg)
 
   　 从http://localhost:7300/打开easymock 的页面 ，开始使用 
 
