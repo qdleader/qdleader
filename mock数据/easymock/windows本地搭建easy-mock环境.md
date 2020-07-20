@@ -21,7 +21,7 @@
    这里直接点立即下载就可以。
    
    ![](windows本地搭建easy-mock环境_files/1.jpg)
-   
+   a
    找到redis直接安装就可以。
    
    ![](windows本地搭建easy-mock环境_files/2.jpg)
@@ -47,5 +47,6 @@
       ![](windows本地搭建easy-mock环境_files/3.jpg)
 
   　 从http://localhost:7300/打开easymock 的页面 ，开始使用 
+  
 
         
