@@ -1,0 +1,75 @@
+.desc {
+    padding: 0 56px;
+    color: rgba(0, 0, 0, .45);
+}
+
+.desc h3 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    color: rgba(0, 0, 0, .45);
+    line-height: 32px;
+}
+
+.desc h4 {
+    margin: 0 0 4px 0;
+    color: rgba(0, 0, 0, .45);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.desc p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 22px;
+}
+.stepForm {
+    margin: 40px auto 0;
+    max-width: 500px;
+}
+
+#step2 .ant-form-item {
+    margin-bottom: 10px;
+}
+#step3{
+    width: 60%;
+    text-align: center;
+    margin: 40px auto 0;
+}
+#step3 .ant-form-item {
+    margin-bottom: 10px;
+}
+.money{
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 14px;
+}
+.icon-box{
+    font-size: 72px;
+    line-height: 72px;
+    margin-bottom: 24px;
+    color: #52c41a;
+    text-align: center;
+}
+.success{
+    font-size: 24px;
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.success-desc{
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0,0,0,.45);
+    margin-bottom: 24px;
+    text-align: center;
+}
+#step3 .result{
+    padding: 24px 40px;
+    margin-bottom: 32px;
+    border-radius: 2px;
+    background: #fafafa;
+    text-align: left;
+}
