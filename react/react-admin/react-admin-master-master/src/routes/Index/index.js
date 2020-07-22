@@ -36,7 +36,7 @@ class Index extends React.Component{
             <Content>
               <ContentMain/>
             </Content>
-            <Footer style={{textAlign: 'center'}}>React-Admin ©2018 Created by 137596665@qq.com <a target='_blank' href='https://github.com/zhangZhiHao1996/react-admin-master'>github地址</a></Footer>
+            <Footer style={{textAlign: 'center'}}>React-Admin  Created by wx a5628354 <a target='_blank' href='https://github.com/qdleader/qdleader'>github地址</a></Footer>
           </Layout>
         </Layout>
       </div>
