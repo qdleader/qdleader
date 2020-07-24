@@ -83,6 +83,7 @@
   },
   "devDependencies": {
     "antd": "3.26.16",
+    "axios": "^0.19.2",
     "less": "^3.11.3",
     "less-loader": "^5.0.0",
     "react-router-dom": "^5.2.0"
@@ -141,5 +142,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+	"proxy":"http://localhost:7300/mock/5f17bec376ee9233ae26f085/kx"
 }
