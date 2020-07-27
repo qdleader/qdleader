@@ -7,27 +7,37 @@ import {adminuserLogin} from '../../api';
 
 class Login extends Component {
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        // console.log(event)
-        // const form = this.props.form;
-
-        // const values = form.getFieldsValue();
-        // console.log("提交表单",values)
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-              console.log('Received values of form: ', values);
-			  const {username,password} = values
-			  adminuserLogin(username,password).then(res => {
-					console.log("成功了",res.data)
-			  }).ctatch(error => {
-				  console.log("失败了",error)
-			  })
-			  this.props.history.push('/admin/dashboard')
-            }
-          });
-
-    }
+//     handleSubmit = (event) => {
+//         event.preventDefault()
+//         this.props.form.validateFields((err, values) => {
+//             if (!err) {
+//               console.log('Received values of form: ', values);
+// 			  const {username,password} = values
+// 			  adminuserLogin(username,password).then(res => {
+// 					console.log("成功了",res.data)
+// 			  }).ctatch(error => {
+// 				  console.log("失败了",error)
+// 			  })
+// 			  this.props.history.push('/admin/dashboard')
+//             }
+//         });
+//     }
+	    handleSubmit = (event) => {
+			event.preventDefault()
+			// 增加async 和 await 
+			// 好处：简化promise对象使用，不用再使用then来制定成功失败的回调函数
+			// 以同步编码(没有回调函数的)方式实现异步流程
+			
+			//async 要写在 await 最近的所在函数的左侧
+			this.props.form.validateFields( async(err, values) => {
+				if (!err) {
+				  console.log('Received values of form: ', values);
+				  const {username,password} = values
+				  const res = await adminuserLogin(username, password)
+				  console.log("成功了",res.data)
+				}
+			});
+		}
     //对密码进行自定义验证
     validatePwd = (rule, value, callback) => {
         if(!value) {
