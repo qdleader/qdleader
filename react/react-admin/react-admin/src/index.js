@@ -7,6 +7,10 @@ import { HashRouter as Router, Switch, Redirect, Route} from 'react-router-dom';
 // import { Switch } from 'antd';
 import { mainRoutes } from './routes';
 
+import Bus from './utils/bus.js'
+const user = JSON.parse(localStorage.getItem('user') || '{}')
+Bus.user = user
+
 ReactDOM.render(
     <Router>
       <Switch>

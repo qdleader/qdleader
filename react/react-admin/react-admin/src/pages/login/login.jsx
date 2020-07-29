@@ -2,11 +2,11 @@ import React, {Component} from 'react'
 
 import { Form, Icon, Input, Button } from 'antd';
 import './login.less';
-
+import { Redirect} from 'react-router-dom';
 import {adminuserLogin} from '../../api';
-
+import Bus from '../../utils/bus.js'
 class Login extends Component {
-
+		
 //     handleSubmit = (event) => {
 //         event.preventDefault()
 //         this.props.form.validateFields((err, values) => {
@@ -35,6 +35,9 @@ class Login extends Component {
 				  const {username,password} = values
 				  const res = await adminuserLogin(username, password)
 				  console.log("成功了",res.data)
+				  Bus.user = res.data
+				  localStorage.setItem("user",JSON.stringify(res.data))
+				  this.props.history.push('/admin/dashboard')
 				}
 			});
 		}
@@ -53,6 +56,13 @@ class Login extends Component {
         }
     }
     render () {
+		
+		const user = Bus.user;
+		if(user && user.admin_user_id) {
+			//没登录跳转到登陆
+			return <Redirect to="/admin/dashboard" />
+		}
+		
         const { getFieldDecorator } = this.props.form;
         return (
 			<div className="login-bg">
