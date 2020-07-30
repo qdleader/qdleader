@@ -1,6 +1,7 @@
 import React ,{Component}from 'react';
 
 import Bus from '../../utils/bus.js'
+import { Redirect} from 'react-router-dom';
 
 //登录的路由组件
 
