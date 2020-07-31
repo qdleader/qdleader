@@ -3,6 +3,9 @@ import React ,{Component}from 'react';
 import Bus from '../../utils/bus.js'
 import { Redirect} from 'react-router-dom';
 
+import { Layout } from 'antd';
+import LeftNav from '../../components/left-nav/left-nav'
+const { Header, Footer, Sider, Content } = Layout;
 //登录的路由组件
 
 export default class Admin extends Component {
@@ -13,9 +16,18 @@ export default class Admin extends Component {
 			return <Redirect to="/login" />
 		}
         return (
-            <div className="login">
-                你好 {user.admin_user_id}
-            </div>
+     
+				
+				 <Layout style={{height:'100%'}}>
+					  <Sider>
+						<LeftNav/>
+					  </Sider>
+					  <Layout>
+						<Header style={{backgroundColor:'#ccc'}}>Header</Header>
+						<Content>Content</Content>
+						<Footer>Footer</Footer>
+					  </Layout>
+				</Layout>
         )
     }
 }

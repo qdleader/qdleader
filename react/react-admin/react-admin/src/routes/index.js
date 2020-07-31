@@ -27,3 +27,8 @@ export const adminRoutes = [{
     path:'/admin/products/edit/:id',
     component:Edit
 }]
+
+
+const menuList = [];
+
+export default menuList;
