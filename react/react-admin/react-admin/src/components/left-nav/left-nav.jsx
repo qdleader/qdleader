@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import './index.less'
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import menuList from '../../routes/index.js'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
+// withRouter 它可以向非路由组件传递 history、location， match
 
-export default class LeftNav extends Component {
+class LeftNav extends Component {
   state = {
     collapsed: false,
   };
@@ -29,6 +30,8 @@ export default class LeftNav extends Component {
 				</Menu.Item>
 			  )
 		  } else {
+			  const cItem = item.children.find(cItem => cItem.key === path)
+			  this.openKey = item.key
 			  return (
 				<SubMenu
 					key={item.key}
@@ -46,13 +49,20 @@ export default class LeftNav extends Component {
 	  })
   }
   
+  componentWillMount () {
+	  this.menuNodes = this.getMenuNodes(menuList)
+  }
   
 	render() {
+		const path = this.props.location.pathname
+		console.log(11,path)
+		
+		const openKey = this.openKey;
 		return (
 			<div className="left-nav">
 				   <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
 					  <div className="logo" />
-					  <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+					  <Menu theme="dark" selectedKeys={[path]} mode="inline">
 							{this.getMenuNodes(menuList)}
 					  </Menu>
 					</Sider>
@@ -60,3 +70,5 @@ export default class LeftNav extends Component {
 		)
 	}
 }
+
+export default withRouter(LeftNav)
