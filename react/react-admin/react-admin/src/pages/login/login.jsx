@@ -60,7 +60,7 @@ class Login extends Component {
 		const user = Bus.user;
 		if(user && user.admin_user_id) {
 			//没登录跳转到登陆
-			return <Redirect to="/admin/dashboard" />
+			return <Redirect to="/" />
 		}
 		
         const { getFieldDecorator } = this.props.form;

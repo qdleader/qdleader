@@ -12,16 +12,17 @@ const user = JSON.parse(localStorage.getItem('user') || '{}')
 Bus.user = user
 
 ReactDOM.render(
-    <Router>
-      <Switch>
-        <Route path="/admin" render={routeProps => <App {...routeProps}/>}/>
-        {mainRoutes.map(route => {
-          return <Route key={route.path} {...route} />
-        })} 
-        <Redirect to="/404"/>
-      </Switch>
-    </Router>,
-    // <App />,
+//     <Router>
+//       <Switch>
+// //         <Route path="/admin" render={routeProps => <App {...routeProps}/>}/>
+// //         {mainRoutes.map(route => {
+// //           return <Route key={route.path} {...route} />
+// //         })} 
+// //         <Redirect to="/404"/>
+// //       </Switch>
+// 	
+//     </Router>,
+    <App />,
   document.getElementById('root')
 );
 
