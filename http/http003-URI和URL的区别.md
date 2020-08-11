@@ -22,3 +22,5 @@
  > 那么放到web上 https://www.csdn.net是一个URI（它只说明了服务器的地址，没有具体到文件是什么类型）
   > 那么https://www.csdn.net/image/logo.gif就是一个URL（他具体到了logo文件的位置并且logo文件是gif类型的） 这样一来URL和URI的区别就很清晰了
 
+
+
