@@ -1,7 +1,19 @@
 import React, {Component} from 'react';
 
 import { Card ,Icon ,Button,Table} from 'antd';
+
+import {reqList} from '../../../api';
+
+// import LinkButton from '../../components/link-button/link-button'
 export default class Category extends Component {
+		getListq = async () => {
+			const res = await reqList('0')
+			console.log("返回的结果",res)
+		}
+		componentWillMount() {
+			this.getListq()
+		}
+	
 	render() {
 		
 		const title = '一级分类列表'
@@ -43,12 +55,23 @@ const columns = [
     dataIndex: 'address',
     key: 'address',
   },
+	{
+		title:'操作',
+		width:300,
+		render:() => (
+			<span>
+				<a href="#">修改分类</a>
+				<a href="#">查看子分类</a>
+			</span>
+		)
+	}
 ];
 
+	
 		return (
 			<div>
 				 <Card title={title} extra={extra}>
-					<Table dataSource={dataSource} columns={columns} />
+					<Table bordered dataSource={dataSource} columns={columns} />
 				</Card>
 			</div>
 		)
