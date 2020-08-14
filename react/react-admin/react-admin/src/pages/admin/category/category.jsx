@@ -1,21 +1,67 @@
 import React, {Component} from 'react';
 
-import { Card ,Icon ,Button,Table} from 'antd';
+import { Card ,Icon ,Button,Table,message} from 'antd';
 
 import {reqList} from '../../../api';
 
 // import LinkButton from '../../components/link-button/link-button'
 export default class Category extends Component {
+		state= {
+			categorys:[],// 分类列表
+		}
+		// 获取列表数据
 		getListq = async () => {
 			const res = await reqList('0')
 			console.log("返回的结果",res)
+			if(res.ret== 0) {
+				res.data.data.map(item => {
+					item.key = item.id
+				})
+				const categorys = res.data.data;
+				this.setState({
+					categorys,
+				})
+			} else {
+				message.error('获取列表失败')
+			}
+		}
+		// 初始化列数组
+		initColums = () => {
+				this.columns = [
+				  {
+				    title: '姓名',
+				    dataIndex: 'id',
+				    key: 'id',
+				  },
+				  {
+				    title: '时间',
+				    dataIndex: 'start_time',
+				    key: 'start_time',
+				  },
+					{
+						title:'操作',
+						width:300,
+						render:() => (
+							<span>
+								<a href="#">修改分类</a>
+								<a href="#">查看子分类</a>
+							</span>
+						)
+					}
+				];
 		}
 		componentWillMount() {
-			this.getListq()
+			this.initColums();
 		}
+		componentDidMount() {
+			this.getListq();
+		}
+		
+
 	
 	render() {
-		
+				//读取状态数据
+		const {categorys} = this.state
 		const title = '一级分类列表'
 		const extra = (
 			<Button>
@@ -39,39 +85,18 @@ export default class Category extends Component {
   },
 ];
 
-const columns = [
-  {
-    title: '姓名',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: '年龄',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: '住址',
-    dataIndex: 'address',
-    key: 'address',
-  },
-	{
-		title:'操作',
-		width:300,
-		render:() => (
-			<span>
-				<a href="#">修改分类</a>
-				<a href="#">查看子分类</a>
-			</span>
-		)
-	}
-];
+
 
 	
 		return (
+
 			<div>
 				 <Card title={title} extra={extra}>
-					<Table bordered dataSource={dataSource} columns={columns} />
+					<Table bordered 
+						dataSource={categorys} 
+						columns={this.columns} 
+						pagination={{defaultPageSize:5,showQuickJumper:true}}
+						/>
 				</Card>
 			</div>
 		)
