@@ -13,15 +13,25 @@ export default class Category extends Component {
 			parentId:'0',//要穿的id
 			parentName:'',//显示的title
 		}
+		//二级分类列表
 		showSub = (data) => {
 			console.log("二级列表",data)
 			this.setState({
-				parentId:data.id
+				parentId:data.id,
+				parentName:data.id
 			},() => {
 				console.log("parentId",this.state.parentId)
 				this.getListq()
 			})
 			
+		}
+		//一级分类列表
+		showFirst = () => {
+			this.setState({
+				parentId:'0',
+				parentName:'',
+				subCategorys:[],
+			})
 		}
 		// 获取列表数据
 		getListq = async () => {
@@ -68,7 +78,8 @@ export default class Category extends Component {
 						render:(data) => (
 							<span>
 								<LinkButton>修改分类</LinkButton>
-								<a href="#" onClick={() => {this.showSub(data)}}>查看子分类</a>
+								{this.state.parentId == '0' ? <a href="#" onClick={() => {this.showSub(data)}}>查看子分类</a>: null}
+								
 							</span>
 						)
 					}
@@ -85,8 +96,14 @@ export default class Category extends Component {
 	
 	render() {
 		//读取状态数据
-		const {categorys,subCategorys,loading,parentId} = this.state
-		const title = '一级分类列表'
+		const {categorys,subCategorys,parentName,loading,parentId} = this.state
+		const title = parentId == '0' ? '一级分类列表' : (
+			<span>
+				<LinkButton onClick={() => {this.showFirst()}}>一级分类列表</LinkButton>
+				<Icon type="arrow-right" style={{marginRight:5}}/>
+				<span>{parentName}</span>
+			</span>
+		)
 		const extra = (
 			<Button>
 				<Icon type="plus"/>
