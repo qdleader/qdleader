@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { Card ,Icon ,Button,Table,message} from 'antd';
+import { Card ,Icon ,Button,Table,message,Modal} from 'antd';
 
 import {reqList} from '../../../api';
 
@@ -12,7 +12,34 @@ export default class Category extends Component {
 			loading:true,//请求过程中列表加载
 			parentId:'0',//要穿的id
 			parentName:'',//显示的title
+			visible:false,//模态框显隐
+			showEdit:false,//展示编辑
 		}
+		showModal = () => {
+			this.setState({
+			  visible: true,
+			  showEdit:false,
+			});
+		  };
+		editModal = () => {
+			this.setState({
+				visible:true,
+				showEdit:true
+			})
+		}
+		  handleOk = e => {
+			console.log(e);
+			this.setState({
+			  visible: false,
+			});
+		  };
+
+		  handleCancel = e => {
+			console.log(e);
+			this.setState({
+			  visible: false,
+			});
+		  };
 		//二级分类列表
 		showSub = (data) => {
 			console.log("二级列表",data)
@@ -77,7 +104,7 @@ export default class Category extends Component {
 						width:300,
 						render:(data) => (
 							<span>
-								<LinkButton>修改分类</LinkButton>
+								<LinkButton onClick={this.editModal}>修改分类</LinkButton>
 								{this.state.parentId == '0' ? <a href="#" onClick={() => {this.showSub(data)}}>查看子分类</a>: null}
 								
 							</span>
@@ -96,7 +123,7 @@ export default class Category extends Component {
 	
 	render() {
 		//读取状态数据
-		const {categorys,subCategorys,parentName,loading,parentId} = this.state
+		const {categorys,subCategorys,parentName,loading,parentId,showEdit} = this.state
 		const title = parentId == '0' ? '一级分类列表' : (
 			<span>
 				<LinkButton onClick={() => {this.showFirst()}}>一级分类列表</LinkButton>
@@ -105,7 +132,7 @@ export default class Category extends Component {
 			</span>
 		)
 		const extra = (
-			<Button>
+			<Button onClick={this.showModal}>
 				<Icon type="plus"/>
 				添加
 			</Button>
@@ -123,6 +150,17 @@ export default class Category extends Component {
 						pagination={{defaultPageSize:5,showQuickJumper:true}}
 						/>
 				</Card>
+				// 遮罩
+				 <Modal
+				  title={showEdit?'编辑':'添加'}
+				  visible={this.state.visible}
+				  onOk={this.handleOk}
+				  onCancel={this.handleCancel}
+				>
+				  <p>Some contents...</p>
+				  <p>Some contents...</p>
+				  <p>Some contents...</p>
+				</Modal>
 			</div>
 		)
 	}
