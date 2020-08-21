@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import { Card ,Icon ,Button,Table,message,Modal} from 'antd';
 
-import {reqList} from '../../../api';
+import {reqList,updateCategory} from '../../../api';
 import AddForm from './add-form';
 import LinkButton from '../../../components/link-button/link-button'
 export default class Category extends Component {
@@ -21,14 +21,23 @@ export default class Category extends Component {
 			  showEdit:false,
 			});
 		  };
-		editModal = () => {
+		editModal = (data) => {
+			this.category = data;
 			this.setState({
 				visible:true,
 				showEdit:true
 			})
 		}
-		  handleOk = e => {
-			console.log(e);
+		  handleOk = async () => {
+			// console.log(e);
+			const id = this.category.id;
+			const name = this.form.getFieldValue('categoryName')
+			console.log(id,name)
+			const res = await updateCategory({id,name})
+			
+			if(res.ret == 0) {
+				this.getListq()
+			}
 			this.setState({
 			  visible: false,
 			});
@@ -104,7 +113,7 @@ export default class Category extends Component {
 						width:300,
 						render:(data) => (
 							<span>
-								<LinkButton onClick={this.editModal}>修改分类</LinkButton>
+								<LinkButton onClick={() =>this.editModal(data)}>修改分类</LinkButton>
 								{this.state.parentId == '0' ? <a href="#" onClick={() => {this.showSub(data)}}>查看子分类</a>: null}
 								
 							</span>
@@ -124,6 +133,8 @@ export default class Category extends Component {
 	render() {
 		//读取状态数据
 		const {categorys,subCategorys,parentName,loading,parentId,showEdit} = this.state
+		
+		const category = this.category || {};
 		const title = parentId == '0' ? '一级分类列表' : (
 			<span>
 				<LinkButton onClick={() => {this.showFirst()}}>一级分类列表</LinkButton>
@@ -157,7 +168,7 @@ export default class Category extends Component {
 				  onOk={this.handleOk}
 				  onCancel={this.handleCancel}
 				>
-					<AddForm/>
+					<AddForm categoryName={category.id} setForm={(form)=> {this.form = form}}/>
 				</Modal>
 			</div>
 		)

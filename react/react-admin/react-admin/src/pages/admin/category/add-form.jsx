@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import PropTypes from 'prop-types';
 import {
 	Form,
 	Select,
@@ -11,14 +12,23 @@ const Option = Select.Option;
 // 添加分类的form组件
 
 class AddForm extends Component {
+	static propTypes = {
+		categoryName:PropTypes.string.isRequired,
+		setForm:PropTypes.func.isRequired
+	}
+	componentWillMount () {
+		//将form 对象传给父组件
+		this.props.setForm(this.props.form)
+	}
 	render() {
+		const {categoryName} = this.props;
 		const {getFieldDecorator} = this.props.form;
 		return (
 			<Form>
 			<Item>
 			{
 				getFieldDecorator('parentId',{
-					initialValue:'0'
+					initialValue:categoryName
 				})(
 					<Select>
 						<Option value="0">下拉1</Option>
