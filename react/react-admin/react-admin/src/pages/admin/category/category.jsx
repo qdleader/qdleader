@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import { Card ,Icon ,Button,Table,message,Modal} from 'antd';
 
 import {reqList} from '../../../api';
-
- import LinkButton from '../../../components/link-button/link-button'
+import AddForm from './add-form';
+import LinkButton from '../../../components/link-button/link-button'
 export default class Category extends Component {
 		state= {
 			categorys:[],// 分类列表
@@ -157,9 +157,7 @@ export default class Category extends Component {
 				  onOk={this.handleOk}
 				  onCancel={this.handleCancel}
 				>
-				  <p>Some contents...</p>
-				  <p>Some contents...</p>
-				  <p>Some contents...</p>
+					<AddForm/>
 				</Modal>
 			</div>
 		)
