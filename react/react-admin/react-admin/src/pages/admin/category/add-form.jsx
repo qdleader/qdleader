@@ -14,26 +14,32 @@ const Option = Select.Option;
 class AddForm extends Component {
 	static propTypes = {
 		categoryName:PropTypes.string.isRequired,
-		setForm:PropTypes.func.isRequired
+		setForm:PropTypes.func.isRequired,
+		categorys:PropTypes.array.isRequired,//一级分类的数组
+		parentId:PropTypes.string.isRequired,//父分类的id
+		
 	}
 	componentWillMount () {
 		//将form 对象传给父组件
 		this.props.setForm(this.props.form)
 	}
 	render() {
-		const {categoryName} = this.props;
+		const {categorys,parentId} = this.props;
+		// const {categoryName} = this.props;
 		const {getFieldDecorator} = this.props.form;
 		return (
 			<Form>
 			<Item>
 			{
 				getFieldDecorator('parentId',{
-					initialValue:categoryName
+					// initialValue:categoryName
+					initialValue:parentId
 				})(
 					<Select>
-						<Option value="0">下拉1</Option>
-						<Option value="1">下拉2</Option>
-						<Option value="2">下拉3</Option>
+						
+							{
+								categorys.map(item => <Option value={item.id}>{item.name}</Option>)
+							}
 					</Select>
 				)
 			}
