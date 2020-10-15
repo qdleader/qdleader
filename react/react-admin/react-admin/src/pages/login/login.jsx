@@ -6,7 +6,7 @@ import { Redirect} from 'react-router-dom';
 import {adminuserLogin} from '../../api';
 import Bus from '../../utils/bus.js'
 class Login extends Component {
-		
+
 //     handleSubmit = (event) => {
 //         event.preventDefault()
 //         this.props.form.validateFields((err, values) => {
@@ -23,23 +23,23 @@ class Login extends Component {
 //         });
 //     }
 	    handleSubmit = (event) => {
-			event.preventDefault()
-			// 增加async 和 await 
-			// 好处：简化promise对象使用，不用再使用then来制定成功失败的回调函数
-			// 以同步编码(没有回调函数的)方式实现异步流程
-			
-			//async 要写在 await 最近的所在函数的左侧
-			this.props.form.validateFields( async(err, values) => {
-				if (!err) {
-				  console.log('Received values of form: ', values);
-				  const {username,password} = values
-				  const res = await adminuserLogin(username, password)
-				  console.log("成功了",res.data)
-				  Bus.user = res.data
-				  localStorage.setItem("user",JSON.stringify(res.data))
-				  this.props.history.push('/admin/dashboard')
-				}
-			});
+				event.preventDefault()
+				// 增加async 和 await
+				// 好处：简化promise对象使用，不用再使用then来制定成功失败的回调函数
+				// 以同步编码(没有回调函数的)方式实现异步流程
+
+				//async 要写在 await 最近的所在函数的左侧
+				this.props.form.validateFields( async(err, values) => {
+					if (!err) {
+					  console.log('Received values of form: ', values);
+					  const {username,password} = values
+					  const res = await adminuserLogin(username, password)
+					  console.log("成功了",res.data)
+					  Bus.user = res.data
+					  localStorage.setItem("user",JSON.stringify(res.data))
+					  this.props.history.push('/admin/dashboard')
+					}
+				});
 		}
     //对密码进行自定义验证
     validatePwd = (rule, value, callback) => {
@@ -56,13 +56,13 @@ class Login extends Component {
         }
     }
     render () {
-		
+
 		const user = Bus.user;
 		if(user && user.admin_user_id) {
 			//没登录跳转到登陆
 			return <Redirect to="/" />
 		}
-		
+
         const { getFieldDecorator } = this.props.form;
         return (
 			<div className="login-bg">
@@ -93,7 +93,7 @@ class Login extends Component {
 							{getFieldDecorator('password', {
 								rules:[
 									{
-										validator:this.validatePwd 
+										validator:this.validatePwd
 									}
 								]
 								// rules: [{ required: true, message: 'Please input your Password!' }],
@@ -114,7 +114,7 @@ class Login extends Component {
 						{/* 登录表单结束 */}
 					</div>
 			</div>
-       
+
         )
     }
 }
