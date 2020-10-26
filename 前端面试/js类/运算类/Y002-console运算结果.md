@@ -1,5 +1,5 @@
 ```
-			console.log(1 + '2') 
+			console.log(1 + '2')
 			console.log(1 + '2' +'2')
 			console.log(1 + +'2' +'2')
 			console.log(1 - '1'+'2')
@@ -101,4 +101,21 @@ console.log({} + [])
 "[object object]"
 "[object object][object object]"
 0
+```
+
+
+```
+console.log(1 < 2 < 3);
+console.log(3 > 2 > 1);
+console.log(Number(true))
+```
+
+答案:
+
+```
+true
+
+false
+
+1
 ```
