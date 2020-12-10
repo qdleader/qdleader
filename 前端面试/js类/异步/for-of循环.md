@@ -21,7 +21,6 @@ nums.forEach(async (i) => {
 
 
 
-
 ```
 !(async function () {
     for (let i of nums) {
