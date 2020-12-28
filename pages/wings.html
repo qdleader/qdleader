@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>雪花昵称生成工具</title>
+	<title>翅膀昵称生成工具</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 	<style type="text/css">
 		* {
@@ -121,16 +121,6 @@
 	}
 	</style>
 
-  <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?6a2d20aff36a827744e84d0ba4b8ea3a";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
 
 </head>
 <body>
@@ -153,7 +143,11 @@
 <div class="btn-box">
 	<input type="button" id="go" value="一键生成">
 </div>
+<div class="sub_title">
+	点击下面文字直接复制
+</div>
 
+<textarea class="res_textarea" id="result" rows="4"></textarea>
 
 <ul id="oBox">
 	<li>꧁❀你❀꧂</li>
@@ -179,14 +173,24 @@
 	<li>◥▇▇▇╋【战灬你</li>
 </ul>
 <script>
-	$('#go').on('click', function () {
-		var code = $('#code').val();
-    console.log(code)
-    let str = `꧁༺${code}༻꧂`
-    $('#result').val(str);
-	});
+
 
 	(function () {
+
+
+		let doS = document.querySelector('#go')
+		let oCode = document.querySelector('#code')
+		let oResult = document.querySelector('#result')
+		doS.addEventListener('click',function() {
+
+				var code = oCode.value;
+				console.log(code)
+
+				let str = `꧁❀${code}❀꧂`
+
+				oResult.innerHTML = str
+		})
+
 		var el = document.querySelector('#result');
 		var autoSelect = function (ev) {
 			var t = ev.currentTarget;
@@ -212,75 +216,86 @@
 		var colorList=document.getElementById("oBox");
 		var colors=colorList.getElementsByTagName("li");
 
+		let doS = document.querySelector('#go')
+		let oCode = document.querySelector('#code')
+		let oResult = document.querySelector('#result')
+
 		colors[0].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `꧁❀${code}❀꧂`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 		colors[1].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `꧁༺༽༾ཊ${code}ཏ༿༼༻꧂`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 		colors[2].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
-				let str = `꧁꫞꯭${code}꯭꫞꧂`
-				$('#result').val(str);
+				let str = `꧁${code}꧂`
+				oResult.innerHTML = str
 		})
 		colors[3].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `꧁༺❀${code}❀༻꧂`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 		colors[4].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `༺❀${code}❀༻`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 		colors[5].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `༺ཌ༈${code}༈ད༻`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 		colors[6].addEventListener('click',function() {
-				var code = $('#code').val();
+				var code = oCode.value;
+				console.log(code)
+
+				let str = `༺ཌ༈${code}༈ད༻`
+				oResult.innerHTML = str
+		})
+		colors[7].addEventListener('click',function() {
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `◢▂${code}▂◣`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
-		colors[0].addEventListener('click',function() {
-				var code = $('#code').val();
+		colors[8].addEventListener('click',function() {
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `圝◤${code}◥圝`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
-		colors[0].addEventListener('click',function() {
-				var code = $('#code').val();
+		colors[9].addEventListener('click',function() {
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `${code}ㄣ▄︻┳═一`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
-		colors[0].addEventListener('click',function() {
-				var code = $('#code').val();
+		colors[10].addEventListener('click',function() {
+				var code = oCode.value;
 				console.log(code)
 
 				let str = `◥▇▇▇╋【战灬${code}`
-				$('#result').val(str);
+				oResult.innerHTML = str
 		})
 
 
@@ -288,11 +303,7 @@
 </script>
 
 
-<div class="sub_title">
-	点击下面文字直接复制
-</div>
 
-<textarea class="res_textarea" id="result" rows="4"></textarea>
 
 
 
