@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+      .box {
+        width:100vw;
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#333;
+
+      }
+      h1 {
+        width:100%;
+        text-align:center;
+        margin-top:-50px;
+        margin-bottom:50px;
+      }
+      * {
+        margin:0;
+        padding:0;
+      }
+    </style>
+
+<style media="screen">
+      .night {
+  position: fixed;
+  left:0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    -webkit-animation: sky 200000ms linear infinite;
+    animation: sky 200000ms linear infinite;
+}
+
+.shooting_star {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  -webkit-filter: drop-shadow(0 0 6px #699bff);
+          filter: drop-shadow(0 0 6px #699bff);
+  -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+          animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+}
+.shooting_star::before, .shooting_star::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+  -webkit-transform: translateX(50%) rotateZ(45deg);
+          transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+          animation: shining 3000ms ease-in-out infinite;
+}
+.shooting_star::after {
+  -webkit-transform: translateX(50%) rotateZ(-45deg);
+          transform: translateX(50%) rotateZ(-45deg);
+}
+.shooting_star:nth-child(1) {
+  top: calc(10% - 185px);
+  left: calc(10% - 150px);
+  -webkit-animation-delay: 8971ms;
+          animation-delay: 8971ms;
+}
+.shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after, .shooting_star:nth-child(1)::after {
+  -webkit-animation-delay: 8971ms;
+          animation-delay: 8971ms;
+}
+.shooting_star:nth-child(2) {
+  top: calc(15% - 50px);
+  left: calc(15% - 179px);
+  -webkit-animation-delay: 9256ms;
+          animation-delay: 9256ms;
+}
+.shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+  -webkit-animation-delay: 9256ms;
+          animation-delay: 9256ms;
+}
+.shooting_star:nth-child(3) {
+  top: calc(20% - -146px);
+  left: calc(20% - 135px);
+  -webkit-animation-delay: 8700ms;
+          animation-delay: 8700ms;
+}
+.shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after, .shooting_star:nth-child(3)::after {
+  -webkit-animation-delay: 8700ms;
+          animation-delay: 8700ms;
+}
+.shooting_star:nth-child(4) {
+  top: calc(30% - -77px);
+  left: calc(30% - 157px);
+  -webkit-animation-delay: 3147ms;
+          animation-delay: 3147ms;
+}
+.shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after, .shooting_star:nth-child(4)::after {
+  -webkit-animation-delay: 3147ms;
+          animation-delay: 3147ms;
+}
+.shooting_star:nth-child(5) {
+  top: calc(40% - -183px);
+  left: calc(40% - 8px);
+  -webkit-animation-delay: 6588ms;
+          animation-delay: 6588ms;
+}
+.shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after, .shooting_star:nth-child(5)::after {
+  -webkit-animation-delay: 6588ms;
+          animation-delay: 6588ms;
+}
+.shooting_star:nth-child(6) {
+  top: calc(50% - -29px);
+  left: calc(50% - 195px);
+  -webkit-animation-delay: 8009ms;
+          animation-delay: 8009ms;
+}
+.shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after, .shooting_star:nth-child(6)::after {
+  -webkit-animation-delay: 8009ms;
+          animation-delay: 8009ms;
+}
+.shooting_star:nth-child(7) {
+  top: calc(60% - 95px);
+  left: calc(60% - 69px);
+  -webkit-animation-delay: 5420ms;
+          animation-delay: 5420ms;
+}
+.shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after, .shooting_star:nth-child(7)::after {
+  -webkit-animation-delay: 5420ms;
+          animation-delay: 5420ms;
+}
+.shooting_star:nth-child(8) {
+  top: calc(70% - -59px);
+  left: calc(70% - 70px);
+  -webkit-animation-delay: 9378ms;
+          animation-delay: 9378ms;
+}
+.shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after, .shooting_star:nth-child(8)::after {
+  -webkit-animation-delay: 9378ms;
+          animation-delay: 9378ms;
+}
+.shooting_star:nth-child(9) {
+  top: calc(80% - 76px);
+  left: calc(80% - 238px);
+  -webkit-animation-delay: 2845ms;
+          animation-delay: 2845ms;
+}
+.shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after, .shooting_star:nth-child(9)::after {
+  -webkit-animation-delay: 2845ms;
+          animation-delay: 2845ms;
+}
+.shooting_star:nth-child(10) {
+  top: calc(90% - 83px);
+  left: calc(90% - 6px);
+  -webkit-animation-delay: 5205ms;
+          animation-delay: 5205ms;
+}
+.shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after, .shooting_star:nth-child(10)::after {
+  -webkit-animation-delay: 5205ms;
+          animation-delay: 5205ms;
+}
+.shooting_star:nth-child(11) {
+  top: calc(100% - -137px);
+  left: calc(100% - 267px);
+  -webkit-animation-delay: 808ms;
+          animation-delay: 808ms;
+}
+.shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after, .shooting_star:nth-child(11)::after {
+  -webkit-animation-delay: 808ms;
+          animation-delay: 808ms;
+}
+.shooting_star:nth-child(12) {
+  top: calc(50% - 12px);
+  left: calc(50% - 8px);
+  -webkit-animation-delay: 2406ms;
+          animation-delay: 2406ms;
+}
+.shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after, .shooting_star:nth-child(12)::after {
+  -webkit-animation-delay: 2406ms;
+          animation-delay: 2406ms;
+}
+.shooting_star:nth-child(13) {
+  top: calc(50% - 148px);
+  left: calc(50% - 47px);
+  -webkit-animation-delay: 7566ms;
+          animation-delay: 7566ms;
+}
+.shooting_star:nth-child(13)::before, .shooting_star:nth-child(13)::after, .shooting_star:nth-child(13)::after {
+  -webkit-animation-delay: 7566ms;
+          animation-delay: 7566ms;
+}
+.shooting_star:nth-child(14) {
+  top: calc(50% - -28px);
+  left: calc(50% - 75px);
+  -webkit-animation-delay: 7634ms;
+          animation-delay: 7634ms;
+}
+.shooting_star:nth-child(14)::before, .shooting_star:nth-child(14)::after, .shooting_star:nth-child(14)::after {
+  -webkit-animation-delay: 7634ms;
+          animation-delay: 7634ms;
+}
+.shooting_star:nth-child(15) {
+  top: calc(50% - -37px);
+  left: calc(50% - 203px);
+  -webkit-animation-delay: 7743ms;
+          animation-delay: 7743ms;
+}
+.shooting_star:nth-child(15)::before, .shooting_star:nth-child(15)::after, .shooting_star:nth-child(15)::after {
+  -webkit-animation-delay: 7743ms;
+          animation-delay: 7743ms;
+}
+.shooting_star:nth-child(16) {
+  top: calc(50% - 41px);
+  left: calc(50% - 256px);
+  -webkit-animation-delay: 2888ms;
+          animation-delay: 2888ms;
+}
+.shooting_star:nth-child(16)::before, .shooting_star:nth-child(16)::after, .shooting_star:nth-child(16)::after {
+  -webkit-animation-delay: 2888ms;
+          animation-delay: 2888ms;
+}
+.shooting_star:nth-child(17) {
+  top: calc(50% - -35px);
+  left: calc(50% - 121px);
+  -webkit-animation-delay: 5864ms;
+          animation-delay: 5864ms;
+}
+.shooting_star:nth-child(17)::before, .shooting_star:nth-child(17)::after, .shooting_star:nth-child(17)::after {
+  -webkit-animation-delay: 5864ms;
+          animation-delay: 5864ms;
+}
+.shooting_star:nth-child(18) {
+  top: calc(50% - 73px);
+  left: calc(50% - 225px);
+  -webkit-animation-delay: 7883ms;
+          animation-delay: 7883ms;
+}
+.shooting_star:nth-child(18)::before, .shooting_star:nth-child(18)::after, .shooting_star:nth-child(18)::after {
+  -webkit-animation-delay: 7883ms;
+          animation-delay: 7883ms;
+}
+.shooting_star:nth-child(19) {
+  top: calc(50% - -69px);
+  left: calc(50% - 47px);
+  -webkit-animation-delay: 3339ms;
+          animation-delay: 3339ms;
+}
+.shooting_star:nth-child(19)::before, .shooting_star:nth-child(19)::after, .shooting_star:nth-child(19)::after {
+  -webkit-animation-delay: 3339ms;
+          animation-delay: 3339ms;
+}
+.shooting_star:nth-child(20) {
+  top: calc(50% - 162px);
+  left: calc(50% - 129px);
+  -webkit-animation-delay: 7963ms;
+          animation-delay: 7963ms;
+}
+.shooting_star:nth-child(20)::before, .shooting_star:nth-child(20)::after, .shooting_star:nth-child(20)::after {
+  -webkit-animation-delay: 7963ms;
+          animation-delay: 7963ms;
+}
+
+@-webkit-keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes shooting {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+}
+@keyframes shooting {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+}
+@-webkit-keyframes sky {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+@keyframes sky {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+/* 结束 */
+    </style>
+  </head>
+  <body>
+    <div class="box">
+        <div class="">
+          <h1>您好主人，现在是：</h1>
+            <canvas id="canvas" width="300" height="300"></canvas>
+        </div>
+
+
+    </div>
+
+
+    <div class="night">
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+</div>
+
+
+
+
+
+      <script type="text/javascript">
+        (function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+      var canvas = document.getElementById('canvas');
+
+      if(canvas.getContext){
+          var cxt = canvas.getContext('2d');
+          //声明canvas的宽高
+          var H = 100,W = 700;
+          canvas.height = H;
+          canvas.width = W;
+          cxt.fillStyle = '#FFFFFF';
+          cxt.fillRect(10,10,50,50);
+
+          //存储时间数据
+          var data = [];
+          //存储运动的小球
+          var balls = [];
+          //设置粒子半径
+          var R = canvas.height/20-1;
+          (function(){
+              var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+              //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+              data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+          })();
+
+          /*生成点阵数字*/
+          function renderDigit(index,num){
+              for(var i = 0; i < digit[num].length; i++){
+                  for(var j = 0; j < digit[num][i].length; j++){
+                      if(digit[num][i][j] == 1){
+                          cxt.beginPath();
+                          cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                          cxt.fillStyle = '#FFFFFF';
+                          cxt.closePath();
+                          cxt.fill();
+                      }
+                  }
+              }
+          }
+
+          /*更新时钟*/
+          function updateDigitTime(){
+              var changeNumArray = [];
+              var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+              var NewData = [];
+              NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+              for(var i = data.length-1; i >=0 ; i--){
+                  //时间发生变化
+                  if(NewData[i] !== data[i]){
+                      //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                      changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+                  }
+              }
+              //增加小球
+              for(var i = 0; i< changeNumArray.length; i++){
+                  addBalls.apply(this,changeNumArray[i].split('_'));
+              }
+              data = NewData.concat();
+          }
+
+          /*更新小球状态*/
+          function updateBalls(){
+              for(var i = 0; i < balls.length; i++){
+                  balls[i].stepY += balls[i].disY;
+                  balls[i].x += balls[i].stepX;
+                  balls[i].y += balls[i].stepY;
+                  if(balls[i].x > W + R || balls[i].y > H + R){
+                      balls.splice(i,1);
+                      i--;
+                  }
+              }
+          }
+
+          /*增加要运动的小球*/
+          function addBalls(index,num){
+              var numArray = [1,2,3];
+              var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+              for(var i = 0; i < digit[num].length; i++){
+                  for(var j = 0; j < digit[num][i].length; j++){
+                      if(digit[num][i][j] == 1){
+                          var ball = {
+                              x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                              y:i*2*(R+1)+(R+1),
+                              stepX:Math.floor(Math.random() * 4 -2),
+                              stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                              color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                              disY:1
+                          };
+                          balls.push(ball);
+                      }
+                  }
+              }
+          }
+
+          /*渲染*/
+          function render(){
+              //重置画布宽度，达到清空画布的效果
+              canvas.height = 100;
+              //渲染时钟
+              for(var i = 0; i < data.length; i++){
+                  renderDigit(i,data[i]);
+              }
+              //渲染小球
+              for(var i = 0; i < balls.length; i++){
+                  cxt.beginPath();
+                  cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+                  cxt.fillStyle = balls[i].color;
+                  cxt.closePath();
+                  cxt.fill();
+              }
+          }
+
+          clearInterval(oTimer);
+          var oTimer = setInterval(function(){
+              //更新时钟
+              updateDigitTime();
+              //更新小球状态
+              updateBalls();
+              //渲染
+              render();
+          },50);
+      }
+
+      })();
+
+
+
+
+      </script>
+  </body>
+</html>
