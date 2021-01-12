@@ -2,12 +2,12 @@
 
 请求头：
 
-## accept 请求报头域，指定客户端可以接收的类型有哪些    
+## accept 请求报头域，指定客户端可以接收的类型有哪些 （浏览器可接收的数据格式）   
 ```
   Accept: application/json
 ```
 
-## accept-encoding：指定客户端可接收的内容编码
+## accept-encoding：指定客户端可接收的内容编码（压缩算法，如gzip）
 
 ```
   Accept-Encoding: gzip, deflate, br
@@ -34,13 +34,15 @@ Host: github.com
   Referer: https://github.com/qdleader/qdleader
 ```
 
-## user-agent（UA）:用于识别用户的使用的客户端版本等信息
+## user-agent（UA）:用于识别用户的使用的客户端版本等信息(浏览器信息)★
 
 ```
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
 ```
 
-## content-type：用于标识具体请求的媒体类型.
+## content-type 发送数据的格式，如 application/json
 ```
 Content-Type: application/manifest+json; charset=utf-8
 ```
+
+## connection:keep-alive 一次TCP链接重复使用
