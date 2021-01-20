@@ -92,3 +92,34 @@ async function fn1() {
 
 //打印 200
 ```
+
+
+eg4：
+```
+async function fn() {
+  return 100
+}
+
+(async function () {
+    const a = fn()
+    console.log(a)
+    const b = await fn();
+    console.log(b)
+})()
+
+```
+
+
+答案：
+```
+Promise {}
+
+100
+
+```
+
+
+
+如果不使用await  那么async函数返回的就是一个promise对象，
+
+加上await后，就是返回then之后的结果了。
