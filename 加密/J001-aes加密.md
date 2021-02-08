@@ -17,7 +17,7 @@ let AesKey = "iam520hellomryk";
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     }
- 
+
     //加密
     export const encrypt = (data) => {
         let key = CryptoJS.enc.Utf8.parse(AesKey);
@@ -28,7 +28,7 @@ let AesKey = "iam520hellomryk";
             CBCOptions
         );
         return encrypted.toString();
-    } 
+    }
 
     export const decrypt = (data) => {
         let key = CryptoJS.enc.Utf8.parse(AesKey);
@@ -40,8 +40,8 @@ let AesKey = "iam520hellomryk";
         return CryptoJS.enc.Utf8.stringify(decrypt).toString();
     }
 
- 
- 
+
+
 
 ```
 
