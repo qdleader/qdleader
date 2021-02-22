@@ -108,3 +108,29 @@ URL（Uniform Resource Locator），统一资源定位符，用于定位互联�
 
 七、断开连接
  数据传送完，需断开tcp连接，此时发起tcp四次挥手。
+
+
+
+
+
+
+
+## 简要概述
+
+### 加载资源
+
+> 浏览器根据DNS 服务器得到域名的IP地址
+
+>向这个IP机器发送http请求
+
+>服务器收到处理并返回http请求
+
+> 浏览器得到返回的内容
+
+### 浏览器渲染页面
+
+> 根据 html 结构生成DOM Tree
+> 根据CSS 生成CSSOM
+>将DOM和CSSOM猪呢个合成RenderTree
+> 根据RenderTree开始渲染和展示
+> 遇到<script>时，会执行并阻塞渲染
