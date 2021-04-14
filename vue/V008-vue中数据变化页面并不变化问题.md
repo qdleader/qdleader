@@ -269,7 +269,7 @@ btn2() {
 async btn2() {
   this.obj = '已更新'
   console.log(this.$el.textContent)  //未更新
-  
+
   await this.$nextTick()
   console.log(this.$el.textContent)  //已更新
 }
