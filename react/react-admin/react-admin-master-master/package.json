@@ -50,7 +50,7 @@
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
-    "react-draft-wysiwyg": "^1.12.13",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
