@@ -32,12 +32,12 @@ let pro1 = new Promise((resolve,reject) => {
 let pro2 = new Promise((resolve,reject) => {
     setTimeout(()=>{
         resolve(2)
-    },1000)
+    },2000)
 })
 let pro3 = new Promise((resolve,reject) => {
     setTimeout(()=>{
         resolve(3)
-    },1000)
+    },3000)
 })
 let data1 = [pro1,pro2,pro3]
 promiseAll(data1).then(res => {
