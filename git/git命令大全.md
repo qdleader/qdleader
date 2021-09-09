@@ -297,3 +297,27 @@ git reset --hard HEAD^ //返回上一个版本
 $ git stash
 $ git stash pop
 ```
+
+
+### 拉取远程所有分支
+
+
+```
+
+
+
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+```
+## 首先同步所有远程分支，如上：
+
+ 
+
+### 将本地所有分支与远程保持同步 
+```
+git fetch --all
+```
+### 最后拉取所有分支代码
+```
+ git pull --all
+
+```
