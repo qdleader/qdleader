@@ -69,3 +69,21 @@ git checkout [branch-name]
 ```
 git log
 ```
+
+
+## 查看当前的用户名
+```
+git config user.name
+
+git config user.email
+```
+
+## 修改用户名和邮箱：
+
+```
+
+git config --global user.name “Your_username”
+
+git config --global user.email “Your_email”
+
+```
