@@ -87,3 +87,13 @@ git config --global user.name “Your_username”
 git config --global user.email “Your_email”
 
 ```
+
+## git 只提交某一文件夹下的文件
+
+```
+git status ./           查看这个文件夹下的文件状态
+git add ./*             把这个文件下的所有应该加入追踪的，加入到暂存区
+git commit -m 日志描述 ./           把这个文件夹下提交的修改commit到本地库
+git push                push到远程库
+
+```
