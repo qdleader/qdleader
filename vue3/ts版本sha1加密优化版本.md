@@ -26,7 +26,5 @@ npm install jssha -D
  }
 
 
-
-
  console.log("加密好的内容":getsign("qdleader"))
 ```
