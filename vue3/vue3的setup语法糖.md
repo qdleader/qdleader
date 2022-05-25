@@ -12,7 +12,7 @@
   <p>{{ name }}</p>
 </template>
 <script setup lang="ts">
-    let name = '小明'
+    let name = 'qd'
 </script>
 
 ```
@@ -30,9 +30,9 @@ script里面的代码会被编译成组件setup()函数的内容。这意味着�
 </template>
 <script setup lang="ts">
   import { ref, reactive } from 'vue'
-  let name = ref('小明')
+  let name = ref('qd')
   let data = reactive({
-    title: '标题'
+    title: 'qd'
   })
 </script>
 ```
@@ -83,7 +83,7 @@ import { Foo as FooBarChild } from './components'
     }
 </script>
 ```
-### 导入指令
+**### 导入指令**
 ```
 <script setup>
   // 导入的指令同样能够工作，并且能够通过重命名来使其符合命名规范
@@ -107,14 +107,14 @@ defineProps 用来接收父组件传来的 props ; defineEmits 用来声明触�
 //父组件
 
 <template>
-  <my-son foo="🚀🚀🚀🚀🚀🚀" @change="childClick" />
+  <my-son foo="qd" @change="childClick" />
 </template>
 
 <script lang="ts" setup>
 import MySon from "./MySon.vue";
 
 let childClick = (e: any):void => {
-  console.log(e);  //🚀🚀🚀🚀🚀🚀
+  console.log(e); 
 };
 </script>
 
@@ -328,7 +328,7 @@ v-memod的指令使用较少，它的作用是:缓存模板中的一部分数据
 ## style v-bind将span变成红色
 ```
 <template>
-  <span> 有开始循环了-开端 </span>  
+  <span> 我是红色 </span>  
 </template>
 <script setup>
   import { reactive } from 'vue'
