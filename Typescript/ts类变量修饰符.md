@@ -44,6 +44,7 @@ class Parent {
 
 class child extends Parent {
     callParent() {
+        super.name // 获取不到
         super.say()
     }
 }
@@ -70,6 +71,7 @@ class Parent {
 
 class child extends Parent {
     callParent() {
+        super.name // 可以获取到
         super.say()
     }
 }
@@ -78,7 +80,7 @@ let p = new Person()
 p.say()  // qdleader
 console.log(p.name) // 报错 获取不到
 let c = new child()
-console.log(c.name)  // qdleader
+console.log(c.name)  // 报错 获取不到
 
 ```
 
