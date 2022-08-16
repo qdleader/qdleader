@@ -52,7 +52,7 @@ enum Person1 {
 }
 console.log(Person1.name); // 1
 console.log(Person1.hobby); // HOBBY
-
+{{}}
 
 //常量枚举
 // 常量枚举通过在枚举上使用 const 修饰符来定义，常量枚举不同于常规的枚举，他们会在编译阶段被删除。
