@@ -106,10 +106,51 @@ components/
 |-SearchSidebarNavigation.vue 
 ```
 
-## 模板中的组件名大小写
+# 模板中的组件名大小写
+
+## good
+```
+Vue.component('MyComponent', {
+  // ...
+})
+import MyComponent from './MyComponent.vue'
+export default {
+  name: 'MyComponent',
+  // ...
+}
+```
+
+在template 中可以
+
+```
+好例子
+<MyComponent/>
+
+<my-component></my-component>
+
+```
+
+## Prop 名大小写强烈推荐
+在声明 prop 的时候，其命名应该始终使用 camelCase，而在模板和 JSX 中应该始终使用 kebab-case。
+
+我们单纯的遵循每个语言的约定。在 JavaScript 中更自然的是 camelCase。而在 HTML 中则是 kebab-case。
+
+### bad
+```
+props: {
+  'greeting-text': String
+}
+<WelcomeMessage greetingText="hi"/>
+```
 
 
-
+### good
+```
+props: {
+  greetingText: String
+}
+<WelcomeMessage greeting-text="hi"/>
+```
 
 
 
