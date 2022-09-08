@@ -78,6 +78,12 @@ git config user.name
 git config user.email
 ```
 
+#### 使用一次新的commit，替代上一次提交
+#### 如果代码没有任何新变化，则用来改写上一次commit的提交信息
+```
+git commit --amend -m [message]
+```
+
 ## 修改用户名和邮箱：
 
 ```
