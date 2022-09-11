@@ -9,3 +9,4 @@ function getAs(name: string | number) {
 function getAs1(name: string | number) {
     return (name as string).length
 }
+{{}}
