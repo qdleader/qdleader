@@ -54,7 +54,7 @@ a.js 模块 和 b.js 模块互相引用，但是没有造成循环引用的情�
 
 # require 加载原理
 
-**首先为了弄清楚上述两个问题。我们要明白两个感念，那就是 module 和 Module。
+** 首先为了弄清楚上述两个问题。我们要明白两个感念，那就是 module 和 Module。
 module ：在 Node 中每一个 js 文件都是一个 module ，module 上保存了 exports 等信息之外，还有一个 loaded 表示该模块是否被加载。
 
 为 false 表示还没有加载；
