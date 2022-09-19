@@ -249,3 +249,11 @@ $ git push --force origin myfeature
 git push命令要加上force参数，因为rebase以后，分支历史改变了，跟远程分支不一定兼容，有可能要强行推送
 
 提交到远程仓库以后，就可以发出 Pull Request 到master分支，然后请求别人进行代码review，确认可以合并到master。
+
+
+
+如果你从 master 分支拉了个feature分支出来，然后你提交了几个commit，这时候刚好有人把他的分支和到了master，
+
+这时候master 分支就比你拉的分支多了几个commit，如果你这时候在feature分支rebase master的话
+
+就会把你当前的这几个commit 放到那人的commit后面。
