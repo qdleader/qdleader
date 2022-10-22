@@ -20,3 +20,18 @@ function mySetInterval(fn, time = 1000) {
 }
 
 ```
+
+
+
+### 2、用setInterval实现setTimeout
+
+
+function mySetInterval(fn, delay) {
+    const timer = setInterval(() => {
+        fn()
+        clearInterval(timer)
+    }, delay)
+}
+// 测试
+mySetInterval(() => console.log(888), 1000)
+
