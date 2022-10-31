@@ -1,9 +1,25 @@
 
 ```
+
+    // const aFunc = () => {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       resolve('a')
+    //     }, 1000)
+    //   })
+    // }
+    // const bFunc = () => {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       resolve('b')
+    //     }, 1000)
+    //   })
+    // }
+
 function* generator() {
-    let result = yield afunc();
+    let result = yield aFunc();
     console.log(result);
-    let other = yield bfunc();
+    let other = yield bFunc();
     console.log(other);
 }
 myAwait(generator);
