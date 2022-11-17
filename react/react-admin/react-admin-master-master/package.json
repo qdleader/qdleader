@@ -37,7 +37,7 @@
     "fs-extra": "3.0.1",
     "gsap": "^2.0.1",
     "html-to-draftjs": "^1.4.0",
-    "html-webpack-plugin": "2.29.0",
+    "html-webpack-plugin": "5.5.0",
     "jest": "20.0.4",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
