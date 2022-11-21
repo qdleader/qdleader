@@ -3,10 +3,9 @@
 **hash 原理**
 hash 通过监听浏览器 onhashchange 事件变化，查找对应路由应用。通过改变 location.hash 改变页面路由。
 
-
 **history 原理**
 利用 html5 的history Interface 中新增的 pushState() 和 replaceState() 方法，改变页面路径。
-history Interface 是浏览器历史记录栈提供的接口，可通过 back、forward、go 等，可以读取历览器历史记录栈的信息，pushState、repalceState 还可以对浏览器历史记录栈进行修改。
+history Interface 是浏览器历史记录栈提供的接口，可通过 back、forward、go 等，可以读取浏览器历史记录栈的信息，pushState、repalceState 还可以对浏览器历史记录栈进行修改。
 
 
 （1）在url显示： hash有#很Low ； history 无#好看
@@ -99,3 +98,9 @@ hash路由，浏览器地址#后面的变化，是可以被监听到的，浏览
     }
 
 ```
+
+
+pushState() 设置的新 URL 可以是与当前 URL 同源的任意 URL；而 hash 只可修改 # 后面的部分，因此只能设置与当前 URL 同文档的 URL
+pushState() 设置的新 URL 可以与当前 URL 一模一样，这样也会把记录添加到栈中；而 hash 设置的新值必须与原来不一样才会触发动作将记录添加到栈中
+pushState() 通过 stateObject 参数可以添加任意类型的数据到记录中；而 hash 只可添加短字符串
+pushState() 可额外设置 title 属性供后续使用
