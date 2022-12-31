@@ -1,0 +1,75 @@
+## 如何判断对象为空？
+
+
+1.JSON.stringify(target);
+
+const o = {};
+console.log(JSON.stringify === '{}'); true
+
+存在的问题
+
+
+
+const o = {
+    a:undefined,
+    b:function() {},
+    c:Symbol()
+}
+
+console.log(JSON.stringify === '{}'); 仍为true
+
+
+2.for in 或 Object.keys(target);
+
+const o = {};
+const isEmptyObject = (o) => {
+    let bBar = true;
+    for(let attr in o) {
+        if(o.hasOwnProperty(attr)) {
+            bBar = false;
+            break
+        }
+    }
+}
+
+console.log(isEmptyObject(o)); //true
+
+
+
+
+## 对象中不可枚举属性
+3.Object.getOwnPropertyNames(target)
+ const o = {
+    name: 'yyy'
+};
+Object.defineProperty(o, 'name', {
+    value: '28',
+    enumerable: false,
+})
+
+console.log(Object.keys(o));  // []
+console.log(Object.getOwnPropertyNames(o)); // ['name']
+
+还有key 是Symbol类型的
+const s = Symbol();
+const o = {
+    [s]:28
+}
+
+console.log(Object.getOwnPropertyName(o).concat(Object.getOwnPropertySymbols(o)).length === 0);
+
+
+
+## Reflect.ownKeys(target)
+
+
+const s = Symbol();
+const o = {
+    [s]:233
+}
+Object.defineProperty(o,'name',{
+    value:'28',
+    enumerable:false
+})
+
+console.log(Reflect.ownKeys(o).length === 0);
