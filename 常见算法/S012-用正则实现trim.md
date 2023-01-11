@@ -38,4 +38,11 @@ console.log(" Hello world ".trim2())
 
 
 
+当然 es6 自带的trim在项目里是最常用到的
+
+```
+//es6
+' ab '.trim()      //"ab" 
+```
+
 
