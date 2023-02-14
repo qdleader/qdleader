@@ -6,6 +6,10 @@
 ```
 插件列表
 名称	            简述
+code Translate 英语翻译
+vscode-icons 更好识别的图标
+DotENV  .env环境变量文件语法高亮
+Tabnine - AI 代码自动补全
 Auto Close Tag	自动闭合HTML标签
 Auto Import	Typescript自动import提示
 Auto Rename Tag	修改HTML标签时，自动修改匹配的标签
