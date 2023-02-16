@@ -2,7 +2,7 @@
 
 ```
 Function.prototype.bind1 = function() {
-  let args = Function.prototype.slice().call(arguments)
+  let args = Array.prototype.slice.call(arguments)
   let t = args.shift()
   let self = this;
   return function() {
