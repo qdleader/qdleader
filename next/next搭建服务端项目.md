@@ -3,8 +3,8 @@
 
 ```js
   npm install -g create-next-app		//全局安装脚手架
-  create-next-app nextDemo		//基于脚手架创建项目
-  cd nextDemo
+  create-next-app nextApp		//基于脚手架创建项目
+  cd nextApp
   npm run dev		//运行项目
 ```
 
@@ -117,5 +117,55 @@ route : /post/abc/a-comment  -->  query : { "pid": "abc", "comment": "a-comment"
 
 ```
 
+
+## CSS-in-JS
+可以使用任何现有的 CSS-in-JS 解决方案。 最简单的一种是内联样式：
+<p style={{ color: 'red' }}>hi there</p>
+
+使用 styled-jsx 的组件就像这样
+```js
+function HelloWorld() {
+  return (
+    <div>
+      Hello world
+      <p>scoped!</p>
+      <style jsx>{`
+        p {
+          color: blue;
+        }
+        div {
+          background: red;
+        }
+        @media (max-width: 600px) {
+          div {
+            background: blue;
+          }
+        }
+      `}</style>
+      <style global jsx>{`
+        body {
+          background: black;
+        }
+      `}</style>
+    </div>
+  )
+}
+
+export default HelloWorld
+
+```
+
+
+@next/font
+加入了一个新的包，可以在构建时直接引用 google 字体和本地字体，实现字体的托管和预加载，这点对英文网站很有用，中文网站一般不加载字体，图标建议使用 svg。
+加载谷歌字体
+import { Inter } from '@next/font/google';
+const inter = Inter();
+<html className={inter.className}>
+复制代码
+加载本地字体
+import localFont from '@next/font/local';
+const myFont = localFont({ src: './my-font.woff2' });
+<html className={myFont.className}>
 
 
