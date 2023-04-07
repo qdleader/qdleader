@@ -156,16 +156,56 @@ export default HelloWorld
 ```
 
 
-@next/font
+## @next/font
 加入了一个新的包，可以在构建时直接引用 google 字体和本地字体，实现字体的托管和预加载，这点对英文网站很有用，中文网站一般不加载字体，图标建议使用 svg。
+
 加载谷歌字体
+```js
 import { Inter } from '@next/font/google';
 const inter = Inter();
 <html className={inter.className}>
-复制代码
+```
 加载本地字体
+```js
 import localFont from '@next/font/local';
 const myFont = localFont({ src: './my-font.woff2' });
 <html className={myFont.className}>
+
+```
+
+
+
+## next/image
+我们知道在 Next.js 12 之前，使用 <img>标签，eslint 会有一个警告，提示我们必须使用 next/image 组件， 因为 next/image 帮我们做了几点优化
+
+> 1. 自动优化图片格式
+> 2. 自动缩放图片大小
+> 3. 使用Intersection Observer API 实现懒加载
+
+所以 image 必须加上 width 和 height 参数
+新的 Next/image 使用了浏览器的 lazy-loading 代替了 Intersection Observer API
+默认情况下需要 alt 标记，因此减少了客户端 JavaScript 代码，当然这个属性对浏览器要求较高，要求 chrome 77+。
+```js
+import Image from 'next/image';
+import avatar from './lee.png';
+
+function Home() {
+  // 为了提高可访问性 "alt" 属性是必须的
+  // 图片可以使用放在 `app/`  目录下
+  return <Image alt="leeerob" src={avatar} placeholder="blur" />;
+}
+```
+
+
+ts 版本时候图片需放在 public文件夹下
+```js
+如/public/assets/logo.png
+  <Image alt="leeerob" src="/assets/logo.png" placeholder="blur" />
+
+```
+
+
+网站部署 netlify
+搭建好的next网站项目可以直接在放到github或netlify[https://www.netlify.com/]免费部署访问
 
 
