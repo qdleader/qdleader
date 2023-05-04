@@ -8,6 +8,13 @@
   npm run dev		//运行项目
 ```
 
+创建 ts 模板
+
+
+```
+npx create-next-app@latest --typescript
+```
+
 
 目录结构介绍：
 > components文件夹: 这里是专门放置自己写的组件的，这里的组件不包括页面，指公用的或者有专门用途的组件。
