@@ -18,7 +18,7 @@ const onScroll = (event: UIEvent) => {
 antd 中 Button 中的e
 
 ```js
-import { ReactNode, useState, MouseEvent } from "react";
+import { ReactNode, MouseEvent } from "react";
 
 	const handleOpenAplly = (e: MouseEvent) => {
 		e.stopPropagation();
