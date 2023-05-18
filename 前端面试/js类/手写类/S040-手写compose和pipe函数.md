@@ -8,6 +8,9 @@ const compose = function(){
 }
 
 // 我们来验证下这个方法
+const add = x => x + 10;
+const multiply = x => x * 10;
+
 let calculate = compose(multiply, add);
 let res = calculate(10);
 console.log(res);    // 结果还是200
