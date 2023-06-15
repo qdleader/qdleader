@@ -51,7 +51,7 @@ elasticsearch:7.12.1
 
 docker run -d \
 --name kibana \
--e ELASTICSEARCH_HOSTS=http://192.168.3.8:9200 \
+-e ELASTICSEARCH_HOSTS=http://172.26.5.163:9200 \
 --network qdnet \
 -p 5601:5601  \
 kibana:7.12.1
@@ -59,6 +59,21 @@ kibana:7.12.1
 ```
 
 这里等待个10秒钟不要着急
+
+如果是m1电脑，下载失败
+加上 --platform linux/amd64 \
+
+```js
+docker run -d \
+--name kibana \
+-e ELASTICSEARCH_HOSTS=http://172.26.5.163:9200 \
+--network qdnet \
+-p 5601:5601  \
+--platform linux/amd64 \
+kibana:7.12.1
+```
+
+
 
 
 Kibana中文配置
@@ -121,9 +136,9 @@ docker restart es
 
 
 
-有时候  docker restart esdata  在浏览器里面当闻不到了，那就试试
+有时候  docker restart es  在浏览器里面当闻不到了，那就试试
 
-docker start -a esdata  看看报错输出
+docker start -a es  看看报错输出
 
 
 ## 分词测试
@@ -137,10 +152,7 @@ ik_smart：最少切分
 ik_max_word：最细切分
 ```
 
-export PATH=/var/lib/elasticsearch/bin:$PATH
 
-/var/lib/elasticsearch/bin
- 
 前面使用默认的standard分词器，对中文分词非常难用，安装IK分词器后，我们可以使用IK分词器测试，测试代码如下：
 ```js
 GET /_analyze
