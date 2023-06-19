@@ -60,7 +60,7 @@ docker cp nginx:/usr/share/nginx/html /Users/docker/nginx/
 
 ```
 
-
+删除了刚才的容器
 docker rm -f nginx
 
 
@@ -86,6 +86,10 @@ docker run \
 -v /home/nginx/html:/usr/share/nginx/html	挂载nginx内容
 nginx:latest	本地运行的版本
 \	shell 命令换行
+
+
+
+
 
 
 
