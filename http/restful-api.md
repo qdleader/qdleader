@@ -28,7 +28,7 @@ put/patch /api/blog/100（更新数据，用put多一些）
 
 get  /api/blog/100 （获取数据）
 
-delete api/blog （删除数据）
+delete api/blog/100 （删除数据）
 ```
 
 ## 3.版本号
