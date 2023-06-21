@@ -7,10 +7,13 @@
 
 ts 中 extends 可以理解为 es6 class 对应的 extends
 可以实现类的继承 
+
 ```js
 class Son extends Father {}
 ```
+
 可以实现和接口的继承
+
 ```js
 
 interface IPeople {
