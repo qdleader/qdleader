@@ -35,4 +35,10 @@ tar -zxvf hello.tar.gz -C /usr/local // 将hello.tar.gz 文件进行解压，并
 ```
 
 
+## 查看当前目录
+
+```js
+pwd
+```
+
 cp -r ~/.volta /Library/volta
