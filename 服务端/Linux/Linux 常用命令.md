@@ -17,9 +17,11 @@ mv test/ src/  // 如果src目录不存在，那么将test目录改名为src，�
 
 ```js
 
-tar -cvf hello.tar ./*    // 将当前所有文件打包，打包后的文件命名为hello.tar
+tar -cvf hello.tar ./*    
+// 将当前所有文件打包，打包后的文件命名为hello.tar
 
-tar -zcvf hello.tar.gz ./*  // 将当前目录下的所有文件打包并压缩，打包后的文件命名为hello.tar.gz
+tar -zcvf hello.tar.gz ./*  
+// 将当前目录下的所有文件打包并压缩，打包后的文件命名为hello.tar.gz
 
 
 ```
@@ -33,4 +35,4 @@ tar -zxvf hello.tar.gz -C /usr/local // 将hello.tar.gz 文件进行解压，并
 ```
 
 
-
+cp -r ~/.volta /Library/volta
