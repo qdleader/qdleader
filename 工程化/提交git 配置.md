@@ -10,7 +10,7 @@ Husky 是一个用于在 git 进程的不同阶段运行脚本的工具，例如
 
 ### 安装 Husky
 ```js
-yarn add -D husky
+npm install -D husky
 
 npx husky install
 ```
@@ -29,15 +29,15 @@ package.json
 创建一个 hook
 
 ```js
-npx husky add .husky/pre-commit "yarn lint"
+npx husky add .husky/pre-commit "npm run   lint"
 ```
 
-上面说为了让我们的提交成功，yarn lint 必须首先运行并成功。 在这种情况下，” 成功 ”意味着没有错误。 它将允许你有告警（请记住，在 ESLint 配置中，设置 1 是警告，设置 2 是错误）
+上面说为了让我们的提交成功，npm run   lint 必须首先运行并成功。 在这种情况下，” 成功 ”意味着没有错误。 它将允许你有告警（请记住，在 ESLint 配置中，设置 1 是警告，设置 2 是错误）
 让我们在这时候进行一次提交，带上信息 ci: implement husky 。如果所有设置都完成，在你进行提交之前就会运行 lint script
 让我们再添加一个
 
 ```js
-npx husky add .husky/pre-push "yarn build"
+npx husky add .husky/pre-push "npm run   build"
 ```
 以上确保我们只有在代码构建成功的时候才可以将代码推送到远程仓库中。 这似乎是一个相当合理的条件，不是吗？ 通过提交此更改并尝试推送来随意测试它。
 最后，我们将再添加一个工具。 到目前为止，我们一直在遵循所有提交消息的标准约定，让我们确保团队中的每个人都遵循它们（包括我们自己！）。 我们可以为我们的提交消息添加一个 linter：
@@ -45,7 +45,7 @@ npx husky add .husky/pre-push "yarn build"
 
 
 ```js
-yarn add -D @commitlint/config-conventional @commitlint/cli
+npm i -D @commitlint/config-conventional @commitlint/cli
 ```
 要配置它，我们将使用一组标准默认值，但我喜欢将该列表显式包含在 commitlint.config.js 文件中，因为我有时会忘记可用的前缀：
 commitlint.config.js
