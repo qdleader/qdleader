@@ -189,7 +189,7 @@ module.exports = async function (content, map, meta) {
 ```
 
 
-style-loader
+## style-loader
 经过css-loader的转译，我们已经得到了完整的css样式代码，style-loader的作用就是将结果以style标签的方式插入DOM树中。
 直觉上似乎我们只需要像下面这样返回一段js代码，将css-loader返回的结果插入DOM就行：
 ```js
@@ -236,7 +236,7 @@ module.exports.pitch = function (remainingRequest) {
 
 ```
 
-style-loader的几个设计思路：
+### style-loader的几个设计思路：
 
 css-loader返回的样式只能通过其js模块的运行时得到，故使用require语句取得
 normal方法实际上什么都没做，在pitch方法里中断loader链的执行，再以inline方式调用了后方的loader来加载当前的less文件
