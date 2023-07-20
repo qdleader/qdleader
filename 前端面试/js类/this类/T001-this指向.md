@@ -1,4 +1,4 @@
-```
+```js
 var hero = {
 	_name: 'john Doe',
 	getSelectIdentify: function() {
@@ -9,6 +9,31 @@ var stoleSecretIdentify = hero.getSelectIdentify;
 console.log(stoleSecretIdentify());
 console.log(hero.getSelectIdentify());
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 答案:
