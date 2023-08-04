@@ -124,3 +124,8 @@ nginx.conf配置文件在 /etc/nginx/  下面，但是你使用vim nginx.conf �
 
 
 docker stop nginx  然后重启 docker start nginx
+
+
+碰到nginx 403 时候，可能是映射文件的权限不够
+
+  chmod -R 755 /Users/docker/qiankunnginx/html
