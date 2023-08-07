@@ -1,4 +1,58 @@
 
+
+|  命令   | 对应英文  | 作用｜
+|  ----  | ----  | ----  |
+| ls  | list | 查看当前目录下的内容 |
+| pwd  | print work directory | 查看当前所在目录 |
+| cd [目录名]  | change directory | 切换目录 |
+| touch [文件名]  | touch | 如果文件不存在，新建文件 |
+| mkdir [目录名]  | make directory | 创建目录 |
+| rm [文件名]  | remove | 删除指定文件 |
+
+
+```js
+rm -f 文件
+rm -rf 文件夹/文件
+```
+
+在执行Linux命令时，如果有乱码，命令行输入
+
+
+```js
+echo 'LANG="en_US.UTF-8"' >> /etc/profile
+source /etc/profile
+```
+
+
+
+实用小技巧
+
+tab 自动补全
+两次tab 给出提示
+上下键 使用过的命令
+使用clear 或 Ctrl + l 清屏
+
+
+
+command [-option] [parameter]
+
+command 命令名
+[-option] 选项 
+[parameter]  参数（0 到多）
+
+eg:
+
+cd /usr/name
+ls -l
+rm -f 1.txt 2.txt
+
+
+
+
+
+
+
+
 ## mv
 
 ```js
