@@ -1,5 +1,8 @@
 
-
+docker 查看所有容器
+```js
+docker ps -a
+```
 
 
 
