@@ -5,6 +5,21 @@
 nginx -t
 ```
 
+## nginx 重启
+nginx -s reload
+
+#### 停止nginx
+nginx -s stop
+
+
+#### 启动nginx
+nginx 
+
+
+#### 查看当前nginx进程
+
+ps -ef | grep nginx
+
 
 
 找到你的nginx的 nginx.conf文件 vim 去查看和修改这文件
