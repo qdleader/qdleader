@@ -178,6 +178,8 @@ success 1006
 
 
 
+# 6
+
 ```ts
 
 Promise.resolve()
@@ -202,12 +204,16 @@ Promise {<fulfilled>: undefined}
 
 
 解释：.then 或者 .catch 中 return 一个 error 对象并不会抛出错误，所以不会被后续的 .catch 捕获，需要改成其中一种：
-javascript复制代码return Promise.reject(new Error('error!!!'))
+```js
+return Promise.reject(new Error('error!!!'))
+// 或
 throw new Error('error!!!')
+```
 因为返回任意一个非 promise 的值都会被包裹成 promise 对象，即 return new Error('error!!!') 等价于 return Promise.resolve(new Error('error!!!'))。
 
 
 
+```js
 Promise.resolve()
   .then(() => {
     throw new Error('error!!!')
@@ -223,6 +229,8 @@ catch:  Error: error!!!
     at <anonymous>:3:11
 Promise {<fulfilled>: undefined}
 
+```
+
 
 ```ts
 
@@ -235,14 +243,106 @@ promise.catch(console.error)
 ```
 
 6844903509934997511:1 Uncaught (in promise) TypeError: Chaining cycle detected for promise #<Promise>
-
-
 解释：.then 或 .catch 返回的值不能是 promise 本身，否则会造成死循环。类似于：
-
+```js
 process.nextTick(function tick () {
   console.log('tick')
   process.nextTick(tick)
 })
+```
+
+# 7
+
+
+
+
+```js
+Promise.resolve(1)
+  .then(2)
+  .then(Promise.resolve(3))
+  .then(console.log)
+
+```
+运行结果： 1
+解释：.then 或者 .catch 的参数期望是函数，传入非函数则会发生值穿透。
+
+
+
+
+## 8
+
+```js
+Promise.resolve()
+  .then(function success (res) {
+    throw new Error('error')
+  }, function fail1 (e) {
+    console.error('fail1: ', e)
+  })
+  .catch(function fail2 (e) {
+    console.error('fail2: ', e)
+  })
+```
+
+
+
+
+运行结果：
+
+```
+fail2: Error: error
+    at success (...)
+    at ...
+```
+
+解释：.then 可以接收两个参数，第一个是处理成功的函数，第二个是处理错误的函数。.catch 是 .then 第二个参数的简便写法，但是它们用法上有一点需要注意：.then 的第二个处理错误的函数捕获不了第一个处理成功的函数抛出的错误，而后续的 .catch 可以捕获之前的错误。当然以下代码也可以：
+
+```js
+Promise.resolve()
+  .then(function success1 (res) {
+    throw new Error('error')
+  }, function fail1 (e) {
+    console.error('fail1: ', e)
+  })
+  .then(function success2 (res) {
+  }, function fail2 (e) {
+    console.error('fail2: ', e)
+  })
+
+  ```
+
+
+
+## 9
+
+```js
+process.nextTick(() => {
+  console.log('nextTick')
+})
+
+Promise.resolve()
+  .then(() => {
+    console.log('then')
+  })
+
+
+setImmediate(() => {
+  console.log('setImmediate')
+})
+console.log('end')
+
+```
+
+
+```js
+end
+nextTick
+then
+setImmediate
+```
+
+解释：process.nextTick 和 promise.then 都属于 microtask，而 setImmediate 属于 macrotask，在事件循环的 check 阶段执行。事件循环的每个阶段（macrotask）之间都会执行 microtask，事件循环的开始会先执行一次 microtask。
+
+
 
 
 
