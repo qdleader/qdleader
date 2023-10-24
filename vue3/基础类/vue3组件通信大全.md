@@ -362,3 +362,61 @@ onUnmounted(()=>{
 </script>
 
 ```
+
+
+## pinia
+
+
+
+#### pinia的api
+```ts
+// 定义仓库
+import { defineStore } from 'pinia'
+const useMainStore = defineStore('main', {
+state() {
+  return {
+    // 状态变量
+    count: 0
+  }
+},
+getters: {
+  countTen(state) {
+    return state.count + 10
+  }
+},
+actions: {
+  increment() {
+    this.count++
+  }
+}
+})
+export default useMainStore
+```
+
+pinia的使用
+```ts
+<script setup lang="ts">
+import useMainStore from './store/index.js'
+const mainStore = useMainStore()
+function increment() {
+  mainStore.increment()
+}
+</script>
+
+<template>
+  <div>
+    count:{{mainStore.count}}
+    countTen:{{mainStore.countTen}}
+  </div>
+  <button @click="increment">
+    increment
+  </button>
+</template>
+
+```
+
+
+## vuex 和 pinia 两者的比较
+pinia 没有 mutations，actions的使用不同，getters的使用是一致的
+pinia 没有总出口全是模块化，需要定义模块名称，当多个模块需要协作的时候需要引入多个模块，vuex是有总入口的，在使用模块的化的时候不需要引入多个模块
+pinia 在修改状态的时候不需要通过其他api，vuex需要通过commit，dispatch去修改
