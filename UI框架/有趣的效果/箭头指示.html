@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>指示箭头动画</title>
+  <style>
+    /* 全局样式重置 */
+
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    /* 箭头容器样式 */
+    .arrow-container {
+      /* width: 250px; */
+      height: 100px;
+      position: relative;
+      /* 隐藏超出部分 */
+      border-radius: 4px;
+      margin-right: 20px;
+      /* 圆角 */
+    }
+
+    /* 长方形样式 */
+    .rectangle {
+      /* width: 200px; */
+      height: 100px;
+      line-height: 100px;
+      box-sizing: border-box;
+      padding-left: 80px;
+      padding-right: 30px;
+      background-color: #ccc;
+      float: left;
+    }
+
+    .arrow1 {
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 50px solid #f0f0f0;
+      transition: width 1s;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* 箭头样式 */
+    .arrow {
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 50px solid #ccc;
+      /* transition: width 1s; */
+      position: absolute;
+      right: -50px;
+      top: 0;
+      z-index: 9;
+      /* 动画过渡效果 */
+    }
+
+    /* .arrow-container:hover .arrow {
+      width: 100px;
+    } */
+
+    .arrow-container:hover .arrow {
+      /* background: orange; */
+      border-left: 50px solid orange;
+    }
+
+    .arrow-container:hover .rectangle {
+      background: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="arrow-container">
+    <div class="arrow1"></div>
+    <div class="rectangle">7126837612836</div>
+    <div class="arrow"></div>
+  </div>
+  <div class="arrow-container">
+    <div class="arrow1"></div>
+    <div class="rectangle">712683762323232323232312836</div>
+    <div class="arrow"></div>
+  </div>
+  <div class="arrow-container">
+    <div class="arrow1"></div>
+    <div class="rectangle">7126836</div>
+    <div class="arrow"></div>
+  </div>
+  <div class="arrow-container">
+    <div class="arrow1"></div>
+    <div class="rectangle">7126837612836</div>
+    <div class="arrow"></div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
