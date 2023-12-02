@@ -18,6 +18,9 @@ command + 左右箭头
 
 
 ### 复制光标向上或者向上批量添加内容
-a. Ctrl + Alt +向下箭头(Mac: command + Option + 向下箭头)将光标添加到下面。
+a. Ctrl + Alt +向下箭头
+(Mac: command + Option + 向下箭头)将光标添加到下面。
+
+
 b. command + 左右箭头
 
