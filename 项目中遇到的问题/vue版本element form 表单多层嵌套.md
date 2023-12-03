@@ -139,7 +139,7 @@ const addOptions = (item: any) => {
 
 
 
-    ## 案例2
+  ## 案例2
 
 ```ts
 
@@ -211,3 +211,28 @@ const addOptions = (item: any) => {
 1 . prop 接收的数据类型是String ,
 
 2. :prop="'domains.' + index + '.value'"  和  :prop="'domains[' + index + '].value'"    这两种传值最终都是转换成了 domains.0.value  字符串，这是一个字符串 而不是通过 domains.0 来取domains数组的第一个元素
+
+
+数组某一项写法
+```js
+    <div
+            class="form-box"
+            :key="domain.key"
+            v-for="(domain, index) in dynamicValidateForm.healthRuleConfigs[0]
+              .secondHealthRuleConfigs[0].ruleConfigs"
+          >
+            <el-row>
+              <el-col :span="5">
+                <el-form-item
+                  class="form-margin"
+                  :prop="`healthRuleConfigs.${0}.secondHealthRuleConfigs.${0}.ruleConfigs.${index}.min`"
+                  :rules="rules.activityRule"
+                >
+                  <el-input
+                    v-model="domain.min"
+                    placeholder="请填写"
+                  ></el-input>
+                </el-form-item>
+
+
+```
