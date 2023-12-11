@@ -1,5 +1,39 @@
 # React18有哪些更新？
 
+
+#### 更新 render API
+v18 使用 ReactDOM.createRoot() 创建一个新的根元素进行渲染，使用该 API，会自动启用并发模式。
+使用旧的 API 仍然兼容，只有在使用 createRoot 了之后才会有 React 18 的新特性。
+
+```js
+
+import { createRoot } from 'react-dom';
+
+function App() {
+
+  return (
+
+    <div>Hello, world!</div>
+
+  );
+
+}
+
+// 原先的使用方式
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+// 新的使用方式
+
+const rootElement = document.getElementById('root');
+
+createRoot(rootElement).render(<App />);
+
+
+```
+使用 createRoot 函数来创建根 React 组件，并将其渲染到页面上。这样，我们就可以使用多个根节点来构建各种复杂的应用程序界面
+
+
 ## 1. setState自动批处理
 
 在react17中，只有react事件会进行批处理，原生js事件、promise，setTimeout、setInterval不会
