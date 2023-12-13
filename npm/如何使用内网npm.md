@@ -50,9 +50,11 @@ npm install -g nrm
 
 ```
 
-参数 | 默认值| 示例描述
-ls  | nrm ls | 列出所有的源地址
-use [source] | nrm use cnpm | 切换到指定的源
-add [resigtry] [url] | nrm add test http://localhost:8080 | 添加源
-del [resigtry] |nrm del test | 删除源
+
+| 参数 | 默认值 | 示例描述| 
+| --------   | :-----:  | :----:  |
+| ls  | nrm ls | 列出所有的源地址 | 
+| use [source] | nrm use cnpm | 切换到指定的源 | 
+| add [resigtry] [url] | nrm add test http://localhost:8080 | 添加源 |
+| del [resigtry] | nrm del test | 删除源 | 
 
