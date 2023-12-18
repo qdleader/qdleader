@@ -14,3 +14,12 @@ nohup java -jar adminApi-0.0.1-SNAPSHOT.jar &
  java -jar adminApi-0.0.1-SNAPSHOT.jar 
 
 ```
+
+
+暂停某一服务
+```shell
+lsof -i:5627
+
+kill -9 进程id
+
+```
