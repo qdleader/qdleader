@@ -7,7 +7,7 @@
 
 ### interface
 ```js
-nterface User {
+interface User {
   name: string
   age: number
 }
