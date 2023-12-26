@@ -4,7 +4,8 @@
 ##  Sponsorship
 开源不易，
 如果你觉得对你有帮助，可以请作者喝一杯咖啡😄
-
-![赞助渠道 Sponsorship channels](./image/wxPay.png)
-![赞助渠道 Sponsorship channels](./image/zfbPay.png)
+微信
+![赞助渠道 Sponsorship channels](./image/wxPay.jpeg)
+支付宝
+![赞助渠道 Sponsorship channels](./image/zfbPay.jpeg)
 
