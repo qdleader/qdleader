@@ -154,44 +154,27 @@ export default {
 </script>
 ```
 
-那么如何监听多个属性呢？
+watch监视多个属性
+首先明确watch接受三个参数（要监视的数据，回调函数，配置项）
+
+第一种方式
+```js
+const num1= ref(1)
+const num2 = ref(2)
+watch(() => [num1.value, num2.value], (newVal, oldVal) => {
+    console.log(newVal, oldVal); 
+    console.log(newVal[0], oldVal[0], newVal[1], oldVal[1]);
+})
 ```
-<template>
-  <div>
-  {{qdleader}}
-  <button @click="changeData"></button>
-  </div>
-</template>
+第二种方式
+```js
+const num1 = ref(1)
+const num2 = ref(2)
+watch(() => [num1.value, num2.value], ([preNum1, preNum2], [oldNum1, oldNum2]) => {
+    console.log(preNum1, oldNum1, preNum2, oldNum2);
+})
 
-<script>
-
-import {ref, toRefs, watch, reactive} from 'vue';
-
-export default {
-  setup() {
-    const state = {
-      qdleader:'qdleader',
-      content:'',
-      a:{
-        b:''
-      },
-      changeData: () => {
-        state.qdleader = '我变了'
-        state.content = '我变了'
-      }
-    }
-
-    watch(() => [state.qdleader,state.content],([qdleader,content]) => {
-        console.log("qdleader发生变化时候",qdleader,content)
-    })
-    return {
-      ...toRefs(state)
-    }
-  }
-}
-</script>
 ```
-
 
 当我们要写多个监听方法时候可以写多个watch吗，会覆盖吗。。
 
