@@ -14,7 +14,7 @@
 
 ##  Sponsorship
 您的支持是对我最大的鼓励，
-如果你觉得对你有帮助，可以请作者喝一杯咖啡😄
+感觉文章对您有帮助的话，那就请作者喝一杯咖啡吧😄
 
 ![赞助渠道 Sponsorship channels](./image/pay.jpeg)
 
