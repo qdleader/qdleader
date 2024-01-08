@@ -1,3 +1,4 @@
+```js
 <template>
   <!-- ↓总路由视图 -->
    <ElConfigProvider :locale="locale">
@@ -29,3 +30,5 @@ export default defineComponent({
     }
 });
 </script>
+
+```

@@ -5,10 +5,10 @@
 ## 跨域是因为浏览器的同源策略所导致的
 
 
-```
+```js
 本域（同源）指的是（下面三者都具备）？
 同协议：如都是http或者https
-同域名：如都是http://jirengu.com/a 和http://jirengu.com/b
+同域名：如都是http://baidu.com/a 和http://baidu.com/b
 同端口：如都是80端口
 ```
 
@@ -18,10 +18,9 @@
 
 
 
-
 ## 跨域解决方案
 
-```
+```js
   1、 通过jsonp跨域
   2、 document.domain + iframe跨域
   3、 location.hash + iframe
@@ -44,15 +43,14 @@ AJAX 请求不能发送
 
 ## 常用的跨域解决方案
 
-# 1、JSONP跨域
+### 1、JSONP跨域
 
 
-  jsonp的原理就是利用<script>标签没有跨域限制，通过<script>标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。
+  jsonp的原理就是利用script标签没有跨域限制，通过script标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。
 
 1）原生JS实现：
 
 ```js
- <script>
     var script = document.createElement('script');
     script.type = 'text/javascript';
 
@@ -64,9 +62,8 @@ AJAX 请求不能发送
     function handleCallback(res) {
         alert(JSON.stringify(res));
     }
- </script>
 
-服务端返回如下（返回时即执行全局函数）：
+// 服务端返回如下（返回时即执行全局函数）：
 
 handleCallback({"success": true, "user": "admin"})
 ```
@@ -95,7 +92,7 @@ this.$http.jsonp('http://www.baidu.com:8080/login', {
 jsonp的缺点：
 > 只能发送get一种请求。
 
-# 2、跨域资源共享（CORS）
+### 2、跨域资源共享（CORS）
 
   CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource sharing）。
 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。
@@ -105,11 +102,13 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
   只要同时满足一下两个条件，就属于简单请求
 
-(1)使用下列方法之一：
+        (1)使用下列方法之一：
 
-head
-get
-post
+        head
+        get
+        post
+
+
 (2)请求的Heder是
 
 Accept
@@ -189,6 +188,7 @@ CORS跨域示例
 1）前端设置：
 
 原生ajax：
+```js
 var xhr = new XMLHttpRequest(); // IE8/9需用window.XDomainRequest兼容
 
 // 前端设置是否带cookie
@@ -212,15 +212,15 @@ $.ajax({
    crossDomain: true,   // 会让请求头中包含跨域的额外信息，但不会含cookie
     ...
 });
-
-# 3.vue中引入 http-proxy-middleware 中间件作为代理,实现跨域
+```
+#### 3.vue中引入 http-proxy-middleware 中间件作为代理,实现跨域
 
 
 >如果要使用axios直接进行跨域访问是不可以的，这是就需要配置代理了，为什么要配置代理呢？
 原因就是因为客户端请求服务端的数据是存在跨域问题的，而服务器和服务器之间可以相互请求数据，是没有跨域的概念（如果服务器没有设置禁止跨域的权限问题），也就是说，我们可以配置一个代理的服务器可以请求另一个服务器中的数据，然后把请求出来的数据返回到我们的代理服务器中，代理服务器再返回数据给我们的客户端，这样我们就可以实现跨域访问数据啦。
 
 
-```
+```js
 module.exports = {
   dev: {
 
@@ -244,7 +244,7 @@ module.exports = {
 
 
 
-# 其他跨域
+#### 其他跨域
 
 ## 1、nginx代理跨域
   nginx代理跨域，实质和CORS跨域原理一样，通过配置文件设置请求响应头Access-Control-Allow-Origin…等字段。
@@ -262,8 +262,9 @@ module.exports = {
 
 nginx具体配置：
 
-### proxy服务器
-```
+#### proxy服务器
+
+```js
 server {
     listen       81;
     server_name  www.domain1.com;
@@ -282,14 +283,15 @@ server {
 
 ## 2、document.domain + iframe跨域
   此方案仅限主域相同，子域不同的跨域应用场景。实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。
-```
+
+```js
 1）父窗口：(http://www.domain.com/a.html)
 
 <iframe id="iframe" src="http://child.domain.com/b.html"></iframe>
 <script>
     document.domain = 'domain.com';
     var user = 'admin';
-</script>
+</script标签没有跨域限制，通过>
 1）子窗口：(http://child.domain.com/a.html)
 
 <script>
@@ -299,12 +301,13 @@ server {
 </script>
 ```
 
-## 3、location.hash + iframe跨域
+### 3、location.hash + iframe跨域
 
   实现原理： a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。
 
   具体实现：A域：a.html -> B域：b.html -> A域：c.html，a与b不同域只能通过hash值单向通信，b与c也不同域也只能单向通信，但c与a同域，所以c可通过parent.parent访问a页面所有对象。
-```
+
+```js
 1）a.html：(http://www.domain1.com/a.html)
 
 <iframe id="iframe" src="http://www.baidu.com/b.html" style="display:none;"></iframe>
@@ -346,7 +349,7 @@ server {
 ## 3、window.name + iframe跨域
 
   window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。
-```
+```js
 1）a.html：(http://www.domain1.com/a.html)
 
 var proxy = function(url, callback) {
@@ -409,7 +412,8 @@ proxy('http://www.baidu.com/b.html', function(data){
 
 data： html5规范支持任意基本类型或可复制的对象，但部分浏览器只支持字符串，所以传参时最好用JSON.stringify()序列化。
 origin： 协议+主机+端口号，也可以设置为"*"，表示可以传递给任意窗口，如果要指定和当前窗口同源的话设置为"/"。
-```
+
+```js
 1）a.html：(http://www.domain1.com/a.html)
 
 <iframe id="iframe" src="http://www.baidu.com/b.html" style="display:none;"></iframe>
@@ -451,13 +455,13 @@ origin： 协议+主机+端口号，也可以设置为"*"，表示可以传递�
 原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
 
 1）前端代码：
-```
+
+```html
 <div>user input：<input type="text"></div>
 <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
 <script>
 var socket = io('http://www.baidu.com:8080');
 
-// 连接成功处理
 socket.on('connect', function() {
     // 监听服务端消息
     socket.on('message', function(msg) {

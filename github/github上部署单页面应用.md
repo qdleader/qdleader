@@ -1,5 +1,6 @@
   我们打包时候执行完npm run build 之后 会生成一个dist
 
+```js
   然后新建一个 分支 git checkout -b feature-outPage
 
 
@@ -36,3 +37,5 @@ Source 选择 Deploy from a branch
 Branch 选择 我们的 feature-outPage   然后保存
 
 等一会就可以看到我们的站点了
+
+```

@@ -1,3 +1,4 @@
+```js
 webpack是用JS写的，运行在node环境，所以默认webpack打包的时候只会处理JS之间的依赖关系。
 
 因为像 .css 这样的文件不是一个 JavaScript 模块，你需要配置 webpack 使用 css-loader 和 style-loader 去合理地处理它们。
@@ -7,7 +8,7 @@ webpack是用JS写的，运行在node环境，所以默认webpack打包的时候
 如果在JS中导入了css，那么就需要使用 css-loader 来识别这个模块，通过特定的语法规则进行转换内容最后导出。
 
 css-loader会处理 import / require @import / url 引入的内容。
-```js
+js
 // base.css
 .bg {
   background: #000;
@@ -15,7 +16,7 @@ css-loader会处理 import / require @import / url 引入的内容。
 const style = require('./base.css')
 console.log(style, 'css')
 
-```
+
 
 css-loader处理之后导出的是一个数组
 
@@ -41,7 +42,7 @@ style-loader 是通过一个JS脚本创建一个style标签，里面包含一些
  ### less-loader
 
 Less是CSS预处理语言，扩展了CSS语言，增加了变量、Mixin、函数等特性，Less-loader的作用就是将less代码转译为浏览器可以识别的CSS代码。
-```less
+less
 // demo.less
 @base: #f938ab;
 
@@ -57,10 +58,10 @@ Less是CSS预处理语言，扩展了CSS语言，增加了变量、Mixin、函�
   border-color: lighten(@base, 30%);
   div { .box-shadow(0 0 5px, 30%) }
 }
-```
+
 
 上面的less代码会被less-loader转译为：
-```css
+css
 // demo.css
 .box {
   color: #fe33ac;
@@ -71,10 +72,10 @@ Less是CSS预处理语言，扩展了CSS语言，增加了变量、Mixin、函�
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-```
+
 
 所以less-loader的原理很简单，就是调用less库提供的方法，转译less语法后输出，如下：
-```js
+js
 // less-loader实现（经简化）
 const less = require('less');
 
@@ -90,7 +91,7 @@ module.exports = function(content) {
     }
   );
 };
-```
+
 
 ### css-loader
 
@@ -99,37 +100,37 @@ Css-loader的作用主要是解析css文件中的@import和url语句，处理css
 
 
 // a.css
-```css
+css
 
 @import './b.css'; // 导入b.css
 .a {
   font-size: 16px;
 }
-```
+
 
 
 
 // b.css
-```css
+css
 
 @import './c.css'; // 导入c.css
 .b {
   color: red;
 }
-```
+
 
 
 
 // c.css
-```css
+css
 
 .c {
   font-weight: bolder;
 }
-```
+
 来看看css-loader对a.css的编译输出：
 
-```js
+js
 
 
 // css-loader输出
@@ -154,13 +155,13 @@ exports.locals = { // css-modules的类名映射
   "a": "src-components-Home-index__a--3EFPE"
 };
 
-```
+
 
 可以理解为css-loader将a.css、b.css和c.css的样式内容以字符串的形式拼接在一起，并将其作为js模块的导出内容。
 
 ####  css-loader源码（经简化）
 
-```js
+js
 // https://github.com/webpack-contrib/css-loader/blob/master/src/index.js
 import postcss from 'postcss';
 
@@ -186,13 +187,13 @@ module.exports = async function (content, map, meta) {
   const callback = this.async(); // 异步返回
   callback(null, `${importCode}${moduleCode}${exportCode}`);
 };
-```
+
 
 
 ## style-loader
 经过css-loader的转译，我们已经得到了完整的css样式代码，style-loader的作用就是将结果以style标签的方式插入DOM树中。
 直觉上似乎我们只需要像下面这样返回一段js代码，将css-loader返回的结果插入DOM就行：
-```js
+js
 module.exports = function (content) {
   return `
     const style = document.createElement('style');
@@ -201,13 +202,13 @@ module.exports = function (content) {
   `;
 };
 
-```
+
 
 但css-loader返回的不是css样式代码的文本，而是一个js模块的代码，将这些js代码直接放进style标里显然是不行的。
 我们来看看style-loader的实现：
  style-loader
 
- ```js
+ js
 import loaderUtils from 'loader-utils';
 
 module.exports = function (content) {
@@ -234,7 +235,7 @@ module.exports.pitch = function (remainingRequest) {
   `;
 };
 
-```
+
 
 ### style-loader的几个设计思路：
 
@@ -246,4 +247,6 @@ normal方法实际上什么都没做，在pitch方法里中断loader链的执行
 style-loader的实现逻辑比较绕，也是一个比较经典的pitch应用，理解了它的原理，就可以是说对loader的调用链、执行顺序和模块化输出等有了一个比较全面的认识，推荐细细体会。
 
 
+
+```
 

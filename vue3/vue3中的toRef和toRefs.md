@@ -1,11 +1,11 @@
 ## 1. ref的使用
-
+```js
 > ref 接受一个原始值，返回一个具有响应式的对象，对象有一个value属性，其值就是所传递的原始值。
 
 > ref是做的一个拷贝关系，修改对象msg的值，不会影响对象obj，视图会发生变化。
 
 
-```
+
     import { ref } from "vue";
     let obj = { name: "你好", age: 16 };
     let msg = ref(obj.name);
@@ -26,10 +26,10 @@
         msg,
      };
 
-   ```  
+     
 
  ## 如果给dom上加ref 就是当前的dom元素
-```
+
 <template>
   <div class="home-new">  
       <div ref="target">
@@ -51,7 +51,7 @@ export default {
  
 };
  
-```
+
 
  
 
@@ -60,7 +60,7 @@ export default {
 > toRef用来给抽离响应式对象中的某一个属性，并把该属性包裹成ref对象，使其和原对象产生链接
 
 > toRef是做的一种引用关系，修改msg2的值，会影响对象msg，但视图不会发生变化
-```
+
     setup(){
     	let msg = { name: 'zs', age: 16 }
         let msg2 = toRef(msg, 'name')
@@ -73,14 +73,14 @@ export default {
         change2()
         return { msg2,change2 }
     }
-```
+
 
 ## 3. toRefs的使用
 >  toRefs用来把响应式对象转换成普通对象，把对象中的每一个属性，包裹成ref对象
 
 > toRefs就是toRef的升级版，只是toRefs是把响应式对象进行转换，其余的特性和toRef无二
 
-```
+
 setup(){
     let msg = { name: 'zs', age: 16 }
     let msg3 = toRefs(msg)
@@ -93,10 +93,10 @@ setup(){
     change3()
     return { msg3, change3 }
 }
-```
+
  请求过来的数据封装了一下
 
-```
+
 <script>
 import { reactive, toRefs } from "vue";
 import { getBanner } from "@/api";
@@ -118,11 +118,11 @@ function getBan() {
   return bannerList;
 }
 </script>
-```
+
 
 ### 这样写模板中直接写入 {{ list }}  就可以了 ， 不用 {{ obj.list }}，修改数据的时候还是 obj.list = 'aaa' 
 
-```
+
   import { reactive, toRefs } from "vue";
   setup() {
     let obj = reactive({
@@ -133,7 +133,7 @@ function getBan() {
  
     return { ...toRefs(obj) };
   },
-```
+
 
 ## 4.总结
 > ref、toRef、toRefs 都可以将某个对象中的属性变成响应式数据
@@ -145,3 +145,4 @@ function getBan() {
 > toRef 一次仅能设置一个数据，接收两个参数，第一个参数是哪个对象，第二个参数是对象的哪个属性
 
 > toRefs接收一个对象作为参数，它会遍历对象身上的所有属性，然后挨个调用toRef执行
+```

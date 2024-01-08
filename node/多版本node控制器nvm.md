@@ -1,3 +1,4 @@
+```js
 NVM：可以随时切换你电脑的node版本，方便的不得了呀！
 
 
@@ -25,7 +26,7 @@ nvm-setup.zip：安装版，推荐使用
 
 
 ## 使用
-```
+shell
 nvm install <version>：下载相应版本node
 nvm list：列出已有node版本
 nvm use <version>: 使用特定node版本
@@ -37,7 +38,7 @@ nvm uninstall <version>： 卸载指定版本node
 nvm use [version] 使用指定版本node
 nvm versoin: 显示nvm版本
 
-```
+
 
 
 
@@ -67,3 +68,4 @@ npm_mirror: https://npm.taobao.org/mirrors/npm/
 解决
 
 把之前的node和nvm都卸了，按照安装流程方法再走一遍即可
+```

@@ -5,7 +5,7 @@
 
 
 
-```
+```js
 <teleport to="body">
     <div  class="mask">
         <div class="dialog">
@@ -20,11 +20,15 @@
 ```
 
 一言以蔽之
+```js
 <teleport to="body">
+```
 相当于  element的 append-to-body
 
 
 这里的移动位置可以是body，也可以是某些css选择器
 比如：
+```js
 <teleport to="#app">
+```
 

@@ -1,11 +1,11 @@
+# S015-手写map方法
 
-
-```
+```js
 
 //循环实现数组 map 方法
     const selfMap = function (fn, context) {
         let arr = Array.prototype.slice.call(this) //map方法不会改变原数组
-        let mappedArr = Array(arr.length) //原答案这里是length - 1，我感觉应该是length才对，否则遇到稀疏数组，循环被跳出了，长度会不对
+        let mappedArr = Array(arr.length) 
         for (let i = 0; i < arr.length; i++) {
             // 稀疏数组，跳出当前循环
             if (!arr.hasOwnProperty(i)) {

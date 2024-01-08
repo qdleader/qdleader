@@ -1,3 +1,4 @@
+```js
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -57,3 +58,5 @@ code {
   color: #304455;
 }
 </style>
+
+```

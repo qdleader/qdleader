@@ -1,3 +1,4 @@
+```tsx
 Next.js 给自己的介绍是“The React Framework”，没接触过的同学可能会有疑问？React 已经是一个框架了，为什么还要有 Next.js 呢？其实 Next.js 是为了互补 React 的不足，Next.js 提供了 CSR、SSR、SSG、ISR、 Streaming 这么多渲染方式，
 
 
@@ -5,15 +6,15 @@ Next.js 给自己的介绍是“The React Framework”，没接触过的同学�
 CSR 也就是客户端渲染，需要使用 JavaScript，调用接口（API）来获取数据，这种方式前后端完全分离。
 比如现在有一个博客接口/api/articles，返回 JSON 数据如下
 
-```js
+js
 [
     {"id":1,"title":"使用 Next.js 和掘金API 打造个性博客"},
     {"id":2,"title":"使用 Strapi 和 Next.js 开发简易微博"},
     {"id":3,"title":"使用 Notion 数据库进行 Next.js 应用全栈开发"}
 ]
-```
+
 通常 React 项目会使用 create-react-app 来创建项目，我们会在useEffect 中请求数据。
-```js
+js
 import { useState, useEffect } from "react";
 
 function BlogList() {
@@ -48,7 +49,7 @@ function BlogList() {
     </div>
   );
 }
-```
+
 上面的代码中，页面上还有一个刷新按钮，当数据新增时，接口接口会多返回一条数据，点击刷新按钮，页面上已经存在的 DOM 节点是不更新的，DOM 中只会插入新增的数据，这样我们就会感觉页面渲染很快。
 这得益于 React 中引入了虚拟 dom，也就是将真实元素节点抽象成 JavaScript 对象，称之为 VNode，更新 DOM 前会先通过 VDOM 对比，得到要真实更新的 DOM，因此可以有效减少直接操作 dom 次数，从而提高程序性能。
 
@@ -56,7 +57,7 @@ function BlogList() {
 
 Next.js 团队发布了另一个关于数据请求的 hooks 叫 swr，名字来自于 stale-while-revalidate，意思是过期就会重新验证，它有缓存，聚焦时重新验证，间隔轮询等功能。
 与上面代码功能相同，我们可以改成下面代码：
-```js
+js
 import useSWR from "swr";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -78,11 +79,11 @@ function BlogList() {
   );
 }
 
-```
+
 
 #### CSR 存在的问题
 基于 create-react-app 创建的应用，在 HTML 首次挂载的的时候仅有几个 DOM 节点，类似如下
-```js
+js
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +95,7 @@ function BlogList() {
     <script src="/assets/js/main-d0bbfde89eb2a.js"></script>
 </body>
 </html>
-```
+
 
 
 这就会引起 2 个问题
@@ -107,7 +108,7 @@ function BlogList() {
 ## SSR（Server Side Rendering）
 
 SSR 也就是服务端渲染，有些同学可能会问“难道要回到 PHP 或者 JSP 时代吗？”，没错 PHP 和 JSP 是服务端渲染，但 Next.js 的 SSR 不同于纯服务端渲染，也拥有着如 SPA 一样快速渲染的能力。传统的服务端渲染只有 HTML 字符串，缺少交互，比如有一个ClickCounter 组件
-```js
+js
 // shared/components/ClickCounter.jsx
 import React,{ useState } from 'react';
 
@@ -117,11 +118,11 @@ const ClickCounter = () => {
       <button onClick={() => setCount(count + 1)} > {count} Clicks </button>
   );
 };
-```
+
 
 经过服务端渲染只能得到最简单的的 HTML。
 
-```js
+js
 // server/index.js
 import ReactDOMServer from "react-dom/server";
 import express from "express";
@@ -144,18 +145,18 @@ app.get("/", (req, res) => {
     </html>`
     res.send(htmlTemplate)
 });
-```
+
 
 打印出的 button 点击无效，传统的服务端渲染到此就结束了。而 react 服务端渲染，需要客户端根据服务端生成的页面，继续二次渲染、事件绑定等
 
-```js
+js
 // client/index.jsx
 import React from 'react';
 import { hydrate } from 'react-dom';
 
 hydrate(<ClickCounter />, document.getElementById('root'));
 
-```
+
 
 
 服务器端使用renderToString直接渲染出的页面信息为静态 html。
@@ -167,7 +168,7 @@ shared： 包含前后端公用的组件代码。
 
 
 而在 Nextjs 中，只需要在 Pages 目录下，如下这么写，Next.js 便会自动打包出前后端的代码，拥有 hydrate 的能力
-```js
+js
 import Link from "next/link";
 
 export default function Page({ data }: PageProps) {
@@ -189,7 +190,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: { data: res },
   };
 };
-```
+
 我们需要清楚的是:
 
 getServerSideProps 只在服务端执行
@@ -198,7 +199,7 @@ Page 组件是在前后端公共执行
 所以，在 Page 函数中要注意一些全局对象的使用，比如window对象（Node.js 中是不存在的，所以会报错）
 
 
-```js
+js
 // ❎ 错误代码
 export default function Page({ data }: PageProps) {
   return (
@@ -207,7 +208,7 @@ export default function Page({ data }: PageProps) {
     </div>
   );
 }
-```
+
 我们应该将 window 操作放入 useEffect 中，或者 click 回调函数中，因为这些函数在服务端渲染的时候是自动忽略的。
 SSR 解决了白屏问题和 SEO 问题，但是也不是完美的。
 
@@ -223,7 +224,7 @@ SSR 解决了白屏问题和 SEO 问题，但是也不是完美的。
 
 SSG 也就是静态站点生成，为了减缓服务器压力，我们可以在构建时生成静态页面，备注：Next.js 生成的静态页面与普通的静态页面是不一样的，也是拥有 SPA 的能力，切换页面用户不会感受到整个页面在刷新
 比如文章列表页，要生成静态页面，在 Next.js 中代码如下：
-```js
+js
 import Link from "next/link";
 
 export default function Page({ data }: PageProps) {
@@ -245,9 +246,9 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { data: res },
   };
 };
-```
+
 使用getStaticProps 可以获得静态网页的数据，传递给 Page 函数，便可以生成静态页面。博客列表 URL 是固定的，那么不是固定 URL 的页面，要生成静态页面怎么办呢？比如博客详情页。
-```js
+js
 // pages/blog/[id].tsx
 export async function getStaticPaths() {
   const articles = await fetch('https://localhost:3000/api/articles').then((res)=>res.json());
@@ -277,7 +278,7 @@ export default function Page({ data }: PageProps) {
     </div>
   );
 }
-```
+
 我们可以使用 getStaticPaths 获得所有文章的路径，返回的paths 参数会传递给getStaticProps，在 getStaticProps中，通过 params 获得文章 id， Next.js 会在构建时，将paths 遍历生成所有静态页面。
 SSG 的优点就是快，部署不需要服务器，任何静态服务空间都可以部署，而缺点也是因为静态，不能动态渲染，每添加一篇博客，就需要重新构建。
 
@@ -286,7 +287,7 @@ SSG 的优点就是快，部署不需要服务器，任何静态服务空间都�
 ## ISR（Incremental Static Regeneration）
 
 于是有了一另一种方案 ISR，增量静态生成，在访问时生成静态页面，在 Next.js 中，它比 SSG 方案只需要加了一个参数revalidate
-```js
+js
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://localhost:3000/api/articles').then((res)=>res.json());
 
@@ -295,11 +296,11 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 20,
   };
 };
-```
+
 上面代码表示，当访问页面时，发现 20s 没有更新页面就会重新生成新的页面，但当前访问的还是已经生成的静态页面，也就是：是否重新生成页面，需要根据上一次的生成时间来判断，并且数据会延迟 1 次。
 我们可以在页面上显示生成时间
 
-```js
+js
 function Time() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   useEffect(() => {
@@ -340,7 +341,7 @@ export const getStaticProps = async ({ params }) => {
     revalidate: 20,
   };
 };
-```
+
 上面代码中我们定义了一个 Time 组件，Time 在客户端渲染，每秒自动刷新。
 本地使用运行yarn build和 yarn start 来模拟生成环境，测试增量生成。
 
@@ -351,7 +352,7 @@ export const getStaticProps = async ({ params }) => {
 若我们访问不存在的 id，比如 http://localhost:3000/blog/4，页面会显示 404。
 
 getStaticPaths 方法中还有一个参数 fallback 用于控制未生成静态页面的渲染方式。
-```js
+js
 // pages/blog/[id].js
 import { useRouter } from 'next/router'
 
@@ -379,7 +380,7 @@ export async function getStaticPaths() {
     fallback: true,
   }
 }
-```
+
 fallback 有 3 个值
 
 fallback: 'blocking' 未生成的页面使用服务端渲染;
@@ -392,7 +393,7 @@ revalidate会额外导致服务器性能开销，20s 生成一次页面是没必
 
 #### On-demand Revalidation（按需增量生成）
 自从 next v12.2.0 开始支持按需增量生成，我们可以在 page 目录下新建一个 pages/api/revalidate.js接口，用于触发增量生成。
-```js
+js
 // pages/api/revalidate.js
 
 export default async function handler(req, res) {
@@ -410,7 +411,7 @@ export default async function handler(req, res) {
     return res.status(500).send('Error revalidating')
   }
 }
-```
+
 比如我们在数据库中增加了 2 条数据，此时访问 https://localhost:3000/api/revalidate?secret=<token>&path=/blog/5，便可以触发，生成新的静态页面了。
 
 
@@ -428,7 +429,7 @@ Server component 是 React18 提供的能力， 与上面的 SSR 不同，相当
 而以上每个步骤必须完成，才可以开始下一个步骤。
 
 比如一个传统的博客页面采用 SSR 的方式使用 getServerSideProps 的方式渲染，那么就需要等 3 个接口全部返回才可以看到页面。
-```js
+js
 export async function getServerSideProps() {
   const list = await getBlogList()
   const detail = await getBlogDetail()
@@ -436,10 +437,10 @@ export async function getServerSideProps() {
 
   return { props: { list,detail,comments } }
 }
-```
+
 如果评论接口返回较慢，那么整个程序就是待响应状态。
 我们可以在 Next.js 13 中开启 app 目录来，使用 Suspense开启流渲染的能力，将 Comments 组件使用 Suspense 包裹。
-```js
+js
 import { SkeletonCard } from '@/ui/SkeletonCard';
 import { Suspense } from 'react';
 import Comments from './Comments';
@@ -461,9 +462,9 @@ export default function Posts() {
     </section>
   );
 }
-```
+
 组件数据请求使用 use API，就可以实现流渲染了。
-```js
+js
 
 import { use } from 'react';
 
@@ -479,7 +480,7 @@ export default function Comments() {
     </section>
   );
 }
-```
+
 
 
 如果评论部分接口还在请求中，那么页面左侧注水完成，也是可以交互可以点击的。
@@ -509,3 +510,4 @@ export default function Comments() {
 
 > Server component- 也是 SSR 的一种， 但互补了 SSR 的不足，让网页拥有流式渲染的能力。
 
+```

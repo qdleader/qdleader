@@ -1,7 +1,7 @@
 
 # S.O.L.I.D.
 
-
+```js
 
 
 本文就通过面向对象编程中，最基本的五种设计模式S.O.L.I.D.，如何在React当中应用，来告诉大家，其实他们是很简单的。
@@ -17,7 +17,7 @@
 下面的代码中，是一个正常React组件：
 你不必看完这个低码，粗略看一下即可
 
-```js
+js
 export function Bad() {
   const [products, setProducts] = useState([]);
   const [filterRate, setFilterRate] = useState(1);
@@ -59,7 +59,7 @@ export function Bad() {
     </div>
   );
 }
-```
+
 
 
 看起来也还不错，但实际上，他其实做了很多事情
@@ -74,7 +74,7 @@ export function Bad() {
 // useProducts custom hook
 // useRateFilter custom hook
 
-```js
+js
 export function Good() {
   const { products } = useProducts();
 
@@ -94,7 +94,7 @@ export function Good() {
     </div>
   );
 }
-```
+
 首先说明一个点，当在写React 代码的时候
 
 如果遇到 useState 和 useEffect 来获取数据的时候，应该首先去考虑封装成一个custom hook
@@ -109,7 +109,7 @@ export function Good() {
 基本含义：类允许被扩展，但不允许被修改
 听起来有些矛盾，但理解了他的意思之后，就会变的很简单。
 考虑以下代码
-```js
+js
 interface IMyButtonProps = {
 	role: 'back' | 'forward' | 'home';
 }
@@ -118,13 +118,13 @@ export const MyFuncyButton = (props: IMyButtonProps) => {
 	....
 	</>
 }
-```
+
 
 在上面的例子当中，按钮分为了三种类型，包括前进、后退、返回主页。一切良好，但如果有一天我想添加一个比如支付的按钮，那该怎么办么？
 **恐怕得有去改代码内部，这显然是与OCP原则不符的。**
 
 所以我们看主流的UI框架，他们的按钮主题都是按照颜色维度去区分的，而不是业务类型，而内部的文案由props传入。这样足够满足各种需求。
-```js
+js
 <!-- 可以看到element-ui是如何抽象按钮类型的 -->
 
 <el-button type="primary">主要按钮</el-button>
@@ -132,7 +132,7 @@ export const MyFuncyButton = (props: IMyButtonProps) => {
  <el-button type="info">信息按钮</el-button>
  <el-button type="warning">警告按钮</el-button>
  <el-button type="danger">危险按钮</el-button>
-```
+
 
 这里还要说明一点，开闭原则有一个超级经典的使用场景，就是装饰器
 @Entity()
@@ -153,7 +153,7 @@ export class Blog {
 可能大家会说，原型链的顶端定义了toString()，其实这已经回答了里氏替换原则。
 因为我们可以认为，原型链顶端，也就是Object.prototype这个原型对象，他就是JS当中所有对象的父类，或说超类。他身上的属性方法就像是一个契约，所有的子类都满足这个契约。
 这一点非常重要，比如
-```js
+js
 class 猿人 {
 	吃饭() {
 		console.log('我会吃饭')
@@ -167,20 +167,20 @@ class 你 extends 猿人 {
 interface xxx {
 	listYourBehaviors(person: 猿人);
 } 
-```
+
 上述代码中listYourBehaviors方法接受一个猿人类型，但因为你继承自猿人，所以如果我入参传入你，那么也不会报错。
 显然这是一种契约，需要开发者去遵守。
 说的有点多。在React当中，我们经常会封装组件，比如
-```js
+js
 export const MyFuncyInput = () => {
 	return <input type="text" />
 }
-```
+
 假设你封装了一下input组件。可能你的组件很牛~，很多技术小伙伴都在用，但有一天，一个人和你说，我使用组件的时候，传入了一个placeholder，发现并没有生效，这是怎么回事？
 额，当然不会生效，因为你没有把placeholder添加到iinput上...
 在这里，你可以认为input就是父类，而你封装的MyFuncyInput就是子类，那么父类具备的属性placeholder，子类也应该去实现，当然，如果挨个写会很麻烦，所以可以这样写
 
-```js
+js
 interface IMyFuncyInputProps extends React.HTMLInputAttributes<HTMLInputElement> {
 	isLargeInput: boolean
 }
@@ -188,7 +188,7 @@ export const MyFuncyInput = (props: IMyFuncyInputProps) => {
 	const {isLargeInput, ...restProps} 
 	return {isLargeInput ? <input type="text" style={...} {...restProps} /> : <input type="text" {...restProps} />
 }
-```
+
 
 每当我们封装一个组件的时候，都应该想到，对于父组件本身原有的属性，我们应该怎样处理，去符合里氏替换原则。
 ## I - ISP 接口分离原则
@@ -223,7 +223,7 @@ export const SubmitForm = () => {
 
 对于上边的表单提交组件，如果有一天，我希望能够将其复用到其他地方，但提交的URL不一样，那么显然，对不不同使用这个表单的地方，都应该只关注该表单的接口。即，他可以改成下面这样
 
-```js
+js
 interface ISubmitFrom {
 	onSubmit: () => void
 }
@@ -234,7 +234,7 @@ export const SubmitForm = (props: ISubmitFrom) => {
 	return <Form onSubmit={onSubmit}></From>
 }
 
-```
+
 如上，即定义了一个接口，他会指定一个回调函数，就是onSubmit，任何使用这个组件的人，是需要是实现回调的逻辑就可以了。也就是所谓的面向接口编程
 其实，我们想象一下，在前后端开发联调的过程中，大家都是按照接口文档是实现。比如前端开发，你会去注意后端逻辑是怎么实现的么，你会关注，比如产品列表，后台是直接读MySQL数据库，还是走Redis缓存?
 
@@ -243,3 +243,4 @@ export const SubmitForm = (props: ISubmitFrom) => {
 
 ### good Demo
 https://github.com/ipenywis/react-solid/tree/main/src/principles
+```

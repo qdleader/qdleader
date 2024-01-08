@@ -22,6 +22,7 @@
 <input type="text" inputmode="search"/>
 ```
 
+```js
 ### a 元素的 download 属性
 
 <a> 元素的 download 属性
@@ -43,3 +44,5 @@
 ### translate
 
 <div translate="yes">how are you</div>
+
+```

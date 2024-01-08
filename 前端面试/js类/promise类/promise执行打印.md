@@ -1,6 +1,6 @@
 ## 1
-
 ```js
+js
 const promise = new Promise((resolve, reject) => {
   console.log(1)
   resolve()
@@ -12,18 +12,18 @@ promise.then(() => {
 console.log(4)
 
 
-```
+
 
 
 
 答案：
 
-```js
+js
 1
 2
 4
 3
-```
+
 
 Promise 构造函数是同步执行的，promise.then 中的函数是异步执行的
 
@@ -32,7 +32,7 @@ Promise 构造函数是同步执行的，promise.then 中的函数是异步执�
 
 ## 2
 
-```js
+js
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('success')
@@ -50,14 +50,14 @@ setTimeout(() => {
   console.log('promise2', promise2)
 }, 2000)
 
-```
+
 
 
 
 
 答案：
 
-```js
+js
 promise1 Promise { <pending> }
 promise2 Promise { <pending> }
 
@@ -71,7 +71,7 @@ promise2 Promise {
     at promise.then (...)
     at <anonymous> }
 
-```
+
 
 解释：promise 有 3 种状态：pending、fulfilled 或 rejected。状态改变只能是 pending->fulfilled 或者 pending->rejected，状态一旦改变则不能再变。上面 promise2 并不是 promise1，而是返回的一个新的 Promise 实例。
 
@@ -80,7 +80,7 @@ promise2 Promise {
 
 ## 3
 
-```ts
+ts
 const promise = new Promise((resolve, reject) => {
   resolve('success1')
   reject('error')
@@ -95,13 +95,13 @@ promise
     console.log('catch: ', err)
   })
 
-```
+
 
 结果
 
-```
+
 then: success1
-```
+
 
 
 解释：构造函数中的 resolve 或 reject 只有第一次执行有效，多次调用没有任何作用，呼应代码二结论：promise 状态一旦改变则不能再变。
@@ -111,7 +111,7 @@ then: success1
 
 
 
-```ts
+ts
 Promise.resolve(1)
   .then((res) => {
     console.log(res)
@@ -129,7 +129,7 @@ Promise.resolve(1)
      return 1001
   })
 
-```
+
 
 
 
@@ -148,7 +148,7 @@ Promise.resolve(1)
 
 # 5 
 
-```js
+js
 
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -165,7 +165,7 @@ promise.then((res) => {
   console.log(res, Date.now() - start)
 })
 
-```
+
 
 once
 success 1005
@@ -180,7 +180,7 @@ success 1006
 
 # 6
 
-```ts
+ts
 
 Promise.resolve()
   .then(() => {
@@ -194,7 +194,7 @@ Promise.resolve()
   })
 
 
-```
+
 
 
 then:  Error: error!!!
@@ -204,16 +204,16 @@ Promise {<fulfilled>: undefined}
 
 
 解释：.then 或者 .catch 中 return 一个 error 对象并不会抛出错误，所以不会被后续的 .catch 捕获，需要改成其中一种：
-```js
+js
 return Promise.reject(new Error('error!!!'))
 // 或
 throw new Error('error!!!')
-```
+
 因为返回任意一个非 promise 的值都会被包裹成 promise 对象，即 return new Error('error!!!') 等价于 return Promise.resolve(new Error('error!!!'))。
 
 
 
-```js
+js
 Promise.resolve()
   .then(() => {
     throw new Error('error!!!')
@@ -229,10 +229,10 @@ catch:  Error: error!!!
     at <anonymous>:3:11
 Promise {<fulfilled>: undefined}
 
-```
 
 
-```ts
+
+ts
 
 const promise = Promise.resolve()
   .then(() => {
@@ -240,29 +240,29 @@ const promise = Promise.resolve()
   })
 promise.catch(console.error)
 
-```
+
 
 6844903509934997511:1 Uncaught (in promise) TypeError: Chaining cycle detected for promise #<Promise>
 解释：.then 或 .catch 返回的值不能是 promise 本身，否则会造成死循环。类似于：
-```js
+js
 process.nextTick(function tick () {
   console.log('tick')
   process.nextTick(tick)
 })
-```
+
 
 # 7
 
 
 
 
-```js
+js
 Promise.resolve(1)
   .then(2)
   .then(Promise.resolve(3))
   .then(console.log)
 
-```
+
 运行结果： 1
 解释：.then 或者 .catch 的参数期望是函数，传入非函数则会发生值穿透。
 
@@ -271,7 +271,7 @@ Promise.resolve(1)
 
 ## 8
 
-```js
+js
 Promise.resolve()
   .then(function success (res) {
     throw new Error('error')
@@ -281,22 +281,22 @@ Promise.resolve()
   .catch(function fail2 (e) {
     console.error('fail2: ', e)
   })
-```
+
 
 
 
 
 运行结果：
 
-```
+
 fail2: Error: error
     at success (...)
     at ...
-```
+
 
 解释：.then 可以接收两个参数，第一个是处理成功的函数，第二个是处理错误的函数。.catch 是 .then 第二个参数的简便写法，但是它们用法上有一点需要注意：.then 的第二个处理错误的函数捕获不了第一个处理成功的函数抛出的错误，而后续的 .catch 可以捕获之前的错误。当然以下代码也可以：
 
-```js
+js
 Promise.resolve()
   .then(function success1 (res) {
     throw new Error('error')
@@ -308,13 +308,13 @@ Promise.resolve()
     console.error('fail2: ', e)
   })
 
-  ```
+  
 
 
 
 ## 9
 
-```js
+js
 process.nextTick(() => {
   console.log('nextTick')
 })
@@ -330,15 +330,15 @@ setImmediate(() => {
 })
 console.log('end')
 
-```
 
 
-```js
+
+js
 end
 nextTick
 then
 setImmediate
-```
+
 
 解释：process.nextTick 和 promise.then 都属于 microtask，而 setImmediate 属于 macrotask，在事件循环的 check 阶段执行。事件循环的每个阶段（macrotask）之间都会执行 microtask，事件循环的开始会先执行一次 microtask。
 
@@ -346,9 +346,4 @@ setImmediate
 
 
 
-
-
-
-
-
-
+```

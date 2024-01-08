@@ -1,5 +1,8 @@
+```js
 1，前言
+js
 <script setup>是在单文件组件中使用Composition API的编译时语法糖。相比于普通的<script>语法，它具有更多优势
+
 
 更少的样板内容，更简洁的代码
 能够使用纯 Typescript 声明 props 和抛出事件
@@ -7,7 +10,7 @@
 
 ## 2，基本语法
 
-```
+vue
 <template>
   <p>{{ name }}</p>
 </template>
@@ -15,7 +18,7 @@
     let name = 'qd'
 </script>
 
-```
+
 
 script里面的代码会被编译成组件setup()函数的内容。这意味着与普通的<script>只在组件被首次引入的时候执行一次不同，<script setup>中的代码会在每次组件实例被创建的时候执行。
 
@@ -23,7 +26,7 @@ script里面的代码会被编译成组件setup()函数的内容。这意味着�
 
 ## 2响应式
 响应式状态需要使用响应式APIs来创建
-```
+vue
 <template>
   <p>{{ name }}</p>
   <p>{{ data.title }}</p>
@@ -35,23 +38,26 @@ script里面的代码会被编译成组件setup()函数的内容。这意味着�
     title: 'qd'
   })
 </script>
-```
+
 
 ## 3组件使用
+js
 <script setup>范围里的值也能被直接作为自定义组件的标签名使用，不需要写在conmonent对象里
-```
+
+
+vue
 <template>
   <MyComponent />
 </template>
 <script setup>
     import MyComponent from './MyComponent.vue'
 </script>
-```
+
 
 ### 3.1，动态组件
 由于组件被引用为变量而不是作为字符串键来注册的，在<script setup>中要使用动态组件的时候，就应该使用动态的:is来绑定
 
-```
+vue
 <template>
   <component :is="Foo" />
   <component :is="someCondition ? Foo : Bar" />
@@ -60,18 +66,19 @@ script里面的代码会被编译成组件setup()函数的内容。这意味着�
     import Foo from './Foo.vue'
     import Bar from './Bar.vue'
 </script>
-```
+
 
 ### 3.2，递归组件
 一个单文件组件可以通过它的文件名被其自己所引用。例如：文件名为Foo.vue的组件可以在其模板中用<Foo/>引用它自己。如果名称冲突了，就需要使用别名。
-```
+
+js
 import { Foo as FooBarChild } from './components'
-```
+
 
 ## 4，自定义指令
 全局注册的自定义指令将以符合预期的方式工作，且本地注册的指令可以直接在模板中使用，就像上文所提及的组件一样。但这里有一个需要注意的限制：必须以 vNameOfDirective的形式来命名本地自定义指令，以使得它们可以直接在模板中使用
 
-```
+vue
 <template>
   <h1 v-my-directive>This is a Heading</h1>
 </template>
@@ -82,28 +89,28 @@ import { Foo as FooBarChild } from './components'
       }
     }
 </script>
-```
+
 **### 导入指令**
-```
+
 <script setup>
   // 导入的指令同样能够工作，并且能够通过重命名来使其符合命名规范
   import { myDirective as vMyDirective } from './MyDirective.js'
 </script>
-```
+
 
 # 5，props
 在<script setup>中必须使用defineProps来声明props，它具备完整的类型推断并且在<script setup>中是直接可用的
-```
+
 <script setup>
     const props = defineProps({
       foo: String
     })
 </script>
-```
+
 
 defineProps 用来接收父组件传来的 props ; defineEmits 用来声明触发的事件。
 
-```
+
 //父组件
 
 <template>
@@ -147,10 +154,10 @@ const sonClick = () =>{
 </script>
 
 
-```
+
 
 ### 5.1，TypeScript支持
-```
+
 const props = defineProps<{
   foo: string
   bar?: number
@@ -164,14 +171,14 @@ const props = withDefaults(defineProps<Props>(), {
   msg: 'hello',
   labels: () => ['one', 'two']
 })
-```
+
 
 ## 6，emit
 在<script setup>中必须使用defineEmits来声明emits，它具备完整的类型推断并且在<script setup>中是直接可用的
 
 
 子组件
-```
+
 
 <template>
     <div>
@@ -193,12 +200,12 @@ let hander2Click=():void=>{
     emit('myDel','删除的数据')
 }
 </script>
-```
+
 
 
 
 父组件
-```
+
 <template>
   <div class="home">
     <test-com @myAdd="myAddHander" @myDel='myDelHander'></test-com>
@@ -214,23 +221,23 @@ let myDelHander=(mess):void=>{
   console.log('删除==>', mess);
 }
 </script>
-```
+
 
 
 
 ### 6.1，TypeScript支持
-```
+
 const emit = defineEmits<{
   (e: 'change', id: number): void
   (e: 'update', value: string): void
 }>()
-```
+
 
 ## 7，defineExpose暴露
 如果在父组件中通过ref='xxx’的方法来获取子组件实例，
 子组件使用了script setup语法糖,
 则子组件的数据需要用defineExpose 的方式导出，否则不会暴露属性。
-```
+
 //父组件
 
 <template>
@@ -268,17 +275,17 @@ defineExpose({
 </script>
 
 
-```
+
 
 ## 8，useSlots 和 useAttrs
 在模板中通过$slots和$attrs来访问它们
-```
+
 <script setup>
     import { useSlots, useAttrs } from 'vue'
     const slots = useSlots()
     const attrs = useAttrs()
 </script>
-```
+
 
 
 ## 9，与普通的script一起使用
@@ -287,7 +294,7 @@ defineExpose({
 无法在<script setup>声明的选项，例如inheritAttrs或通过插件启用的自定义的选
 声明命名导出
 运行副作用或者创建只需要执行一次的对象
-```
+
 <script>
     // 普通 <script>, 在模块范围下执行(只执行一次)
     runSideEffectOnce()
@@ -300,7 +307,7 @@ defineExpose({
 <script setup>
     // 在 setup() 作用域中执行 (对每个实例皆如此)
 </script>
-```
+
 
 
 
@@ -308,7 +315,7 @@ defineExpose({
 
 
 ### 新增指令 v-memo
-```
+
 v-memod会记住一个模板的子树,元素和组件上都可以使用。
 该指令接收一个固定长度的数组作为依赖值进行[记忆比对]。
 如果数组中的每个值都和上次渲染的时候相同，则整个子树的更新会被跳过。
@@ -322,11 +329,11 @@ v-memod会记住一个模板的子树,元素和组件上都可以使用。
 v-memod的指令使用较少，它的作用是:缓存模板中的一部分数据。
 只创建一次，以后就不会再更新了。也就是说用内存换取时间。
 
-```
+
 
 
 ## style v-bind将span变成红色
-```
+
 <template>
   <span> 我是红色 </span>  
 </template>
@@ -342,4 +349,5 @@ v-memod的指令使用较少，它的作用是:缓存模板中的一部分数据
     color: v-bind('state.color');
   }  
 </style>
+
 ```

@@ -1,4 +1,5 @@
-Turbopack
+```js
+## Turbopack
 首先是最引入注目的，在 Next13 中加入了全新的打包工具 Turbopack， 它是出自 Webpack 作者 TobiasKoppers 之手，官方描述是：开发时更新速度比 Webpack 快 700 倍、比 Vite 快 10 倍，是不是有点迫不及待，想要熟手体验了呢？我们直接使用官方提供的 cli 创建一个 Next.js 工程。
 npx create-next-app --example with-turbopack
 复制代码
@@ -16,19 +17,19 @@ Turbopack 特点
 
 ## 创建项目
 
-```js
+js
   npm install -g create-next-app		//全局安装脚手架
   create-next-app nextApp		//基于脚手架创建项目
   cd nextApp
   npm run dev		//运行项目
-```
-
-创建 ts 模板
 
 
-```
+#### 创建 ts 模板
+
+
+js
 npx create-next-app@latest --typescript
-```
+
 
 
 目录结构介绍：
@@ -45,7 +46,7 @@ npx create-next-app@latest --typescript
 #### 页面跳转
 
 页面跳转一般有两种形式，第一种是利用标签<Link>,第二种是用js编程的方式进行跳转，也就是利用Router组件
-```js
+js
 import Router from 'next/router'
 
  const goDetail = () => {
@@ -57,7 +58,7 @@ import Router from 'next/router'
 
       <div><Link href="/pageDetail">详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
-```
+
 
 
 注意：用<Link>标签进行跳转是非常容易的，但是又一个小坑需要你注意一下，就是他不支持兄弟标签并列的情况。
@@ -70,7 +71,7 @@ import Router from 'next/router'
 在Next.js中只能通过通过query（?id=1）来传递参数，而不能通过(path:id)的形式传递参数。
 
 ###### 拼接方式传递
-```js
+js
 import Link from 'next/link'
 import Router from 'next/router'
 
@@ -85,10 +86,10 @@ import Router from 'next/router'
 
       <div><Link href="/pageDetail">详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
-```
+
 ###### 对象方式传递
 
-```js
+js
     import Link from 'next/link'
     import Router from 'next/router'
 
@@ -104,11 +105,11 @@ import Router from 'next/router'
 
       <div><Link href={pathname:"/pageDetail",query:{ name:"icourt"}}>详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
-```
 
 
 
-```js
+
+js
 //PageDetail.js
 import { withRouter} from 'next/router'
 import Link from 'next/link'
@@ -124,11 +125,11 @@ const PageDetail = ({router})=>{
 //withRouter是Next.js框架的高级组件，用来处理路由用的
 export default withRouter(PageDetail)
 
-```
+
 
 
 <!-- 动态路由 -->
-```js
+js
 
 pages/post/[pid].js
 route : /post/abc  -->  query : { "pid": "abc" }
@@ -137,13 +138,13 @@ route : /post/abc  -->  query : { "pid": "abc" }
 pages/post/[pid]/[comment].js
 route : /post/abc/a-comment  -->  query : { "pid": "abc", "comment": "a-comment" }
 
-```
+
 
 
 ## 数据请求
 使用 react 的 use 函数加 fetch API 来实现：静态站点生成（SSG）、服务器端渲染（SSR）和增量静态再生（ISR）
 在 Page 页面使用 fetch：
-```js
+js
 import { use } from 'react';
 
 async function getData() {
@@ -160,10 +161,10 @@ export default function Page() {
 
   return '...';
 }
-```
 
 
-```js
+
+js
 fetch 的缓存策略
 // 请求被缓存
 // 相当于 `getStaticProps`.
@@ -177,7 +178,7 @@ fetch(URL, { cache: 'no-store' });
 // 请求被缓存10s，10s 重新生成
 // 相当于 `getStaticProps` 加上 `revalidate` 参数.
 fetch(URL, { next: { revalidate: 10 } });
-```
+
 使用这种方式的优点是，当请求数据的增加，打包后前端 JavaScript 的大小不会增加。
 
 
@@ -187,7 +188,7 @@ fetch(URL, { next: { revalidate: 10 } });
 <p style={{ color: 'red' }}>hi there</p>
 
 使用 styled-jsx 的组件就像这样
-```js
+js
 function HelloWorld() {
   return (
     <div>
@@ -217,25 +218,25 @@ function HelloWorld() {
 
 export default HelloWorld
 
-```
+
 
 
 ## @next/font
 加入了一个新的包，可以在构建时直接引用 google 字体和本地字体，实现字体的托管和预加载，这点对英文网站很有用，中文网站一般不加载字体，图标建议使用 svg。
 
 加载谷歌字体
-```js
+js
 import { Inter } from '@next/font/google';
 const inter = Inter();
 <html className={inter.className}>
-```
+
 加载本地字体
-```js
+js
 import localFont from '@next/font/local';
 const myFont = localFont({ src: './my-font.woff2' });
 <html className={myFont.className}>
 
-```
+
 
 
 
@@ -249,7 +250,7 @@ const myFont = localFont({ src: './my-font.woff2' });
 所以 image 必须加上 width 和 height 参数
 新的 Next/image 使用了浏览器的 lazy-loading 代替了 Intersection Observer API
 默认情况下需要 alt 标记，因此减少了客户端 JavaScript 代码，当然这个属性对浏览器要求较高，要求 chrome 77+。
-```js
+js
 import Image from 'next/image';
 import avatar from './lee.png';
 
@@ -258,15 +259,15 @@ function Home() {
   // 图片可以使用放在 `app/`  目录下
   return <Image alt="leeerob" src={avatar} placeholder="blur" />;
 }
-```
+
 
 
 ts 版本时候图片需放在 public文件夹下
-```js
+js
 如/public/assets/logo.png
   <Image alt="leeerob" src="/assets/logo.png" placeholder="blur" />
 
-```
+
 
 
 网站部署 netlify
@@ -294,7 +295,7 @@ function Home() {
 
 
 在 Next13 中 ， 在 app 目录下，如要使用 useState 等状态管理的 hook，那么该组件只在客户端执行，需要在首行加入 'use client' 指令。
-```js 
+js 
 'use client';
 
 import { useState } from 'react';
@@ -309,7 +310,7 @@ export default function Counter() {
     </div>
   );
 }
-```
+
 该区分服务端组件和客户端组件，下表列出了常用使用场景
 
 
@@ -318,3 +319,4 @@ export default function Counter() {
 
 使用场景服务端组件客户端组件fetch 请求数据。✅[⚠️]访问后端资源（直接）✅❌在服务器上保留敏感信息（访问令牌、API 密钥等）✅❌保持对服务器的大量依赖/减少客户端 JavaScript✅❌添加交互和事件侦听器（onClick(),onChange()等）❌✅使用状态和生命周期效果（useState(), useReducer(), useEffect(), 等）❌✅使用仅限浏览器的 API(window)❌✅使用依赖于状态、效果或仅浏览器 API 的自定义 hooks❌✅使用React 类组件
 
+```

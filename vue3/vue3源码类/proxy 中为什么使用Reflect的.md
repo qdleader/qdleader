@@ -1,36 +1,36 @@
-
+```js
 
 ## Reflect 有返回值
 
 对于某个对象，赋值并不总是成功的。
 
 例如，我们把 input 的name属性设置为只读，如下：
-```js
+js
 Object.defineProperty(input, 'name', {
     get () {
        return this.getAttribute('name') || 'text';
     }
 });
-```
+
 
 传统的使用等于号进行的属性赋值并不能知道最后是否执行成功，需要开发者自己进行进一步的检测。
 
 例如：
-```js
+js
 console.log(input.type = 'qdleader');
-```
+
 上面一行赋值返回值是'qdleader'，至于改变输入框的type属性值是否成功，不得而知。
 
-```js
+js
 // 输出 false
 console.log(Reflect.set(input, 'name', 'qdleader'));
-```
+
 但是下面一行语句使用的Reflect.set()方法，就可以知道是否设置成功，因为Reflect.set()的返回值是true或者false（只要参数类型准确）。
 
 
 ##  Reflect方法还有个好处，不会因为报错而中断正常的代码逻辑执行
 
-```js
+js
 (function () {
     'use strict';
 
@@ -41,7 +41,7 @@ console.log(Reflect.set(input, 'name', 'qdleader'));
 
     console.log('no log');
 })();
-```
+
 会出现下面的TypeError错误：
 
 Uncaught TypeError: Cannot assign to read only property ‘name’ of object ‘#<Object>’
@@ -49,7 +49,7 @@ Uncaught TypeError: Cannot assign to read only property ‘name’ of object ‘
 
 但是如果使用Reflect方法，则console语句是可以执行的，例如：
 
-```js
+js
 (function () {
     'use strict';
 
@@ -60,7 +60,7 @@ Uncaught TypeError: Cannot assign to read only property ‘name’ of object ‘
 
     console.log('no log');
 })();
-```
+
 
 
 ## receiver参数
@@ -118,7 +118,7 @@ console.log(threePeople.name);
 
 实际上 Reflect 的函数可以接收第三个参数，即函数调用过程中的 this
 比如：
-```js
+js
 const obj = {
   get test() {
       return this.age + this.name
@@ -131,7 +131,7 @@ const obj2 = {
 }
 
 console.log(Reflect.get(obj, "test", obj2)) // 输出 18Ben
-```
+
 
 
 ### Reflect对象经常和Proxy代理一起使用，原因有三点：
@@ -141,5 +141,5 @@ console.log(Reflect.get(obj, "test", obj2)) // 输出 18Ben
 > receiver参数具有不可替代性。
 
 
-
+```
 
