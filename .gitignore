@@ -31,3 +31,4 @@ package-lock.json
 yarn.lock
 
 .vuepress/.temp
+.vuepress/.cache/
