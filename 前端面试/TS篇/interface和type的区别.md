@@ -19,7 +19,7 @@ interface SetUser {
 
 
 ### type
-```
+```js
 type User = {
   name: string
   age: number
@@ -156,7 +156,7 @@ User 的接口为 {
 
 相同点：
 
-    > 都可以描述对象或者函数
+    > 都可以描述对象或者函数 
     > 都允许扩展（extends）
 
 不同点：
