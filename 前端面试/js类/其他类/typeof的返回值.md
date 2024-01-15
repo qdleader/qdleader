@@ -1,4 +1,4 @@
-```
+```js
  typeof undefined //undefined
 
  typeof 'abc'  // string
@@ -14,5 +14,10 @@
  typeof null // object
 
  typeof console.log //function
+
+
+ typeof Symbol(); // symbol 
+
+ typeof new RegExp(); //object 
 
  ```
