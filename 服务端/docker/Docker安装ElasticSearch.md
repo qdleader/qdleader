@@ -16,7 +16,7 @@ chmod 777 plugins
 
 ```js
 docker run -d \
-	--name es \
+	--name esnew \
     -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
     -e "discovery.type=single-node" \
     -v /Users/data:/usr/share/elasticsearch/data \
@@ -50,8 +50,8 @@ elasticsearch:7.12.1
 ```js
 
 docker run -d \
---name kibana \
--e ELASTICSEARCH_HOSTS=http://172.26.5.163:9200 \
+--name kibana1 \
+-e ELASTICSEARCH_HOSTS=http://121.36.47.43:9200 \
 --network qdnet \
 -p 5601:5601  \
 kibana:7.12.1
@@ -66,7 +66,7 @@ kibana:7.12.1
 ```js
 docker run -d \
 --name kibana \
--e ELASTICSEARCH_HOSTS=http://172.26.5.163:9200 \
+-e ELASTICSEARCH_HOSTS=http://121.36.47.43:9200 \
 --network qdnet \
 -p 5601:5601  \
 --platform linux/amd64 \
