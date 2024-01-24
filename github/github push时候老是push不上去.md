@@ -4,10 +4,12 @@
 设置针对github.com本身(如果你需要代理的仓库，都是github上面的，只要设置这个)的代理：
 
 ## 只对github.com
-### 找到自己的代理的port的4个数字的端口就行，不一定是1080口的
+### 找到自己的代理的port的4个数字的端口就行，不一定是7880口的
 ```js
-git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+git config --global http.https://github.com.proxy http://127.0.0.1:7890
 #上面是别人的，如果你的代理是http类型的，如下设置：
+git config --global https.https://github.com.proxy https://127.0.0.1:7890
+
 git config --global http.https://github.com.proxy 'http://127.0.0.1:代理的port'
 ```
 
@@ -20,13 +22,35 @@ git config --global --unset http.https://github.com.proxy
 
 ### 找到自己的代理的port的4个数字的端口就行，不一定是1080口的
 ```js
-git config --global http.proxy 'socks5://127.0.0.1:1080'
-git config --global https.proxy 'socks5://127.0.0.1:1080'
+git config --global http.proxy 'socks5://127.0.0.1:7890'
+git config --global https.proxy 'socks5://127.0.0.1:7890'
+
+// git config --global http.proxy socks5 127.0.0.1:7890
+// git config --global https.proxy socks5 127.0.0.1:7890
 ```
 
 ##上面是别人的，如果你的代理是http类型的，如下设置：
 ## 找到自己的代理的port的4个数字的端口就行，不一定是1080口的
 ```js
-git config --global http.proxy  'http://127.0.0.1:代理的port'
-git config --global https.proxy  'http://127.0.0.1:代理的port'
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+```
+
+
+
+配置http代理
+
+
+
+## 查看代理命令
+```js
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+## 取消代理命令
+
+```js
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
