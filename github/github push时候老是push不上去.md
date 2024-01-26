@@ -4,7 +4,7 @@
 设置针对github.com本身(如果你需要代理的仓库，都是github上面的，只要设置这个)的代理：
 
 ## 只对github.com
-### 找到自己的代理的port的4个数字的端口就行，不一定是7880口的
+### 找到自己的代理的port的4个数字的端口就行，不一定是7890口的
 ```js
 git config --global http.https://github.com.proxy http://127.0.0.1:7890
 #上面是别人的，如果你的代理是http类型的，如下设置：

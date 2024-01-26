@@ -24,7 +24,7 @@
 ## 安装YaPi
 
 ```
-  sudo npm install -g yapi-cli --registry https://registry.npm.taobao.org
+  sudo npm install -g yapi-cli --registry https://registry.npmmirror.com/
 
   sudo yapi server
 ```

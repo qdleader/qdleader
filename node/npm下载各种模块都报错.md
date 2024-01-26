@@ -23,7 +23,7 @@ npm config set registry http://registry.cnpmjs.org/
 然后你就可以愉快的安装cnpm了
 
 ```
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g cnpm --registry=https://registry.npmmirror.com/
 ```
 
 然后你就可以更加愉快的用cnpm安任何东西了

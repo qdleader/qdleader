@@ -32,7 +32,7 @@ npm config set registry http://vuereact.top:4873
  常用的镜像地址
 
 -- 设置当前地址（设置为淘宝镜像）
-npm config set registry http://registry.npm.taobao.org/
+npm config set registry http://registry.npmmirror.com/
  
 -- 设置当前地址（设置为默认地址）
 npm config set registry https://registry.npmjs.org/
