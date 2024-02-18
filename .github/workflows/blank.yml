@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 16
           #   cache: npm
-      - run: npm install -f
+      - run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
