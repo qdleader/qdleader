@@ -162,8 +162,16 @@ Linux系统下设置redis的密码
 运行命令：config set requirepass ****(****为你要设置的密码)，设置成功的话会返回‘OK’字样
 
 ## 4、重启redis服务
+```js
+pkill redis
+/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
+```
+
+## 5、使用密码登录redis
+
 ctrl+C退出当前的命令行模式后运行命令：
 redis-cli -h 127.0.0.1 -p 6379 -a ****（****为你心设置的密码）  
+
 
 
 redis-cli -h 121.36.47.43 -p 6379
