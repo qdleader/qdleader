@@ -1,6 +1,6 @@
 ## props 自定义验证
 
-```
+```js
 props: {
   num: {
     default:1,

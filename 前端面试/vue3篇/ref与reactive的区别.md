@@ -1,5 +1,5 @@
 
-
+# ref 和 reactive 区别
 ref与reactive 是 Vue3 新推出的主要 API 之一，它们主要用于响应式数据的创建。
 
 template 模板中使用的数据和方法，都需要通过 setup 函数 return 出去才可以被使用。
