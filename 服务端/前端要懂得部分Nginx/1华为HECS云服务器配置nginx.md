@@ -163,3 +163,15 @@ shell复制代码# /usr/local/webserver/nginx/sbin/nginx
 
 
 
+
+
+
+
+// 修改配置文件
+vim /usr/local/webserver/nginx/conf/nginx.conf
+
+//停止      
+/usr/local/webserver/nginx/sbin/nginx -s stop
+
+// 启动
+/usr/local/webserver/nginx/sbin/nginx  
