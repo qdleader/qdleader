@@ -56,3 +56,17 @@ b、修改jenkins端口号
 
 ## 4、根据界面提示信息去查看密码
 $ cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+
+
+
+
+## 卸载
+
+第一种：
+卸载yum方式安装的jenkins
+
+service jenkins stop
+
+yum -y remove jenkins
