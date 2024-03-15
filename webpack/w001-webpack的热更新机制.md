@@ -40,11 +40,11 @@ module.exports = {
 
 根据变化的内容生成两个补丁文件：manifest(包含了 hash 和 chundId，用来说明变化的内容)和chunk.js 模块
 
-由于socket服务器在HMR Runtime 和 HMR Server之间建立 websocket链接，当文件发生改动的时候，服务端会向浏览器推送一条消息，消息包含文件改动后生成的hash值，如下图的h属性，作为下一次热更新的标识
+由于socket服务器在HMR Runtime 和 HMR Server之间建立 websocket链接，当文件发生改动的时候，服务端会向浏览器推送一条消息，消息包含文件改动后生成的hash值，作为下一次热更新的标识
 
 在浏览器接受到这条消息之前，浏览器已经在上一次socket 消息中已经记住了此时的hash 标识，这时候我们会创建一个 ajax 去服务端请求获取到变化内容的 manifest 文件
 
-mainfest文件包含重新build生成的hash值，以及变化的模块，对应上图的c属性
+mainfest文件包含重新build生成的hash值，以及变化的模块，
 
 浏览器根据 manifest 文件获取模块变化的内容，从而触发render流程，实现局部模块更新
 
