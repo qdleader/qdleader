@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: 16
           #   cache: npm
+      - run: rm -rf node_modules package-lock.json
       - run: npm cache clean --force
       - run: npm install -f
 
