@@ -16,6 +16,7 @@
     "@vuepress/plugin-nprogress": "2.0.0-rc.0",
     "@vuepress/plugin-search": "^2.0.0-rc.0",
     "@vuepress/theme-default": "^2.0.0-rc.0",
+    "@vuepress/bundler-vite": "^2.0.0-rc.9",
     "busuanzi.pure.js": "^1.0.3",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
