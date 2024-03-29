@@ -17,7 +17,7 @@ jobs:
       - run: rm -rf node_modules package-lock.json
       - run: npm cache clean --force
       - run: npm install -f
-      - run: npm audit fix
+      - run: npm audit fix -f
 
       - name: Build
         run: npm run build
