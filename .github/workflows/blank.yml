@@ -14,10 +14,11 @@ jobs:
         with:
           node-version: 18
           #   cache: npm
+      - run: node -v
       - run: rm -rf node_modules package-lock.json
       - run: npm cache clean --force
       - run: npm install -f
-      - run: npm audit fix -f
+      # - run: npm audit fix -f
 
       - name: Build
         run: npm run build
