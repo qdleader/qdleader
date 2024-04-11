@@ -54,3 +54,17 @@ const dataType2:  MyPartial<ApiKey> = {
   name: 'json'
 }
 ```
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+}
+
+type PartialPerson = Partial<Person>;
+
+let person1: PartialPerson = { name: "Alice" }; // age 是可选属性，值默认为 undefined
+let person2: PartialPerson = { }; // name 和 age 都是可选属性，值默认为 undefined
+let person3: Partial<Person> = { name: "Bob", age: 20 }; // 和 Person 一样，都是必选属性
+
+```
