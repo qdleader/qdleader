@@ -47,3 +47,34 @@ xAxis: {
 
 ```
 
+## 加滚动条
+```js
+//  echarts 为x轴、y轴添加滚动条
+
+// dataZoom    
+
+// type: 'slider'，内置型数据区域缩放组件（dataZoomInside）
+
+// start ，数据窗口范围的起始百分比。范围是：0 ~ 100。表示 0% ~ 100%。
+// end，数据窗口范围的结束百分比。范围是：0 ~ 100。
+
+// 以y轴为例：
+
+dataZoom: [
+    {
+        type: 'slider',
+        show: true,
+        yAxisIndex: [0],
+        left: '93%',
+        start: 0, //数据窗口范围的起始百分比
+        end: 36
+    },
+    {
+        type: 'inside',
+        yAxisIndex: [0],
+        start: 0,
+        end: 36
+    }
+]
+
+```
