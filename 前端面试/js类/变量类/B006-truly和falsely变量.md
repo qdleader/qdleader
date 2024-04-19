@@ -3,20 +3,20 @@
 
 ## truly 变量：
 
-```
+```js
 !!a === true 的变量
 ```
 
 ## falsely 变量：
 
-```
+```js
 !!a === false 的变量
 ```
 
 
 ## 以下是falsely 变量，除此之外都是truly变量
 
-```
+```js
 !!0 === false
 !!NaN === false
 !!'' === false
