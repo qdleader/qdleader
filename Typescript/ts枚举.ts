@@ -1,7 +1,7 @@
 enum Days {
-    Sun,
-    Mon,
-    Tue,
+  Sun,
+  Mon,
+  Tue,
 }
 
 console.log(Days.Sun);  // 0
@@ -17,9 +17,9 @@ console.log(Days[Days.Sun]); // Sun
 
 // 数字枚举具有 自增行为
 enum Days1 {
-    Sun = 3,
-    Mon,
-    Tue,
+  Sun = 3,
+  Mon,
+  Tue,
 }
 console.log(Days.Sun);  // 3
 console.log(Days.Mon);  // 4
@@ -52,7 +52,7 @@ enum Person1 {
 }
 console.log(Person1.name); // 1
 console.log(Person1.hobby); // HOBBY
-{{}}
+{ { } }
 
 //常量枚举
 // 常量枚举通过在枚举上使用 const 修饰符来定义，常量枚举不同于常规的枚举，他们会在编译阶段被删除。
@@ -63,6 +63,33 @@ const enum Size {
   HEIGHT = 20
 }
 const area = Size.WIDTH * Size.HEIGHT; // 200
+
+
+
+// 项目中使用枚举
+// 日期匹配
+export enum WEEK_TYPE {
+  SUNDAY = 0,
+  MONDAY = 1,
+  TUESDAY = 2,
+  WEDNESDAY = 3,
+  THURSDAY = 4,
+  FRIDAY = 5,
+  SATURDAY = 6
+}
+interface IWEEK_TYPE_ENUM {
+  [key: number]: string
+}
+export const WEEK_TYPE_ENUM: IWEEK_TYPE_ENUM = {
+  [WEEK_TYPE.SUNDAY]: "日",
+  [WEEK_TYPE.MONDAY]: "一",
+  [WEEK_TYPE.TUESDAY]: "二",
+  [WEEK_TYPE.WEDNESDAY]: "三",
+  [WEEK_TYPE.THURSDAY]: "四",
+  [WEEK_TYPE.FRIDAY]: "五",
+  [WEEK_TYPE.SATURDAY]: "六"
+}
+
 
 
 
