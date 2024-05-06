@@ -240,8 +240,8 @@ export function useWatermark(parentEl: Ref<HTMLElement | null> = bodyEl) {
 import { useWatermark } from "@/hooks/useWatermark"
 const { setWatermark: setGlobalWatermark } = useWatermark()
 
- setGlobalWatermark(content, {
-      color: '全局水印',
+ setGlobalWatermark("全局水印", {
+      color: '#333',
       opacity: 0.2,
     })
 ```
