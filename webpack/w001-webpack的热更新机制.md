@@ -59,3 +59,14 @@ socket server 是一个 websocket 的长连接，双方可以通信
 当 socket server 监听到对应的模块发生变化时，会生成两个文件.json(manifest文件)和.js文件(update chunk)
 通过长连接，socket server 可以直接将这两个文件主动发送给客户端(浏览器)
 浏览器拿到两个新的文件后，通过HMR runtime机制，加载这两个文件，并且针对修改的模块进行更新
+
+## 详细版
+在 webpack 的运行时中 __webpack__modules__ 用以维护所有的模块。
+
+而热模块替换的原理，即通过 chunk 的方式加载最新的 modules，找到 __webpack__modules__ 中对应的模块逐一替换，并删除其上下缓存。
+
+> webpack-dev-server 将打包输出 bundle 使用内存型文件系统控制，而非真实的文件系统。此时使用的是 memfs 模拟 node.js fs API
+> 每当文件发生变更时，webpack 将会重新编译，webpack-dev-server 将会监控到此时文件变更事件，并找到其对应的 module。此时使用的是 chokidar 监控文件变更
+> webpack-dev-server 将会把变更模块通知到浏览器端，此时使用 websocket 与浏览器进行交流。此时使用的是 ws
+> 浏览器根据 websocket 接收到 hash，并通过 hash 以 JSONP 的方式请求更新模块的 chunk
+> 浏览器加载 chunk，并使用新的模块对旧模块进行热替换，并删除其缓存
