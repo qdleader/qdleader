@@ -347,3 +347,44 @@ setImmediate
 
 
 ```
+
+
+
+## 10
+
+```js
+console.log(1)  
+
+const promise = new Promise((resolve, reject) => {  
+
+    console.log(2);  
+    
+    setTimeout(() => {  
+        resolve(3);  
+        reject(4);  
+    },0);  
+});  
+
+promise.then((data) => {  
+    console.log(data);  
+}).catch((error)=> {  
+    console.log(error);  
+});  
+
+console.log(5);
+
+```
+
+## 答案
+
+```js
+1
+2
+5
+3
+```
+
+
+## 重点解析
+执行 promise.then 方法中的回调函数，输出 3。
+接着执行 promise.catch 方法中的回调函数，由于 Promise 已经被解决该回调函数不会被执行。
