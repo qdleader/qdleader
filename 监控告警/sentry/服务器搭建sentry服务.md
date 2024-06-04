@@ -97,7 +97,6 @@ CSRF_TRUSTED_ORIGINS = ["https://sentry.example.com", "http://10.100.10.10", "ht
 ```
 
 
-
 ### 方案2 
 
    默认安装完成以后通过http://ip:9000端口去访问sentry的时候只要一登录就会报错CSPF跨域访问失败，需要修改一些配置。
@@ -115,8 +114,8 @@ SENTRY_FEATURES['auth:register'] = False
 
 ## 重启服务
 
- docker compose down
- docker compose up -d
+ docker-compose down
+ docker-compose up -d
 
 
 
