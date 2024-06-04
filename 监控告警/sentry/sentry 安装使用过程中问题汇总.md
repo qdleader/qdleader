@@ -22,8 +22,8 @@ SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 ## 最后重新启动compose
 ```shell
-docker compose down
-docker compose up -d
+docker-compose down
+docker-compose up -d
 ```
 
 ### 2、使用nginx反向代理sentry服务
