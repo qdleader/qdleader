@@ -1,7 +1,7 @@
+# 获取当前url的参数
+## 正则 方式
 
-# 正则 方式
-
-```
+```js
 function query(name) {
   const search = location.search.substr(1)  //类似slice（1）从第一未开始，一直截取到最后
   const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`,'i')
@@ -18,8 +18,8 @@ function query(name) {
 
 
 
-# URLSearchParams 方式
-```
+## URLSearchParams 方式
+```js
 function query(name) {
   const search = location.search
   const p = new URLSearchParams(search)
@@ -31,8 +31,8 @@ console.log( query('name'))
 
 
 
-# URLSearchParams 方式2
-```
+## URLSearchParams 方式2
+```js
 function queryToObj() {
   const res = {}
   const pList = new URLSearchParams(location.search)
@@ -44,9 +44,9 @@ function queryToObj() {
 ```
 
 
-# 传统方式
+## 传统方式
 
-```
+```js
 function queryToObj() {
   const res = {};
   const search = location.search.substr(1) //去掉前面的？

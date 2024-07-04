@@ -1,4 +1,5 @@
-```
+# js跳出双重循环
+```js
 let bool =false
  for (let index = 0; index < config.length; index++) {
         const v = config[index]

@@ -1,14 +1,14 @@
- **Console定义样式;**
+# 常用console
 
 
- ```
+ ```js
 
-    2. Console.table方法;
-    3. Console包对象;
-    4. Console.timeㅣ console.timeEnd[OK]
+    1. Console.table方法;
+    2. Console包对象;
+    3. Console.timeㅣ console.timeEnd[OK]
 
 ```
-```
+```js
 
 // prints the text to the console as  a log message
 console.log('This is a log message');
