@@ -1,10 +1,10 @@
 import {
   __commonJS
-} from "./chunk-Y2F7D3TJ.js";
+} from "./chunk-BUSYA2B4.js";
 
-// node_modules/.pnpm/busuanzi.pure.js@1.0.3/node_modules/busuanzi.pure.js/busuanzi.pure.js
+// node_modules/busuanzi.pure.js/busuanzi.pure.js
 var require_busuanzi_pure = __commonJS({
-  "node_modules/.pnpm/busuanzi.pure.js@1.0.3/node_modules/busuanzi.pure.js/busuanzi.pure.js"(exports, module) {
+  "node_modules/busuanzi.pure.js/busuanzi.pure.js"(exports, module) {
     var bszCaller;
     var bszTag;
     var scriptTag;
@@ -20,8 +20,7 @@ var require_busuanzi_pure = __commonJS({
           return t2.call(this);
         }), this;
       }, e = function() {
-        for (var t2 = 0, e2 = c.length; t2 < e2; t2++)
-          c[t2].apply(document);
+        for (var t2 = 0, e2 = c.length; t2 < e2; t2++) c[t2].apply(document);
         c = [];
       }, n = function() {
         a || (a = true, e.call(window), document.removeEventListener ? document.removeEventListener("DOMContentLoaded", n, false) : document.attachEvent && (document.detachEvent("onreadystatechange", n), window == window.top && (clearInterval(t), t = null)));
@@ -91,9 +90,9 @@ var require_busuanzi_pure = __commonJS({
   }
 });
 
-// node_modules/.pnpm/busuanzi.pure.js@1.0.3/node_modules/busuanzi.pure.js/index.js
+// node_modules/busuanzi.pure.js/index.js
 var require_busuanzi_pure2 = __commonJS({
-  "node_modules/.pnpm/busuanzi.pure.js@1.0.3/node_modules/busuanzi.pure.js/index.js"(exports, module) {
+  "node_modules/busuanzi.pure.js/index.js"(exports, module) {
     module.exports = require_busuanzi_pure();
   }
 });

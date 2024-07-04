@@ -1,58 +1,49 @@
 {
-  "hash": "a0468ee8",
-  "configHash": "0b1df0ef",
-  "lockfileHash": "b79aff9e",
-  "browserHash": "2c8968bb",
+  "hash": "c00364c4",
+  "configHash": "e99a1987",
+  "lockfileHash": "8bafe9a4",
+  "browserHash": "f7729a65",
   "optimized": {
     "@vue/devtools-api": {
-      "src": "../../../node_modules/.pnpm/registry.npmmirror.com+@vue+devtools-api@6.5.1/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "src": "../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "@vue_devtools-api.js",
-      "fileHash": "73a97ee1",
+      "fileHash": "ef49f78d",
       "needsInterop": false
     },
     "@vuepress/shared": {
-      "src": "../../../node_modules/.pnpm/registry.npmmirror.com+@vuepress+shared@2.0.0-rc.0/node_modules/@vuepress/shared/dist/index.js",
+      "src": "../../../node_modules/@vuepress/shared/dist/index.js",
       "file": "@vuepress_shared.js",
-      "fileHash": "8cec63db",
-      "needsInterop": false
-    },
-    "@vueuse/core": {
-      "src": "../../../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@10.7.1_vue@3.3.13/node_modules/@vueuse/core/index.mjs",
-      "file": "@vueuse_core.js",
-      "fileHash": "168d14b6",
+      "fileHash": "9077b6e0",
       "needsInterop": false
     },
     "vue": {
-      "src": "../../../node_modules/.pnpm/registry.npmmirror.com+vue@3.3.13/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "2f509bc6",
+      "fileHash": "a4486bd2",
       "needsInterop": false
     },
     "vue-router": {
-      "src": "../../../node_modules/.pnpm/registry.npmmirror.com+vue-router@4.2.5_vue@3.3.13/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "src": "../../../node_modules/vue-router/dist/vue-router.esm-bundler.js",
       "file": "vue-router.js",
-      "fileHash": "aadff64e",
+      "fileHash": "cd29a53a",
       "needsInterop": false
     },
     "busuanzi.pure.js": {
-      "src": "../../../node_modules/.pnpm/busuanzi.pure.js@1.0.3/node_modules/busuanzi.pure.js/index.js",
+      "src": "../../../node_modules/busuanzi.pure.js/index.js",
       "file": "busuanzi__pure__js.js",
-      "fileHash": "f5a373f7",
+      "fileHash": "601b89e4",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-T27QITWP": {
-      "file": "chunk-T27QITWP.js"
+    "chunk-CXPLV47U": {
+      "file": "chunk-CXPLV47U.js"
     },
-    "chunk-2EUWMBJL": {
-      "file": "chunk-2EUWMBJL.js"
+    "chunk-XPVHNUZ4": {
+      "file": "chunk-XPVHNUZ4.js"
     },
-    "chunk-GN5GUYLF": {
-      "file": "chunk-GN5GUYLF.js"
-    },
-    "chunk-Y2F7D3TJ": {
-      "file": "chunk-Y2F7D3TJ.js"
+    "chunk-BUSYA2B4": {
+      "file": "chunk-BUSYA2B4.js"
     }
   }
 }

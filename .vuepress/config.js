@@ -4,7 +4,7 @@ import { navbar } from "./navbar.js"
 import { searchPlugin } from "@vuepress/plugin-search"
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
-import { clipboardPlugin } from 'vuepress-plugin-clipboard'
+// import { clipboardPlugin } from 'vuepress-plugin-clipboard'
 import { viteBundler } from '@vuepress/bundler-vite'
 // import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
@@ -74,7 +74,7 @@ export default defineUserConfig({
 		}),
 		backToTopPlugin(),
 		nprogressPlugin(),
-		clipboardPlugin({})
+		// clipboardPlugin({})
 	],	
 	bundler: viteBundler({
 	  viteOptions: {},

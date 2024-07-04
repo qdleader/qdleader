@@ -1,18 +1,18 @@
 # meta中常见的一些属性
+```js
 
-
-<meta> 标签的属性
-<meta> 是什么？
-<meta> 标签主要用于表示和当前文档相关的 元数据 信息。
-而 元数据（metadata），简单的来说就是描述数据的数据。例如，一个 HTML 文件是一种数据，但 HTML 文件也能在 <head> 元素中包含描述该文档的 元数据，比如该文件的作者和概要。
-
+<meta/> 标签的属性
+<meta/> 是什么？
+<meta/> 标签主要用于表示和当前文档相关的 元数据 信息。
+而 元数据（metadata），简单的来说就是描述数据的数据。例如，一个 HTML 文件是一种数据，但 HTML 文件也能在 head元素中包含描述该文档的 元数据，比如该文件的作者和概要。
+```
 
 ### 1.name
 
 name属性用于指定元数据的名称。
 
 ```html
-<meta name="description" content="这是一个描述">
+<meta name="description" content="这是一个描述"/>
 ```
 
 ### 2.charset
@@ -20,7 +20,7 @@ name属性用于指定元数据的名称。
 charset属性用于指定网页的字符编码。
 
 ```html
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
 
 
 <!-- 若使用这个属性，那么它的值只能是字符串 "utf-8" （不区分 ASCII 大小写），因为 UTF-8 是 HTML5 文档的唯一有效编码
@@ -32,7 +32,7 @@ charset属性用于指定网页的字符编码。
 viewport属性用于指定网页的视口设置。
 
 ```html
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 ```
 
 ### 4.robots
@@ -40,7 +40,7 @@ viewport属性用于指定网页的视口设置。
 robots属性用于指定搜索引擎的爬虫索引方式。
 
 ```html
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow"/>
 
 
 
@@ -58,7 +58,7 @@ follow：搜索引擎继续通过此网页的链接索引搜索 其它的网页 
 author属性用于指定网页的作者。
 
 ```html
-<meta name="author" content="John Doe">
+<meta name="author" content="John Doe"/>
 ```
 
 ### 6.keywords
@@ -66,7 +66,7 @@ author属性用于指定网页的作者。
 keywords属性用于指定网页的关键字。
 
 ```html
-<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="keywords" content="HTML, CSS, JavaScript"/>
 ```
 
 ### 7.description
@@ -74,7 +74,7 @@ keywords属性用于指定网页的关键字。
 description属性用于指定网页的描述信息。
 
 ```html
-<meta name="description" content="这是一个描述">
+<meta name="description" content="这是一个描述"/>
 ```
 
 #### 清除缓存
@@ -93,11 +93,11 @@ description属性用于指定网页的描述信息。
 用来指定支持双核浏览器要采用哪种的渲染方式，如 360 浏览器
 
 ```html
-<meta name="renderer" content="webkit"> // 默认 webkit 内核
+<meta name="renderer" content="webkit"/> // 默认 webkit 内核
 
-<meta name="renderer" content="ie-comp"> //默认 IE 兼容模式
+<meta name="renderer" content="ie-comp"/> //默认 IE 兼容模式
 
-<meta name="renderer" content="ie-stand"> //默认 IE 标准模式 
+<meta name="renderer" content="ie-stand"/> //默认 IE 标准模式 
 ```
 
 ### 8.generator
@@ -105,7 +105,7 @@ description属性用于指定网页的描述信息。
 generator属性用于指定生成当前网页的软件名称和版本号。
 
 ```html
-<meta name="generator" content="MyApp 1.0">
+<meta name="generator" content="MyApp 1.0"/>
 ```
 
 ### 9.copyright
@@ -113,7 +113,7 @@ generator属性用于指定生成当前网页的软件名称和版本号。
 copyright属性用于指定网页的版权信息。
 
 ```html
-<meta name="copyright" content="Copyright © 2021 MySite. All Rights Reserved.">
+<meta name="copyright" content="Copyright © 2021 MySite. All Rights Reserved."/>
 ```
 
 ### 10.revisit-after
@@ -121,7 +121,7 @@ copyright属性用于指定网页的版权信息。
 revisit-after属性用于指定搜索引擎爬虫访问网站的频率。
 
 ```html
-<meta name="revisit-after" content="7 days">
+<meta name="revisit-after" content="7 days"/>
 ```
 
 
@@ -133,7 +133,7 @@ revisit-after属性用于指定搜索引擎爬虫访问网站的频率。
 
 #### http-equiv
 通过该属性可以设置特定 HTTP 标头内容，例如（非全部）：
-
+```js
 
 http-equiv="X-UA-Compatible"
 一般用来是做 IE 浏览器适配 的，如以下告诉 IE 浏览器使用最高版本来渲染页面
@@ -147,10 +147,10 @@ http-equiv="Content-Type"
 
 http-equiv="x-dns-prefetch-control"
 
-HTML 页面中的 <a> 标签 会 自动启用 DNS 提前解析 来提升网站性能，但是在使用 https 协议的网站中失效，可通过设置以下方式进行打开
+HTML 页面中的 a 标签 会 自动启用 DNS 提前解析 来提升网站性能，但是在使用 https 协议的网站中失效，可通过设置以下方式进行打开
 ```html
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<meta> 
+<meta http-equiv="x-dns-prefetch-control" content="on"/>
+<meta/> 
 ```
 
 这样的方式有利于在发布新版本后，避免通过手动清除浏览器缓存，如果不清除缓存就会加载旧版本的资源。
@@ -165,8 +165,10 @@ HTML 页面中的 <a> 标签 会 自动启用 DNS 提前解析 来提升网站�
 
 
 自定义元数据
-除了使用 <meta> 标签本身提供特定元数据内容之外，我们其实也可以自定义元数据，只不过这个元数据不会被当前文档所识别并被应用，例如：
+除了使用 <meta/> 标签本身提供特定元数据内容之外，我们其实也可以自定义元数据，只不过这个元数据不会被当前文档所识别并被应用，例如：
 
 ```html
 <meta name="theme-color" content="#333" />
+```
+
 ```
