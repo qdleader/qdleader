@@ -11,13 +11,11 @@ export const navbar = [
 	},
 	{
 		text: "前端面试题",
-		link: "/前端面试题/",
-		children: [
-			{
-				text: "S015-手写map方法",
-				link: "/前端面试题/手写类/S015-手写map方法.md",
-			},
-		],
+		link: "/前端面试/",
+	},
+	{
+		text: "前端小tip",
+		link: "/前端小tip/",
 	},
 	{
 		text: "npm",
