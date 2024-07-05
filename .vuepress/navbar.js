@@ -1,13 +1,7 @@
 export const navbar = [
 	{
-		text: "http",
-		link: "/http/",
-		children: [
-			{
-				text: "http007-TCP和UDP的区别.md",
-				link: "/http/http007-TCP和UDP的区别.md",
-			},
-		],
+		text: "git",
+		link: "/git/",
 	},
 	{
 		text: "前端面试题",
@@ -18,44 +12,34 @@ export const navbar = [
 		link: "/前端小tip/",
 	},
 	{
-		text: "npm",
-		link: "/npm/",
+		text: "构建工具",
+		link: "/vue/",
 		children: [
 			{
-				text: "npm",
-				link: "/npm/如何使用内网npm.md",
+				text: "vite",
+				link: "/vite/",
 			},
 			{
-				text: "npm2",
-				link: "/#npm",
-			},
-
-			{
-				text: "json中库的版本号详解",
-				link: "/npm/package.json中库的版本号详解(^和~区别).md",
-			},
-			{
-				text: "packagejson常用字段介绍",
-				link: "/npm/packagejson常用字段介绍.md",
+				text: "webpack",
+				link: "/webpack/",
 			},
 		],
 	},
 	{
-		text: "支付",
-		link: "/支付/",
+		text: "npm",
+		link: "/npm/",
+	},
+	{
+		text: "vue",
+		link: "/vue/",
 		children: [
 			{
-				text: "h5微信外浏览器微信支付跳转白页面的优化",
-				link: "/支付/h5微信外浏览器微信支付跳转白页面的优化.md",
+				text: "vue2",
+				link: "/vue/",
 			},
 			{
-				text: "h5微信支付",
-				link: "/支付/h5微信支付.md",
-			},
-
-			{
-				text: "h5的支付宝支付",
-				link: "/支付/h5的支付宝支付.md",
+				text: "vue3",
+				link: "/vue/",
 			},
 		],
 	},

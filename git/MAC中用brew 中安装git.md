@@ -1,3 +1,4 @@
+# MAC中用brew 中安装git
 
 先下载个brew 然后下载git 
 

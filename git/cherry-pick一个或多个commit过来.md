@@ -1,3 +1,5 @@
+# cherry-pick一个或多个commit过来
+
 单个commit只需要git cherry-pick commitid
 
 多个commit 只需要git cherry-pick commitid1..commitid100

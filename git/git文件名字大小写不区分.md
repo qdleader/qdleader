@@ -1,5 +1,6 @@
+# git文件名字大小写不区分
 
-```
+```js
 git config --get core.ignorecase 
 ```
 
@@ -7,6 +8,6 @@ git config --get core.ignorecase
 如果 窗口提示为true执行下列代码
 
 
-```
+```js
 git config core.ignorecase false 
 ```

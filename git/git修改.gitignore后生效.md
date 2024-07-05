@@ -1,5 +1,6 @@
 
 
+# git修改.gitignore后生效
 
 
 
