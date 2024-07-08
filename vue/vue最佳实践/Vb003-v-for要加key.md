@@ -1,10 +1,11 @@
+# Vb003-v-for要加key
 #为 v-for 设置key
 
 以便维护内部组件及其子树的状态。甚至在元素上维护可预测的行为。
 
 
 bad
-```
+```js
 <ul>
   <li v-for="todo in todos">
     {{ todo.text }}
@@ -14,7 +15,7 @@ bad
 
 
 good
-```
+```js
 <ul>
   <li
     v-for="todo in todos"

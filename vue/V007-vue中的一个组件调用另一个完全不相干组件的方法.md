@@ -16,7 +16,7 @@ B 组件中获取这个属性，并监听，当监听到这个属性变化时候
 
 
 A 组件：
-```
+```js
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
@@ -36,7 +36,7 @@ export default {
 vuex中：
 
 mutations.js
-```
+```js
 import {
     DOF,
 } from './types'
@@ -62,7 +62,7 @@ export default {
 ```
 
 getters.js
-```
+```js
 import { mapGetters } from "vuex";
 
 const getters = {
@@ -82,7 +82,7 @@ export default getters;
 
 B组件:
 
-```
+```js
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {

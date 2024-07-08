@@ -1,3 +1,5 @@
+# Vb004-v-for与v-if不要用在一个标签上
+
 vue-best
 
 
@@ -9,7 +11,7 @@ vue-best
 
 
 当 Vue 处理指令时，v-for 比 v-if 具有更高的优先级，所以这个模板：
-```
+```js
 <ul>
   <li
     v-for="user in users"
@@ -26,7 +28,7 @@ vue-best
 
 而我们处理后
 
-```
+```js
 computed: {
   activeUsers: function () {
     return this.users.filter(function (user) {
@@ -53,7 +55,7 @@ computed: {
 
 
 另外
-```
+```js
 <ul v-if="shouldShowUsers">
   <li
     v-for="user in users"

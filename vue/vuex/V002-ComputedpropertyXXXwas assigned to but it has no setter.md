@@ -1,3 +1,4 @@
+# V002-ComputedpropertyXXXwas assigned to but it has no setter
 Computed property "XXX" was assigned to but it has no setter
 
 >001 中留了个小坑，有同学问，按照你的方法后，问啥报错了？

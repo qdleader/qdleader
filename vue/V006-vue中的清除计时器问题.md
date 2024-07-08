@@ -1,6 +1,6 @@
 # V006-vue中的清除计时器问题★
 1.有同学说我页面切来切去为什么就是没有触发destroyed呢，那我的定时器岂不是都清不了了，emm。。。。。。
-```
+```js
 destroyed() {
 	if(timer) {
 		clearInterval(timer);
@@ -20,7 +20,7 @@ destroyed() {
 
 判断当路由离开时候清除计时器。
 
-```
+```js
     beforeRouteLeave(to, from, next){
          if(timer) {
             clearInterval(timer);

@@ -1,6 +1,7 @@
-##1.首先在main.js中引入
+# V001-vuex实用篇
+## 1.首先在main.js中引入
 
-
+```js
 import store from './store/index.js'
 
 new Vue({
@@ -10,10 +11,11 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+```
 
 
 
-##2.然后在main.js同级建立store文件夹
+## 2.然后在main.js同级建立store文件夹
 
 在store文件夹里面分别建立actions.js, getters.js, index.js, mutations.js,types.js
 
@@ -21,7 +23,7 @@ new Vue({
 比如现在需求在组件A控制组件B中的一个状态的显隐。
 
 在组件A中
-```
+```js
 <script>
 import {mapGetters, mapActions} from 'vuex';
 	data() {
@@ -41,7 +43,7 @@ import {mapGetters, mapActions} from 'vuex';
 1.触发后进入store中的index文件
 index文件中的内容是固定的：
 
-```
+```js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -61,7 +63,7 @@ export default new Vuex.Store({
 
 *2.然后进入actions里面
 
-```
+```js
 import * as types from './types'
 
 export default {
@@ -75,13 +77,13 @@ export default {
 ```
 
 *3.然后维护下types文件
-```
+```js
 export const BUYPOP = 'BUYPOP';
 ```
 
 
 然后到了mutations文件
-```
+```js
 import {
     BUYPOP,
 } from './types'
@@ -109,7 +111,7 @@ export default {
 
 然后进入getters文件
 
-```
+```js
 
 const getters = {
 	//获取弹出层状态
@@ -127,7 +129,7 @@ export default getters;
 着啥急，这不就来了嘛。。
 
 B组件：
-```
+```js
 <template>
 	<div>
 			<div v-show="cpShow">被控制的木偶</div>
