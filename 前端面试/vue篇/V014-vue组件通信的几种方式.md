@@ -1,7 +1,7 @@
 
 # V014-vue组件通信的几种方式
 
-```
+```js
 1.props 和$emit 父组件向子组件传递数据是通过 prop 传递的，子组件传递数据给父组件是通过$emit 触发事件来做到的
 2.$parent,$children 获取当前组件的父组件和当前组件的子组件
 3.$attrs 和$listeners A->B->C。Vue 2.4 开始提供了$attrs 和$listeners 来解决这个问题

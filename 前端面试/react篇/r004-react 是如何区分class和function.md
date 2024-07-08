@@ -1,3 +1,4 @@
+# r004-react 是如何区分class和function
 
 ## React是怎么区分class和function的？
 

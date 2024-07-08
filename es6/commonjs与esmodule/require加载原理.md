@@ -1,4 +1,4 @@
-
+# require加载原理
 ## require 模块引入与处理
 > CommonJS 模块同步加载并执行模块文件，CommonJS 模块在执行阶段分析模块依赖，采用深度优先遍历（depth-first traversal），执行顺序是父 -> 子 -> 父；
 

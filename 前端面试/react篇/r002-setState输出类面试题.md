@@ -1,4 +1,6 @@
-```
+# r002-setState输出类面试题
+
+```js
 class Example extends React.Component {
   constructor() {
     super();

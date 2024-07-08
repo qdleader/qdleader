@@ -1,4 +1,4 @@
-### w001-webpack的热更新机制
+# w001-webpack的热更新机制
 
 HMR全称 Hot Module Replacement，可以理解为模块热替换，指在应用程序运行过程中，替换、添加、删除模块，而无需重新刷新整个应用。
 

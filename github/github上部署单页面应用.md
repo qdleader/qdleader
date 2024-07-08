@@ -1,3 +1,5 @@
+# github上部署单页面应用
+
   我们打包时候执行完npm run build 之后 会生成一个dist
 
 ```js

@@ -1,5 +1,5 @@
 
-
+# any、never、unknown、null、undefined、void有什么区别
 
 any: 动态的变量类型（丢失了类型检查的作用）
 never: 永不存在的值的类型，例如：never类型是那些总是抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型。

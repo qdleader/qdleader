@@ -1,4 +1,4 @@
-
+# Exclude和Omit的区别
 
 TypeScript 中 Omit 和 Exclude 都有排除属性的能力，但是两者的使用场景和具体功能又不是完全一样
 

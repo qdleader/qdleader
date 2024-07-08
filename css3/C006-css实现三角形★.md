@@ -1,5 +1,5 @@
 # C006-css实现三角形★.html
-```
+```js
 <!DOCTYPE html>
 <html>
 	<head>

@@ -1,4 +1,4 @@
-
+# 判断两个对象是否一致Objectis
 console.log(Object.is('1', 1));
 // Expected output: false
 
@@ -16,7 +16,7 @@ console.log(Object.is(obj, {}));
 
 
 
-```
+```js
 // Case 1: Evaluation result is the same as using ===
 Object.is(25, 25); // true
 Object.is("foo", "foo"); // true

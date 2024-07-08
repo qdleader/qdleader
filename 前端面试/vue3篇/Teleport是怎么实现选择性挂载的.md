@@ -1,4 +1,4 @@
-## Teleport是怎么实现选择性挂载的？
+# Teleport是怎么实现选择性挂载的？
 
 Teleport是vue的一个内部组件，类似于React的Portal，它可以让组件渲染在父组件以外的DOM上，主要支持
 to和disabled两个参数

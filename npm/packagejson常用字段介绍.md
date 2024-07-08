@@ -1,4 +1,6 @@
-# 一、描述信息
+# packagejson常用字段介绍
+
+## 一、描述信息
 package.jaon中有五个和项目包描述信息相关的配置字段，下面就分别来看看这些字段的含义。
 
 
@@ -12,23 +14,30 @@ keywords字段是一个字符串数组，表示这个项目包的关键词。和
 ## 3. author
 
 author顾名思义就是作者，表示该项目包的作者。它有两种形式，一种是字符串格式：
-```js   "author": "qdleader <xxxxx@xx.com> (https://github.com/qdleader/qdleader)"
+```js  
+ "author": "qdleader <xxxxx@xx.com> (https://github.com/qdleader/qdleader)"
+```
 
 另一种是对象形式：
-```js   "author": {
+```js   
+"author": {
   "name" : "q d le a de r",
   "email" : "xxxxx@xx.com",
   "url" : "https://github.com/qdleader/qdleader"
 }
+```
 
 ## 4. contributors
 contributors表示该项目包的贡献者，和author不同的是，该字段是一个数组，包含所有的贡献者，它同样有两种写法：
-```js   "contributors": [
+```js  
+ "contributors": [
   "qdleader0 <xxxxx@xx.com> (https://github.com/qdleader/qdleader)",
   "qdleader1 <xxxxx@xx.com> (https://github.com/qdleader/qdleader)"
  ]
+```
 
-```js   "contributors": [
+```js  
+ "contributors": [
   {
   	"name" : "qdleader0",
   	"email" : "xxxxx@xx.com",
@@ -40,19 +49,24 @@ contributors表示该项目包的贡献者，和author不同的是，该字段�
   	"url" : "https://github.com/qdleader/qdleader"
 	}
  ]
+```
 
 ## 5. homepage
 homepage就是项目的主页地址了，它是一个字符串。
 
 ## 6. repository
 repository表示代码的存放仓库地址，通常有两种书写形式。第一种是字符串形式：
-```js   "repository": "https://github.com/facebook/react.git"
+```js  
+ "repository": "https://github.com/facebook/react.git"
+```
 
 除此之外，还可以显式地设置版本控制系统，这时就是对象的形式：
-```js   "repository": {
+```js   
+"repository": {
   "type": "git",
   "url": "https://github.com/facebook/react.git"
 }
+```
 
 ## 7. bugs
 bugs表示项目提交问题的地址，该字段是一个对象，可以添加一个提交问题的地址和反馈的邮箱：
@@ -60,6 +74,7 @@ bugs表示项目提交问题的地址，该字段是一个对象，可以添加�
   "url" : "https://github.com/facebook/react/issues",
   "email" : "xxxxx@xx.com"
 }
+```
 
 ## 三、依赖配置
 

@@ -1,4 +1,5 @@
-# Decorator，即装饰器，从名字上很容易让我们联想到装饰者模式
+# decorator装饰器
+## Decorator，即装饰器，从名字上很容易让我们联想到装饰者模式
 
 一、介绍
 Decorator，即装饰器，

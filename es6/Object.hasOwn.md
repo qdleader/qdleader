@@ -1,3 +1,4 @@
+# Object.hasOwn
 ### Object.hasOwn(obj, propKey)
 
 Object.hasOwn() 方法是比 Object.prototype.hasOwnProperty() 方法更加 便捷 和 安全 的策略。

@@ -1,10 +1,10 @@
-
+# V015-如果子组件改变props里面的数据会发生什么？
 
 ## 改变的props数据是基本类型
 
 > 如果修改的是基本类型，则会报错
 
-```
+```js
 props: {
     num: Number,
   }
@@ -18,7 +18,7 @@ created() {
 
 ## 改变的props数据是引用类型
 
-```
+```js
 props: {
     item: {
       default: () => {},

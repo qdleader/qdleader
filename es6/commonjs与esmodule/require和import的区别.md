@@ -1,5 +1,5 @@
 
-## require 和import 的区别？
+# require 和import 的区别？
 
 require是运行时调用，所以require理论上可以运用在代码的任何地方
 import是编译时调用，所以必须放在文件开头

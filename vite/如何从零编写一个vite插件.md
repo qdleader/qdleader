@@ -1,18 +1,18 @@
-
+# 如何从零编写一个vite插件
 ## 创建  vite 插件通用模板
 
 #### 1. 初始化
-```
+```js
 mkdir vite-progress && cd vite-progress && pnpm init
 ```
 #### 1.2 安装 typescript
-```
+```js
 pnpm i typescript @types/node -D
 ```
 
 
 #### 1.3 配置 tsconfig.json
-```
+```js
 {
   "compilerOptions": {
     "module": "ESNext",
@@ -48,14 +48,14 @@ pnpm intsall vite --save-dev
 #### 1. 配置 eslint 和 prettier（可选）
 
 安装 eslint
-```
+```js
 pnpm i eslint @typescript-eslint / parser @typescript-eslint / eslint - plugin--save - dev
 ```
 
 
 配置.eslintrc：
 
-```
+```js
 {
   "root": true,
   "env": {
@@ -92,7 +92,7 @@ pnpm i prettier eslint - config - prettier eslint - plugin - prettier--save - de
 
 
 #### 配置.prettierrc ：
-```
+```js
 {
   "printWidth": 80,
   "tabWidth": 2,
@@ -110,7 +110,7 @@ pnpm i prettier eslint - config - prettier eslint - plugin - prettier--save - de
 }
 ```
 ## 3. 新增 src / index.ts 入口
-```
+```js
 import type { PluginOption } from 'vite';
 
 export default function vitePluginTemplate (): PluginOption {
@@ -151,7 +151,7 @@ pnpm create vite my-vue-app --template vue
 
 修改 my-vue-app/package.json
 
-```
+```js
 {
   "name": "my-vue-app",
   "private": true,
@@ -182,7 +182,7 @@ pnpm create vite my-vue-app --template vue
 
 然后修改 my-vue-app/vite.config.ts 文件
 
-```
+```js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 

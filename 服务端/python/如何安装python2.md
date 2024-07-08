@@ -17,3 +17,4 @@ https://www.python.org/downloads/release/python-2718/
 
 下载完后点击安装，然后输入
 python 和 pip 命令，就可以看到版本号了。
+
