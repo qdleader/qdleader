@@ -1,5 +1,5 @@
-## S037-实现一个LRU缓存函数
-```
+# S037-实现一个LRU缓存函数
+```js
 class LRUCache {
   constructor(size) {
     this.size = size

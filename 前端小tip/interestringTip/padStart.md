@@ -1,7 +1,8 @@
+# padStart
 
 尝试推测它的输出：
 
-```
+```js
 const name = 'qdleader'
 console.log(name.padStart(14))
 console.log(name.padStart(2))
@@ -16,7 +17,7 @@ console.log(name.padStart(2))
 
 
 
-```
+```js
 'abc'.padStart(10);         // "       abc"
 'abc'.padStart(10, "foo");  // "foofoofabc"
 'abc'.padStart(6,"123465"); // "123abc"

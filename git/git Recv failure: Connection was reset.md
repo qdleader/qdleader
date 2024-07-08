@@ -1,3 +1,5 @@
+# git Recv failure: Connection was reset
+
 https访问
 仅为github.com设置socks5代理(推荐这种方式, 公司内网就不用设代理了, 多此一举):
 

@@ -9,7 +9,7 @@
 
 eg1:
 
-```
+```js
 async function fn1() {
   return 100
 }
@@ -29,7 +29,7 @@ res1.then(data => {
 
 
 eg2:
-```
+```js
 async function fn1() {
   return Promise.resolve(200)
 }
@@ -46,7 +46,7 @@ res1.then(data => {
 ```
 
 eg3:
-```
+```js
 !(async function() {
   const p4 = Promise.reject('err')
     try {
@@ -59,7 +59,7 @@ eg3:
 
 ```
 
-```
+```js
 !(async function () {
     const p1 = Promise.resolve(300)
     const data = await p1;
@@ -80,7 +80,7 @@ eg3:
 
 await 可以 跟别的async 函数
 
-```
+```js
 async function fn1() {
   return Promise.resolve(200)
 }
@@ -95,7 +95,7 @@ async function fn1() {
 
 
 eg4：
-```
+```js
 async function fn() {
   return 100
 }
@@ -111,7 +111,7 @@ async function fn() {
 
 
 答案：
-```
+```js
 Promise {}
 
 100

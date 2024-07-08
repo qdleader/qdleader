@@ -1,4 +1,5 @@
-```
+# S032-手写Promise加载图片
+```js
 function getData(url) {
   return new Promise((resolve, reject) => {
     $.ajax({

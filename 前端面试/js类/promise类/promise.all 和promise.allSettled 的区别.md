@@ -1,3 +1,4 @@
+# promise.all 和promise.allSettled 的区别
 
 一句话概括Promise.allSettled和Promise.all的最大不同：**Promise.allSettled永远不会被reject。**
 

@@ -1,12 +1,12 @@
 
-## 实现一个promise.retry 方法  
+# 实现一个promise.retry 方法  
 
 在规定的次数内，没成功就重复调用异步方法
 
 
 
 
-```
+```js
 
 
 function fn() {

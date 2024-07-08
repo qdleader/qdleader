@@ -1,4 +1,5 @@
 
+# defer和async的区别
 
 ## defer （延迟脚本）
 延迟脚本：defer 属性只适用于外部脚本文件。

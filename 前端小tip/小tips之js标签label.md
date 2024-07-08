@@ -1,4 +1,4 @@
-## 小tips之js标签label
+# 小tips之js标签label
 
 
 JavaScript语言允许，语句的前面有标签（label），相当于定位符，用于跳转到程序的任意位置，标签的格式如下。

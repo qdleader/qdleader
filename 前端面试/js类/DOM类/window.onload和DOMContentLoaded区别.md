@@ -1,8 +1,8 @@
 
-## window.onload和DOMContentLoaded区别？
+# window.onload和DOMContentLoaded区别？
 
 ## 解析
-```
+```js
 window.addEventListener('load', function () {
     // 页面的全部资源加载完才会执行，包括图片视频等
 })

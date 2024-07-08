@@ -1,6 +1,6 @@
 import {
   setupDevtoolsPlugin
-} from "./chunk-T27QITWP.js";
+} from "./chunk-CXPLV47U.js";
 import {
   computed,
   defineComponent,
@@ -19,12 +19,11 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-2EUWMBJL.js";
-import "./chunk-GN5GUYLF.js";
-import "./chunk-Y2F7D3TJ.js";
+} from "./chunk-XPVHNUZ4.js";
+import "./chunk-BUSYA2B4.js";
 
-// node_modules/.pnpm/registry.npmmirror.com+vue-router@4.2.5_vue@3.3.13/node_modules/vue-router/dist/vue-router.mjs
-var isBrowser = typeof window !== "undefined";
+// node_modules/vue-router/dist/vue-router.mjs
+var isBrowser = typeof document !== "undefined";
 function isESModule(obj) {
   return obj.__esModule || obj[Symbol.toStringTag] === "Module";
 }
@@ -43,6 +42,46 @@ var isArray = Array.isArray;
 function warn(msg) {
   const args = Array.from(arguments).slice(1);
   console.warn.apply(console, ["[Vue Router warn]: " + msg].concat(args));
+}
+var HASH_RE = /#/g;
+var AMPERSAND_RE = /&/g;
+var SLASH_RE = /\//g;
+var EQUAL_RE = /=/g;
+var IM_RE = /\?/g;
+var PLUS_RE = /\+/g;
+var ENC_BRACKET_OPEN_RE = /%5B/g;
+var ENC_BRACKET_CLOSE_RE = /%5D/g;
+var ENC_CARET_RE = /%5E/g;
+var ENC_BACKTICK_RE = /%60/g;
+var ENC_CURLY_OPEN_RE = /%7B/g;
+var ENC_PIPE_RE = /%7C/g;
+var ENC_CURLY_CLOSE_RE = /%7D/g;
+var ENC_SPACE_RE = /%20/g;
+function commonEncode(text) {
+  return encodeURI("" + text).replace(ENC_PIPE_RE, "|").replace(ENC_BRACKET_OPEN_RE, "[").replace(ENC_BRACKET_CLOSE_RE, "]");
+}
+function encodeHash(text) {
+  return commonEncode(text).replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+}
+function encodeQueryValue(text) {
+  return commonEncode(text).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+}
+function encodeQueryKey(text) {
+  return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
+}
+function encodePath(text) {
+  return commonEncode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F");
+}
+function encodeParam(text) {
+  return text == null ? "" : encodePath(text).replace(SLASH_RE, "%2F");
+}
+function decode(text) {
+  try {
+    return decodeURIComponent("" + text);
+  } catch (err) {
+    warn(`Error decoding "${text}". Using original value`);
+  }
+  return "" + text;
 }
 var TRAILING_SLASH_RE = /\/$/;
 var removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE, "");
@@ -67,7 +106,7 @@ function parseURL(parseQuery2, location2, currentLocation = "/") {
     fullPath: path + (searchString && "?") + searchString + hash,
     path,
     query,
-    hash
+    hash: decode(hash)
   };
 }
 function stringifyURL(stringifyQuery2, location2) {
@@ -130,8 +169,20 @@ function resolveRelativePath(to, from) {
     } else
       break;
   }
-  return fromSegments.slice(0, position).join("/") + "/" + toSegments.slice(toPosition - (toPosition === toSegments.length ? 1 : 0)).join("/");
+  return fromSegments.slice(0, position).join("/") + "/" + toSegments.slice(toPosition).join("/");
 }
+var START_LOCATION_NORMALIZED = {
+  path: "/",
+  // TODO: could we use a symbol in the future?
+  name: void 0,
+  params: {},
+  query: {},
+  hash: "",
+  fullPath: "/",
+  matched: [],
+  meta: {},
+  redirectedFrom: void 0
+};
 var NavigationType;
 (function(NavigationType2) {
   NavigationType2["pop"] = "pop";
@@ -172,8 +223,8 @@ function getElementPosition(el, offset) {
   };
 }
 var computeScrollPosition = () => ({
-  left: window.pageXOffset,
-  top: window.pageYOffset
+  left: window.scrollX,
+  top: window.scrollY
 });
 function scrollToPosition(position) {
   let scrollToOptions;
@@ -206,7 +257,7 @@ function scrollToPosition(position) {
   if ("scrollBehavior" in document.documentElement.style)
     window.scrollTo(scrollToOptions);
   else {
-    window.scrollTo(scrollToOptions.left != null ? scrollToOptions.left : window.pageXOffset, scrollToOptions.top != null ? scrollToOptions.top : window.pageYOffset);
+    window.scrollTo(scrollToOptions.left != null ? scrollToOptions.left : window.scrollX, scrollToOptions.top != null ? scrollToOptions.top : window.scrollY);
   }
 }
 function getScrollKey(path, delta) {
@@ -501,17 +552,6 @@ function isRouteLocation(route) {
 function isRouteName(name) {
   return typeof name === "string" || typeof name === "symbol";
 }
-var START_LOCATION_NORMALIZED = {
-  path: "/",
-  name: void 0,
-  params: {},
-  query: {},
-  hash: "",
-  fullPath: "/",
-  matched: [],
-  meta: {},
-  redirectedFrom: void 0
-};
 var NavigationFailureSymbol = Symbol(true ? "navigation failure" : "");
 var NavigationFailureType;
 (function(NavigationFailureType2) {
@@ -572,7 +612,7 @@ var propertiesToLog = ["params", "query", "hash"];
 function stringifyRoute(to) {
   if (typeof to === "string")
     return to;
-  if ("path" in to)
+  if (to.path != null)
     return to.path;
   const location2 = {};
   for (const key of propertiesToLog) {
@@ -950,6 +990,9 @@ function createRouterMatcher(routes, globalOptions) {
         if (isRootAdd && record.name && !isAliasRecord(matcher))
           removeRoute(record.name);
       }
+      if (isMatchable(matcher)) {
+        insertMatcher(matcher);
+      }
       if (mainNormalizedRecord.children) {
         const children = mainNormalizedRecord.children;
         for (let i = 0; i < children.length; i++) {
@@ -957,9 +1000,6 @@ function createRouterMatcher(routes, globalOptions) {
         }
       }
       originalRecord = originalRecord || matcher;
-      if (matcher.record.components && Object.keys(matcher.record.components).length || matcher.record.name || matcher.record.redirect) {
-        insertMatcher(matcher);
-      }
     }
     return originalMatcher ? () => {
       removeRoute(originalMatcher);
@@ -989,12 +1029,8 @@ function createRouterMatcher(routes, globalOptions) {
     return matchers;
   }
   function insertMatcher(matcher) {
-    let i = 0;
-    while (i < matchers.length && comparePathParserScore(matcher, matchers[i]) >= 0 && // Adding children with empty path should still appear before the parent
-    // https://github.com/vuejs/router/issues/1124
-    (matcher.record.path !== matchers[i].record.path || !isRecordChildOf(matcher, matchers[i])))
-      i++;
-    matchers.splice(i, 0, matcher);
+    const index = findInsertionIndex(matcher, matchers);
+    matchers.splice(index, 0, matcher);
     if (matcher.record.name && !isAliasRecord(matcher))
       matcherMap.set(matcher.record.name, matcher);
   }
@@ -1021,15 +1057,15 @@ function createRouterMatcher(routes, globalOptions) {
         paramsFromLocation(
           currentLocation.params,
           // only keep params that exist in the resolved location
-          // TODO: only keep optional params coming from a parent record
-          matcher.keys.filter((k) => !k.optional).map((k) => k.name)
+          // only keep optional params coming from a parent record
+          matcher.keys.filter((k) => !k.optional).concat(matcher.parent ? matcher.parent.keys.filter((k) => k.optional) : []).map((k) => k.name)
         ),
         // discard any existing params in the current location that do not exist here
         // #1497 this ensures better active/exact matching
         location2.params && paramsFromLocation(location2.params, matcher.keys.map((k) => k.name))
       );
       path = matcher.stringify(params);
-    } else if ("path" in location2) {
+    } else if (location2.path != null) {
       path = location2.path;
       if (!path.startsWith("/")) {
         warn(`The Matcher cannot resolve relative paths but received "${path}". Unless you directly called \`matcher.resolve("${path}")\`, this is probably a bug in vue-router. Please open an issue at https://github.com/vuejs/router/issues/new/choose.`);
@@ -1065,7 +1101,18 @@ function createRouterMatcher(routes, globalOptions) {
     };
   }
   routes.forEach((route) => addRoute(route));
-  return { addRoute, resolve, removeRoute, getRoutes, getRecordMatcher };
+  function clearRoutes() {
+    matchers.length = 0;
+    matcherMap.clear();
+  }
+  return {
+    addRoute,
+    resolve,
+    removeRoute,
+    clearRoutes,
+    getRoutes,
+    getRecordMatcher
+  };
 }
 function paramsFromLocation(params, keys) {
   const newParams = {};
@@ -1145,48 +1192,38 @@ function checkMissingParamsInAbsolutePath(record, parent) {
       return warn(`Absolute path "${record.record.path}" must have the exact same param named "${key.name}" as its parent "${parent.record.path}".`);
   }
 }
-function isRecordChildOf(record, parent) {
-  return parent.children.some((child) => child === record || isRecordChildOf(record, child));
-}
-var HASH_RE = /#/g;
-var AMPERSAND_RE = /&/g;
-var SLASH_RE = /\//g;
-var EQUAL_RE = /=/g;
-var IM_RE = /\?/g;
-var PLUS_RE = /\+/g;
-var ENC_BRACKET_OPEN_RE = /%5B/g;
-var ENC_BRACKET_CLOSE_RE = /%5D/g;
-var ENC_CARET_RE = /%5E/g;
-var ENC_BACKTICK_RE = /%60/g;
-var ENC_CURLY_OPEN_RE = /%7B/g;
-var ENC_PIPE_RE = /%7C/g;
-var ENC_CURLY_CLOSE_RE = /%7D/g;
-var ENC_SPACE_RE = /%20/g;
-function commonEncode(text) {
-  return encodeURI("" + text).replace(ENC_PIPE_RE, "|").replace(ENC_BRACKET_OPEN_RE, "[").replace(ENC_BRACKET_CLOSE_RE, "]");
-}
-function encodeHash(text) {
-  return commonEncode(text).replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
-}
-function encodeQueryValue(text) {
-  return commonEncode(text).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
-}
-function encodeQueryKey(text) {
-  return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
-}
-function encodePath(text) {
-  return commonEncode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F");
-}
-function encodeParam(text) {
-  return text == null ? "" : encodePath(text).replace(SLASH_RE, "%2F");
-}
-function decode(text) {
-  try {
-    return decodeURIComponent("" + text);
-  } catch (err) {
-    warn(`Error decoding "${text}". Using original value`);
+function findInsertionIndex(matcher, matchers) {
+  let lower = 0;
+  let upper = matchers.length;
+  while (lower !== upper) {
+    const mid = lower + upper >> 1;
+    const sortOrder = comparePathParserScore(matcher, matchers[mid]);
+    if (sortOrder < 0) {
+      upper = mid;
+    } else {
+      lower = mid + 1;
+    }
   }
-  return "" + text;
+  const insertionAncestor = getInsertionAncestor(matcher);
+  if (insertionAncestor) {
+    upper = matchers.lastIndexOf(insertionAncestor, upper - 1);
+    if (upper < 0) {
+      warn(`Finding ancestor route "${insertionAncestor.record.path}" failed for "${matcher.record.path}"`);
+    }
+  }
+  return upper;
+}
+function getInsertionAncestor(matcher) {
+  let ancestor = matcher;
+  while (ancestor = ancestor.parent) {
+    if (isMatchable(ancestor) && comparePathParserScore(matcher, ancestor) === 0) {
+      return ancestor;
+    }
+  }
+  return;
+}
+function isMatchable({ record }) {
+  return !!(record.name || record.components && Object.keys(record.components).length || record.redirect);
 }
 function parseQuery(search) {
   const query = {};
@@ -1310,7 +1347,7 @@ function onBeforeRouteUpdate(updateGuard) {
   }
   registerGuard(activeRecord, "updateGuards", updateGuard);
 }
-function guardToPromiseFn(guard, to, from, record, name) {
+function guardToPromiseFn(guard, to, from, record, name, runWithContext = (fn) => fn()) {
   const enterCallbackArray = record && // name is defined if record is because of the function overload
   (record.enterCallbacks[name] = record.enterCallbacks[name] || []);
   return () => new Promise((resolve, reject) => {
@@ -1335,7 +1372,7 @@ function guardToPromiseFn(guard, to, from, record, name) {
         resolve();
       }
     };
-    const guardReturn = guard.call(record && record.instances[name], to, from, true ? canOnlyBeCalledOnce(next, to, from) : next);
+    const guardReturn = runWithContext(() => guard.call(record && record.instances[name], to, from, true ? canOnlyBeCalledOnce(next, to, from) : next));
     let guardCall = Promise.resolve(guardReturn);
     if (guard.length < 3)
       guardCall = guardCall.then(next);
@@ -1372,7 +1409,7 @@ function canOnlyBeCalledOnce(next, to, from) {
       next.apply(null, arguments);
   };
 }
-function extractComponentsGuards(matched, guardType, to, from) {
+function extractComponentsGuards(matched, guardType, to, from, runWithContext = (fn) => fn()) {
   const guards = [];
   for (const record of matched) {
     if (!record.components && !record.children.length) {
@@ -1399,7 +1436,7 @@ function extractComponentsGuards(matched, guardType, to, from) {
       if (isRouteComponent(rawComponent)) {
         const options = rawComponent.__vccOpts || rawComponent;
         const guard = options[guardType];
-        guard && guards.push(guardToPromiseFn(guard, to, from, record, name));
+        guard && guards.push(guardToPromiseFn(guard, to, from, record, name, runWithContext));
       } else {
         let componentPromise = rawComponent();
         if (!("catch" in componentPromise)) {
@@ -1413,7 +1450,7 @@ function extractComponentsGuards(matched, guardType, to, from) {
           record.components[name] = resolvedComponent;
           const options = resolvedComponent.__vccOpts || resolvedComponent;
           const guard = options[guardType];
-          return guard && guardToPromiseFn(guard, to, from, record, name)();
+          return guard && guardToPromiseFn(guard, to, from, record, name, runWithContext)();
         }));
       }
     }
@@ -1441,7 +1478,28 @@ function loadRouteLocation(route) {
 function useLink(props) {
   const router = inject(routerKey);
   const currentRoute = inject(routeLocationKey);
-  const route = computed(() => router.resolve(unref(props.to)));
+  let hasPrevious = false;
+  let previousTo = null;
+  const route = computed(() => {
+    const to = unref(props.to);
+    if (!hasPrevious || to !== previousTo) {
+      if (!isRouteLocation(to)) {
+        if (hasPrevious) {
+          warn(`Invalid value for prop "to" in useLink()
+- to:`, to, `
+- previous to:`, previousTo, `
+- props:`, props);
+        } else {
+          warn(`Invalid value for prop "to" in useLink()
+- to:`, to, `
+- props:`, props);
+        }
+      }
+      previousTo = to;
+      hasPrevious = true;
+    }
+    return router.resolve(to);
+  });
   const activeRecordIndex = computed(() => {
     const { matched } = route.value;
     const { length } = matched;
@@ -1479,7 +1537,8 @@ function useLink(props) {
       const linkContextDevtools = {
         route: route.value,
         isActive: isActive.value,
-        isExactActive: isExactActive.value
+        isExactActive: isExactActive.value,
+        error: null
       };
       instance.__vrl_devtools = instance.__vrl_devtools || [];
       instance.__vrl_devtools.push(linkContextDevtools);
@@ -1487,6 +1546,7 @@ function useLink(props) {
         linkContextDevtools.route = route.value;
         linkContextDevtools.isActive = isActive.value;
         linkContextDevtools.isExactActive = isExactActive.value;
+        linkContextDevtools.error = isRouteLocation(unref(props.to)) ? null : 'Invalid "to" value';
       }, { flush: "post" });
     }
   }
@@ -1753,9 +1813,15 @@ function addDevtools(app, router, matcher) {
       if (isArray(componentInstance.__vrl_devtools)) {
         componentInstance.__devtoolsApi = api;
         componentInstance.__vrl_devtools.forEach((devtoolsData) => {
+          let label = devtoolsData.route.path;
           let backgroundColor = ORANGE_400;
           let tooltip = "";
-          if (devtoolsData.isExactActive) {
+          let textColor = 0;
+          if (devtoolsData.error) {
+            label = devtoolsData.error;
+            backgroundColor = RED_100;
+            textColor = RED_700;
+          } else if (devtoolsData.isExactActive) {
             backgroundColor = LIME_500;
             tooltip = "This is exactly active";
           } else if (devtoolsData.isActive) {
@@ -1763,8 +1829,8 @@ function addDevtools(app, router, matcher) {
             tooltip = "This link is active";
           }
           node.tags.push({
-            label: devtoolsData.route.path,
-            textColor: 0,
+            label,
+            textColor,
             tooltip,
             backgroundColor
           });
@@ -1972,6 +2038,8 @@ var LIME_500 = 8702998;
 var CYAN_400 = 2282478;
 var ORANGE_400 = 16486972;
 var DARK = 6710886;
+var RED_100 = 16704226;
+var RED_700 = 12131356;
 function formatRouteRecordForInspector(route) {
   const tags = [];
   const { record } = route;
@@ -2103,6 +2171,9 @@ function createRouter(options) {
     let record;
     if (isRouteName(parentOrRoute)) {
       parent = matcher.getRecordMatcher(parentOrRoute);
+      if (!parent) {
+        warn(`Parent route "${String(parentOrRoute)}" not found when adding child route`, route);
+      }
       record = route;
     } else {
       record = parentOrRoute;
@@ -2143,8 +2214,13 @@ function createRouter(options) {
         href: href2
       });
     }
+    if (!isRouteLocation(rawLocation)) {
+      warn(`router.resolve() was passed an invalid location. This will fail in production.
+- Location:`, rawLocation);
+      return resolve({});
+    }
     let matcherLocation;
-    if ("path" in rawLocation) {
+    if (rawLocation.path != null) {
       if ("params" in rawLocation && !("name" in rawLocation) && // @ts-expect-error: the type is never
       Object.keys(rawLocation.params).length) {
         warn(`Path "${rawLocation.path}" was passed with params but they will be ignored. Use a named route alongside params instead.`);
@@ -2179,7 +2255,7 @@ function createRouter(options) {
       if (href.startsWith("//")) {
         warn(`Location "${rawLocation}" resolved to "${href}". A resolved location cannot start with multiple slashes.`);
       } else if (!matchedRoute.matched.length) {
-        warn(`No match found for location with path "${"path" in rawLocation ? rawLocation.path : rawLocation}"`);
+        warn(`No match found for location with path "${rawLocation.path != null ? rawLocation.path : rawLocation}"`);
       }
     }
     return assign({
@@ -2229,7 +2305,7 @@ function createRouter(options) {
         );
         newTargetLocation.params = {};
       }
-      if (!("path" in newTargetLocation) && !("name" in newTargetLocation)) {
+      if (newTargetLocation.path == null && !("name" in newTargetLocation)) {
         warn(`Invalid redirect found:
 ${JSON.stringify(newTargetLocation, null, 2)}
  when navigating to "${to.fullPath}". A redirect must contain a name or path. This will break in production.`);
@@ -2239,7 +2315,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
         query: to.query,
         hash: to.hash,
         // avoid transferring params if the redirect has a path
-        params: "path" in newTargetLocation ? {} : to.params
+        params: newTargetLocation.path != null ? {} : to.params
       }, newTargetLocation);
     }
   }
@@ -2375,7 +2451,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
       return runGuardQueue(guards);
     }).then(() => {
       to.matched.forEach((record) => record.enterCallbacks = {});
-      guards = extractComponentsGuards(enteringRecords, "beforeRouteEnter", to, from);
+      guards = extractComponentsGuards(enteringRecords, "beforeRouteEnter", to, from, runWithContext);
       guards.push(canceledNavigationCheck);
       return runGuardQueue(guards);
     }).then(() => {
@@ -2537,6 +2613,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
     listening: true,
     addRoute,
     removeRoute,
+    clearRoutes: matcher.clearRoutes,
     hasRoute,
     getRoutes,
     resolve,
@@ -2628,7 +2705,7 @@ function extractChangingRecords(to, from) {
 function useRouter() {
   return inject(routerKey);
 }
-function useRoute() {
+function useRoute(_name) {
   return inject(routeLocationKey);
 }
 export {
@@ -2660,8 +2737,8 @@ export {
 
 vue-router/dist/vue-router.mjs:
   (*!
-    * vue-router v4.2.5
-    * (c) 2023 Eduardo San Martin Morote
+    * vue-router v4.4.0
+    * (c) 2024 Eduardo San Martin Morote
     * @license MIT
     *)
 */

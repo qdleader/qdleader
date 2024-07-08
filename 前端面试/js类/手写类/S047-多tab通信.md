@@ -1,3 +1,5 @@
+# S047-多tab通信
+
 ## 在本地实现一个聊天室，多个tab页相互通信，不能用websocket，有哪些方法？
 
 ## 1、使用LocalStorage或SessionStorage：

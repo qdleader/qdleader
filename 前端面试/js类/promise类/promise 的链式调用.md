@@ -1,3 +1,4 @@
+# promise 的链式调用
 
 红灯3秒亮一次，绿灯1秒亮一次，黄灯2秒亮一次：如何使用Promise让三个灯不断交替重复亮灯？（海康威视笔试题）
 Javascript复制代码function red(){

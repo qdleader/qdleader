@@ -1,4 +1,4 @@
-```
+```js
 let list = [1,2,3];
 
 const square = num => {
@@ -47,7 +47,7 @@ test()
 
 方1
 
-```
+```js
 async function test() {
     for(let i = 0; i < list.length; i ++){
         const res = await square(list[i])
@@ -60,7 +60,7 @@ await test()
 
 方法 2
 
-```
+```js
 async function test() {
     for(let i in list){
         const res = await square(i)
@@ -74,7 +74,7 @@ await test()
 
 方法3
 
-```
+```js
 let promise = Promise.resolve();
 function test(i) {
     if(i === list.length) return;

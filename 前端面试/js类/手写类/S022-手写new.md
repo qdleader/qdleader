@@ -1,5 +1,6 @@
+# S022-手写new
 ##  手写-new 操作符
-```
+```js
 function myNew(fn, ...args) {
   let obj = Object.create(fn.prototype);
   let res = fn.call(obj, ...args);

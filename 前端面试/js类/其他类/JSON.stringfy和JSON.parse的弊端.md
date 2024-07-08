@@ -1,4 +1,5 @@
-# 缺点
+# JSON.stringfy和JSON.parse的弊端
+## 缺点
 ### 1.如果obj里面有时间对象，则JSON.stringify后再JSON.parse的结果，时间将只是字符串的形式，而不是对象的形式
 ### 2.如果obj里有函数，undefined，则序列化的结果会把函数或 undefined丢失；
 ### 3.如果被拷贝的对象中有正则表达式，则拷贝之后的对象正则表达式会变成Object
@@ -6,7 +7,7 @@
 
 
 
-```
+```js
 eg:
 function Person(name) {
     this.name = name;

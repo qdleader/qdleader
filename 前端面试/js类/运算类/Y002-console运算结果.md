@@ -1,4 +1,5 @@
-```
+# Y002-console运算结果
+```js
 			console.log(1 + '2')
 			console.log(1 + '2' +'2')
 			console.log(1 + +'2' +'2')
@@ -10,7 +11,7 @@
 ```
 
 答案：
-```
+```js
 12
 122
 32
@@ -23,7 +24,7 @@ NANC
 
 
 
-```
+```js
 console.log('12'+1);           
 console.log('abc'+'def');       
 console.log('1'+true);          
@@ -43,7 +44,7 @@ console.log(null+null);
 
 答案：
 
-```
+```js
 121
 abcdef
 1true
@@ -62,7 +63,7 @@ undefined
 
 
 
-```
+```js
 console.log(+[]);    
 console.log(+{});     
 console.log(+null);    
@@ -87,7 +88,7 @@ NAN
 
 
 
-```
+```js
 console.log([] + [])
 console.log([] + {})
 console.log({} + {})
@@ -96,7 +97,7 @@ console.log({} + [])
 
 
 答案：
-```
+```js
 ''
 "[object object]"
 "[object object][object object]"
@@ -104,7 +105,7 @@ console.log({} + [])
 ```
 
 
-```
+```js
 console.log(1 < 2 < 3);
 console.log(3 > 2 > 1);
 console.log(Number(true))
@@ -112,7 +113,7 @@ console.log(Number(true))
 
 答案:
 
-```
+```js
 true
 
 false

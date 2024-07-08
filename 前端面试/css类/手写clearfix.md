@@ -1,5 +1,5 @@
-# 手写clearfix★
-```
+# 手写clearfix
+```css
 .clearfix:after {
   content:'';
   display:table;

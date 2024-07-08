@@ -1,4 +1,6 @@
-```
+# F001-for后面加一个（；）
+
+```js
 const length = 4;
 const number = [];
 for(var i = 0; i < length; i ++); {
@@ -21,7 +23,7 @@ number;  // => ?
 
 相当于：
 
-```
+```js
 const length = 4;
 const numbers = [];
 for(var i = 0; i < length; i ++) {

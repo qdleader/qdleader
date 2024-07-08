@@ -1,4 +1,4 @@
-## 输入中文拼音导致input 重复触发事件？
+# 输入中文拼音导致input 重复触发事件？
 
 #### web前端之中文输入法导致的高频事件、addEventListener、compositionstart、compositionend
 ```js

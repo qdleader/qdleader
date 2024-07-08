@@ -1,3 +1,4 @@
+# git rebase详解
 
 ## merge 和rebase什么关系
 > git rebase 和git merge 做的事其实是一样的。它们都被设计来将一个分支的更改并入另一个分支，只不过方式有些不同。

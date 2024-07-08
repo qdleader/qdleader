@@ -1,7 +1,7 @@
 
+# 前端获取UTC时间戳
 
-
-    ```
+    ```js
     function getUtcTimestamp() {
         const now = new Date();
         const utcTimestamp = Date.UTC(

@@ -1,4 +1,6 @@
-```
+# S036-手写const
+
+```js
 function __const(data, value) {
     window[data] = value // 把要定义的data挂载到window下，并赋值value
 	let c=1

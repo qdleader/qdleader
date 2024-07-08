@@ -1,4 +1,4 @@
-# position 有哪些值，作用分别是什么
+# position 有哪些值
 
 
 ## static

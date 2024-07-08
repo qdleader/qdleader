@@ -1,6 +1,8 @@
+# S014-手写EventHub（发布订阅）★★★
+
 ## 手写 EventHub（发布-订阅）
 
-```
+```js
 核心思路是：
 
 使用一个对象作为缓存
@@ -9,7 +11,7 @@ emit 负责遍历触发（订阅） EventName 下的方法数组
 off 找方法的索引，并删除
 
 ```
-```
+```js
 class EventEmitter {
   constructor() {
     this.events = {};
@@ -46,7 +48,7 @@ class EventEmitter {
 ```
 
 
-```
+```js
 // 使用如下
 
 

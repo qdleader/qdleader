@@ -1,3 +1,5 @@
+# 实现一个mergePromise
+
 请实现一个mergePromise函数，把传进去的数组按顺序先后执行，并且把返回的数据先后放到数组data中。
 
 ```ts

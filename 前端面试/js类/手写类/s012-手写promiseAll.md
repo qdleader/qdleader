@@ -1,6 +1,8 @@
+# s012-手写promiseAll
+
 ## 手写 promiseAll
 
-```
+```js
 function promiseAll(arr) {
   return new Promise((resolve,reject) =>{
       if(!Array.isArray(arr)) {

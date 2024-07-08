@@ -5,7 +5,7 @@
 
 
 
-```
+```js
 let str1 = "gsvcxqdleaderusdcvdaqdleadersjcvdgcvhsdc";
 let str2 = 'qdleader'
 

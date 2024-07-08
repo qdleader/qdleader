@@ -1,9 +1,10 @@
-`
+# Arr001-数组的length属性
+```js
 const clothes = ['jacket','tshirt];
 clothes.length = 0
 
 clothes[0]  输出什么？
-`
+```
 
 
 答案是：undefined

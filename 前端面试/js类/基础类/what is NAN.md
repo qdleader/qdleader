@@ -1,3 +1,5 @@
+# what is NAN
+
 ## 什么是NAN
 
 NaN 是 Not a Number 的缩写，JavaScript 的一种特殊数值，其类型是 Number，可以通过 isNaN(param) 来判断一个值是否是 NaN：

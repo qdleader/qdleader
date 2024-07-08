@@ -1,5 +1,5 @@
 # 两个 script ,第一个报错,第二个是否会继续解析★
-```
+```js
 <script>
 throw new Error('error')
 </script>
@@ -9,7 +9,7 @@ console.log(1)
 </script>
 ```
 在运行的时候 我们发现1是会正常输出的，再看下一段代码：
-```
+```js
 <script>
 console.log(a)
 </script>
@@ -28,7 +28,7 @@ var a = 1;
 浏览器在解析文档的时候，并没有提前将页面上的所有的script标签，提前收集起来 做统一处理，而是根据遇到则解析的 规则来解析，
 所以我们看到 即使js存在命名提升，因为在解析第一段script的时候，第二段script还没有执行，所以也就不存在命名提升
 
-```
+```js
 <script>
 var a = 1;
 </script>

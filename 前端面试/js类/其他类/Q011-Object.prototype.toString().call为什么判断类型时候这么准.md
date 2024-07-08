@@ -1,4 +1,4 @@
-## 为什么Object.prototype.toString.call()可以如此准确的判断类型？
+# Q011-Object.prototype.toString().call为什么判断类型时候这么准
 
 ## 为什么Object.prototype.toString.call()可以准确判断数据类型
 我们需要了解，不论是Array,还是Date，所有数据类型。都是从对象衍生而来的。本质上，Array和Date还有Function啥的他们就是对象。

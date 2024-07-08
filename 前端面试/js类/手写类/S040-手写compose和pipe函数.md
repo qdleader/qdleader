@@ -1,3 +1,5 @@
+# S040-手写compose和pipe函数
+
 ```js
 const compose = function(){
   // 将接收的参数存到一个数组， args == [multiply, add]

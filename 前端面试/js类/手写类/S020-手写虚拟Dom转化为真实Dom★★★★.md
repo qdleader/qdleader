@@ -1,4 +1,5 @@
-
+# S020-手写虚拟Dom转化为真实Dom★★★★
+```js
 {
   tag:"DIV",
   attrs:{
@@ -37,7 +38,7 @@
 
 
 
-```
+```js
 // 真正的渲染函数
 function _render(vnode) {
   // 如果是数字类型转化为字符串

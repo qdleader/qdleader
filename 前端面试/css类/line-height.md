@@ -4,7 +4,7 @@
 ## 说一下下面三种情况，p的line-height分别是多少？
 
 1.
-```
+```html
 <div class="box">
   <p></p>
 </div>
@@ -29,7 +29,7 @@ p{
 
 
 2.
-```
+```html
 <div class="box">
   <p></p>
 </div>
@@ -55,7 +55,7 @@ p{
 
 
 3.
-```
+```html
 <div class="box">
   <p></p>
 </div>

@@ -1,8 +1,13 @@
+# require查包的过程
+
 最近，使用vue-cli时，webpack配置里面配置了：
+```js
 resolve：{
 ‘vue$’: ‘vue/dist/vue.esm.js
 ……
 }
+```
+
 只有这样，我们在index.js(这是我的项目里面文件)中引入vue时（require（’vue’））才可以正常使用，不然会报错。
 
 我们下面将讲解一下require时，它是如何搜索包的，这样再进行解释就可以清楚明了了。

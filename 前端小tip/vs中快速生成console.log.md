@@ -1,4 +1,4 @@
-# vscode 中快速生成console.log()
+# vs中快速生成console.log
 
 > 文件 - 首选项 - 用户代码片段
 

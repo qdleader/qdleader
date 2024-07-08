@@ -1,3 +1,5 @@
+# this和$(this)在jquery中会有何不同
+
 $(this) 返回一个jquery对象，你可以用$(this)调用多个方法，如text() ,val()
 
 

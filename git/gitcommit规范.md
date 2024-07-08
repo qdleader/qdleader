@@ -1,4 +1,4 @@
-
+# gitcommit规范
 ```
 feat: 新增feature 
 fix： 修复bug

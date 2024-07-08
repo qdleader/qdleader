@@ -1,3 +1,4 @@
+# git 用不同账号提交不同的仓库
 其实很简单，在每个仓库里面修改成局部的相应的username和email即可
 
 git config  user.name “Your_username”

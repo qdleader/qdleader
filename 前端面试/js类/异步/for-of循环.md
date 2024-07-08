@@ -1,5 +1,5 @@
-
-```
+# for-of循环
+```js
 function muti(num) {
   return new Promise(resolve => {
       setTimeout(() => {
@@ -21,7 +21,7 @@ nums.forEach(async (i) => {
 
 
 
-```
+```js
 !(async function () {
     for (let i of nums) {
       const res = await muti(i)
