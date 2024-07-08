@@ -15,7 +15,7 @@ eg:
 ### A.vue
 
 
-```html
+
 <template>
   <div>
     <B></B>
@@ -32,11 +32,10 @@ export default {
 };
 </script>
 
-```
 
 B.vue
 
-```js
+
 <template>
   <div>
     <C></C>
@@ -52,10 +51,8 @@ export default {
   },
 };
 </script>
-```
 
 C.vue
-```js
 <template>
   <div>
   </div>
@@ -67,13 +64,11 @@ export default {
 };
 </script>
 
-```
 
 A与C使用provide / inject方式进行通信
 
 A使用provide
 
-```js
 <template>
   <div>
     <B></B>
@@ -92,11 +87,9 @@ export default {
   }
 };
 </script>
-```
 
 C使用inject
 
-```js
 <template>
   <div>
     <span>{{name}}</span>
@@ -109,11 +102,9 @@ export default {
   inject:["name"]
 };
 </script>
-```
 
 此时，C已经拿到A中的对应的name。但是，我们可能希望：当A中的name是本身某个可变化的数据时，如下：
 
-```js
 <template>
   <div>
     <B></B>
@@ -142,14 +133,12 @@ export default {
   }
 };
 </script>
-```
 我们希望当name改变时（如触发changeName方法），对应的C中的name也要相应改变，但是使用以上方式时，C中的name并未随着改变，此时需要我们进一步处理，即处理响应性。
 
 处理响应性
 在上面的例子中，如果我们更改了name，这个变化并不会反映在 inject 的 name property 中。这是因为默认情况下，provide/inject 绑定并不是响应式的。在vue3中，我们可以通过传递一个 ref property 或 reactive 对象给 provide 来改变这种行为（下面展开）。在我们的例子（vue2）中，如果我们想对祖先组件中的更改做出响应，我们需要将 provide 传值进行改变。
 
 A使用provide，此时传入的应是一个响应式对象（如以下的obj）
-
 <template>
   <div>
     <B></B>
