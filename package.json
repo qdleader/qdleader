@@ -18,6 +18,7 @@
     "@vuepress/plugin-copy-code": "^2.0.0-rc.37",
     "@vuepress/plugin-nprogress": "2.0.0-rc.37",
     "@vuepress/plugin-search": "^2.0.0-rc.14",
+    "@vuepress/plugin-sitemap": "^2.0.0-rc.37",
     "@vuepress/theme-default": "^2.0.0-rc.14",
     "busuanzi.pure.js": "^1.0.3",
     "fs": "0.0.1-security",

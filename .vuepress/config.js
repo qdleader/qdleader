@@ -10,6 +10,7 @@ import { copyCodePlugin } from '@vuepress/plugin-copy-code'
 // import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 import path from "path";
 import { catalogPlugin } from '@vuepress/plugin-catalog'
+import { sitemapPlugin } from '@vuepress/plugin-sitemap'
 
 
 export default defineUserConfig({
@@ -95,6 +96,10 @@ export default defineUserConfig({
 		catalogPlugin({
 		// 你的选项
 		}),
+		sitemapPlugin({
+			// 选项
+			hostname:"qdleader.github.io/qdleader"
+		  }),
 	],	
 	bundler: viteBundler({
 	  viteOptions: {},
