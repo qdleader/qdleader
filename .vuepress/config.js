@@ -43,6 +43,9 @@ export default defineUserConfig({
 			['meta', {name: 'google-site-verification', content: 'q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg'}],
 		],
 		[
+			['meta', {name: 'google-site-verification', content: 'q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg'}],
+		],
+		[
 			"script",
 			{},
 			`var _hmt = _hmt || [];
