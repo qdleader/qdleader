@@ -1,4 +1,6 @@
-```
+# F002-return换行后自动添加分号
+
+```js
 function arrayFormValue(items) {
 	return 
 		[items];
@@ -14,7 +16,7 @@ undefined
 这里需要注意的是return和[items]之间已经换行了，js会在换行之间自动加入分号
 所以等价于：
 
-```
+```js
 function arrayFromValue(items) {
 	return;
 	[items];

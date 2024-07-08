@@ -1,3 +1,4 @@
+# async await 的错误捕获
 async await 错误捕获
 
 async/await很好用，帮助我们用同步的方式去处理异步请求,虽然它仅仅是Promise的语法糖。在Promise中处理错误很容易，使用catch即可，如：

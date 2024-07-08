@@ -2,7 +2,7 @@
 
 
 ## 1.通过id获取
-```
+```html
 <div id="box"></div>
 
 
@@ -12,7 +12,7 @@ document.getElementById("box")
 
 ## 2.通过class获取
 
-```
+```js
 <div class="box"></div>
 <div class="box"></div>
 
@@ -26,7 +26,7 @@ let box2 = boxList[1]
 
 
 ## 3.通过标签名获取
-```
+```js
 <div id="box">
     <p>段落1</p>
     <p>段落2</p>
@@ -42,7 +42,7 @@ let pCollection = document.getElementsByTagName("p")
 
 ## 4.通过name属性获取
 
-```
+```js
 <div id="box">
     <input type="text" name="user" />
 </div>
@@ -55,7 +55,7 @@ let userInput = document.getElementsByName("user")
 
 ## 5.通过querySelector获取
 
-```
+```js
 <div id="box"></div>
 
 
@@ -64,7 +64,7 @@ let box = document.querySelector("#box")
 
 
 ## 6.通过querySelectorAll获取
-```
+```js
 <div class="box">box1</div>
 <div class="box">box2</div>
 <div class="box">box3</div>
@@ -86,7 +86,7 @@ let box = document.querySelector("#box")
 
 ## 7.获取html的方法
 
-```
+```js
 document.documentElement
 
 是专门获取html这个标签的
@@ -100,7 +100,7 @@ document.documentElement
 
 ## 8.获取body的方法（document.body）
 
-```
+```js
 document.body
 
 是专门获取body这个标签的。

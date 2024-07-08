@@ -1,5 +1,6 @@
+# S025手写promise
 
-```
+```js
 class MyPromise {
   constructor(executor) { // executor执行器
     this.status = 'pending' // 等待状态

@@ -1,3 +1,5 @@
+# typeof的返回值
+
 ```js
  typeof undefined //undefined
 

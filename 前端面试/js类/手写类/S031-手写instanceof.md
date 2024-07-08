@@ -1,4 +1,5 @@
-```
+# S031-手写instanceof
+```js
 function myInstanceof(left, right) {
   while (true) {
     if (left === null) {

@@ -9,7 +9,7 @@
 通俗来讲：
 attribute 是在我们代码中将常看到的键值对，例如
 
-```
+```js
 <input id="inputBox" type="text" value="qdleader">
 
 
@@ -25,7 +25,7 @@ attribute 是在我们代码中将常看到的键值对，例如
 
 
 property 是 attribute 对应的DOM节点 对象属性
-```
+```js
 let oBox = document.getElementById('inputBox');
 oBox.id === 'inputBox'
 oBox.type === 'text'
@@ -42,7 +42,7 @@ oBox.value === 'qdleader'
 ```
 
 
-```
+```js
 // attribute
 input.getAttribute('id') // inputBox
 input.getAttribute('type') // texo

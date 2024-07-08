@@ -1,3 +1,4 @@
+# toPrecision
 把数字格式化为指定的长度:
 ```js
 var num = new Number(13.3714);

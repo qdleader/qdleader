@@ -1,6 +1,6 @@
+# 异步打印类async function async1() {
 
-
-```
+```js
 async function async1() {
   console.log('async1 start');
   await async2();

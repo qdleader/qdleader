@@ -1,5 +1,5 @@
 
-## S046-手写Promise.allSettled
+# S046-手写Promise.allSettled
 
 
 基于 promise.all 实现 

@@ -1,5 +1,5 @@
 
-## Reflect和Proxy
+# Reflect和Proxy
 
 Reflect 是一个内置的对象，它提供拦截 JavaScript 操作的方法。这些方法与proxy handlers 的方法相同.
 

@@ -1,13 +1,13 @@
-
+# 实现sleep一秒的几种方式
 1.
 
-```
+```js
 setTimeout(fn,wait)
 ```
 
 
 
-```
+```js
 const sleep = {
     sleepInPromise: function (time) {
         return new Promise((resolve, reject) => {
@@ -43,7 +43,7 @@ sleep.sleepInPromise(1000).then(targetFn)
 
 4.
 
-```
+```js
 const sleep = {
     sleepInPromise: function (time) {
         return new Promise((resolve, reject) => {

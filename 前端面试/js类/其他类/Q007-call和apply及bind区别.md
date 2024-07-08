@@ -1,4 +1,6 @@
-```
+# Q007-call和apply及bind区别
+
+```js
 var name = '王',age= 17;
 var obj1 = {
   name:'校长',

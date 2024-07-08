@@ -1,3 +1,4 @@
+# cold-004判断一个对象的层数
 题目描述：给你一个对象，统计一下它的层数
 
 const obj = {
@@ -9,7 +10,7 @@ console.log(loopGetLevel(obj)) // 4
 
 
 实现如下:
-```
+```js
 function loopGetLevel(obj) {
     var res = 1;
 

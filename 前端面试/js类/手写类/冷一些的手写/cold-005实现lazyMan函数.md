@@ -1,3 +1,4 @@
+# cold-005实现lazyMan函数
 题目描述：
 
 实现一个LazyMan，可以按照以下方式调用:
@@ -23,7 +24,7 @@ Eat supper
 
 
 实现如下：
-```
+```js
 class _LazyMan {
   constructor(name) {
     this.tasks = []

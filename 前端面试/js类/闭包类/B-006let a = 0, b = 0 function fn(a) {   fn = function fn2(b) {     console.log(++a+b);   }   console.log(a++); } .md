@@ -1,4 +1,6 @@
-```
+# B-006let a = 0, b = 0 function fn(a) {   fn = function fn2(b) {     console.log(++a+b);   }   console.log(a++); } 
+
+```js
 let a = 0, b = 0
 function fn(a) {
   fn = function fn2(b) {

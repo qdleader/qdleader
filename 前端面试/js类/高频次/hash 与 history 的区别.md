@@ -1,4 +1,6 @@
 
+# hash 与 history 的区别
+
 一、实现原理
 **hash 原理**
 hash 通过监听浏览器 onhashchange 事件变化，查找对应路由应用。通过改变 location.hash 改变页面路由。

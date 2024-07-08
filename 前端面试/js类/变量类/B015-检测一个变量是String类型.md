@@ -1,4 +1,5 @@
 
+# B015-检测一个变量是String类型
 
 ## typeof
 ```js

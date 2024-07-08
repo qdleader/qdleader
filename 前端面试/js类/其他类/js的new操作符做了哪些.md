@@ -1,7 +1,7 @@
 
-js new操作符都做了哪些事情
+# js new操作符都做了哪些事情
 
-```
+```js
 1.创建一个空对象
 let obj = {}
 2.设置原型链
@@ -14,7 +14,7 @@ let result = Fn.call(fn);
 
 关于第四点，如果不是很清楚的话，我们来看下面的两个例子
 
-```
+```js
 
 // 第一种
 function Person(name){
