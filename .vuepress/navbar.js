@@ -39,7 +39,7 @@ export const navbar = [
 			},
 			{
 				text: "vue3",
-				link: "/vue/",
+				link: "/vue3/",
 			},
 		],
 	},
