@@ -1,5 +1,6 @@
+# vue3+ts父组件调用子组件方法
 父组件
-```
+```js
 <div>
 
   <editPage ref="sonRef"/>

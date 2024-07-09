@@ -1,3 +1,5 @@
+# pinia的使用
+
 ## 安装状态管理pinia
 ```
  npm install pinia

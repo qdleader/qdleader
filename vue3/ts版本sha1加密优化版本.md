@@ -1,4 +1,4 @@
-
+# ts版本sha1加密优化版本
 ### 下载
 ```
 npm install jssha -D

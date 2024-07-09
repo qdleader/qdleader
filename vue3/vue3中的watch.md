@@ -9,7 +9,7 @@
 
 
 首先展示ref 监听的常规写法：
-```
+```js
 <template>
   <div>
   {{qdleader}}
@@ -42,7 +42,7 @@ export default {
 
 2.在state 的写法中怎么用呢？
 注意在这里你直接写state.qdleader是不好使的，你要写() => state.qdleader
-```
+```js
 <template>
   <div>
   {{qdleader}}
@@ -78,7 +78,7 @@ export default {
 那什么时候用第三个参数呢？怎么用呢？
 
 
-```
+```js
 <template>
   <div>
   {{qdleader}}
@@ -116,7 +116,7 @@ export default {
 
 这时我们的第三个属性就闪亮登场了。
 
-```
+```js
 <template>
   <div>
   {{qdleader}}
@@ -185,7 +185,7 @@ watch(() => [num1.value, num2.value], ([preNum1, preNum2], [oldNum1, oldNum2]) =
 watchEffact
 
 
-```
+```js
 <template>
   <div>
   {{qdleader}}
