@@ -1,5 +1,5 @@
 
-
+# http三次握手示意图
 
                    客户端                     服务端
                CLOSED|                         | LISTEN 

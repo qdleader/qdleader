@@ -1,13 +1,14 @@
-##方法1
-```
+# V002-去掉console打印
+## 方法1
+```js
 如果你用的是vscode
 全局替换console.log为//console.log
 
 这种方法有点emmmmmm。。。。不太优雅
 ```
 
-###方法二
-```
+## 方法二
+```js
 替换window的console方法为{}，
 在main.js里面
 
@@ -17,8 +18,8 @@ window['console']['log'] = function() {}; //关闭默认设置
 
 
 
-###方法3
-```
+## 方法3
+```js
 在util写一个控制console.log的函数
 
 let env = 'pro';  //this is a switch
@@ -33,24 +34,24 @@ export default selfLog;
 
 
 在mainjs里面应用
-```
+```js
 import selfLog from './utils/selfLog'
 
 Vue.prototype.selfLog = selfLog;
 ```
 
 使用时候
-```
+```js
 this.selfLog()就等效于console.log()
 ```
 
 
 
-### 方法四
+## 方法四
 >在vue webpack打包时候去掉
 在 webpack.pro.conf.js中(35行左右)将设置改为：
 
-```
+```js
 new UglifyJsPlugin({
   uglifyOptions: {
     compress: {

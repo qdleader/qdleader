@@ -1,4 +1,5 @@
 
+# vue3为什么要用Proxy替代defineProperty
 
 vue2 中 采用 defineProperty 来劫持整个对象，然后进行深度遍历所有属性，给每个属性添加getter和setter，实现响应式，但有以下问题
 

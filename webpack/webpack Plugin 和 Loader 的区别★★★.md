@@ -1,4 +1,4 @@
-
+# webpack Plugin 和 Loader 的区别★★★
 ## loader：
 ### loader从字面的意思理解，是 加载 的意思。
 由于webpack 本身只能打包commonjs规范的js文件，所以，针对css，图片等格式的文件没法打包，就需要引入第三方的模块进行打包。loader虽然是扩展了 webpack ，但是它只专注于转化文件（transform）这一个领域，完成压缩，打包.也就是说loader仅仅只是为了打包，

@@ -1,4 +1,4 @@
-
+# require文件的加载流程
 
 > 在当前目录下的 node_modules 目录查找。
 > 如果没有，在父级目录的 node_modules 查找，如果没有在父级目录的父级目录的 node_modules 中查找。

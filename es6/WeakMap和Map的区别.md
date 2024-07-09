@@ -1,3 +1,5 @@
+# WeakMap和Map的区别
+
 ## map 的使用
 ```
 map.set(key,value)添加键值对到映射中

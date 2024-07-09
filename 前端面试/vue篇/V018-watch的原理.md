@@ -1,4 +1,5 @@
-# watch 的原理
+# V018-watch的原理
+## watch 的原理
 
 
 watch 本质上是为每个监听属性 setter 创建了一个 watcher，当被监听的属性更新时，调用传入的回调函数。常见的配置选项有 deep 和 immediate，对应原理如下

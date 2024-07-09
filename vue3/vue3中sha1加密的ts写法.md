@@ -1,4 +1,5 @@
-```
+# vue3中sha1加密的ts写法
+```js
 
 
 const hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */

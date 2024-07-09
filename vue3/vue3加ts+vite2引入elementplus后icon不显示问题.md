@@ -1,7 +1,7 @@
 
-
+# vue3加ts+vite2引入elementplus后icon不显示问题
 直接 vite2创建vue3项目
-```
+```js
 yarn create @vitejs/app
 ```
 选择vue-ts
@@ -11,7 +11,7 @@ yarn create @vitejs/app
 ## 方法1
 在index.html中
 
-```
+```js
 <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
 ```
 

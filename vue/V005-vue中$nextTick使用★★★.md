@@ -1,7 +1,7 @@
 # V005-vue中$nextTick使用★★★
 
 this.$nextTick 会在所有的dom都加载完毕后，才执行。
-```
+```js
   <div ref="hello">
       <h1>qdleader</h1>
     </div>
@@ -26,7 +26,7 @@ qdleader
 
 2.
 
-```
+```js
 <template>
   <section>
     <h1 ref="hello">{{ value }}</h1>

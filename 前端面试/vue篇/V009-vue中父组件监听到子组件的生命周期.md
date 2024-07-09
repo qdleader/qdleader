@@ -1,12 +1,12 @@
 
 
-# 8.vue中父组件能监听到子组件的生命周期吗
+# V009-vue中父组件监听到子组件的生命周期
 
 比如有父组件 Parent 和子组件 Child，
 如果父组件监听到子组件挂载 mounted 就做一些逻辑处理，可以通过以下写法实现：
 
-# 方法1 通过 $emit 触发父组件的事件，
-```
+## 方法1 通过 $emit 触发父组件的事件，
+```js
 // Parent.vue
 <Child @mounted="doSomething"/>
 
@@ -17,9 +17,9 @@ mounted() {
 ```
  
  
- # 方法2 可以在父组件引用子组件时通过 @hook 来监听即可，如下所示：
+ ## 方法2 可以在父组件引用子组件时通过 @hook 来监听即可，如下所示：
 
-```
+```js
 //  Parent.vue
 <Child @hook:mounted="doSomething" ></Child>
 
@@ -44,7 +44,7 @@ mounted(){
 
 （2）callHook函数源码
 
-```
+```js
 export function callHook (vm: Component, hook: string) {
   // #7573 disable dep collection when invoking lifecycle hooks
   pushTarget()
@@ -65,7 +65,7 @@ export function callHook (vm: Component, hook: string) {
 
 （3）_hasHookEvent标志位源码
 
-```
+```js
 const hookRE = /^hook:/ // 以hook:开头
 Vue.prototype.$on = function (event: string | Array<string>, fn: Function): Component {
   const vm: Component = this

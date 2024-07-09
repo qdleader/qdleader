@@ -1,3 +1,4 @@
+# github push时候老是push不上去
 
 如果有一个代理，能上github，但是git bash里面老是不能push/pull上去，
 

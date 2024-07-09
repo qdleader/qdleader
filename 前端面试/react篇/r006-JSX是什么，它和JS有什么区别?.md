@@ -1,3 +1,4 @@
+# r006-JSX是什么，它和JS有什么区别?
 
 JSX是react的语法糖，它允许在html中写JS，它不能被浏览器直接识别，需要通过webpack、babel之类的编译工具转换为JS执行
 

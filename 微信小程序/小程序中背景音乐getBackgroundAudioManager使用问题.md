@@ -1,3 +1,4 @@
+# 小程序中背景音乐getBackgroundAudioManager使用问题
 
 ## 小程序中背景音乐getBackgroundAudioManager使用问题
 

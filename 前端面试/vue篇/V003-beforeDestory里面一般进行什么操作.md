@@ -1,5 +1,5 @@
 
-##V003-beforeDestory里面一般进行什么操作
+# V003-beforeDestory里面一般进行什么操作
 
 beforedestoryed是组件销毁之前执行的一个生命周期，在这个生命周期里，我们可以进行回调函数或定时器的清
 <br/>

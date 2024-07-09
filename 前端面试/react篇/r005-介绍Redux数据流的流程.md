@@ -1,5 +1,6 @@
 
 
+# r005-介绍Redux数据流的流程
 
 
 1. 当用户触摸界面时，调用store.dispatch(action)捕捉具体的action动作。

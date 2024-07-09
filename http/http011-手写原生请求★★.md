@@ -1,6 +1,6 @@
 
-
-```
+# http011-手写原生请求★★
+```js
 const xhr = new XMLHttpRequest();
 xhr.open("POST",'/login', true);  //true代表异步，false代表同步
 xhr.onreadystatechange = function () {
@@ -19,7 +19,7 @@ xhr.send(JSON.stringify(data))
 ```
 
 > 稍微完善版
-```
+```js
 
 var xhr=null;
 if(window.XMLHttpRequest){

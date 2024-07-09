@@ -1,3 +1,4 @@
+ # this.$store获取不到
  import astore from './store'
 
  new Vue({
@@ -16,7 +17,7 @@ this.$store 没有
 
 解决
 
-```
+```js
 import store from './store'
 
 new Vue({

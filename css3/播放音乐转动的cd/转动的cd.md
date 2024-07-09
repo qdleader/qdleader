@@ -1,4 +1,5 @@
-```
+# 转动的cd
+```js
  <div class="middle-box">
 	<img class='player-needle' src="./player-needle.png" alt="">
 	<div :class="{'pic-box':true,'pic-box-move':isPlay}">
@@ -8,7 +9,7 @@
 </div>
 ```
 
-```
+```js
 // 音频播放开始
 .middle-box {
         // overflow: hidden;

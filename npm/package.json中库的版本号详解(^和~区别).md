@@ -1,4 +1,4 @@
-## package.json中库的版本号详解(^和~区别)
+# package.json中库的版本号详解(^和~区别)
 
 
 ```js

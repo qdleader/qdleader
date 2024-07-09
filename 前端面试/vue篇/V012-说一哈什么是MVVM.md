@@ -6,7 +6,7 @@
 
 
 
-# mvvm的优点：
+## mvvm的优点：
 
 > 低耦合，视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。
 

@@ -1,4 +1,4 @@
-
+# vue3+ts下拉框空白问题
 vue3 + ts + elementplus 项目  下拉框空白问题
 
 直接渲染下拉框内容
@@ -6,7 +6,7 @@ vue3 + ts + elementplus 项目  下拉框空白问题
 
 本地可以，线上下拉为空白
 
-```
+```js
 <el-select v-model="form.display_type" placeholder="请选择展演类别">
     <el-option v-for="item in catData" :label="item.label" :value="item.value" :key="item.value"></el-option>
  </el-select>
@@ -26,7 +26,7 @@ catData:[],
 
 
 在onMounted 重新赋下值即可
-```
+```js
 initData:() => {
     data.feeList = [
         {

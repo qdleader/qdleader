@@ -12,7 +12,7 @@ console.log(isNaN('ds')); //true
 console.log(isNaN('32131sdas32d')); //true
 console.log(NaN === NaN); //false
 console.log(NaN === undefined); //false
-console.log(undefined === undefined); //false
+console.log(undefined === undefined); //true
 console.log(typeof NaN); //number
 console.log(Object.prototype.toString.call(NaN)); //[object Number]
 ```

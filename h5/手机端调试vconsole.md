@@ -1,5 +1,5 @@
-
-# 为什么使用vconsole呢？
+# 手机端调试vconsole
+## 为什么使用vconsole呢？
 >因为手机或者平板之类的客户端软件并没有控制台，前端开发想看log日志比较麻烦，如果一直弹窗alert方法实在太挫了。所以腾讯开发了这个 js 插件。
 
 #使用方法
@@ -22,14 +22,14 @@
 ## 方法2：
 
 
-# 安装
-```
+### 安装
+```js
 npm install vconsole
 
 ```
-# 引入
+### 引入
 
-```
+```js
 import VConsole from 'vconsole';
 
 const isDebug = true;

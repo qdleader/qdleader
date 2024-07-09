@@ -1,3 +1,4 @@
+# github下载时候git clone 报错
 
 git clone 遇到问题：fatal: unable to access 'https://github.com/qdleader/qdleader.git': Failed to connect to xxxxxxxxxxxxx
 
@@ -9,7 +10,7 @@ git clone 遇到问题：fatal: unable to access 'https://github.com/qdleader/qd
 
 解决方式
 
-```
+```js
 git clone git://github.com/qdleader/qdleader.git
 ```
 

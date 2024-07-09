@@ -1,4 +1,5 @@
 
+# r001-setState是同步还是异步
 
 虽然我们讨论的是 setState 的同步异步，但这个不是 setTimeout、Promise 那种异步，只是指 setState 之后是否 state 马上变了，是否马上 render。
 ## 结论

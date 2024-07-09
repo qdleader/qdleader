@@ -1,13 +1,14 @@
+# vue3封装全局过滤器
 vue3里面没有了全局的时间过滤器了，我给大家提供两种解决方案。
 
-# 1. 挂载到全局属性globalProperties上面
+## 1. 挂载到全局属性globalProperties上面
 
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5fe9a4d586242ddb7f4a1df9e92ae06~tplv-k3u1fbpfcp-watermark.image?)
 在utils，新建filters文件。
 里面内容
 
-```
+```js
 export default {
     formatTime(date?:any, type = 'yyyy-MM-dd hh:mm') {
         if (!date) return
@@ -29,7 +30,7 @@ function addZero (num:number) {
 
 然后在main.ts 里面引入
 
-```
+```js
 import filters from './utils/filters'
 const app = createApp(App)
 app.config.globalProperties.$filters = filters
@@ -54,7 +55,7 @@ app.mount('#app')
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/96416649f3d844ffbaed140e5429dc93~tplv-k3u1fbpfcp-watermark.image?)
 
 
-```
+```js
 // useTime.ts
 import { ref, watch } from "vue";
 export function useTime(date?:any, type = 'yyyy-MM-dd hh:mm', isWrap?:Boolean) {
@@ -86,7 +87,7 @@ export function useTime(date?:any, type = 'yyyy-MM-dd hh:mm', isWrap?:Boolean) {
 ```
 
 在 .vue 中的使用
-```
+```js
 <template>
   <div>
      {{formatTime(lastEditTime)}}

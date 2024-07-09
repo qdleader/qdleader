@@ -1,3 +1,5 @@
+# 在vue文件中获取vite不同环境变量
+
 ```js
 <script lang="ts">
 import { defineComponent } from "vue";

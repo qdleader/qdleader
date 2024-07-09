@@ -1,12 +1,12 @@
 
 
-###V006-watch和computed的区别
+# V006-watch和computed的区别
 
 
 
 #使用场景
 
-```
+```js
 computed 　　　　
 　　　　当一个属性受多个属性影响的时候就需要用到computed(当有一些数据需要随着另外一些数据变化时，建议使用computed)
 　　　　最典型的例子： 购物车商品结算的时候
@@ -20,7 +20,7 @@ watch
 
 #总结：
 
-```
+```js
 watch顾名思义，用于监听数据变化，其中可以监听的数据来源有三部分：props、data、computed内的数据；
 watch提供两个参数（newValue，oldValue），第一个参数是新值，第二个参数保存旧值；
 

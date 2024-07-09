@@ -1,9 +1,11 @@
+# V001-vue随页面改变title自动改变
 在 router.js 中需要在每一个路由下面多添加一个 meta:{title:'主页'}，比如：
 
 
 
 
-`			 {
+```js
+			 {
 	            path: '',
                 name: 'Main',
                 meta:{title: '首页'},
@@ -32,12 +34,14 @@
                     title:'我的'
                 },
 				component: my,
-			}`
+			}
+```
 
 
 
-##在main.js
-`
+## 在main.js
+
+```js
 import router from './router'
 
 /* 路由发生变化修改页面title */
@@ -46,4 +50,5 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
   }
   next()
-})`
+})
+```

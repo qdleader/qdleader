@@ -2,7 +2,7 @@
 
 > 比如封装一个时间组件
 ## 新建一个nowTime.ts的文件
-```
+```js
 import { ref } from 'vue'
 
 const nowTime = ref("00:00:00")
@@ -24,7 +24,7 @@ export {
 
 ## 在组件中引用
 
-```
+```js
 <template>
   <div class="about">
     <div>

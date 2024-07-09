@@ -1,5 +1,5 @@
 
-## type 和 interface的区别
+# type 和 interface的区别
 
 相同点
 都可以描述一个对象或者函数
