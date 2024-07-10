@@ -1,3 +1,4 @@
+# charles 抓包乱码问题
 ## 一、证书安装
 1、安装证书，Help -> SSL Proxying -> Install Charles Root Certificate
 

@@ -1,3 +1,5 @@
+# mac上修改环境变量
+
 1、打开终端，输入
 ```js
 vim ~/.bash_profile

@@ -1,19 +1,19 @@
 
 
-
-# 下载
-```
+# brew安装
+## 下载
+```js
 /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 ```
 
 
 
 ## 加入到path 
-```
+```js
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/icourt/.zprofile
 
 ```
-```
+```js
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 

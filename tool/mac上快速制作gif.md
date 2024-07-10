@@ -1,4 +1,4 @@
-
+# mac上快速制作gif
 
 使用 command + shift + 5 选择视频录制，
 
