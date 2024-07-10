@@ -1,4 +1,5 @@
 
+# formitem中input去掉空格
 
 ```javascript
 	const getValueFromEvent = (e: React.ChangeEvent<HTMLInputElement>) => {

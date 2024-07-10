@@ -1,6 +1,7 @@
+# echart echart 属性以及用法详解；title、legend 、tooltip 、xAxis 、yAxis 、series；pie
 记录一些关于echart的属性及用法
 
-# **1、title  主副标题**
+## **1、title  主副标题**
 ```js
 title : {
     text: '主标题',//'\n'指定换行
@@ -35,7 +36,7 @@ title : {
 
 
 
-#  **2、grid 图表位置**
+##  **2、grid 图表位置**
 ```js
 grid: {
     top: '15%',  //如果top、left、rigt、bottom都设置成0图表就会充满画布
@@ -58,7 +59,7 @@ grid: {
 
 
 
-#  **3、legend 图例**
+##  **3、legend 图例**
 ```js
 legend: {
     bottom: '5%',//top，bottom
@@ -84,7 +85,7 @@ legend: {
 
 
 
-#  **4、tooltip 显示提示框**
+##  **4、tooltip 显示提示框**
 ```js
 tooltip: {
 	trigger: 'item',//不自定义此一句即可;属性值：item数据项触发、axis坐标轴触发、none不触发
@@ -158,7 +159,7 @@ tooltip: {
 
 
 
-#  **5、线图 x轴：xAxis  （yAxis 和 xAxis基本一致）**
+##  **5、线图 x轴：xAxis  （yAxis 和 xAxis基本一致）**
 
 ```js
 //x轴
@@ -234,7 +235,7 @@ yAxis: {
 
 
 
-#  **5饼图 pie :series**
+##  **5饼图 pie :series**
 
 ```js
 series: [

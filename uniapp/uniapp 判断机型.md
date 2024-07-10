@@ -1,4 +1,6 @@
-```
+# uniapp 判断机型
+
+```js
 uni.getSystemInfo(OBJECT)
 
 

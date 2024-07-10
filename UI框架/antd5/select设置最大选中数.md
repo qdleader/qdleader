@@ -1,4 +1,5 @@
 
+# select设置最大选中数
 
     ```js
       <FormItem className={[styles.proInput, styles.redDot].join(' ')}>

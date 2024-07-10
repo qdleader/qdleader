@@ -1,5 +1,5 @@
-
-```
+# 获取cascasder的选中值label
+```js
 <el-cascader
   ref="refSubCat"
   v-model="areas"

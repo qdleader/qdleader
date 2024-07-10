@@ -1,4 +1,4 @@
-
+# image不变形自适应高度
 
 没事多看看官网还是有收获的
 
@@ -6,7 +6,7 @@
 
 image 中的
 
-```
+```js
 mode=widthFix
 ```
 
@@ -17,7 +17,7 @@ mode=widthFix
 
 可以设个
 
-```
+```js
 height:auto
 ```
 

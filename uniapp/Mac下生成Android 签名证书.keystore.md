@@ -1,3 +1,5 @@
+# Mac下生成Android 签名证书.keystore
+
 Mac下生成Android 签名证书.keystore
 
 > 1、打开终端，输入 cd /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/bin 回车 （每个人的Java安装不太一样，可以输入命令：/usr/libexec/java_home -V 去查看）
@@ -8,7 +10,7 @@ Mac下生成Android 签名证书.keystore
 这里直接安装到了 /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/bin 这个目录
 
 
-```
+```js
 testalias是证书别名，可修改为自己想设置的字符，建议使用英文字母和数字
 test.keystore是证书文件名称，可修改为自己想设置的文件名称，也可以指定完整文件路径
 36500是证书的有效期，表示100年有效期，单位天，建议时间设置长一点，避免证书过期
@@ -37,7 +39,7 @@ Enter key password for <testalias>
 ```
 
 ### 查看证书信息
-```
+```js
 keytool -list -v -keystore yourapp.keystore  
 Enter keystore password: //输入密码，回车
 ```

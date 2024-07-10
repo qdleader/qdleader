@@ -1,7 +1,7 @@
-
+# tab下拉加载会请求多次问题
 
 直接上代码
-```
+```js
 <van-list  :finished="finished" finished-text="到底啦,只有这么多了" @load="onLoadDown" v-if="commentList.length != 0" v-model="loading">
          <ul class="comment_ul">
              <li class="comment_li clearfix" v-for="(item,index) in commentList" :key="index">
@@ -34,7 +34,7 @@
 ```
 
 
-```
+```js
 onLoad() {
     // 异步更新数据
     const _self = this

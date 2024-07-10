@@ -1,6 +1,6 @@
 
-
-```
+# 添加自定义控制popover显隐事件
+```js
 <el-popover
      v-model="visible"
      placement="top"
@@ -26,7 +26,7 @@
 ```
 
 
-```
+```js
 doShowPopover(item, index) {
    this.$refs[`popoverBtn`].click();
  },

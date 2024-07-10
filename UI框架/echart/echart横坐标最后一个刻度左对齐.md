@@ -1,3 +1,4 @@
+# echart横坐标最后一个刻度左对齐
 ```js
 		xAxis: {
 				type: "category",

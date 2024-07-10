@@ -1,5 +1,5 @@
-
-```
+# 遍历出来的form表单如何添加校验规则
+```js
 <ul class="dialogChangeNum-con-ul">
        <el-form
          ref="ruleForm"
@@ -23,7 +23,7 @@
      </ul>
 
 ```
-```
+```js
 ruleForm: {
   usage: "",
    arr:[{value:''},{value:''}],// form 列表
