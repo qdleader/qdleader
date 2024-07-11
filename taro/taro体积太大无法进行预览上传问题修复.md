@@ -1,6 +1,7 @@
+# taro体积太大无法进行预览上传问题修复
 通过webpackChain配置解决开发环境下小程序包体积过大无法进行预览上传的问题(不影响devtools的使用)
 
-```
+```js
 // config/dev.sj
 module.exports = {
  mini: {

@@ -1,5 +1,5 @@
-
-# 1
+# React获取url后面参数的几种方式
+## 1
 使用 window.location.search 获取 URL 中的查询字符串，然后使用 JavaScript 内置的 URLSearchParams 对象来解析查询字符串。例如：
 ```js
 const search = window.location.search; // 获取 URL 中的查询字符串，如 "?foo=bar"

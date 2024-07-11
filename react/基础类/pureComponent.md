@@ -1,4 +1,5 @@
-```
+# pureComponent
+```js
 import React,{PureComponent} from 'react';
 
 

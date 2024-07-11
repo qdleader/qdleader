@@ -1,8 +1,9 @@
+# react+ts批量生成条形码
 react + ts 中添加条形码批量生成
 
 
 
-```
+```js
 import JsBarcode from 'jsbarcode';
 
 

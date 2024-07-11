@@ -1,16 +1,16 @@
 
+# react中使用echart
 
-
-# 下载
-```
+## 下载
+```js
 npm install --save echarts-for-react
 npm install --save echarts
 ```
 
 
-# 引入
+## 引入
 
-```
+```js
 import ReactECharts from 'echarts-for-react';
 
 
@@ -19,7 +19,7 @@ import ReactECharts from 'echarts-for-react';
 ```
 
 
-```
+```js
 getOption =()=> {
     let option = {
         title:{

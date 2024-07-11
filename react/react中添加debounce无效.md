@@ -1,8 +1,9 @@
+# react中添加debounce无效
 useEffect中防抖为什么不起作用？react hooks中如何写防抖？
 
 一、发现问题，useEffect 中防抖无效：
 若直接在useEffect()中调用防抖函数，会发现防抖不起作用：
-
+```js
 export default function MyComponent(){
   function handleAdd() {
     setValue(value + 1);
@@ -23,6 +24,7 @@ export default function MyComponent(){
   </>
   )
 }
+```
 效果如图所示，点击5次，打印5次（是无效的防抖）：
 
 点击5次 效果
@@ -33,7 +35,7 @@ export default function MyComponent(){
 思想：用 ref 保存一下防抖函数，后面再触发useEffect时，就不会生成新的防抖函数了。 同时，了解一下如何自定义hooks。
 
 第一步：使用第三方库 loadash 的debounce方法，自定义一个防抖hooks，文件名叫 debounce.js 。代码如下：
-
+```js
   import { debounce } from 'lodash';
   const useMyDebounce = (fun, wait, options) => {
     const myRef = useRef();
@@ -43,8 +45,10 @@ export default function MyComponent(){
     return myRef.current;
   };
   export default useMyDebounce;
-第二步：在函数组件中使用：
 
+```
+第二步：在函数组件中使用：
+```js
 import { Button } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 // 自定义hooks文件的路径，根据自己的目录结构
@@ -77,6 +81,8 @@ export default function MyComponent(){
   </>
   )
 }
+
+```
 不停的点击按钮，效果图：
 
 点击 控制台打印

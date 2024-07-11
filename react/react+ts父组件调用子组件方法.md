@@ -1,5 +1,6 @@
+# react+ts父组件调用子组件方法
 父组件
-```
+```js
 child: any = {}  //主要加这个
 onRef = (ref: any) => {
     this.child = ref
@@ -20,7 +21,7 @@ showEditAdminModal = (admin?: IAdmin) => {
 
 子组件
 
-```
+```js
 interface IProps {
     visible: boolean
     cancel: (refresh?: boolean) => void

@@ -1,8 +1,8 @@
 
-
+# react自定义进度占比条形组件
 新建ProgressBar.tsx组件
 
-```
+```js
 
 
 import React, { Component } from 'react';

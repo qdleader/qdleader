@@ -1,4 +1,4 @@
-
+# useEffect依赖空数组与componentDidMount的区别
 
 在render 执行之后，会执行componentDidMount，在里面执行setState，会再次调用render，浏览器渲染只会渲染render第二次返回的执行，避免了闪屏。
 

@@ -1,7 +1,8 @@
+# taro中dev和线上打包不同的小程序
 新建一个 setProjectConfig.js
 
 
-```
+```js
 // import * as fs from 'fs';
 // eslint-disable-next-line import/no-commonjs
 var fs = require('fs')
@@ -47,7 +48,7 @@ writeJson()
 
 
 
-```
+```js
 "build:weapp": "cross-env TARO_APP_API=prod node ./setProjectConfig.js && taro build --type weapp ",
 "builddev:weapp": "taro build --type weapp ",
 "dev:weapp": "cross-env TARO_APP_API=dev node ./setProjectConfig.js && npm run builddev:weapp -- --watch",

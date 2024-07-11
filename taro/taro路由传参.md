@@ -1,3 +1,5 @@
+# taro路由传参
+```js
 import Taro, {useRouter， getCurrentInstance} from '@tarojs/taro';
  
 // 使用navigateTo(跳转后可以返回上一级页面)或者redirectTo(跳转后无法返回上一级页面)
@@ -52,3 +54,4 @@ function Index(){
     </View>
   )
 }
+```

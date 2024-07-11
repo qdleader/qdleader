@@ -1,7 +1,7 @@
 # Roo1-setState更改数据试图不变化
 
 1. 由于dataSource是list对象，如果采用如下方法，则只是操作引用：
-```
+```js
   handleDataSource = () => {
     let temp = this.state.dataSource;    
 
@@ -21,7 +21,7 @@ React认为虚拟DOM并没有改变，因此，不会重新渲染页面。这就
 
 
 2.更新代码如下：
-```
+```js
   handleDataSource = () => {
     let temp = [...this.state.dataSource];    
 

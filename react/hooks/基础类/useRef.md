@@ -1,7 +1,7 @@
-
+# useRef
 useRef 获取dom
 
-```
+```js
 function App() {
     const testRef = React.useRef(null)
     const h1Ref = React.useRef(null)
