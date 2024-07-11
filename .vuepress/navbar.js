@@ -43,4 +43,8 @@ export const navbar = [
 			},
 		],
 	},
+	{
+		text: "react",
+		link: "/react/",
+	},
 ]
