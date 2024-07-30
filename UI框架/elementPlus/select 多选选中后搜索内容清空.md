@@ -1,14 +1,13 @@
 # select 多选选中后搜索内容清空
-## select 多选选中后搜索内容清空
 
-vue3 写法
+vue cli + vue3 写法
 ```js
  <el-select
     v-model="drawerProps.row!.reservationUserIdList"
     filterable
     remote
     multiple
-    ref="changeSelectPeopleRef"
+    ref="changeSelectRef"
     @change="changeSelectPeople"
 >
     <el-option
@@ -22,8 +21,24 @@ vue3 写法
 
 
 ```js
-const changeSelectPeopleRef = ref<any>(null)
+const changeSelectRef = ref<any>(null)
 const changeSelectPeople = () => {
-  changeSelectPeopleRef.value.query = ""
+  changeSelectRef.value.query = ""
 }
+```
+
+
+vite + vue3 中 除了 上述写法还需要加  :reserve-keyword="false"
+
+```js
+  <el-select
+    v-model="formData.modelValue"
+    reserve-keyword
+    filterable
+    multiple
+    remote
+    :remote-method="fetchData"
+    ref="changeSelectRef"
+    @change="handleChange"
+  >
 ```
