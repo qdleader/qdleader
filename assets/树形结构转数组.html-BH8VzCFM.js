@@ -1,0 +1,46 @@
+import{_ as n,c as s,o as a,a as p}from"./app-Bul2w5Pu.js";const e={},t=p(`<h1 id="树形结构转数组" tabindex="-1"><a class="header-anchor" href="#树形结构转数组"><span>树形结构转数组</span></a></h1><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line"><span class="token punctuation">[</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&#39;节点1&#39;</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">parentId</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="line">            <span class="token punctuation">{</span></span>
+<span class="line">                <span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span></span>
+<span class="line">                <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&#39;节点1_1&#39;</span><span class="token punctuation">,</span></span>
+<span class="line">                <span class="token literal-property property">parentId</span><span class="token operator">:</span><span class="token number">1</span></span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">]</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line">转成</span>
+<span class="line"><span class="token punctuation">[</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&#39;节点1&#39;</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">parentId</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token comment">//这里用0表示为顶级节点</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&#39;节点1_1&#39;</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">parentId</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token comment">//通过这个字段来确定子父级</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token operator">...</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line"></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">treeToList</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">const</span> <span class="token function-variable function">dfs</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">tree</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span></span>
+<span class="line">        tree<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">                <span class="token function">dfs</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                <span class="token keyword">delete</span> item<span class="token punctuation">.</span>children<span class="token punctuation">;</span></span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">            res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token function">dfs</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> res<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3),l=[t];function i(c,o){return a(),s("div",null,l)}const u=n(e,[["render",i],["__file","树形结构转数组.html.vue"]]),d=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/js%E7%B1%BB/%E6%89%8B%E5%86%99%E7%B1%BB/%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E8%BD%AC%E6%95%B0%E7%BB%84.html","title":"树形结构转数组","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1722912902000,"contributors":[{"name":"qdleader","email":"yk4545945@163.com","commits":1}]},"filePathRelative":"前端面试/js类/手写类/树形结构转数组.md"}');export{u as comp,d as data};

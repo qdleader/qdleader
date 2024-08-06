@@ -1,0 +1,1 @@
+import{_ as t,r as o,c as a,e as n,o as c}from"./app-Bul2w5Pu.js";const l={};function s(r,_){const e=o("Catalog");return c(),a("div",null,[n(e)])}const d=t(l,[["render",s],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/tool/vscode/","title":"Vscode","lang":"zh-CN","frontmatter":{"title":"Vscode"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};

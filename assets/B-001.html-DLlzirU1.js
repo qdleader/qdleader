@@ -1,0 +1,8 @@
+import{_ as e,c as s,o as n,a}from"./app-Bul2w5Pu.js";const i={},t=a(`<h1 id="b-001" tabindex="-1"><a class="header-anchor" href="#b-001"><span>B-001</span></a></h1><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">let i;</span>
+<span class="line">for (i = 0; i &lt; 3; i ++) {</span>
+<span class="line">	const log = () =&gt; {</span>
+<span class="line">		console.log(i)</span>
+<span class="line">	}</span>
+<span class="line">	setTimeout(log,100);</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>#答案： 3 3 3</p><p>#解析：</p><p>for() 迭代3次，在每次迭代时候，都会创建一个新函数log，log函数捕获变量i，然后， setTimeout()调度log()的执行。</p><p>当for循环完成时候变量i的值为3.</p><p>100ms后setTimeout调用的3 个 log() 回调。log() 读取变量 i 的当前值，即 3。</p>`,7),l=[t];function c(o,r){return n(),s("div",null,l)}const p=e(i,[["render",c],["__file","B-001.html.vue"]]),m=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/js%E7%B1%BB/%E9%97%AD%E5%8C%85%E7%B1%BB/B-001.html","title":"B-001","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1722912902000,"contributors":[{"name":"qdleader","email":"yk4545945@163.com","commits":1}]},"filePathRelative":"前端面试/js类/闭包类/B-001.md"}');export{p as comp,m as data};

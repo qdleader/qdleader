@@ -1,0 +1,1 @@
+import{_ as t,r as a,c as o,e as n,o as l}from"./app-Bul2w5Pu.js";const c={};function r(s,_){const e=a("Catalog");return l(),o("div",null,[n(e)])}const m=t(c,[["render",r],["__file","index.html.vue"]]),f=JSON.parse('{"path":"/css/flex/","title":"Flex","lang":"zh-CN","frontmatter":{"title":"Flex"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,f as data};

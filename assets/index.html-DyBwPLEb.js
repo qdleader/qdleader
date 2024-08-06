@@ -1,0 +1,1 @@
+import{_ as t,r as a,c as o,e as n,o as r}from"./app-Bul2w5Pu.js";const c={};function l(s,_){const e=a("Catalog");return r(),o("div",null,[n(e)])}const d=t(c,[["render",l],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/react/redux/","title":"Redux","lang":"zh-CN","frontmatter":{"title":"Redux"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};

@@ -1,0 +1,5 @@
+import{_ as e,c as t,o as s,a as n}from"./app-Bul2w5Pu.js";const a={},i=n(`<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">String.prototype.trim = function () {</span>
+<span class="line">  return this.replace(/^\\s+/,&#39;&#39;).replace(/\\s+$/,&#39;&#39;)</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1),r=[i];function l(c,d){return s(),t("div",null,r)}const o=e(a,[["render",l],["__file","手写trim方法.html.vue"]]),p=JSON.parse('{"path":"/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/%E6%89%8B%E5%86%99trim%E6%96%B9%E6%B3%95.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1722912902000,"contributors":[{"name":"qdleader","email":"yk4545945@163.com","commits":1}]},"filePathRelative":"常用正则/手写trim方法.md"}');export{o as comp,p as data};

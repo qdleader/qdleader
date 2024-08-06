@@ -1,0 +1,34 @@
+import{_ as s,c as n,o as e,a}from"./app-Bul2w5Pu.js";const l={},i=a(`<h1 id="es-module的特点" tabindex="-1"><a class="header-anchor" href="#es-module的特点"><span>es module的特点</span></a></h1><p>ES6 Module 静态的，不能放在块级作用域内，代码发生在编译时。 ES6 Module 的值是动态绑定的，可以通过导出方法修改，可以直接访问修改结果。 ES6 Module 可以导出多个属性和方法，可以单个导入导出，混合导入导出。 ES6 模块提前加载并执行模块文件，</p><h2 id="静态语法" tabindex="-1"><a class="header-anchor" href="#静态语法"><span>静态语法</span></a></h2><p>ES6 module 的引入和导出是静态的，import 会自动提升到代码的顶层 ，import , export 不能放在块级作用域或条件语句中。</p><h2 id="执行特性" tabindex="-1"><a class="header-anchor" href="#执行特性"><span>执行特性</span></a></h2><p>ES6 module 和 Common.js 一样，对于相同的 js 文件，会保存静态属性。 但是与 Common.js 不同的是 ，CommonJS 模块同步加载并执行模块文件，ES6 模块提前加载并执行模块文件，ES6 模块在预处理阶段分析模块依赖，在执行阶段执行模块，两个阶段都采用深度优先遍历，执行顺序是子 -&gt; 父。 如：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">main.js</span>
+<span class="line">console.log(&#39;main.js开始执行&#39;)</span>
+<span class="line">import say from &#39;./a&#39;</span>
+<span class="line">import say1 from &#39;./b&#39;</span>
+<span class="line">console.log(&#39;main.js执行完毕&#39;)</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">a.js</span>
+<span class="line">import b from &#39;./b&#39;</span>
+<span class="line">console.log(&#39;a模块加载&#39;)</span>
+<span class="line">export default  function say (){</span>
+<span class="line">    console.log(&#39;hello , world&#39;)</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">b.js</span>
+<span class="line">console.log(&#39;b模块加载&#39;)</span>
+<span class="line">export default function sayhello(){</span>
+<span class="line">    console.log(&#39;hello,world&#39;)</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">main.js 和 a.js 都引用了 b.js 模块，但是 b 模块也只加载了一次。</span>
+<span class="line">执行顺序是子 -&gt; 父</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">b模块加载</span>
+<span class="line">a模块加载</span>
+<span class="line">main.js开始执行</span>
+<span class="line">main.js执行完毕</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="导出绑定" tabindex="-1"><a class="header-anchor" href="#导出绑定"><span>导出绑定</span></a></h2><p>不能修改import导入的属性 使用 import 被导入的变量是只读的，可以理解默认为 const 装饰，无法被赋值 使用 import 被导入的变量是与原变量绑定/引用的，可以理解为 import 导入的变量无论是否为基本类型都是引用传递。</p><h2 id="import-动态引入" tabindex="-1"><a class="header-anchor" href="#import-动态引入"><span>import() 动态引入</span></a></h2><p>import() 返回一个 Promise 对象， 返回的 Promise 的 then 成功回调中，可以获取模块的加载成功信息</p><h4 id="动态加载可以放在块级作用域" tabindex="-1"><a class="header-anchor" href="#动态加载可以放在块级作用域"><span>动态加载可以放在块级作用域</span></a></h4><p>首先 import() 动态加载一些内容，可以放在条件语句或者函数执行上下文中</p><h4 id="懒加载-也可实现代码分割" tabindex="-1"><a class="header-anchor" href="#懒加载-也可实现代码分割"><span>懒加载 也可实现代码分割</span></a></h4><p>import() 这种加载效果，可以很轻松的实现代码分割。避免一次性加载大量 js 文件</p><p>ES6导入 Tree Shaking 在 Webpack 中的实现，是用来尽可能的删除没有被使用过的代码，一些被 import 了但其实没有被使用的代码，就不会被打包</p>`,16),d=[i];function p(c,r){return e(),n("div",null,d)}const m=s(l,[["render",p],["__file","es module的特点.html.vue"]]),t=JSON.parse('{"path":"/es6/commonjs%E4%B8%8Eesmodule/es%20module%E7%9A%84%E7%89%B9%E7%82%B9.html","title":"es module的特点","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"静态语法","slug":"静态语法","link":"#静态语法","children":[]},{"level":2,"title":"执行特性","slug":"执行特性","link":"#执行特性","children":[]},{"level":2,"title":"导出绑定","slug":"导出绑定","link":"#导出绑定","children":[]},{"level":2,"title":"import() 动态引入","slug":"import-动态引入","link":"#import-动态引入","children":[]}],"git":{"updatedTime":1722912902000,"contributors":[{"name":"qdleader","email":"yk4545945@163.com","commits":1}]},"filePathRelative":"es6/commonjs与esmodule/es module的特点.md"}');export{m as comp,t as data};

@@ -1,0 +1,1 @@
+import{_ as t,r as a,c as n,e as o,o as c}from"./app-Bul2w5Pu.js";const i={};function l(r,s){const e=a("Catalog");return c(),n("div",null,[o(e)])}const m=t(i,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/vue3/pinia/","title":"Pinia","lang":"zh-CN","frontmatter":{"title":"Pinia"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
