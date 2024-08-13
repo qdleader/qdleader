@@ -33,7 +33,7 @@ export default defineUserConfig({
 	// ],
 	head: [
 		// 设置 favor.ico，.vuepress/public 下
-		["link", { rel: "icon", href: "/qdleader.jpg" }],
+		["link", { rel: "icon", href: "https://qdleader.github.io/qdleader/qdleader.jpg" }],
 		// SEO
 		[
 			"meta",
