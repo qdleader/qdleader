@@ -2,26 +2,25 @@ import { defineUserConfig } from "vuepress"
 import { defaultTheme } from "@vuepress/theme-default"
 import { navbar } from "./navbar.js"
 import { searchPlugin } from "@vuepress/plugin-search"
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
-import { nprogressPlugin } from '@vuepress/plugin-nprogress'
+import { backToTopPlugin } from "@vuepress/plugin-back-to-top"
+import { nprogressPlugin } from "@vuepress/plugin-nprogress"
 // import { clipboardPlugin } from 'vuepress-plugin-clipboard'
-import { viteBundler } from '@vuepress/bundler-vite'
-import { copyCodePlugin } from '@vuepress/plugin-copy-code'
+import { viteBundler } from "@vuepress/bundler-vite"
+import { copyCodePlugin } from "@vuepress/plugin-copy-code"
 // import { copyCodePlugin } from "vuepress-plugin-copy-code2";
-import path from "path";
-import { catalogPlugin } from '@vuepress/plugin-catalog'
-import { sitemapPlugin } from '@vuepress/plugin-sitemap'
-
+import path from "path"
+import { catalogPlugin } from "@vuepress/plugin-catalog"
+import { sitemapPlugin } from "@vuepress/plugin-sitemap"
 
 export default defineUserConfig({
 	extendsPage: (page) => {
 		// 在 routeMeta 中设置目录信息
 		page.routeMeta = {
-		  // 目录标题
-		  title: page.title,
-		  // ... 其他信息
+			// 目录标题
+			title: page.title,
+			// ... 其他信息
 		}
-	  },
+	},
 	lang: "zh-CN",
 	base: "/qdleader/",
 	title: "Hi FE ！",
@@ -33,19 +32,19 @@ export default defineUserConfig({
 	// 	}),
 	// ],
 	head: [
+		// 设置 favor.ico，.vuepress/public 下
+		["link", { rel: "icon", href: "https://qdleader.github.io/qdleader/qdleader.jpg" }],
 		// SEO
 		[
 			"meta",
 			{
 				name: "keywords",
-				content: "qdleader,前端面试题大全, 编程学习路线, 编程知识百科, Java, 编程导航, 前端, 开发, 编程分享, 项目, IT, 求职, 面经",
+				content: "前端开发,qdleader,前端面试题大全, 编程学习路线, 编程知识百科, Java, 编程导航, 前端, 开发, 编程分享, 项目, IT, 求职, 面经",
 			},
-			['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
-			['meta', {name: 'google-site-verification', content: 'q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg'}],
+			["meta", { name: "referrer", content: "no-referrer-when-downgrade" }],
+			["meta", { name: "google-site-verification", content: "q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg" }],
 		],
-		[
-			['meta', {name: 'google-site-verification', content: 'q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg'}],
-		],
+		[["meta", { name: "google-site-verification", content: "q56zlN4YQIQUwgGTM80BLZwESirvmrp0h9e7SHfg_Gg" }]],
 		[
 			"script",
 			{},
@@ -55,7 +54,7 @@ export default defineUserConfig({
 			hm.src = "https://hm.baidu.com/hm.js?c448e2224bfefb1edc964cdd6e7b1175";
 			var s = document.getElementsByTagName("script")[0]; 
 			s.parentNode.insertBefore(hm, s);
-			})()`
+			})()`,
 		],
 	],
 	theme: defaultTheme({
@@ -91,18 +90,17 @@ export default defineUserConfig({
 		}),
 		backToTopPlugin(),
 		nprogressPlugin(),
-		copyCodePlugin({
-		}),
+		copyCodePlugin({}),
 		catalogPlugin({
-		// 你的选项
+			// 你的选项
 		}),
 		sitemapPlugin({
 			// 选项
-			hostname:"qdleader.github.io/qdleader"
-		  }),
-	],	
+			hostname: "qdleader.github.io/qdleader",
+		}),
+	],
 	bundler: viteBundler({
-	  viteOptions: {},
-	  vuePluginOptions: {},
+		viteOptions: {},
+		vuePluginOptions: {},
 	}),
-  })
+})
