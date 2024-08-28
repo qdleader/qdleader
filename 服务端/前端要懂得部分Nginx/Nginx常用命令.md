@@ -85,7 +85,7 @@ systemctl stop firewalld
 systemctl enable firewalld
 停止并且禁用防火墙
 
-sytemctl disable firewalld
+systemctl disable firewalld
 
 
 查看目前已开放端口
