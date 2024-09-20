@@ -1,5 +1,5 @@
 # DOM 事件分级
-
+```js
 随着DOM级别的变化，DOM事件也随之分成了多个级别。
 DOM事件分为3个级别：DOM0级事件处理，DOM2级事件处理和DOM3级事件处理。
 
@@ -7,7 +7,6 @@ DOM事件分为3个级别：DOM0级事件处理，DOM2级事件处理和DOM3级�
 
 ## 1、DOM0级事件
 DOM0级处理事件就是将一个函数赋值给一个事件处理属性。
-```js 
 <button id="btn" type="button"></button> 
  
 var btn = document.getElementById('btn')
@@ -16,18 +15,16 @@ btn.onclick = function() {
 }
 // 将一个函数赋值给了一个事件处理属性onclick 这样的方法就是DOM0级。
 // 可以通过给事件处理属性赋值null来解绑事件。
-```
-## 2、DOM2级事件
+
+
+// ## 2、DOM2级事件
 DOM2级处理事件是在DOM0级处理事件的基础上再添加了一些处理程序。
 
 可以同时绑定多个事件处理函数。
 定义了 addEventListener 和 removeEventListener 两个方法。
-```js
 element.addEventListener(eventName, fn, useCapture)
 // 第三个参数 useCapture：指定事件是否在捕获或冒泡阶段执行。布尔值，可选，默认false
 // 可能值：true - 事件句柄在捕获阶段执行；false- 默认。事件句柄在冒泡阶段执行
-```
-```js
 <button id="btn" type="button"></button> 
  
 var btn = document.getElementById('btn')
@@ -43,9 +40,8 @@ btn.addEventListener('click', LogFn);
 
 // 解绑事件 
 btn.removeEventListener('click', showFn); 
-```
 
-## 3、DOM3级事件
+// ## 3、DOM3级事件
 
     DOM3级处理事件是在DOM2级处理事件的基础上再添加了很多事件类型。
 
@@ -61,9 +57,8 @@ btn.removeEventListener('click', showFn);
 同时DOM3级事件也允许使用者自定义一些事件。
 
 
-## 四、DOM事件流
+// ## 四、DOM事件流
 DOM2级事件中规定了一个事件流包括3个阶段：事件捕获阶、处于目标阶段、事件冒泡阶段。
-```html 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,15 +89,15 @@ son.addEventListener('click', () => {
 }, false);
 </script>
 </html>
-```
 
-当点击父元素：父级冒泡 -> 父级捕获
-当点击子元素：父级捕获 -> 子级捕获 ->  子级冒泡 -> 父级冒泡
+{/* 当点击父元素：父级冒泡 -> 父级捕获
+当点击子元素：父级捕获 -> 子级捕获 ->  子级冒泡 -> 父级冒泡 */}
 
 总结
 事件流的执行顺序是：事件捕获阶 -> 处于目标阶段 -> 事件冒泡阶段，且当事件处于目标阶段时，事件调用顺序决定于绑定事件的书写顺序。
 需要注意的是IE8以下版本不支持 addEventlistener 和 removeEventListerner，需要使用attachEvent 和 detachEvent 实现：
-```js 
+
+
 // 绑定事件 
 btn.attachEvent('onclick', fn); 
 // 解绑事件
