@@ -1,8 +1,9 @@
-# VC002-vue事件中传入$event，使用e.target和e.currentTarget有什么区别.md
+# VC002-vue 事件中传入$event，使用 e.target 和 e.currentTarget 有什么区别.md
 
-event.currentTarget始终指向事件所绑定的元素,
-而event.target指向事件发生时的元素。
+currentTarget：事件绑定的元素
+target:鼠标触发的元素
 
+event.currentTarget 指向事件所绑定的元素，而 event.target 始终指向事件发生时的元素。
 
 ```js
 <template>
@@ -16,10 +17,8 @@ event.currentTarget始终指向事件所绑定的元素,
 </template>
 ```
 
-
-
-e.currentTarget（表示不论点击select内的哪个元素，都指向绑定的select那个元素）
-e.target （表示指向select标签内，鼠标点击的那个元素）
+e.currentTarget（表示不论点击 select 内的哪个元素，都指向绑定的 select 那个元素）
+e.target （表示指向 select 标签内，鼠标点击的那个元素）
 
 ```js
 <template>
