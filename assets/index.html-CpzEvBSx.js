@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as n,o,r as c}from"./app-z95KQ9dg.js";const l={};function r(s,i){const e=c("Catalog");return o(),a("div",null,[n(e)])}const _=t(l,[["render",r],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/uniapp/","title":"Uniapp","lang":"zh-CN","frontmatter":{"title":"Uniapp"},"headers":[],"git":{},"filePathRelative":null}');export{_ as comp,m as data};

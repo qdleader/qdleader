@@ -1,0 +1,24 @@
+import{_ as s,c as a,a as e,o as t}from"./app-z95KQ9dg.js";const l={};function p(i,n){return t(),a("div",null,n[0]||(n[0]=[e(`<h1 id="获取当前时间取整到整分的毫秒数" tabindex="-1"><a class="header-anchor" href="#获取当前时间取整到整分的毫秒数"><span>获取当前时间取整到整分的毫秒数</span></a></h1><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">getCurrent() {</span>
+<span class="line">	let now = new Date();</span>
+<span class="line">	let year = now.getFullYear();      //年</span>
+<span class="line">	let m = now.getMonth() + 1;     //月</span>
+<span class="line">	let d = now.getDate();          //日</span>
+<span class="line">	let h = now.getHours();         //时</span>
+<span class="line">	let i = now.getMinutes();       //分</span>
+<span class="line">	let nowD = \`\${year}/\${m}/\${d} \${h}:\${i}\`;</span>
+<span class="line"></span>
+<span class="line">	let nowDS = new Date(nowD).getTime();</span>
+<span class="line">	return nowDS</span>
+<span class="line">},</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>获取当天时间的0点 获取当天时间的59分59秒</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre><code><span class="line">  <span class="token comment">// 获取当前日期和时间</span></span>
+<span class="line">  <span class="token keyword">const</span> currentDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment">// 创建一个新的日期对象，以避免修改原始对象</span></span>
+<span class="line">  <span class="token keyword">const</span> endDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>currentDate<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token keyword">const</span> startDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>currentDate<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">  startDate<span class="token punctuation">.</span><span class="token function">setHours</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">  endDate<span class="token punctuation">.</span><span class="token function">setHours</span><span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">999</span><span class="token punctuation">)</span></span>
+<span class="line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>startDate<span class="token punctuation">,</span>endDate<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,4)]))}const o=s(l,[["render",p],["__file","获取当前时间取整到整分的毫秒数.html.vue"]]),r=JSON.parse('{"path":"/tool/%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%8F%96%E6%95%B4%E5%88%B0%E6%95%B4%E5%88%86%E7%9A%84%E6%AF%AB%E7%A7%92%E6%95%B0.html","title":"获取当前时间取整到整分的毫秒数","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1728353169000,"contributors":[{"name":"qdleader","email":"yk4545945@163.com","commits":1}]},"filePathRelative":"tool/获取当前时间取整到整分的毫秒数.md"}');export{o as comp,r as data};

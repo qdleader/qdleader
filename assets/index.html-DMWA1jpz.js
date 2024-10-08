@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as n,r}from"./app-z95KQ9dg.js";const c={};function l(s,i){const e=r("Catalog");return n(),a("div",null,[o(e)])}const d=t(c,[["render",l],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/css/grid/","title":"Grid","lang":"zh-CN","frontmatter":{"title":"Grid"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};
