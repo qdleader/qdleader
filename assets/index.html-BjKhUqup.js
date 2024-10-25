@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as n,r as c}from"./app-D7F1f-PT.js";const l={};function r(s,_){const e=c("Catalog");return n(),a("div",null,[o(e)])}const m=t(l,[["render",r],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/%E4%BC%98%E5%8C%96/","title":"优化","lang":"zh-CN","frontmatter":{"title":"优化"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
