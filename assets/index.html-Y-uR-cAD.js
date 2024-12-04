@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as n,r}from"./app-CeraUqgt.js";const c={};function l(s,_){const e=r("Catalog");return n(),a("div",null,[o(e)])}const d=t(c,[["render",l],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/react/redux/","title":"Redux","lang":"zh-CN","frontmatter":{"title":"Redux"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};

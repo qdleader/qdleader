@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,o as n,r as c}from"./app-CeraUqgt.js";const l={};function s(r,_){const e=c("Catalog");return n(),o("div",null,[a(e)])}const d=t(l,[["render",s],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/tool/vscode/","title":"Vscode","lang":"zh-CN","frontmatter":{"title":"Vscode"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};
