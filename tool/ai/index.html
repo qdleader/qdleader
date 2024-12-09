@@ -1,0 +1,32 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain.js 示例</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/brain.js"></script>
+  <script>
+    // 你的代码将放在这里
+    const data = [
+      { "input": "implementing a caching mechanism improves performance", "output": "backend" },
+      { "input": "hover effects on buttons", "output": "frontend" },
+    ];
+
+    // const net = new brain.NeuralNetwork();
+    const net = new brain.recurrent.LSTM();
+    net.train(data, {
+      iterations: 20000,
+      errorThresh: 0.005,
+      log: true,
+      logPeriod: 100
+    });
+
+    const output = net.run("implementing a caching mechanism improves performance"); // 输出应为 "backend"
+    console.log(output);
+
+  </script>
+</body>
+</html>
