@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as n,r}from"./app-Tx5Py22k.js";const c={};function l(s,_){const e=r("Catalog");return n(),a("div",null,[o(e)])}const m=t(c,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/taro/","title":"Taro","lang":"zh-CN","frontmatter":{"title":"Taro"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

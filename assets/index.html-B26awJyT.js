@@ -1,0 +1,1 @@
+import{_ as t,c as s,e as a,o,r as c}from"./app-Tx5Py22k.js";const n={};function l(r,_){const e=c("Catalog");return o(),s("div",null,[a(e)])}const m=t(n,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/less_scss/scss/","title":"Scss","lang":"zh-CN","frontmatter":{"title":"Scss"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

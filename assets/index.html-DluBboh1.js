@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as n,r as c}from"./app-Tx5Py22k.js";const r={};function l(s,_){const e=c("Catalog");return n(),a("div",null,[o(e)])}const m=t(r,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/react/","title":"React","lang":"zh-CN","frontmatter":{"title":"React"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
