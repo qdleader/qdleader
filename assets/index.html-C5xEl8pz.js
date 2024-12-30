@@ -1,0 +1,1 @@
+import{_ as t,c as s,e as a,o,r as n}from"./app-D_ZNEwCJ.js";const c={};function l(r,_){const e=n("Catalog");return o(),s("div",null,[a(e)])}const m=t(c,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/less_scss/","title":"Less Scss","lang":"zh-CN","frontmatter":{"title":"Less Scss"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
