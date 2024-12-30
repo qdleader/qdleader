@@ -54,7 +54,9 @@ Rollup 分为 build（构建）阶段和 output generate（输出生成）阶段
 
 当声明一个 script 标签类型为 module 时,如
 
+```html
 <script type="module" src="/src/main.js"></script>
+```
 
 当浏览器解析资源时，会往当前域名发起一个 GET 请求 main.js 文件
 
