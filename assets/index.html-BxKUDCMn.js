@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as r,o as a,r as n}from"./app-BJH5QZKa.js";const c={};function l(s,_){const e=n("Catalog");return a(),o("div",null,[r(e)])}const m=t(c,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/tool/cursor/","title":"Cursor","lang":"zh-CN","frontmatter":{"title":"Cursor"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
