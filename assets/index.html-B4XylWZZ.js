@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as r,r as a,o as n}from"./app-DXbwLjSy.js";const c={};function l(s,_){const e=a("Catalog");return n(),o("div",null,[r(e)])}const m=t(c,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/tool/cursor/","title":"Cursor","lang":"zh-CN","frontmatter":{"title":"Cursor"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
