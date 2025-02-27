@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as o,r as n,o as c}from"./app-Dw20wKhM.js";const l={};function r(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const p=t(l,[["render",r],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/webpack/","title":"Webpack","lang":"zh-CN","frontmatter":{"title":"Webpack"},"headers":[],"git":{},"filePathRelative":null}');export{p as comp,m as data};

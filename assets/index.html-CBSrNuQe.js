@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as o,r as n,o as s}from"./app-Dw20wKhM.js";const l={};function r(c,_){const e=n("Catalog");return s(),a("div",null,[o(e)])}const m=t(l,[["render",r],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/es6/es2024/","title":"Es2024","lang":"zh-CN","frontmatter":{"title":"Es2024"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
