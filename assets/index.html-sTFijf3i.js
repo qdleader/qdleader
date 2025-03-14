@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as o,r as n,o as r}from"./app-BTXTvCFM.js";const l={};function c(s,_){const e=n("Catalog");return r(),a("div",null,[o(e)])}const m=t(l,[["render",c],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/tool/trae/","title":"Trae","lang":"zh-CN","frontmatter":{"title":"Trae"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

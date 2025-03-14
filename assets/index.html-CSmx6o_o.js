@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as n,r as o,o as l}from"./app-BTXTvCFM.js";const r={};function c(i,s){const e=o("Catalog");return l(),a("div",null,[n(e)])}const _=t(r,[["render",c],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/uniapp/","title":"Uniapp","lang":"zh-CN","frontmatter":{"title":"Uniapp"},"headers":[],"git":{},"filePathRelative":null}');export{_ as comp,m as data};

@@ -1,0 +1,1 @@
+import{_ as t,e as o,i as a,r as n,o as r}from"./app-BTXTvCFM.js";const s={};function c(l,_){const e=n("Catalog");return r(),o("div",null,[a(e)])}const m=t(s,[["render",c],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/react/hooks/","title":"Hooks","lang":"zh-CN","frontmatter":{"title":"Hooks"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

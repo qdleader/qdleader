@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as o,r as n,o as l}from"./app-BTXTvCFM.js";const c={};function r(s,_){const e=n("Catalog");return l(),a("div",null,[o(e)])}const m=t(c,[["render",r],["__file","index.html.vue"]]),f=JSON.parse('{"path":"/css/flex/","title":"Flex","lang":"zh-CN","frontmatter":{"title":"Flex"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,f as data};

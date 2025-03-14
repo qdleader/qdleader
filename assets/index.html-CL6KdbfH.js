@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as n,r as o,o as i}from"./app-BTXTvCFM.js";const l={};function r(c,s){const e=o("Catalog");return i(),a("div",null,[n(e)])}const m=t(l,[["render",r],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/vue3/pinia/","title":"Pinia","lang":"zh-CN","frontmatter":{"title":"Pinia"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

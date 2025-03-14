@@ -1,0 +1,1 @@
+import{_ as t,e as a,i as o,r as n,o as r}from"./app-BTXTvCFM.js";const c={};function l(s,_){const e=n("Catalog");return r(),a("div",null,[o(e)])}const d=t(c,[["render",l],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/react/redux/","title":"Redux","lang":"zh-CN","frontmatter":{"title":"Redux"},"headers":[],"git":{},"filePathRelative":null}');export{d as comp,m as data};
