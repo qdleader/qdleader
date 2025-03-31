@@ -1,0 +1,1 @@
+import{_ as t,c as n,e as a,r as o,o as c}from"./app-Dgmug7RJ.js";const r={};function l(s,i){const e=o("Catalog");return c(),n("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/Linux/","title":"Linux","lang":"zh-CN","frontmatter":{"title":"Linux"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as c,o as n}from"./app-Dgmug7RJ.js";const s={};function r(l,_){const e=c("Catalog");return n(),o("div",null,[a(e)])}const i=t(s,[["render",r]]),m=JSON.parse('{"path":"/tool/vscode/","title":"Vscode","lang":"zh-CN","frontmatter":{"title":"Vscode"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,m as data};

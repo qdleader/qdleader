@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-Dgmug7RJ.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/%E8%AF%81%E4%B9%A6/","title":"证书","lang":"zh-CN","frontmatter":{"title":"证书"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as o,r as c,o as n}from"./app-Dgmug7RJ.js";const r={};function l(s,_){const t=c("Catalog");return n(),a("div",null,[o(t)])}const h=e(r,[["render",l]]),m=JSON.parse('{"path":"/UI%E6%A1%86%E6%9E%B6/echart/","title":"Echart","lang":"zh-CN","frontmatter":{"title":"Echart"},"headers":[],"git":{},"filePathRelative":null}');export{h as comp,m as data};

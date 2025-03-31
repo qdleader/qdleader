@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as s,o as n}from"./app-Dgmug7RJ.js";const c={};function r(l,_){const e=s("Catalog");return n(),a("div",null,[o(e)])}const m=t(c,[["render",r]]),p=JSON.parse('{"path":"/css/","title":"Css","lang":"zh-CN","frontmatter":{"title":"Css"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
