@@ -2,7 +2,6 @@
 
 MirageJS 是一个轻量级的 HTTP 请求模拟库，非常适合用于模拟后端 API。
 示例：使用 MirageJS
-首先，安装 MirageJS：
 
 ```js
 npm install miragejs
