@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/%E9%83%A8%E7%BD%B2/","title":"部署","lang":"zh-CN","frontmatter":{"title":"部署"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/vue3/%E5%9F%BA%E7%A1%80%E7%B1%BB/","title":"基础类","lang":"zh-CN","frontmatter":{"title":"基础类"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

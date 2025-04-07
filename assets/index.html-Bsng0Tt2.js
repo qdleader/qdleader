@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/","title":"设计原则","lang":"zh-CN","frontmatter":{"title":"设计原则"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

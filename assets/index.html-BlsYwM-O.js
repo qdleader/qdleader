@@ -1,0 +1,1 @@
+import{_ as t,c as s,e as a,r as o,o as c}from"./app-ChbYw63X.js";const n={};function r(l,_){const e=o("Catalog");return c(),s("div",null,[a(e)])}const m=t(n,[["render",r]]),p=JSON.parse('{"path":"/less_scss/scss/","title":"Scss","lang":"zh-CN","frontmatter":{"title":"Scss"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

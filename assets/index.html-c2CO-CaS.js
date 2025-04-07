@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as s}from"./app-ChbYw63X.js";const c={};function r(l,i){const e=n("Catalog");return s(),a("div",null,[o(e)])}const _=t(c,[["render",r]]),m=JSON.parse('{"path":"/uniapp/tips/","title":"Tips","lang":"zh-CN","frontmatter":{"title":"Tips"},"headers":[],"git":{},"filePathRelative":null}');export{_ as comp,m as data};

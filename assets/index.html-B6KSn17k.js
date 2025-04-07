@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as s}from"./app-ChbYw63X.js";const c={};function r(l,m){const t=n("Catalog");return s(),o("div",null,[a(t)])}const i=e(c,[["render",r]]),p=JSON.parse('{"path":"/tool/postman/","title":"Postman","lang":"zh-CN","frontmatter":{"title":"Postman"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as r}from"./app-ChbYw63X.js";const l={};function c(s,_){const e=n("Catalog");return r(),a("div",null,[o(e)])}const h=t(l,[["render",c]]),m=JSON.parse('{"path":"/tool/charles/","title":"Charles","lang":"zh-CN","frontmatter":{"title":"Charles"},"headers":[],"git":{},"filePathRelative":null}');export{h as comp,m as data};

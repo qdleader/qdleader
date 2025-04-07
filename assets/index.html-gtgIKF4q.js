@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as r,r as a,o as n}from"./app-ChbYw63X.js";const c={};function s(l,_){const e=a("Catalog");return n(),o("div",null,[r(e)])}const m=t(c,[["render",s]]),p=JSON.parse('{"path":"/tool/cursor/","title":"Cursor","lang":"zh-CN","frontmatter":{"title":"Cursor"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

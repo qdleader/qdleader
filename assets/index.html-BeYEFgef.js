@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function s(l,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const p=t(r,[["render",s]]),m=JSON.parse('{"path":"/Typescript/%E8%BF%9B%E9%98%B6/","title":"进阶","lang":"zh-CN","frontmatter":{"title":"进阶"},"headers":[],"git":{},"filePathRelative":null}');export{p as comp,m as data};

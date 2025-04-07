@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const p=t(r,[["render",l]]),m=JSON.parse('{"path":"/uniapp/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AF%87/","title":"小程序篇","lang":"zh-CN","frontmatter":{"title":"小程序篇"},"headers":[],"git":{},"filePathRelative":null}');export{p as comp,m as data};

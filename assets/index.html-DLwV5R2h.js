@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as c,o as n}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=c("Catalog");return n(),o("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/mock%E6%95%B0%E6%8D%AE/","title":"Mock数据","lang":"zh-CN","frontmatter":{"title":"Mock数据"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

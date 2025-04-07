@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as n,r as o,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const t=o("Catalog");return c(),a("div",null,[n(t)])}const i=e(r,[["render",l]]),m=JSON.parse('{"path":"/UI%E6%A1%86%E6%9E%B6/antd5/","title":"Antd5","lang":"zh-CN","frontmatter":{"title":"Antd5"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,m as data};

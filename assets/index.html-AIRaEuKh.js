@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD/","title":"性能","lang":"zh-CN","frontmatter":{"title":"性能"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-ChbYw63X.js";const r={};function s(l,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const m=t(r,[["render",s]]),p=JSON.parse('{"path":"/css/%E4%BC%AA%E7%B1%BB/","title":"伪类","lang":"zh-CN","frontmatter":{"title":"伪类"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
