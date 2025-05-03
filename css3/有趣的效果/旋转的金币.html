@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            animation: spin 2.5s linear infinite;
+        }
+        .back {
+            width: 150px;
+            height: 150px; 
+            background: blue;
+            border-radius: 50%;
+        }
+       .front {
+             height: 150px;
+             width: 150px;
+             position: absolute;
+             background: red;
+             border-radius: 50%;
+             transform: translateZ(10px);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <div class="box">
+        <div class="front" ></div>
+        <div class="back"> </div>
+    </div>
+</body>
+    
+</body>
+</html>

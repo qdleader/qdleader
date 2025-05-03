@@ -12,6 +12,8 @@ import path from "path"
 import { catalogPlugin } from "@vuepress/plugin-catalog"
 import { sitemapPlugin } from "@vuepress/plugin-sitemap"
 
+// import { copyrightPlugin } from '@vuepress/plugin-copyright'
+
 export default defineUserConfig({
 	extendsPage: (page) => {
 		// 在 routeMeta 中设置目录信息
@@ -98,6 +100,11 @@ export default defineUserConfig({
 			// 选项
 			hostname: "qdleader.github.io/qdleader",
 		}),
+		// copyrightPlugin({
+		// 	author: "qdleader",
+		// 	link: 'Original posted at :link'
+		// 	// options
+		//   }),
 	],
 	bundler: viteBundler({
 		viteOptions: {},

@@ -1,5 +1,7 @@
-# S022-手写new
-##  手写-new 操作符
+# S022-手写 new ★
+
+## 手写-new 操作符
+
 ```js
 function myNew(fn, ...args) {
   let obj = Object.create(fn.prototype);
@@ -10,14 +12,15 @@ function myNew(fn, ...args) {
   return obj;
 }
 ```
+
 用法如下：
 
 // // function Person(name, age) {
-// //   this.name = name;
-// //   this.age = age;
+// // this.name = name;
+// // this.age = age;
 // // }
 // // Person.prototype.say = function() {
-// //   console.log(this.age);
+// // console.log(this.age);
 // // };
 // // let p1 = myNew(Person, "yyy", 18);
 // // console.log(p1.name);

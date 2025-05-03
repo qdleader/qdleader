@@ -29,7 +29,7 @@ charset属性用于指定网页的字符编码。
 
 ### 3.viewport
 
-viewport属性用于指定网页的视口设置。
+viewport属性用于指定网页的视口设置。确保在移动设备上显示的内容不会缩放 
 
 ```html
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

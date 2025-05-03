@@ -12,7 +12,7 @@
 ### 强制缓存
 
 对于强制缓存来说，header中会有两个字段来标明失效规则（Expires/Cache-Control）
-```
+```js
 Expires
     Expires的值为服务端返回的到期时间，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。
     不过Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。
@@ -29,6 +29,12 @@ Cache-Control
     no-cache:          需要使用对比缓存来验证缓存数据 (表示可以存储，但在重新验正其有效性之前不能用于响应客户端请求)
     no-store:           所有内容都不会缓存，强制缓存，对比缓存都不会触发（基本不用）
 no-cache 不用本地的强制缓存，服务端可以缓存，no-store 本地强制缓存和服务端的协商缓存都不用。基本用不到
+
+    s-maxage（单位为s)
+    同max-age作用一样，只在代理服务器中生效（比如CDN缓存）。比如当s-maxage=60时，在这60秒中，即使更新了CDN的内容，浏览器也不会进行请求。max-age用于普通缓存，而s-maxage用于代理缓存。s-maxage的优先级高于max-age。如果存在s-maxage，则会覆盖掉max-age和Expires header。
+
+    max-stable	30秒内，即使缓存过期，也使用该缓存
+    min-fresh	希望在30秒内获取最新的相应
 
 ```
 
