@@ -1,0 +1,11 @@
+import{_ as s,c as a,a as n,o as i}from"./app-CKfc45Zi.js";const l={};function t(r,e){return i(),a("div",null,e[0]||(e[0]=[n(`<h2 id="eg1" tabindex="-1"><a class="header-anchor" href="#eg1"><span>eg1</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code><span class="line">type 别名 = 类型</span>
+<span class="line"></span>
+<span class="line">type Str = string // 定义</span>
+<span class="line"></span>
+<span class="line">const str1:Str = &#39;abc&#39;</span>
+<span class="line">const str2:string = &#39;abc&#39;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="eg2" tabindex="-1"><a class="header-anchor" href="#eg2"><span>eg2</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code><span class="line"> type NewType = string | number</span>
+<span class="line"></span>
+<span class="line"> let a: NewType = 1</span>
+<span class="line"> let b: NewType = &#39;1&#39;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>别名可以是任意的合法字符串，一般首字母大写</p></blockquote>`,5)]))}const c=s(l,[["render",t]]),p=JSON.parse(`{"path":"/Typescript/%E5%9F%BA%E7%A1%80/%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D.html","title":"","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1747530378000,"contributors":[{"name":"qdleader","username":"qdleader","email":"62106726+qdleader@users.noreply.github.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"35946fb0727bfe016751f2fe179132b69c4f3fda","time":1747530378000,"email":"62106726+qdleader@users.noreply.github.com","author":"前端架构师","message":"Merge branch 'master' of github.com:qdleader/qdleader"}]},"filePathRelative":"Typescript/基础/类型别名.md"}`);export{c as comp,p as data};

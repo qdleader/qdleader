@@ -1,0 +1,8 @@
+import{_ as s,c as a,a as n,o as l}from"./app-CKfc45Zi.js";const i={};function t(r,e){return l(),a("div",null,e[0]||(e[0]=[n(`<p>#L006 函数 Less 中也有函数，这让它看起来像一门编程语言了，不是吗？</p><p>让我们来看一下 fadeout， 一个降低颜色透明度的函数。</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code><span class="line">@var:#004590;</span>
+<span class="line"></span>
+<span class="line">div {</span>
+<span class="line">	height:50px;</span>
+<span class="line">	width:50px;</span>
+<span class="line">	background-color:fadeout(@var, 50%);</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3)]))}const c=s(i,[["render",t]]),o=JSON.parse(`{"path":"/less_scss/L006-%E5%87%BD%E6%95%B0.html","title":"","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1747530378000,"contributors":[{"name":"qdleader","username":"qdleader","email":"62106726+qdleader@users.noreply.github.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"35946fb0727bfe016751f2fe179132b69c4f3fda","time":1747530378000,"email":"62106726+qdleader@users.noreply.github.com","author":"前端架构师","message":"Merge branch 'master' of github.com:qdleader/qdleader"}]},"filePathRelative":"less&scss/L006-函数.md"}`);export{c as comp,o as data};

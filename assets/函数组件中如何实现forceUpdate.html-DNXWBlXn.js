@@ -1,0 +1,13 @@
+import{_ as a,c as s,a as n,o as i}from"./app-CKfc45Zi.js";const t={};function l(r,e){return i(),s("div",null,e[0]||(e[0]=[n(`<h1 id="函数组件中如何实现forceupdate" tabindex="-1"><a class="header-anchor" href="#函数组件中如何实现forceupdate"><span>函数组件中如何实现forceUpdate</span></a></h1><h2 id="方法1" tabindex="-1"><a class="header-anchor" href="#方法1"><span>方法1:</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code><span class="line">    const [,forceUpdate] = useReducer((x) =&gt; x + 1,0)</span>
+<span class="line"></span>
+<span class="line">    const handleClick = () =&gt; {</span>
+<span class="line">        forceUpdate()</span>
+<span class="line">    }</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="方法二" tabindex="-1"><a class="header-anchor" href="#方法二"><span>方法二</span></a></h2><p>自定义hook</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code><span class="line">function useForceUpdate() {</span>
+<span class="line">    const [state,setState] = setState(0);</span>
+<span class="line">    const update = useCallback(() =&gt; {</span>
+<span class="line">        setState((prev) =&gt; prev + 1)</span>
+<span class="line">    })</span>
+<span class="line">    return update;</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,6)]))}const c=a(t,[["render",l]]),p=JSON.parse(`{"path":"/react/hooks/%E5%9F%BA%E7%A1%80%E7%B1%BB/%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0forceUpdate.html","title":"函数组件中如何实现forceUpdate","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1747530378000,"contributors":[{"name":"qdleader","username":"qdleader","email":"62106726+qdleader@users.noreply.github.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"35946fb0727bfe016751f2fe179132b69c4f3fda","time":1747530378000,"email":"62106726+qdleader@users.noreply.github.com","author":"前端架构师","message":"Merge branch 'master' of github.com:qdleader/qdleader"}]},"filePathRelative":"react/hooks/基础类/函数组件中如何实现forceUpdate.md"}`);export{c as comp,p as data};
