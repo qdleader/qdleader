@@ -21,3 +21,11 @@ windows
 ```js
 irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex
 ```
+
+启动 下次启动在上次执行的目录下会看到一个 install.sh 文件
+
+在当前文件下执行
+
+```js
+./install.sh
+```
