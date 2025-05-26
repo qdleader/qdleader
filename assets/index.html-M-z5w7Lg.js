@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-CxRJHVie.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E7%9B%91%E6%8E%A7%E5%91%8A%E8%AD%A6/","title":"监控告警","lang":"zh-CN","frontmatter":{"title":"监控告警"},"git":{},"filePathRelative":null}');export{m as comp,p as data};
