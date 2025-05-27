@@ -111,3 +111,11 @@ font-family: "PingFang SC", miui, system-ui, -apple-system, BlinkMacSystemFont, 
 github：font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 ```
+
+## 8.通过类名控制，密码点点点样式展示
+
+```css
+.input {
+  -webkit-text-security: disc;
+}
+```
