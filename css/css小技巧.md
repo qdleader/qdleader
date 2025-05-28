@@ -119,3 +119,28 @@ github：font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Ar
   -webkit-text-security: disc;
 }
 ```
+
+## 逗号点点点加载中
+
+```css
+.pub-dots:after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+@keyframes dots {
+  0%,
+  20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  80%,
+  100% {
+    content: "...";
+  }
+}
+```
