@@ -1,5 +1,9 @@
 export const navbar = [
 	{
+		text: "Ai",
+		link: "/ai/",
+	},
+	{
 		text: "git",
 		link: "/git/",
 	},
