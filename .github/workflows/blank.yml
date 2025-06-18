@@ -19,6 +19,7 @@ jobs:
       - run: npm cache clean --force
       - run: npm i pnpm -g
       - run: pnpm install --no-cache
+      - run: pnpm approve-builds
       # - run: npm audit fix -f
 
       - name: Build
