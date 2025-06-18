@@ -30,6 +30,9 @@
     "vuepress-sidebar-atuo": "^1.0.4",
     "vuepress-theme-sidebar": "^0.1.0"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@swc/core", "better-sqlite3"]
+  },
   "volta": {
     "node": "20.15.0"
   }
