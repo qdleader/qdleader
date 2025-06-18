@@ -15,10 +15,10 @@ jobs:
           node-version: 20
           #   cache: npm
       - run: node -v
-      - run: rm -rf node_modules package-lock.json
+      - run: rm -rf node_modules package-lock.json pnpm-lock.yaml
       - run: npm cache clean --force
       - run: npm i pnpm -g
-      - run: pnpm i
+      - run: pnpm install --frozen-lockfile --no-cache
       # - run: npm audit fix -f
 
       - name: Build
