@@ -17,8 +17,9 @@ jobs:
       - run: node -v
       - run: rm -rf node_modules package-lock.json
       - run: npm cache clean --force
-      - run: npm i pnpm -g
-      - run: pnpm i
+      - run: npm i
+      # - run: npm i pnpm -g
+      # - run: pnpm i
       # - run: npm audit fix -f
 
       - name: Build
