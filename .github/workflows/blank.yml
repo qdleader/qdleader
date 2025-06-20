@@ -18,7 +18,8 @@ jobs:
       - run: rm -rf node_modules package-lock.json pnpm-lock.yaml
       - run: npm cache clean --force
       # - run: npm i --legacy-peer-deps
-      - run: npm i pnpm -g
+      # - run: npm i pnpm -g
+      - run: npm install -g pnpm@latest
       - run: pnpm i
       # - run: pnpm approve-builds
       # - run: npm audit fix -f
