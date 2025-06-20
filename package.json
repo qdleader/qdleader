@@ -29,7 +29,9 @@
     "vuepress": "^2.0.0-rc.14",
     "vuepress-plugin-clipboard": "^2.1.5",
     "vuepress-sidebar-atuo": "^1.0.4",
-    "vuepress-theme-sidebar": "^0.1.0"
+    "vuepress-theme-sidebar": "^0.1.0" ,
+    "@mdit/plugin-tab": "^0.22.1",
+    "markdown-it": "^13.0.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
