@@ -21,6 +21,7 @@ jobs:
       # - run: npm i pnpm -g
       - run: npm install -g pnpm@latest
       - run: pnpm i
+      - run: pnpm add markdown-it@13.0.2
       # - run: pnpm approve-builds
       # - run: npm audit fix -f
 
