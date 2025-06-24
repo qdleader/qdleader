@@ -17,11 +17,12 @@ jobs:
       - run: node -v
       - run: rm -rf node_modules package-lock.json pnpm-lock.yaml
       - run: npm cache clean --force
+      - run: npm i
       # - run: npm i --legacy-peer-deps
       # - run: npm i pnpm -g
-      - run: npm install -g pnpm@latest
-      - run: pnpm i
-      - run: pnpm add markdown-it@13.0.2
+      # - run: npm install -g pnpm@latest
+      # - run: pnpm i
+      # - run: pnpm add markdown-it@13.0.2
       # - run: pnpm approve-builds
       # - run: npm audit fix -f
 
