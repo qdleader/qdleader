@@ -1,0 +1,8 @@
+import{_ as s,c as a,a as n,o as l}from"./app-DbHRFhcj.js";const r={};function t(i,e){return l(),a("div",null,e[0]||(e[0]=[n(`<p>#变量</p><p>less 的一个主要功能就是可以让你在像其他语言中一样声明变量，这样你可以使用你经常使用的任何类型值：</p><blockquote><p>像 颜色，尺寸， 选择器， 字体名称， URL</p></blockquote><p>eg：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">@background-color:#ffffff;</span>
+<span class="line">@text-color:#000000;</span>
+<span class="line"></span>
+<span class="line">ul {</span>
+<span class="line">	background-color:@background-color;</span>
+<span class="line">	color:@text-color;</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><a href="http://lesscss.org/features/" target="_blank" rel="noopener noreferrer">官网</a></p>`,6)]))}const d=s(r,[["render",t]]),o=JSON.parse('{"path":"/less_scss/L002-less%E5%8F%98%E9%87%8F.html","title":"","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1751247917000,"contributors":[{"name":"qdleader","username":"qdleader","email":"yk4545945@163.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"c36011f17d8589a9dd4d62d0fd57f0287349de37","time":1751247917000,"email":"yk4545945@163.com","author":"qdleader","message":"docs(css): 添加关于:is()和:where()选择器的文档"}]},"filePathRelative":"less&scss/L002-less变量.md"}');export{d as comp,o as data};
