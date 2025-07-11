@@ -1,38 +1,40 @@
 <template>
-    <main class="footer">
-        <div v-for="(item, index) in footerList" :key="index" class="footer-item">
-            <a :href="item.href" target="_blank" rel="noopener noreferrer">
-                <img v-if="item.icon" :src="item.icon" alt="icon" class="item-icon" />
-                <span class="item-text">{{ item.label }}</span>
-            </a>
-        </div>
-        <div class="copy-right">
-           <span class="name">{{`${currentYear} 编程导航 &nbsp; |  &nbsp; `}} </span>
-            <a :href="government.href" target="_blank" rel="noreferrer" >
-              {{government.name}}
-            </a>
-        </div>
-    </main>
+  <main class="footer">
+    <div v-for="(item, index) in footerList" :key="index" class="footer-item">
+      <a :href="item.href" target="_blank" rel="noopener noreferrer">
+        <img v-if="item.icon" :src="item.icon" alt="icon" class="item-icon" />
+        <span class="item-text">{{ item.label }}</span>
+      </a>
+    </div>
+    <div class="copy-right">
+      <span class="name"
+        >{{ `${currentYear} 编程导航 &nbsp; |  &nbsp; ` }}
+      </span>
+      <a :href="government.href" target="_blank" rel="noreferrer">
+        {{ government.name }}
+      </a>
+    </div>
+  </main>
 </template>
 
 <script>
 export default {
-    name: 'Footer',
-    data () {
-        return {
-            footerList: [],
-            government: {},
-            currentYear : ''
-        }
-    },
+  name: "Footer",
+  data() {
+    return {
+      footerList: [],
+      government: {},
+      currentYear: "",
+    };
+  },
 
-  props: ['sidebarItems'],
+  props: ["sidebarItems"],
   mounted() {
-    this.footerList = this.$site.themeConfig.footer.friendLinks
-    this.government = this.$site.themeConfig.footer.copyright
-    this.currentYear =  new Date().getFullYear()
-  }
-}
+    this.footerList = this.$site.themeConfig.footer.friendLinks;
+    this.government = this.$site.themeConfig.footer.copyright;
+    this.currentYear = new Date().getFullYear();
+  },
+};
 </script>
 
 <style lang="stylus">
