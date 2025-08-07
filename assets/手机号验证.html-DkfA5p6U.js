@@ -1,0 +1,15 @@
+import{_ as a,c as n,a as e,o as t}from"./app-JR0DiM0i.js";const l={};function i(r,s){return t(),n("div",null,s[0]||(s[0]=[e(`<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">   let myreg = /^[1][3,4,5,7,8][0-9]{9}$/;</span>
+<span class="line">	if (!myreg.test(this.phone)) {</span>
+<span class="line">		this.$toast(&quot;请输入正确手机号码&quot;);</span>
+<span class="line">	} else {</span>
+<span class="line">		</span>
+<span class="line">	}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"></span>
+<span class="line"><span class="token comment">// 输入时候只输入手机号</span></span>
+<span class="line"> <span class="token operator">&lt;</span>a<span class="token operator">-</span>input</span>
+<span class="line">	v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">&quot;searchParams.alpCell&quot;</span></span>
+<span class="line">	placeholder<span class="token operator">=</span><span class="token string">&quot;手机号&quot;</span></span>
+<span class="line">	oninput<span class="token operator">=</span><span class="token string">&quot;value=value.match(/^\\d+(?:\\\\d{0,2})?/)&quot;</span></span>
+<span class="line">	<span class="token operator">:</span>maxLength<span class="token operator">=</span><span class="token string">&quot;20&quot;</span></span>
+<span class="line"><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>input<span class="token operator">&gt;</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2)]))}const o=a(l,[["render",i]]),c=JSON.parse(`{"path":"/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/%E6%89%8B%E6%9C%BA%E5%8F%B7%E9%AA%8C%E8%AF%81.html","title":"","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1754578924000,"contributors":[{"name":"qdleader","username":"qdleader","email":"62106726+qdleader@users.noreply.github.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"8368a3d830d4d39275b582b9717392562d913e18","time":1754578924000,"email":"62106726+qdleader@users.noreply.github.com","author":"前端架构师","message":"Merge branch 'master' of github.com:qdleader/qdleader"}]},"filePathRelative":"常用正则/手机号验证.md"}`);export{o as comp,c as data};
