@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七夕·星空下的约定</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              love: {
+                red: "#FF3A6E",
+                pink: "#FF9EBB",
+                purple: "#9D65C9",
+                blue: "#5B85AA",
+                dark: "#150E56",
+              },
+            },
+            fontFamily: {
+              romantic: ['"Dancing Script"', "cursive", "sans-serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .text-shadow-love {
+          text-shadow: 0 0 15px rgba(255, 58, 110, 0.7);
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float 6s ease-in-out 2s infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .bg-glass {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        .star {
+          position: absolute;
+          background-color: white;
+          border-radius: 50%;
+          animation: twinkle 2s infinite alternate;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <!-- 引入Google字体 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+  </head>
+
+  <body class="bg-love-dark text-white overflow-x-hidden font-sans">
+    <!-- 星空背景 -->
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+
+    <!-- 漂浮的星星 (动态生成) -->
+    <div
+      id="stars-container"
+      class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></div>
+
+    <!-- 导航栏 -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+      id="navbar">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center bg-glass rounded-b-xl">
+        <a
+          href="#hero"
+          class="text-2xl md:text-3xl font-romantic font-bold text-love-pink text-shadow-love"
+          >七夕·约定</a
+        >
+
+        <!-- 桌面导航 -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#story"
+            class="hover:text-love-pink transition-colors duration-300"
+            >爱情故事</a
+          >
+          <a
+            href="#gallery"
+            class="hover:text-love-pink transition-colors duration-300"
+            >甜蜜瞬间</a
+          >
+          <a
+            href="#message"
+            class="hover:text-love-pink transition-colors duration-300"
+            >爱的留言</a
+          >
+          <a
+            href="#countdown"
+            class="hover:text-love-pink transition-colors duration-300"
+            >倒计时</a
+          >
+        </div>
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menu-toggle" class="md:hidden text-2xl">
+          <i class="fa fa-heart-o"></i>
+        </button>
+      </div>
+
+      <!-- 移动端导航菜单 -->
+      <div id="mobile-menu" class="hidden md:hidden bg-glass absolute w-full">
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <a
+            href="#story"
+            class="hover:text-love-pink transition-colors duration-300 py-2"
+            >爱情故事</a
+          >
+          <a
+            href="#gallery"
+            class="hover:text-love-pink transition-colors duration-300 py-2"
+            >甜蜜瞬间</a
+          >
+          <a
+            href="#message"
+            class="hover:text-love-pink transition-colors duration-300 py-2"
+            >爱的留言</a
+          >
+          <a
+            href="#countdown"
+            class="hover:text-love-pink transition-colors duration-300 py-2"
+            >倒计时</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <!-- 牛郎织女动画 -->
+      <div
+        class="absolute top-1/4 left-[10%] w-20 h-20 md:w-32 md:h-32 animate-float hidden md:block">
+        <img
+          src="https://picsum.photos/id/1012/200/200"
+          alt="牛郎"
+          class="w-full h-full object-cover rounded-full border-2 border-love-blue" />
+      </div>
+
+      <div
+        class="absolute top-1/4 right-[10%] w-20 h-20 md:w-32 md:h-32 animate-float-delay hidden md:block">
+        <img
+          src="https://picsum.photos/id/1027/200/200"
+          alt="织女"
+          class="w-full h-full object-cover rounded-full border-2 border-love-pink" />
+      </div>
+
+      <!-- 主标题 -->
+      <div class="container mx-auto px-4 z-10 text-center">
+        <h1
+          class="text-[clamp(2.5rem,8vw,5rem)] font-romantic font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-love-pink via-white to-love-blue text-shadow">
+          七夕情人节
+        </h1>
+        <p
+          class="text-[clamp(1rem,3vw,1.5rem)] mb-10 max-w-2xl mx-auto text-gray-200">
+          星空为证，爱意永恒。在这个特别的日子，让我们共同见证爱情的美好
+        </p>
+
+        <!-- 漂浮爱心按钮 -->
+        <div class="relative inline-block animate-pulse-slow">
+          <a
+            href="#message"
+            class="inline-block bg-gradient-to-r from-love-red to-love-pink text-white font-bold py-3 px-8 rounded-full transform transition hover:scale-110 hover:shadow-lg hover:shadow-love-pink/30">
+            写下爱的告白
+          </a>
+          <div
+            class="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-love-red animate-ping">
+            <i class="fa fa-heart text-xs"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 向下滚动指示 -->
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a
+          href="#story"
+          class="text-white/70 hover:text-white transition-colors">
+          <i class="fa fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- 爱情故事区域 -->
+    <section id="story" class="relative py-20 z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[clamp(1.8rem,5vw,3rem)] font-romantic font-bold mb-4 text-love-pink text-shadow-love">
+            牛郎织女的传说
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-love-pink to-love-blue mx-auto rounded-full"></div>
+        </div>
+
+        <div
+          class="max-w-4xl mx-auto bg-glass rounded-2xl p-8 md:p-12 shadow-xl border border-white/10">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="order-2 md:order-1">
+              <p class="mb-4 text-lg leading-relaxed">
+                传说中，牛郎是一个贫苦的放牛娃，而织女是天上的仙女。一次偶然的机会，他们相遇并相爱，结为夫妻，生下了一儿一女。
+              </p>
+              <p class="mb-4 text-lg leading-relaxed">
+                然而，他们的爱情触犯了天条，王母娘娘强行将织女带回天庭。牛郎带着孩子追赶，王母娘娘用金钗划出一条天河（银河）将他们隔开。
+              </p>
+              <p class="text-lg leading-relaxed">
+                最终，王母娘娘被他们的深情打动，允许他们每年农历七月初七相会一次。每年的这一天，无数喜鹊会飞来搭成鹊桥，让他们得以相见。
+              </p>
+
+              <div class="mt-8 flex space-x-4">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-5 py-2 border border-love-pink text-love-pink rounded-full hover:bg-love-pink hover:text-white transition-all duration-300">
+                  <i class="fa fa-book mr-2"></i> 阅读完整版
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-5 py-2 bg-love-blue text-white rounded-full hover:bg-love-blue/80 transition-all duration-300">
+                  <i class="fa fa-heart mr-2"></i> 爱情箴言
+                </a>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 relative">
+              <div
+                class="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img
+                  src="https://picsum.photos/id/1039/600/800"
+                  alt="牛郎织女鹊桥相会"
+                  class="w-full h-auto" />
+              </div>
+              <div
+                class="absolute top-6 -right-6 w-full h-full bg-love-purple/30 rounded-xl -rotate-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 爱情数据可视化区域 -->
+    <section class="relative py-16 z-10 bg-love-dark/50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[clamp(1.8rem,5vw,3rem)] font-romantic font-bold mb-4 text-love-blue text-shadow">
+            爱情的轨迹
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-300">
+            用数据记录我们爱情的每一个瞬间，每一个点滴都值得珍藏
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- 爱情时长图表 -->
+          <div class="bg-glass rounded-xl p-6 shadow-lg border border-white/10">
+            <h3 class="text-xl font-romantic mb-4 text-love-pink">
+              我们的爱情历程
+            </h3>
+            <div class="h-80">
+              <canvas id="loveChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 爱情统计卡片 -->
+          <div class="grid grid-cols-2 gap-6">
+            <div
+              class="bg-glass rounded-xl p-6 shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+              <div class="text-4xl text-love-pink mb-2">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-1">1095天</h3>
+              <p class="text-gray-300 text-sm">我们相爱的日子</p>
+            </div>
+
+            <div
+              class="bg-glass rounded-xl p-6 shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+              <div class="text-4xl text-love-blue mb-2">
+                <i class="fa fa-map-marker"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-1">24个</h3>
+              <p class="text-gray-300 text-sm">一起去过的城市</p>
+            </div>
+
+            <div
+              class="bg-glass rounded-xl p-6 shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+              <div class="text-4xl text-love-purple mb-2">
+                <i class="fa fa-cutlery"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-1">156次</h3>
+              <p class="text-gray-300 text-sm">浪漫的晚餐</p>
+            </div>
+
+            <div
+              class="bg-glass rounded-xl p-6 shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+              <div class="text-4xl text-love-red mb-2">
+                <i class="fa fa-heart"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-1">无数次</h3>
+              <p class="text-gray-300 text-sm">说过我爱你</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 甜蜜瞬间画廊 -->
+    <section id="gallery" class="relative py-20 z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[clamp(1.8rem,5vw,3rem)] font-romantic font-bold mb-4 text-love-pink text-shadow-love">
+            甜蜜瞬间
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-love-pink to-love-blue mx-auto rounded-full mb-4"></div>
+          <p class="max-w-2xl mx-auto text-gray-300">
+            每一个瞬间都值得被珍藏，每一段回忆都闪耀着爱的光芒
+          </p>
+        </div>
+
+        <!-- 图片画廊 -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <!-- 画廊项目 1 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1015/600/400"
+              alt="情侣在海滩看日落"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  海边的誓言
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  第一次一起看海，你说要像海浪一样永远陪伴着我
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 画廊项目 2 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1019/600/800"
+              alt="情侣在山顶看风景"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  山顶的约定
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  在云雾缭绕的山顶，我们约定要一起看遍世间美景
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 画廊项目 3 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1040/600/400"
+              alt="情侣在咖啡馆"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  午后的咖啡馆
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  阳光透过窗户洒在你脸上，那是我见过最美的画面
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 画廊项目 4 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1059/600/400"
+              alt="情侣在雨中漫步"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  雨中的浪漫
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  即使大雨滂沱，只要有你在身边，就是晴天
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 画廊项目 5 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1062/600/800"
+              alt="情侣在雪中共度"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  初雪的约定
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  第一场雪落下时，我们说好要一起走过每个春夏秋冬
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 画廊项目 6 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-500">
+            <img
+              src="https://picsum.photos/id/1066/600/400"
+              alt="情侣在花丛中"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-love-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="p-6">
+                <h3 class="text-xl font-romantic text-white mb-2">
+                  花海中的吻
+                </h3>
+                <p class="text-gray-200 text-sm">
+                  在盛开的花海中，你的吻比所有花朵都要芬芳
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 查看更多按钮 -->
+        <div class="text-center mt-12">
+          <button
+            class="inline-flex items-center px-6 py-3 bg-glass border border-love-pink text-love-pink rounded-full hover:bg-love-pink hover:text-white transition-all duration-300">
+            <span>查看更多回忆</span>
+            <i class="fa fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 爱的留言板 -->
+    <section id="message" class="relative py-20 z-10 bg-love-dark/70">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[clamp(1.8rem,5vw,3rem)] font-romantic font-bold mb-4 text-love-pink text-shadow-love">
+            爱的留言
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-love-pink to-love-blue mx-auto rounded-full mb-4"></div>
+          <p class="max-w-2xl mx-auto text-gray-300">
+            在这个特别的日子，写下你对TA的深情告白
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-5 gap-8">
+            <!-- 留言表单 -->
+            <div
+              class="md:col-span-2 bg-glass rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
+              <h3 class="text-2xl font-romantic mb-6 text-love-pink">
+                写下你的爱
+              </h3>
+
+              <form id="message-form" class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2"
+                    >你的名字</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-love-pink text-white"
+                    placeholder="请输入你的名字" />
+                </div>
+
+                <div>
+                  <label for="lover" class="block text-sm font-medium mb-2"
+                    >给TA的称呼</label
+                  >
+                  <input
+                    type="text"
+                    id="lover"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-love-pink text-white"
+                    placeholder="TA的名字或昵称" />
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2"
+                    >爱的留言</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="5"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-love-pink text-white resize-none"
+                    placeholder="写下你想对TA说的话..."></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full py-3 bg-gradient-to-r from-love-red to-love-pink text-white font-bold rounded-lg hover:opacity-90 transition-opacity duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                  发送爱的告白
+                </button>
+              </form>
+            </div>
+
+            <!-- 留言展示 -->
+            <div
+              class="md:col-span-3 bg-glass rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
+              <h3 class="text-2xl font-romantic mb-6 text-love-blue">
+                甜蜜的留言
+              </h3>
+
+              <div
+                id="messages-container"
+                class="space-y-6 max-h-[600px] overflow-y-auto pr-2">
+                <!-- 留言1 -->
+                <div
+                  class="bg-white/5 p-5 rounded-xl border border-white/10 transform hover:translate-x-2 transition-transform duration-300">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h4 class="font-bold text-love-pink">小明</h4>
+                      <p class="text-sm text-gray-400">给 小红</p>
+                    </div>
+                    <span class="text-xs text-gray-400">今天 13:14</span>
+                  </div>
+                  <p class="text-gray-200">
+                    遇见你是我一生中最幸运的事，往后余生，风雪是你，平淡是你，心底温柔也是你。七夕快乐，我的爱。
+                  </p>
+                  <div class="mt-3 flex items-center">
+                    <button
+                      class="text-gray-400 hover:text-love-red transition-colors flex items-center text-sm">
+                      <i class="fa fa-heart-o mr-1"></i> <span>52</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 留言2 -->
+                <div
+                  class="bg-white/5 p-5 rounded-xl border border-white/10 transform hover:translate-x-2 transition-transform duration-300">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h4 class="font-bold text-love-pink">阿杰</h4>
+                      <p class="text-sm text-gray-400">给 小雨</p>
+                    </div>
+                    <span class="text-xs text-gray-400">昨天 20:08</span>
+                  </div>
+                  <p class="text-gray-200">
+                    从校服到婚纱，从青涩到成熟，感谢你一直陪伴在我身边。这个七夕，我想对你说：我爱你，不止今天，而是每一天。
+                  </p>
+                  <div class="mt-3 flex items-center">
+                    <button
+                      class="text-gray-400 hover:text-love-red transition-colors flex items-center text-sm">
+                      <i class="fa fa-heart-o mr-1"></i> <span>131</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 留言3 -->
+                <div
+                  class="bg-white/5 p-5 rounded-xl border border-white/10 transform hover:translate-x-2 transition-transform duration-300">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h4 class="font-bold text-love-pink">星辰</h4>
+                      <p class="text-sm text-gray-400">给 大海</p>
+                    </div>
+                    <span class="text-xs text-gray-400">3天前</span>
+                  </div>
+                  <p class="text-gray-200">
+                    虽然我们相隔千里，但心却紧紧相连。这个七夕不能陪在你身边，但我的思念从未停止。等我回来，给你一个大大的拥抱。
+                  </p>
+                  <div class="mt-3 flex items-center">
+                    <button
+                      class="text-gray-400 hover:text-love-red transition-colors flex items-center text-sm">
+                      <i class="fa fa-heart-o mr-1"></i> <span>99</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 七夕倒计时 -->
+    <section id="countdown" class="relative py-20 z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[clamp(1.8rem,5vw,3rem)] font-romantic font-bold mb-4 text-love-blue text-shadow">
+            距离七夕还有
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-300">
+            珍惜每一分每一秒，期待与你共度浪漫时刻
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="bg-glass rounded-2xl p-8 shadow-xl border border-white/10">
+            <!-- 倒计时器 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              <div class="text-center">
+                <div
+                  id="days"
+                  class="text-[clamp(2rem,6vw,4rem)] font-bold text-love-pink mb-2">
+                  00
+                </div>
+                <div class="text-gray-300">天</div>
+              </div>
+              <div class="text-center">
+                <div
+                  id="hours"
+                  class="text-[clamp(2rem,6vw,4rem)] font-bold text-love-pink mb-2">
+                  00
+                </div>
+                <div class="text-gray-300">时</div>
+              </div>
+              <div class="text-center">
+                <div
+                  id="minutes"
+                  class="text-[clamp(2rem,6vw,4rem)] font-bold text-love-pink mb-2">
+                  00
+                </div>
+                <div class="text-gray-300">分</div>
+              </div>
+              <div class="text-center">
+                <div
+                  id="seconds"
+                  class="text-[clamp(2rem,6vw,4rem)] font-bold text-love-pink mb-2">
+                  00
+                </div>
+                <div class="text-gray-300">秒</div>
+              </div>
+            </div>
+
+            <!-- 七夕日期说明 -->
+            <div class="text-center mt-10">
+              <p class="text-lg text-gray-200">
+                2025年七夕节是农历七月初七，公历8月29日
+              </p>
+            </div>
+
+            <!-- 爱情誓言 -->
+            <div class="mt-12 text-center">
+              <p
+                class="text-[clamp(1.2rem,3vw,1.8rem)] font-romantic text-white italic max-w-2xl mx-auto">
+                "两情若是久长时，又岂在朝朝暮暮。"
+              </p>
+              <p class="text-gray-400 mt-2">——秦观《鹊桥仙·纤云弄巧》</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer
+      class="relative py-10 z-10 bg-love-dark/80 border-t border-white/10">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h3 class="text-2xl font-romantic text-love-pink mb-4">
+            七夕·星空下的约定
+          </h3>
+          <p class="text-gray-400 mb-6">愿天下有情人终成眷属</p>
+
+          <div class="flex justify-center space-x-6 mb-8">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-love-pink text-xl transition-colors">
+              <i class="fa fa-weixin"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-love-pink text-xl transition-colors">
+              <i class="fa fa-weibo"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-love-pink text-xl transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-love-pink text-xl transition-colors">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+          </div>
+
+          <p class="text-gray-500 text-sm">
+            © 2025 七夕爱情主题网站 | 用爱创造美好
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-love-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+      // 等待DOM加载完成
+      document.addEventListener("DOMContentLoaded", function () {
+        // 移动端菜单切换
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          // 切换图标
+          const icon = menuToggle.querySelector("i");
+          if (icon.classList.contains("fa-heart-o")) {
+            icon.classList.replace("fa-heart-o", "fa-times");
+          } else {
+            icon.classList.replace("fa-times", "fa-heart-o");
+          }
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            navbar.classList.add("bg-love-dark/90", "shadow-lg");
+            navbar.classList.remove("bg-transparent");
+          } else {
+            navbar.classList.remove("bg-love-dark/90", "shadow-lg");
+            navbar.classList.add("bg-transparent");
+          }
+        });
+
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.remove("translate-y-20", "opacity-0");
+            backToTopBtn.classList.add("translate-y-0", "opacity-100");
+          } else {
+            backToTopBtn.classList.add("translate-y-20", "opacity-0");
+            backToTopBtn.classList.remove("translate-y-0", "opacity-100");
+          }
+        });
+
+        backToTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // 关闭移动菜单（如果打开）
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+              const icon = menuToggle.querySelector("i");
+              icon.classList.replace("fa-times", "fa-heart-o");
+            }
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // 创建随机星星
+        function createStars() {
+          const starsContainer = document.getElementById("stars-container");
+          const starCount = 100;
+
+          for (let i = 0; i < starCount; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            // 随机大小
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            // 随机位置
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            star.style.left = `${posX}%`;
+            star.style.top = `${posY}%`;
+
+            // 随机闪烁延迟
+            star.style.animationDelay = `${Math.random() * 2}s`;
+
+            starsContainer.appendChild(star);
+          }
+        }
+
+        // 初始化粒子背景
+        function initParticles() {
+          particlesJS("particles-js", {
+            particles: {
+              number: {
+                value: 80,
+                density: {
+                  enable: true,
+                  value_area: 800,
+                },
+              },
+              color: {
+                value: "#ffffff",
+              },
+              shape: {
+                type: "circle",
+                stroke: {
+                  width: 0,
+                  color: "#000000",
+                },
+              },
+              opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.1,
+                  sync: false,
+                },
+              },
+              size: {
+                value: 3,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 2,
+                  size_min: 0.1,
+                  sync: false,
+                },
+              },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.2,
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: 1,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+              },
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "grab",
+                },
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+                resize: true,
+              },
+              modes: {
+                grab: {
+                  distance: 140,
+                  line_linked: {
+                    opacity: 0.5,
+                  },
+                },
+                push: {
+                  particles_nb: 3,
+                },
+              },
+            },
+            retina_detect: true,
+          });
+        }
+
+        // 爱情历程图表
+        function initLoveChart() {
+          const ctx = document.getElementById("loveChart").getContext("2d");
+
+          const loveChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: [
+                "相识",
+                "第一次约会",
+                "确定关系",
+                "第一个情人节",
+                "第一次旅行",
+                "一周年",
+                "现在",
+              ],
+              datasets: [
+                {
+                  label: "爱情温度",
+                  data: [30, 60, 80, 85, 90, 95, 100],
+                  borderColor: "#FF3A6E",
+                  backgroundColor: "rgba(255, 58, 110, 0.1)",
+                  tension: 0.4,
+                  fill: true,
+                  pointBackgroundColor: "#FF9EBB",
+                  pointBorderColor: "#fff",
+                  pointRadius: 6,
+                  pointHoverRadius: 8,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 100,
+                  grid: {
+                    color: "rgba(255, 255, 255, 0.1)",
+                  },
+                  ticks: {
+                    color: "rgba(255, 255, 255, 0.7)",
+                  },
+                },
+                x: {
+                  grid: {
+                    color: "rgba(255, 255, 255, 0.1)",
+                  },
+                  ticks: {
+                    color: "rgba(255, 255, 255, 0.7)",
+                  },
+                },
+              },
+              plugins: {
+                legend: {
+                  labels: {
+                    color: "rgba(255, 255, 255, 0.7)",
+                  },
+                },
+              },
+            },
+          });
+        }
+
+        // 倒计时功能
+        function startCountdown() {
+          // 2025年七夕日期：2025年8月29日
+          const targetDate = new Date("2025-08-29T00:00:00");
+
+          function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            // 如果日期已过，显示0
+            if (diff <= 0) {
+              document.getElementById("days").textContent = "00";
+              document.getElementById("hours").textContent = "00";
+              document.getElementById("minutes").textContent = "00";
+              document.getElementById("seconds").textContent = "00";
+              return;
+            }
+
+            // 计算天、时、分、秒
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // 显示倒计时，确保两位数
+            document.getElementById("days").textContent = days
+              .toString()
+              .padStart(2, "0");
+            document.getElementById("hours").textContent = hours
+              .toString()
+              .padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes
+              .toString()
+              .padStart(2, "0");
+            document.getElementById("seconds").textContent = seconds
+              .toString()
+              .padStart(2, "0");
+          }
+
+          // 立即更新一次
+          updateCountdown();
+          // 每秒更新一次
+          setInterval(updateCountdown, 1000);
+        }
+
+        // 处理留言表单提交
+        const messageForm = document.getElementById("message-form");
+        const messagesContainer = document.getElementById("messages-container");
+
+        messageForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const lover = document.getElementById("lover").value;
+          const message = document.getElementById("message").value;
+
+          if (!name || !lover || !message) {
+            alert("请填写完整信息");
+            return;
+          }
+
+          // 创建新留言元素
+          const now = new Date();
+          const timeString = `${
+            now.getMonth() + 1
+          }月${now.getDate()}日 ${now.getHours()}:${now
+            .getMinutes()
+            .toString()
+            .padStart(2, "0")}`;
+
+          const newMessage = document.createElement("div");
+          newMessage.className =
+            "bg-white/5 p-5 rounded-xl border border-white/10 transform hover:translate-x-2 transition-transform duration-300";
+          newMessage.innerHTML = `
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h4 class="font-bold text-love-pink">${name}</h4>
+              <p class="text-sm text-gray-400">给 ${lover}</p>
+            </div>
+            <span class="text-xs text-gray-400">${timeString}</span>
+          </div>
+          <p class="text-gray-200">${message}</p>
+          <div class="mt-3 flex items-center">
+            <button class="text-gray-400 hover:text-love-red transition-colors flex items-center text-sm">
+              <i class="fa fa-heart-o mr-1"></i> <span>0</span>
+            </button>
+          </div>
+        `;
+
+          // 添加到留言容器顶部
+          messagesContainer.insertBefore(
+            newMessage,
+            messagesContainer.firstChild
+          );
+
+          // 滚动到顶部
+          messagesContainer.scrollTop = 0;
+
+          // 重置表单
+          messageForm.reset();
+
+          // 添加点赞功能
+          const likeBtn = newMessage.querySelector("button");
+          likeBtn.addEventListener("click", function () {
+            const icon = this.querySelector("i");
+            const countSpan = this.querySelector("span");
+            let count = parseInt(countSpan.textContent);
+
+            if (icon.classList.contains("fa-heart-o")) {
+              icon.classList.replace("fa-heart-o", "fa-heart");
+              countSpan.textContent = count + 1;
+              this.classList.add("text-love-red");
+            } else {
+              icon.classList.replace("fa-heart", "fa-heart-o");
+              countSpan.textContent = count - 1;
+              this.classList.remove("text-love-red");
+            }
+          });
+        });
+
+        // 初始化点赞功能
+        document
+          .querySelectorAll("#messages-container button")
+          .forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const icon = this.querySelector("i");
+              const countSpan = this.querySelector("span");
+              let count = parseInt(countSpan.textContent);
+
+              if (icon.classList.contains("fa-heart-o")) {
+                icon.classList.replace("fa-heart-o", "fa-heart");
+                countSpan.textContent = count + 1;
+                this.classList.add("text-love-red");
+              } else {
+                icon.classList.replace("fa-heart", "fa-heart-o");
+                countSpan.textContent = count - 1;
+                this.classList.remove("text-love-red");
+              }
+            });
+          });
+
+        // 初始化所有功能
+        createStars();
+        initParticles();
+        initLoveChart();
+        startCountdown();
+      });
+    </script>
+  </body>
+</html>
