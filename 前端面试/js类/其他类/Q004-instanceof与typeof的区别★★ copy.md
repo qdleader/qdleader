@@ -6,7 +6,7 @@
 都用来判断一个变量是否为空,或者什么类型
 
 不同点:
-	typeof返回值是一个字符串,用来说明变量的数据类型.(number,boolean,string,function,object,undefined)
+	typeof返回值是一个**字符串**,用来说明变量的数据类型.(number,boolean,string,function,object,undefined)
 
 	判断一个变量是否存在:
 		if(typeof(a)!='undefined') {
