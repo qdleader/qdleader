@@ -49,8 +49,10 @@ yum -y install gcc-c++
 
 #### 4、安装完成
 输入命令，如果显示对应版本号表示安装成功。
-lua复制代码# pcre-config --version
 
+```js
+pcre-config --version
+```
 
 
 
@@ -60,7 +62,8 @@ lua复制代码# pcre-config --version
 进入/usr/local/src/目录，使用以下命令下载nginx并解压。
 ```shell
  cd /usr/local/src/
-# wget http://nginx.org/download/nginx-1.23.4.tar.gz
+# wget http://nginx.org/download/nginx-1.28.0.tar.gz
+wget http://nginx.org/download/nginx-1.23.4.tar.gz
 # tar zxvf nginx-1.23.4.tar.gz
 ```
 
