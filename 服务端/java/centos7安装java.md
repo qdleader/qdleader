@@ -5,6 +5,11 @@
 ## 1、下载安装包
 ```js
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
+
+或
+
+
+wget https://mirrors.tuna.tsinghua.edu.cn/Adoptium/17/jdk/x64/linux/OpenJDK17U-jdk_x64_linux_hotspot_17.0.16_8.tar.gz
 ```
 
 java17和java8一样，都是LTS长期支持版本，因此这里直接下载java17
