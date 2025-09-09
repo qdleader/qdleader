@@ -114,6 +114,13 @@ cd usr/local/mongodb/mongodb-linux-x86_64-rhel80-5.0.4/bin
 ```js
 ./mongod --config /usr/local/mongodb/etc/mongodb.conf
 ```
+如果报错的话
+```js
+./mongod: error while loading shared libraries: libcrypto.so.1.1: cannot open shared object file: No such file or directory
+```
+```js
+[root@iv-ye39k0b2805i3z5gsheu bin]# yum install -y libcrypto.so.*
+```
 
 
 启动服务之后测试，进入数据库:
