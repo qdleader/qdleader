@@ -1,25 +1,23 @@
-# V001-vuerouter是怎么传值的
+# V001-vuerouter 是怎么传值的
 
-1.
->在路由处配置
+## 1.在路由处配置
 
-```
-path:'/detail/:id'
+```js
+path: "/detail/:id";
 ```
 
-```
-调用：
+```js
+// 调用：
 this.$router.push({
-	path:'/home/${id}'
-})
+  path: "/home/${id}",
+});
 ```
 
-在组件内通过this.$route.params.id即可获取。
+在组件内通过 this.$route.params.id 即可获取。
 
+## 2.在 router-link 标签中传递参数。
 
-
-2.在router-link标签中传递参数。
-```
+```js
 <router-link :to = {
 	params:{
 		id:1
@@ -28,13 +26,13 @@ this.$router.push({
 ```
 
 也可通过：
-this.$route.params.id获取
+this.$route.params.id 获取
 
->这里通过router-link传参方式是隐形传参
+> 这里通过 router-link 传参方式是隐形传参
 
-3.另一种params的是通过params传参，通过name配置路由。
+## 3.另一种 params 的是通过 params 传参，通过 name 配置路由。
 
-```
+```js
 //路由处：
 
 {
@@ -44,27 +42,23 @@ this.$route.params.id获取
 }
 ```
 
-```
-调用：
+```js
+// 调用：
 
 this.$router.push({
-	name:'Home',
-	params:{
-		id:id
-	}
-})
+  name: "Home",
+  params: {
+    id: id,
+  },
+});
 ```
 
 获取：
 this.$route.params.id
 
+## 4.通过 query 来传递参数，参数会在 url 后边的?id=?中显示
 
-
-4.通过query来传递参数，参数会在url后边的?id=?中显示
-
-
-
-```
+```js
 //路由处：
 
 {
@@ -74,16 +68,15 @@ this.$route.params.id
 }
 ```
 
-
-```
-调用：
+```js
+// 调用：
 
 this.$router.push({
-	path:'/home',
-	query:{
-		id:id
-	}
-})
+  path: "/home",
+  query: {
+    id: id,
+  },
+});
 ```
 
 获取：
