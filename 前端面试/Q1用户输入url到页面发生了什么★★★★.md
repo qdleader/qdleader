@@ -1,4 +1,4 @@
-# Q1用户输入url到页面发生了什么★★★★
+# Q1 用户输入 url 到页面发生了什么 ★★★★
 
 ```js
 ###用户输入url到页面发生了什么？★★★★
@@ -134,7 +134,7 @@ URL（Uniform Resource Locator），统一资源定位符，用于定位互联�
 
 > 根据 html 结构生成DOM Tree
 > 根据CSS 生成CSSOM
->将DOM和CSSOM猪呢个合成RenderTree
+>将DOM和CSSOM整合成RenderTree
 > 根据RenderTree开始渲染和展示
 > 遇到<script>时，会执行并阻塞渲染
 ```
