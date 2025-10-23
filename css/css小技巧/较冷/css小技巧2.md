@@ -35,3 +35,23 @@
   }
 
 ```
+
+
+## is ()：简化多选择器重复写法
+
+```css
+/* 传统写法 */
+header p,
+main p,
+footer p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* :is() 简化写法 */
+:is(header, main, footer) p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+```
