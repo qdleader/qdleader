@@ -4,9 +4,9 @@
 
 **📚 一个系统化整理的前端知识库，涵盖面试、实战、工具等全方位内容**
 
-[![GitHub stars](https://img.shields.io/github/stars/icourt/qdleader?style=flat-square)](https://github.com/icourt/qdleader/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/icourt/qdleader?style=flat-square)](https://github.com/icourt/qdleader/network)
-[![GitHub issues](https://img.shields.io/github/issues/icourt/qdleader?style=flat-square)](https://github.com/icourt/qdleader/issues)
+[![GitHub stars](https://img.shields.io/github/stars/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/network)
+[![GitHub issues](https://img.shields.io/github/issues/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/issues)
 
 </div>
 
@@ -15,6 +15,14 @@
 这是一个持续更新的前端知识库，汇集了日常开发中的实战经验、面试题解析、工具使用技巧等内容。无论你是初学者还是进阶开发者，都能在这里找到有价值的参考资料。
 
 > 💡 **吾生也有涯，而知也无涯。** 让我们一起在有限的时间里，做自己喜欢的事，探索前端的奇妙世界！
+
+## 💬 交流社区
+
+欢迎关注公众号 **qdleader**，回复「**加群**」即可加入技术交流群！
+
+- 📱 每日推送最新知识点
+- 👥 与小伙伴们一起讨论技术问题
+- 🎯 获取更多学习资源
 
 ## ✨ 特色内容
 
@@ -80,7 +88,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/icourt/qdleader.git
+git clone https://github.com/qdleader/qdleader.git
 
 # 进入目录
 cd qdleader
