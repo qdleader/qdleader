@@ -1,0 +1,7 @@
+src/
+tsconfig.json
+*.log
+.DS_Store
+*.tsbuildinfo
+node_modules/
+

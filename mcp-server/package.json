@@ -1,0 +1,49 @@
+{
+  "name": "qdleader-mcp",
+  "version": "2.0.0",
+  "description": "MCP Server for QDLeader Front-end Knowledge Base - Access comprehensive front-end documentation including Vue, React, TypeScript, interview questions, and more",
+  "type": "module",
+  "bin": {
+    "qdleader-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "frontend",
+    "documentation",
+    "vue",
+    "react",
+    "typescript",
+    "interview",
+    "knowledge-base"
+  ],
+  "author": "QDLeader",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qdleader/qdleader.git",
+    "directory": "mcp-server"
+  },
+  "bugs": {
+    "url": "https://github.com/qdleader/qdleader/issues"
+  },
+  "homepage": "https://github.com/qdleader/qdleader/tree/master/mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

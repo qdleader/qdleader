@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "qdleader": {
+      "command": "node",
+      "args": ["/absolute/path/to/qdleader/mcp-server/dist/index.js"]
+    }
+  }
+}
+

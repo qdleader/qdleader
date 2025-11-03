@@ -31,6 +31,7 @@
 - 🎯 **系统化整理** - 按技术栈分类，方便查阅
 - 🔧 **工具技巧** - 提升开发效率的实用工具和方法
 - 🎨 **组件收藏** - 好玩实用的组件和页面效果
+- 🤖 **AI 增强** - 提供 MCP 服务器，让 AI 助手访问知识库
 
 ## 📂 目录结构
 
@@ -96,6 +97,43 @@ cd qdleader
 # 使用 VS Code 打开
 code .
 ```
+
+## 🤖 AI 增强 - MCP 服务器
+
+我们提供了 **QDLeader MCP Server**，让 AI 助手（如 Cursor、Claude Desktop）能够直接访问和搜索整个知识库！
+
+### 特性
+
+- 🔍 智能搜索整个知识库
+- 📚 按分类浏览文档
+- 📖 完整读取任何文档
+- 🎯 快速定位 Vue、React、面试题等内容
+
+### 快速配置
+
+在 Cursor 或 Claude Desktop 的 MCP 配置中添加：
+
+```json
+{
+  "mcpServers": {
+    "qdleader": {
+      "command": "npx",
+      "args": ["-y", "qdleader-mcp"]
+    }
+  }
+}
+```
+
+### 使用示例
+
+配置完成后，你可以这样与 AI 助手对话：
+
+- "帮我搜索 Vue3 组合式 API 的相关文档"
+- "列出所有前端面试题分类"
+- "读取 React hooks 的使用指南"
+- "在 TypeScript 分类中搜索泛型相关内容"
+
+📖 详细文档请查看 [MCP Server 文档](./mcp-server/README.md)
 
 ## 💬 交流社区
 

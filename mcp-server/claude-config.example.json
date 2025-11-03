@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "qdleader": {
+      "command": "npx",
+      "args": ["-y", "qdleader-mcp"]
+    }
+  }
+}
+
