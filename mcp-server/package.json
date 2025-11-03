@@ -1,6 +1,6 @@
 {
   "name": "qdleader-mcp",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "MCP Server for QDLeader Front-end Knowledge Base - Access comprehensive front-end documentation including Vue, React, TypeScript, interview questions, and more",
   "type": "module",
   "bin": {
