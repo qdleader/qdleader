@@ -1,6 +1,7 @@
 # vue3中如何封装组件
 
 > 比如封装一个时间组件
+
 ## 新建一个nowTime.ts的文件
 ```js
 import { ref } from 'vue'

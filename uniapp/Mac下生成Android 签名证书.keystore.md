@@ -6,9 +6,7 @@ Mac下生成Android 签名证书.keystore
 
 > 2、keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keystore yourapp.keystore
 
-
 这里直接安装到了 /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/bin 这个目录
-
 
 ```js
 testalias是证书别名，可修改为自己想设置的字符，建议使用英文字母和数字
@@ -35,7 +33,6 @@ Is CN=XX, OU=XX, O=XX, L=XX, ST=XX, C=XX correct?
 Enter key password for <testalias>  
         (RETURN if same as keystore password):  //确认证书密码与证书文件密码一样（HBuilder|HBuilderX要求这两个密码一致），直接回车就可以
 
-
 ```
 
 ### 查看证书信息
@@ -43,12 +40,10 @@ Enter key password for <testalias>
 keytool -list -v -keystore yourapp.keystore  
 Enter keystore password: //输入密码，回车
 ```
+
 ### 更改密钥库类型
-```
+```js
 keytool -importkeystore -srckeystore yourapp.keystore -destkeystore yourapp.keystore -deststoretype JKS
 ```
+
 以上步骤完成即可在uniapp中打包了。
-
-
-
-

@@ -95,5 +95,4 @@ console.debug('这是一条调试信息');
 const obj = { name: '张三', age: 25 };
 console.dir(obj);
 
-
 ```

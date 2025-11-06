@@ -5,11 +5,11 @@
 ```js
 mkdir vite-progress && cd vite-progress && pnpm init
 ```
+
 #### 1.2 安装 typescript
 ```js
 pnpm i typescript @types/node -D
 ```
-
 
 #### 1.3 配置 tsconfig.json
 ```js
@@ -39,9 +39,10 @@ pnpm i typescript @types/node -D
   ]
 }
 ```
+
 #### 1.4 安装 vite
 
-```
+```bash
 pnpm intsall vite --save-dev
 ```
 
@@ -51,7 +52,6 @@ pnpm intsall vite --save-dev
 ```js
 pnpm i eslint @typescript-eslint / parser @typescript-eslint / eslint - plugin--save - dev
 ```
-
 
 配置.eslintrc：
 
@@ -86,10 +86,9 @@ pnpm i eslint @typescript-eslint / parser @typescript-eslint / eslint - plugin--
 ## 配置格式化文件
 
 #### 安装 prettier （可选）
-```
+```bash
 pnpm i prettier eslint - config - prettier eslint - plugin - prettier--save - dev
 ```
-
 
 #### 配置.prettierrc ：
 ```js
@@ -109,6 +108,7 @@ pnpm i prettier eslint - config - prettier eslint - plugin - prettier--save - de
   "endOfLine": "auto"
 }
 ```
+
 ## 3. 新增 src / index.ts 入口
 ```js
 import type { PluginOption } from 'vite';
@@ -139,6 +139,7 @@ export default function vitePluginTemplate (): PluginOption {
     }
 }
 ```
+
 到这里，那么我们的基本模版就建好了，怎么运行呢？
 
 在当前目录下执行
@@ -194,11 +195,7 @@ export default defineConfig({
 
 ```
 
-
-
 好了，在外面（vite-progress 目录下）我们再下载个tsup ，tsup 是一个轻小且无需配置的，由 esbuild 支持的构建工具；
-
-
 
 修改一下 vite-progress/package.json 的打包命令，及路径
 
@@ -214,12 +211,10 @@ export default defineConfig({
 
   7. 开发环境运行
 
-
 开发环境运行：实时监听文件修改后重新打包（热更新）
 pnpm run build:vite
 
 到这里你就可以 边开发边运行了 😄
-
 
 # vite 的插件钩子
 ## 1. vite 独有的钩子
@@ -250,6 +245,3 @@ pnpm run build:vite
 > generateBundle(options, bundle, isWrite)：在调用 bundle.write 之前立即触发这个 hook；
 > writeBundle(options, bundle)：在调用 bundle.write后，所有的chunk都写入文件后，最后会调用一次 writeBundle；
 > closeBundle()：在服务器关闭时被调用
-
-
-

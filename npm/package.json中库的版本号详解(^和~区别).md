@@ -1,6 +1,5 @@
 # package.json中库的版本号详解(^和~区别)
 
-
 ```js
 "dependencies": {
     "bluebird": "^3.3.4",
@@ -11,8 +10,6 @@
 
 bluebird的版本号：^3.3.4
 body-parse的版本号：~1.15.2
-
-
 
 当我们使用最新的Node运行‘npm instal --save xxx'，的时候，他会优先考虑使用插入符号（^）而不是波浪符号（~）了。
 
@@ -26,7 +23,6 @@ body-parse的版本号：~1.15.2
 
 ^3.3.4 := >=3.3.4 <4.0.0
 ```
-
 
 最后解释下之前提到的minor verision和major version：
 

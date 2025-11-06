@@ -1,11 +1,11 @@
 # vue3+ts父组件调用子组件方法
+
 父组件
 ```js
 <div>
 
   <editPage ref="sonRef"/>
 </div>
-
 
 </template>
 
@@ -49,18 +49,14 @@ setup() {
      sonRef.value.acceptValue('123456')
    }
 
-
-
    return {
            sonRef
       }
 ```
 
-
 子组件
 
-```
-
+```js
 
 export default defineComponent({
     name:'editPage',

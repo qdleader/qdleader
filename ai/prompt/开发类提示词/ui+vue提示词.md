@@ -68,10 +68,13 @@ Users need professional-level UI design solutions and corresponding Vue code imp
 </process>
 
 <output_format>
+
 ## 1. Requirements Analysis and Reasoning Process
+
 [Detailed requirements analysis and reasoning process, including key decision points and considerations]
 
 ## 2. UI Design Solution
+
 [Complete design solution description, including:]
 - Design philosophy and visual style explanation
 - Page layout and component structure
@@ -81,6 +84,7 @@ Users need professional-level UI design solutions and corresponding Vue code imp
 - Design preview or illustrations
 
 ## 3. Vue Code Implementation
+
 [Code implementation based on design solution, including:]
 - Component structure and data flow explanation
 - Core component code (with comments)

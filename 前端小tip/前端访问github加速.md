@@ -6,7 +6,7 @@
 
 这是两个国内镜像的地址：
 
-```
+```js
 
 https://github.com.cnpmjs.org
 
@@ -17,25 +17,23 @@ https://hub.fastgit.org
 ->_->  浏览起来真香呀！
 https://github.com.cnpmjs.org/这个网址浏览时候常有问题，刷新一下就可以了，下面这个网址比这个就好用多了。。
 
-
 https://hub.fastgit.org这个下载时候也是比较快的
 
-```
+```bash
 git clone https://hub.fastgit.org/qdleader/qdleader.git
 ```
+
 推荐指数：★★★
 
-
-
 ## 2.github浏览加速
-```
+```js
 http://toolwa.com/github/
 ```
 
 把你要浏览的仓库放到输入框就可以快速浏览
 
 比如你把
-```
+```js
 https://github.com/qdleader/qdleader.git
 ```
 
@@ -47,40 +45,34 @@ https://github.com/qdleader/qdleader.git
 
 推荐指数：★
 
-
 ## 3.git clone 下载加速
 
-```
+```js
 https://github.zhlh6.cn/
 ```
+
 把加速的地址
 放到输入栏
-```
+```js
 https://github.com/qdleader/qdleader
 ```
 
 会生成下面的地址
-```
+```js
 git@git.zhlh6.cn:qdleader/qdleader
 ```
-直接git clone 这个地址即可
 
+直接git clone 这个地址即可
 
 推荐指数：★★★
 
-
-
-
 ## 4.谷歌浏览器 GitHub 加速插件
 
-
 > 直接在chrome 网上应用商店  搜GitHub加速  下载即可
-
 
 如果小伙伴在线安装不便，可以在qdleader 公众号后台回复 github加速。获取安装包
 
 推荐指数: ★★★
-
 
 ## 5.通过 Gitee 中转 fork 仓库下载
 
@@ -94,7 +86,6 @@ git@git.zhlh6.cn:qdleader/qdleader
 
 推荐指数: ★★
 
-
 ## 6. 通过修改 HOSTS 文件进行加速
 
 1 获取GitHub官方CDN地址
@@ -103,7 +94,7 @@ git@git.zhlh6.cn:qdleader/qdleader
 https://www.ipaddress.com/
 
 查询这两个链接的DNS解析地址
-```
+```js
 github.com
 
 github.global.ssl.fastly.net
@@ -117,7 +108,7 @@ github.global.ssl.fastly.net
 
 在最后加上
 
-```
+```js
   192.30.253.112     github.com
 
   199.232.69.194 github.global.ssl.fastly.net
@@ -125,7 +116,7 @@ github.global.ssl.fastly.net
 ```
 
 3 刷新系统DNS缓存
-```
+```js
 Windows+X 打开系统命令行（管理员身份）或powershell
 
 运行 ipconfig /flushdns 手动刷新系统DNS缓存。
@@ -133,24 +124,26 @@ Windows+X 打开系统命令行（管理员身份）或powershell
 
 推荐指数: ★★
 
-
 ## 7.克隆加速
+
 加入部分连接
-```
+```js
 ghproxy.com
 ```
+
 比如你下下载
-```
+```js
 https://github.com/qdleader/qdleader.git
 ```
 
 原来写法
-```
+```bash
 git clone https://github.com/qdleader/qdleader.git
 ```
+
 现在只需要
 
-```
+```bash
 git clone https://ghproxy.com/github.com/qdleader/qdleader.git
 ```
 

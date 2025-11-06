@@ -1,14 +1,13 @@
 # 常用console
 
-
  ```js
 
     1. Console.table方法;
     2. Console包对象;
     3. Console.timeㅣ console.timeEnd[OK]
 
-```
 ```js
+```
 
 // prints the text to the console as  a log message
 console.log('This is a log message');
@@ -34,15 +33,12 @@ console.groupCollapsed('Technolgies');
 technologies.forEach(tech => {console.info(tech);})
 console.groupEnd('Technolgies');
 
-
-
 console.time()
 
 console.timeEnd()
 
-
-
 console.log('%c this is a message','color:#0f0;')
 console.log('%c this %c is a %c message','color:#f00;','font-size:20px;','color:blue;background:yellow;')
 
+```js
 ```

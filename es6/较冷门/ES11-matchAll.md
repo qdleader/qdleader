@@ -1,18 +1,12 @@
 # ES11-matchAll
-matchAll
 
+matchAll
 
 ```ts
 const reg = /[0-3]/g;
 const data = '2020';
 console.log(data.matchAll(reg))
 console.log([...data.matchAll(reg)])
-
-
-
-
-
-
 
 /**
  * 0: ["2", index: 0, input: "2020", groups: undefined]
@@ -22,7 +16,3 @@ console.log([...data.matchAll(reg)])
  */
 
 ```
-
-
-
-

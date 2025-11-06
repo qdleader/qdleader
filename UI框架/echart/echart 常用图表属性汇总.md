@@ -1,7 +1,7 @@
 # echart 常用图表属性汇总
 
-
 ​
+
 ## 图表标题
 
 ```json
@@ -30,10 +30,6 @@
     }
   }
 ```
-
-
-
-
 
 ## 图例
 ```json
@@ -92,11 +88,6 @@ dataRange: {
 },
 ```
 
-
-
-
-
-
 ## 工具箱
 ```json
 // 工具箱
@@ -135,7 +126,7 @@ toolbox: {
 ``` 
 
 ## 提示框
-```json
+```
 // 提示框
 tooltip: {
   trigger: 'item',           // 触发类型，默认数据触发，见下图，可选为：'item' ¦ 'axis'
@@ -164,10 +155,10 @@ tooltip: {
     color: '#fff'
   }
 },
-```
+```css
 
 ## 区域缩放控制器
-```json
+```
 // 区域缩放控制器
 dataZoom: {
   orient: 'horizontal',      // 布局方式，默认为水平布局，可选为：
@@ -183,10 +174,10 @@ dataZoom: {
   fillerColor: 'rgba(144,197,237,0.2)',   // 填充颜色
   handleColor: 'rgba(70,130,180,0.8)'     // 手柄颜色
 },
-```
+```css
 
 ## 网格
-```json
+```
 // 网格
   grid: {
     x: 80,
@@ -199,10 +190,10 @@ dataZoom: {
     borderWidth: 1,
     borderColor: '#ccc'
   },
-```
+```css
 
 ## 类目轴
-```json
+```
 // 类目轴
 categoryAxis: {
   position: 'bottom',    // 位置
@@ -254,10 +245,10 @@ categoryAxis: {
     }
   }
 },
-```
+```css
 
 ## 数值型坐标轴默认参数
-```json
+```
 // 数值型坐标轴默认参数
 valueAxis: {
   position: 'left',      // 位置
@@ -306,10 +297,10 @@ valueAxis: {
     }
   }
 },
-```
+```css
 
 ## 极坐标系
-```json
+```
 // 极坐标系
 polar : {
   center : ['50%', '50%'],    // 默认全局居中
@@ -350,10 +341,10 @@ polar : {
     }
   }
 },
-```
+```css
 
 ## 柱形图默认参数
-```json
+```
 // 柱形图默认参数
 bar: {
   barMinHeight: 0,          // 最小高度改为0
@@ -387,10 +378,10 @@ bar: {
     }
   }
 },
-```
+```css
 
 ## 折线图默认参数
-```json
+```
 // 折线图默认参数
 line: {
   itemStyle: {
@@ -427,10 +418,10 @@ line: {
   //symbolRotate : null,  // 拐点图形旋转控制
   showAllSymbol: false    // 标志图形默认只有主轴显示（随主轴标签间隔隐藏策略）
 },
-```
+```css
 
 ## K线图默认参数
-```json
+```
 // K线图默认参数
 k: {
   // barWidth : null          // 默认自适应
@@ -451,10 +442,10 @@ k: {
     }
   }
 },
-```
+```css
 
 ## 散点图默认参数
-```json
+```
 // 散点图默认参数
 scatter: {
   //symbol: null,      // 图形类型
@@ -483,10 +474,10 @@ scatter: {
     }
   }
 },
-```
+```css
 
 ## 雷达图默认参数
-```json
+```
 // 雷达图默认参数
 radar : {
   itemStyle: {
@@ -511,10 +502,10 @@ radar : {
   symbolSize: 2           // 可计算特性参数，空数据拖拽提示图形大小
   //symbolRotate : null,  // 图形旋转控制
 },
-```
+```css
 
 ## 饼图默认参数
-```json
+```
 // 饼图默认参数
 pie: {
   center : ['50%', '50%'],    // 默认全局居中
@@ -564,10 +555,10 @@ pie: {
     }
   }
 },
-```
+```css
 
 ## 地图
-```json
+```
 // 地图
 map: {
     mapType: 'china',   // 各省的mapType暂时都用中文
@@ -609,10 +600,10 @@ map: {
       }
     }
   },
-```
+```css
 
 ## 力引导
-```json
+```
 force : {
     // 数据map到圆的半径的最小值和最大值
     minRadius : 10,
@@ -653,10 +644,10 @@ force : {
       }
     }
   },
-```
+```css
 
 ## 和弦图
-```json
+```
 chord : {
     radius : ['65%', '75%'],
     center : ['50%', '50%'],
@@ -795,4 +786,5 @@ textStyle: {
   addDataAnimation: true,         // 动态数据接口是否开启动画效果
   animationDuration: 2000,
   animationEasing: 'ExponentialOut'    //BounceOut
+```js
 ```

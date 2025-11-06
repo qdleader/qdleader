@@ -1,16 +1,13 @@
 # vue3+ts添加公共富文本组件
 
-## vue3+ts添加公共富文本组件
-
 ## 下载
-```
+```bash
 npm install wangeditor --save-dev
 ```
 
 ### 新建一个editor.vue 的组件
 
-
-```
+```js
 <style scoped>
 .part_right {
     width: 100%;
@@ -64,7 +61,6 @@ npm install wangeditor --save-dev
         </div>
 </div>
 
-
 </template>
 
 <script lang="ts">
@@ -77,8 +73,6 @@ interface DataProps {
     editorContent: string
     getContent:(ref?: any) => void
 }
-
-
 
 export default defineComponent({
     name:'Editor',
@@ -166,19 +160,14 @@ export default defineComponent({
 })
 </script>
 
-
-
-
 ```
 
 ### 调用的组件
 
-```
+```js
 <style scoped>
 
-
 </style>
-
 
 <template>
     <div class="part_right">   
@@ -194,8 +183,6 @@ interface DataProps {
     content: string;
     showBack:(ref?: any) => void
 }
-
-
 
 export default defineComponent({
     name:'about',
@@ -235,14 +222,13 @@ export default defineComponent({
 
 ```
 
-
 这样就完成可以在vue3加ts中使用 富文本啦
 
 拓展。。
 
 有的同学需要自定义上传图片的接口
 
-```
+```js
 data.editor.config.customUploadImg = function (files: any, insert: any ) {
         // files 是 input 中选中的文件列表insert 是获取图片 url 后，插入到编辑器的方法
         // let file;

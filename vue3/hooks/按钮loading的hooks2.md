@@ -62,6 +62,5 @@ function onCancel() {
 </template>
 ```
 
-
 这里也是用到了promise链式调用的特性，在接口调用之后马上将loading置为true，在接口调用完成后置为false。而useAutoRequest则是在接口调用之前就将loading置为true。
 useAutoRequest调用时代码更简洁，useAutoLoading的使用则更灵活，可以同时服务给多个接口使用，比较适合提交、取消这种互斥的场景。

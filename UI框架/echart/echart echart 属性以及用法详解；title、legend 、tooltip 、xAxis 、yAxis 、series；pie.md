@@ -1,4 +1,5 @@
 # echart echart 属性以及用法详解；title、legend 、tooltip 、xAxis 、yAxis 、series；pie
+
 记录一些关于echart的属性及用法
 
 ## **1、title  主副标题**
@@ -34,8 +35,6 @@ title : {
 },	
 ```
 
-
-
 ##  **2、grid 图表位置**
 ```js
 grid: {
@@ -56,8 +55,6 @@ grid: {
     // shadowBlur:10, //阴影的模糊大小
 },
 ```
-
-
 
 ##  **3、legend 图例**
 ```js
@@ -82,8 +79,6 @@ legend: {
     selectedMode:false,//去掉鼠标点击事件 false不可点击 true可以点击
 },
 ```
-
-
 
 ##  **4、tooltip 显示提示框**
 ```js
@@ -156,8 +151,6 @@ tooltip: {
 	confine:true,//解决有些提示框现实不全的问题，没有问题不设也可
 },
 ```
-
-
 
 ##  **5、线图 x轴：xAxis  （yAxis 和 xAxis基本一致）**
 
@@ -233,8 +226,6 @@ yAxis: {
 }
 ```
 
-
-
 ##  **5饼图 pie :series**
 
 ```js
@@ -304,11 +295,6 @@ series: [
     }
 ]
 ```
-
-
-
-
-
 
 ```js
  
@@ -426,11 +412,7 @@ function pieFun(pieData,ele){
 
 ```
 
-
 **简单折线图完整代码**
-
-
-
 
 ```js
 

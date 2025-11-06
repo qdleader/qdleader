@@ -1,6 +1,6 @@
 # 去除富文本中的html标签
-去除字符串里面的html标签的正则公式
 
+去除字符串里面的html标签的正则公式
 
 ```js
 var filterHTMLTag = function (str) {

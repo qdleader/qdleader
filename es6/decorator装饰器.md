@@ -9,7 +9,6 @@ ES6中Decorator函数亦如此，其本质也不是什么高大上的结构，�
 eg:
 这里定义了一个baby，这个时候他什么技能都没有
 
-
 ```js
 class baby{ 
 }
@@ -30,10 +29,8 @@ baby.canTalk // true
 
 上面的代码虽然简单，但也能够清晰地看到使用的Decorator优点：
 
-
 > 代码的吸引力变强了，装饰器源自一个注释
 > 在不改变原有代码的情况下，对原有功能进行扩展
-
 
 ```js
 
@@ -73,6 +70,7 @@ class MyClass {}
 MyClass.isTestable // false
 
 ```
+
 装饰类属性
 当对类属性进行装饰的时候，能够接受三个参数：
 
@@ -96,10 +94,9 @@ class Person {
 
 readonly(Person.prototype, 'name', descriptor);
 
-
 ```
-如果一个方法有多个装饰器，就像洋葱一样，先从外到内进入，再由内到外执行
 
+如果一个方法有多个装饰器，就像洋葱一样，先从外到内进入，再由内到外执行
 
 ```js
 function dec(id){
@@ -118,6 +115,7 @@ class Example {
 // executed 1
 外层装饰器@dec(1)先进入，但内层装饰器@dec(2)先执行
 ```
+
 注意
 **装饰器不能用于修饰函数，因为函数存在变量声明情况**
 ```js
@@ -147,7 +145,9 @@ add = function () {
 
 结果是执行后counter等于1，但是实际结果counter等于0
 ```
+
 ## 三、使用场景
+
 基于Decorator强大的作用，我们能够完成各种场景的需求，下面简单列举几下：
 
 使用react-redux的时候，如果写成下面这种形式，既不雅观也很麻烦
@@ -230,7 +230,7 @@ person.facepalm();
 person.facepalmHard();
 // DEPRECATION Person#facepalmHard: 功能废除了
 
-
 ```
+
 参考文献
 https://es6.ruanyifeng.com/#docs/decorator

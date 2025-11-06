@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 const App = () => {
 	const [name, setName] = useState<string>("yyy");
 
-
-
 	const do1 = () => {
         setName("qdleader");
 
@@ -21,7 +19,6 @@ const App = () => {
 		console.log("我还是更改前的name", name);
 
 	};
-
 
 	return (
 		

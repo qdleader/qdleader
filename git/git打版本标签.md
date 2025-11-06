@@ -2,7 +2,7 @@
 
 ## 一、什么是tag
 
-```
+```js
 tag是git版本库的一个标记，指向某个commit的指针。
 
 tag主要用于发布版本的管理，一个版本发布之后，我们可以为git打上 v.1.0.1 v.1.0.2 ...这样的标签。
@@ -17,11 +17,10 @@ tag 和 branch 的相互配合使用，有时候起到非常方便的效果，�
 
 ## 二、tag的简单使用
 ### 1.创建tag：
+
 创建 tag 是基于本地分支的 commit，而且与分支的推送是两回事，就是说分支已经推送到远程了，但是你的 tag 并没有，如果把 tag 推送到远程分支上，需要另外执行 tag 的推送命令。
 
-
-
-```
+```bash
 git tag <tagName> //创建本地tag
 
 git push origin <tagName> //推送到远程仓库
@@ -30,26 +29,23 @@ git push origin <tagName> //推送到远程仓库
 
 git push origin --tags
 
-
 ```
-
 
 以上是基于本地当前分支的最后的一个commit 创建的 tag ，但是如果不想以最后一个，只想以某一个特定的提交为tag ，也是可以的，只要你知道commit 的id。
 
-```
+```bash
 git log --pretty=oneline //查看当前分支的提交历史 里面包含 commit id
 
 git tag -a <tagName> <commitId>
 
-
 ```
 
 ### 2.查看标签
+
 查看本地某个 tag 的详细信息：
 
-```
+```bash
 git show <tagName>
-
 
 查看本地所有 tag：
 
@@ -61,10 +57,9 @@ git ls-remote --tags origin
 
 ```
 
-
 ### 3.删除标签
 
-```
+```bash
 本地 tag 的删除：
 
 git tag -d <tagName>
@@ -76,7 +71,7 @@ git push origin :<tagName>
 ```
 
 ### 4.检出标签
-```
+```bash
 
 git checkout -b <branchName> <tagName>
 

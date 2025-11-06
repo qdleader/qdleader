@@ -1,9 +1,9 @@
 # redux的使用
+
 redux与vuex一样是一个组件的状态（数据）管理器，当我们需要在项目各组件中共享数据时可以使用。
 redux是一个第三方的库，本身和react没有任何关系，react-redux也是一个第三方库，可以帮助我们在react项目中更好的使用redux。
  
 ## store（状态库）：用于存放组件中的state。
-
 
  ```
 
@@ -12,7 +12,6 @@ redux是一个第三方的库，本身和react没有任何关系，react-redux�
 
  ```
  
-
 
  
 
@@ -26,20 +25,16 @@ redux是一个第三方的库，本身和react没有任何关系，react-redux�
 
  
 
-
 ## 安装
 
  
-```
+```bash
 npm install react react-redux --save
 ```
 
  
 
-
-
 > 用react-redux管理todoList数据
-
 
 action（动作）分析：
 
@@ -49,8 +44,7 @@ action（动作）分析：
 
 ## 创建action
 
-
-```
+```js
 
 import actionTypes from './actionTypes'
  
@@ -75,7 +69,7 @@ export default actionCreator;
 
 action的type定义为常量放在actionType.js中统一管理，以避免type手写出错的可能。
 
-```
+```js
 actionTypes.js
 
 const types = {
@@ -93,7 +87,7 @@ export default types;
 ## 定义reducer
 
 reducer.js
-```
+```js
 import actionTypes from './actionTypes';
  
 const defaultState = {
@@ -125,7 +119,7 @@ export default (state = defaultState, action) => {
 ## 创建store
 
 index.js
-```
+```js
 import { createStore } from 'redux';
 import reducer from './reducer';
  
@@ -139,7 +133,7 @@ export default store;
 ## 利用react-redux
 
 index.js
-```
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
@@ -158,6 +152,7 @@ ReactDOM.render(
 );
  
 ```
+
 React-Redux 提供Provider组件，可以让容器组件拿到state。上面代码中，Provider在根组件外面包了一层，这样一来，TodoList的所有子组件就默认都可以拿到state了。
 
  
@@ -165,7 +160,7 @@ React-Redux 提供Provider组件，可以让容器组件拿到state。上面代�
 ### 组件中创建state、dispatch的映射关系
 
  
-```
+```js
 const mapStateToProps = state => {
   return {
     value: state.inputValue,
@@ -183,9 +178,10 @@ const mapDispatchToProps = dispatch => {
 };
  
 ```
+
 意思就是将state与dispatch都映射到props，那么组件内就可以直接通过props来访问。
 
-```
+```js
 // ui组件
 const TodoList = props => {
   const { value, list, inputChange, btnClick, listClick } = props;
@@ -215,10 +211,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
  
 ```
 
-
 完整代码：TodoList.js
 
-```
+```js
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../store/actionCreator';
@@ -265,5 +260,5 @@ const TodoList = props => {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
  
 ```
-这样就实现了通过react-redux管理组件状态（数据）。
 
+这样就实现了通过react-redux管理组件状态（数据）。

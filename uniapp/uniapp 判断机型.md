@@ -3,7 +3,6 @@
 ```js
 uni.getSystemInfo(OBJECT)
 
-
 获取屏幕高度宽度
 screenWidth 屏幕宽度
 screenHeight 屏幕高度
@@ -50,9 +49,6 @@ uni.getSystemInfo({
 ```
 
 api[https://uniapp.dcloud.io/api/system/info?id=getsysteminfo]
-
-
-
 
 | 手机型号 | 尺寸 | 代码获取屏幕大小 | 屏幕分辨率 | 倍图 | 状态栏高度 |	导航栏高度| 底部安全距离 | Tabbar高度 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |

@@ -1,7 +1,6 @@
 # img网络加载异常时候展示的图片
 ## 图片加载异常
 
-
 ```JS
 img {
     width: 128px; height: 96px;
@@ -16,7 +15,6 @@ HTML代码：
 <img src="qdleader.jpg" onerror="this.src='break.svg';">
 
 ```
-
 
 ## 方式2
 
@@ -52,7 +50,3 @@ img.error::after {
 }
 
 ```
-
-
-
-

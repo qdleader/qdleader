@@ -13,7 +13,9 @@ sudo vim /etc/hosts
 输入密码后，按 i 增加以下配置
 
 ```js
+
 # github 注意下面的IP地址和域名之间有一个空格
+
 140.82.114.3 github.com
 199.232.69.194 github.global.ssl.fastly.net
 185.199.108.153 assets-cdn.github.com

@@ -1,8 +1,6 @@
 # V001-vue随页面改变title自动改变
+
 在 router.js 中需要在每一个路由下面多添加一个 meta:{title:'主页'}，比如：
-
-
-
 
 ```js
 			 {
@@ -36,8 +34,6 @@
 				component: my,
 			}
 ```
-
-
 
 ## 在main.js
 

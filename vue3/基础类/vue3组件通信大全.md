@@ -64,9 +64,7 @@ export default {
 </script>
 ```
 
-
 ### 方法二，纯 Vue3 写法(语法糖)
-
 
 ```ts
 // Parent.vue 传送
@@ -96,15 +94,12 @@ export default {
 </script>
 ```
 
-
 注意：
 如果父组件是混合写法，子组件纯 Vue3 写法的话，是接收不到父组件里 data 的属性，只能接收到父组件里 setup 函数里传的属性。
 
 如果父组件是纯 Vue3 写法，子组件混合写法，可以通过 props 接收到 data 和 setup 函数里的属性，但是子组件要是在 setup 里接收，同样只能接收到父组件中 setup 函数里的属性，接收不到 data 里的属性。
 
 官方也说了，既然用了 3，就不要写 2 了
-
-
 
 ## 2. $emit
   
@@ -223,7 +218,6 @@ attrs：包含父作用域里除 class 和 style 除外的非 props 属性集合
 </script>
 ```
 
-
 ## 5. v-model
 
 可以支持多个数据双向绑定
@@ -282,8 +276,6 @@ inject：在任何后代组件中接收想要添加在这个组件上的数据�
 
 ```
 
-
-
 ## 7. Vuex
 ```ts
 // store/index.js
@@ -340,6 +332,7 @@ import mitt from 'mitt'
 const mitt = mitt()
 export default mitt
 ```
+
 然后两个组件之间通信的使用
 ```ts
 // 组件 A
@@ -363,10 +356,7 @@ onUnmounted(()=>{
 
 ```
 
-
 ## pinia
-
-
 
 #### pinia的api
 ```ts
@@ -415,8 +405,8 @@ function increment() {
 
 ```
 
-
 ## vuex 和 pinia 两者的比较
+
 pinia 没有 mutations，actions的使用不同，getters的使用是一致的
 pinia 没有总出口全是模块化，需要定义模块名称，当多个模块需要协作的时候需要引入多个模块，vuex是有总入口的，在使用模块的化的时候不需要引入多个模块
 pinia 在修改状态的时候不需要通过其他api，vuex需要通过commit，dispatch去修改

@@ -3,7 +3,7 @@
 <!-- 插件一：Auto Close Tag自动闭合HTML标签
 插件二：Auto Rename Tag修改HTML标签时，自动修改匹配的标签 -->
 
-```
+```js
 插件列表
 名称	            简述
 code Translate 英语翻译
@@ -105,7 +105,5 @@ Path Intellisense 智能提示路径
 Prettier 功能强大的格式化工具，可以进行格式化配置
 
 Javascript (ES6) Code Snippets 很好用的代码片段插件，主要是我习惯了打clg而不是会卡一下的log
-
-
 
 ```

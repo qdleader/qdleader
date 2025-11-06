@@ -6,18 +6,13 @@ express --view=ejs server
 
 ```
 
-
 然后 cd 到server 这文件夹
 执行 npm i
 ```js
 npm run start
 ```
 
-
 访问localhost:3000 就能访问到接口了
-
-
-
 
 添加更改后自动更新功能
 
@@ -25,7 +20,6 @@ npm run start
 ```js
 npm i nodemon --save-dev
 ```
-
 
 在packjson 中加入
 
@@ -35,9 +29,8 @@ npm i nodemon --save-dev
 	},
 ```
 
-
-
 ## get 接口
+
 在server/routes/index.js 中添加
 
 ```js
@@ -64,10 +57,9 @@ router.get("/hooks/tenant/list", function (req, res, next) {
 	});
 });
 ```
+
 可以得到一个get 接口
 http://localhost:3000/hooks/tenant/list
-
-
 
 ## post 接口
 ```js

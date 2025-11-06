@@ -14,7 +14,6 @@ Object.defineProperty(input, 'name', {
     }
 });
 
-
 传统的使用等于号进行的属性赋值并不能知道最后是否执行成功，需要开发者自己进行进一步的检测。
 
 例如：
@@ -28,7 +27,6 @@ js
 console.log(Reflect.set(input, 'name', 'qdleader'));
 
 但是下面一行语句使用的Reflect.set()方法，就可以知道是否设置成功，因为Reflect.set()的返回值是true或者false（只要参数类型准确）。
-
 
 ##  Reflect方法还有个好处，不会因为报错而中断正常的代码逻辑执行
 
@@ -63,10 +61,7 @@ js
     console.log('no log');
 })();
 
-
-
 ## receiver参数
-
 
 receiver是接受者的意思，表示调用对应属性或方法的主体对象，通常情况下，receiver参数是无需使用的，但是如果发生了继承，为了明确调用主体，receiver参数就需要出马了。
 
@@ -117,7 +112,6 @@ let threePeople = {
 console.log(threePeople.name);
 此时，运行结果就是预期的“三体人”了
 
-
 实际上 Reflect 的函数可以接收第三个参数，即函数调用过程中的 this
 比如：
 js
@@ -134,14 +128,10 @@ const obj2 = {
 
 console.log(Reflect.get(obj, "test", obj2)) // 输出 18Ben
 
-
-
 ### Reflect对象经常和Proxy代理一起使用，原因有三点：
 
 > Reflect提供的所有静态方法和Proxy第2个handle参数方法是一模一样的。具体见后面的对比描述。
 > Proxy get/set()方法需要的返回值正是Reflect的get/set方法的返回值，可以天然配合使用，比直接对象赋值/获取值要更方便和准确。
 > receiver参数具有不可替代性。
 
-
 ```
-

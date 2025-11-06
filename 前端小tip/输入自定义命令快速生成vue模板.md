@@ -1,4 +1,5 @@
 # 输入自定义命令快速生成vue模板
+
 我们在.vue文件中输入自定义指令，快速生成vue3模板
 
 1.
@@ -7,7 +8,7 @@
 文件-->首选项-->用户代码片段-->点击新建代码片段--取名vue.json 确定
 
 2.把代码放进去。。。
-```
+```js
 {
     "Print to console": {
       "prefix": "vue3",
@@ -48,8 +49,6 @@
       "description": "Log output to console"
     }
   }
-
-
 
 ```
 

@@ -3,7 +3,6 @@
 ```js
 前端构建打包工具，在运行 build 的时候，会默认把项目中所有用到的第三方资源、库文件打包成一个 js 文件中 vendor.js，如果不加以拆分，这个文件将会很大导致首屏加载速度变慢。这时可以把一些第三方库文件用 cdn 加载（优化手段之一），优化包大小和首屏加载速度
 
-
 Vue2 + Webpack
 我们回顾以前使用 vue2 + webpack 构建的时候，可以在 index.html 中用 script 标签加载第三方库资源，推荐这个 cdn 资源网站： https://www.jsdelivr.com/
 
@@ -137,7 +136,6 @@ export { default } from "https://cdn.esm.sh/v55/axios@0.21.4/es2021/axios.js";
 WechatIMG228.jpeg
 
 而且使用 alias 加载 CDN 还有个好处，它是按需加载。意思是如果只是在某个 Vue 文件中 import 了这个库，那么进入到这个 Vue 文件的页面，才会加载此 CDN 资源
-
 
 但需要注意的是，import 时不能解构，只能直接引入，因为支持 ESM 编译的资源文件都是 export { default } from ...，没有单个 export
 例如我配置了 mavon-editor 的 ESM CDN 资源

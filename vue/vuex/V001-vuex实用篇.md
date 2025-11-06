@@ -13,12 +13,9 @@ new Vue({
 })
 ```
 
-
-
 ## 2.然后在main.js同级建立store文件夹
 
 在store文件夹里面分别建立actions.js, getters.js, index.js, mutations.js,types.js
-
 
 比如现在需求在组件A控制组件B中的一个状态的显隐。
 
@@ -81,7 +78,6 @@ export default {
 export const BUYPOP = 'BUYPOP';
 ```
 
-
 然后到了mutations文件
 ```js
 import {
@@ -107,8 +103,6 @@ export default {
 }
 ```
 
-
-
 然后进入getters文件
 
 ```js
@@ -122,7 +116,6 @@ const getters = {
 
 export default getters;
 ```
-
 
 然后store文件就处理完毕了，那么在B组件中怎么调用呢？
 
@@ -156,7 +149,6 @@ export default {
 };
 </script>
 
-
 //调用时候可以直接this.cpShow
 写法嘛很多种：
         ...mapGetters({
@@ -170,7 +162,6 @@ export default {
 	   都在可以
 
 ```
-
 
 这就是一个完整的使用流程喽！
 

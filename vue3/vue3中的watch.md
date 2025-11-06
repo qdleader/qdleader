@@ -1,12 +1,9 @@
 # vue3 中的watch
 
-
 > 接受三个参数：
 > 参数1：监听的数据源 （可以为一个ref或者一个函数）
 > 参数2： 回调函数 （newValue, oldValue） => {}
 > 参数3： 深度监听或立即执行的配置（deep: true, imediate: true）
-
-
 
 首先展示ref 监听的常规写法：
 ```js
@@ -74,9 +71,7 @@ export default {
 </script>
 ```
 
-
 那什么时候用第三个参数呢？怎么用呢？
-
 
 ```js
 <template>
@@ -112,6 +107,7 @@ export default {
 }
 </script>
 ```
+
 当我们监听对象属性时候，监听a，当a对象中的b发生变化时候，我们会发现，我们根本监听不到。
 
 这时我们的第三个属性就闪亮登场了。
@@ -166,6 +162,7 @@ watch(() => [num1.value, num2.value], (newVal, oldVal) => {
     console.log(newVal[0], oldVal[0], newVal[1], oldVal[1]);
 })
 ```
+
 第二种方式
 ```js
 const num1 = ref(1)
@@ -183,7 +180,6 @@ watch(() => [num1.value, num2.value], ([preNum1, preNum2], [oldNum1, oldNum2]) =
 另外我们在这里介绍一个跟watch 类似的一个api
 
 watchEffact
-
 
 ```js
 <template>
@@ -223,6 +219,7 @@ export default {
 ```
 
 ## watchEffact与watch的区别：
+
 > 1、watch 是需要传入侦听的数据源，而 watchEffect 是自动收集数据源作为依赖。
 
 > 2、watch 可以访问侦听状态变化前后的值，而 watchEffect 不可。

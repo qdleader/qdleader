@@ -7,13 +7,8 @@
   render: h => h(App)
 }).$mount('#app')
 
-
-
 此时在vue中你会发现
 this.$store 没有
-
-
-
 
 解决
 
@@ -28,4 +23,4 @@ new Vue({
 
 ```
 
-vue 中只认 store 
+vue 中只认 store

@@ -1,6 +1,5 @@
 # vue3 watch 停止监听以及重新开始监听
 
-
 vue3的watch终止监听，只需要将watch赋值给一个变量，当达到条件调用watch赋值的那个变量就可以终止监听了。
 ```js
 <template>
@@ -42,7 +41,6 @@ flag = watch(
   { deep: true }
 
 ```
-
 
 ## vue2 中
 ```js
@@ -86,5 +84,5 @@ export default {
   }
 }
 ```
-根据上例可以看到，我们可以在需要的时候通过this.$watch来监听数据变化。那么如何取消监听呢，上例中this.$watch返回了一个值unwatch,是一个函数，在需要取消的时候，执行 unwatch()即可取消
 
+根据上例可以看到，我们可以在需要的时候通过this.$watch来监听数据变化。那么如何取消监听呢，上例中this.$watch返回了一个值unwatch,是一个函数，在需要取消的时候，执行 unwatch()即可取消

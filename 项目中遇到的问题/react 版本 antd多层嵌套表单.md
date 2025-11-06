@@ -11,11 +11,9 @@ import TextArea from "antd/es/input/TextArea";
 
 import { useEffect, useState } from "react";
 
-
 const Index = () => {
 
 	const [form] = Form.useForm();
-
 
 	return (
 		<div className="addTenant card">
@@ -41,7 +39,6 @@ const Index = () => {
 			>
 		
 		
-
 
 				{/* 单选题板块 */}
 				<div>
@@ -158,6 +155,5 @@ const Index = () => {
 };
 
 export default Index;
-
 
 ```

@@ -7,17 +7,14 @@ npm install --save echarts-for-react
 npm install --save echarts
 ```
 
-
 ## 引入
 
 ```js
 import ReactECharts from 'echarts-for-react';
 
-
 // render echarts option.
 <ReactECharts option={this.getOption()} />
 ```
-
 
 ```js
 getOption =()=> {
@@ -45,7 +42,6 @@ getOption =()=> {
     return option;
   }
 ```
-
 
 echarts api https://echarts.apache.org/examples/zh/index.html#chart-type-pie
 

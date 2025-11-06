@@ -8,11 +8,9 @@
 > 引用时将响应式变量或者方法显式解构暴露出来如：const {nameRef，Fn} = useXX()
 （在setup函数解构出自定义hooks的变量和方法）
 
-
-
 ## 加法 hook
 
-```
+```js
 import { ref, watch } from 'vue';
 const useAdd= ({ num1, num2 })  =>{
     const addNum = ref(0)
@@ -29,12 +27,10 @@ const useAdd= ({ num1, num2 })  =>{
 }
 export default useAdd
 
-
 ```
-
 
 ## 减法 hook
-```
+```js
 //减法功能-Hook
 import { ref, watch } from 'vue';
 export function useSub  ({ num1, num2 }){
@@ -53,9 +49,8 @@ export function useSub  ({ num1, num2 }){
 
 ```
 
-
 在组建中使用：
-```
+```js
 <template>
     <div>
         num1:<input v-model.number="num1" style="width:100px" />
@@ -78,7 +73,6 @@ const num2 = ref(1)
 const { addNum, addFn } = useAdd({ num1, num2 })
 addFn(num1.value, num2.value)
 
-
 //减法功能-自定义Hook (将响应式变量或者方法形式暴露出来)
 const { subNum, subFn } = useSub({ num1, num2 })
 subFn(num1.value, num2.value)
@@ -87,13 +81,11 @@ subFn(num1.value, num2.value)
 
 ```
 
-
 ## Vue3自定义Hooks可以灵活传递任何参数来改变它的逻辑，参数不限于其他hook的暴露出来的变量
-
 
 算平均的Hook
 
-```
+```js
 //平均功能-Hook
 import { ref, watch } from "vue";
 export function useAverage(addNum) {
@@ -112,14 +104,12 @@ export function useAverage(addNum) {
 
 ```
 
-
 组件内使用
-```
+```js
 //组件内
 //加法功能-自定义Hook（将响应式变量或者方法形式暴露出来）
 const { addNum, addFn } = useAdd({ num1, num2 })
 addFn(num1.value, num2.value)//主动调用，返回最新addNum
-
 
 //平均功能-自定义Hook- hook传入参数值来其他hook暴露出来的变量
 const { averageNum, averageFn} = useAverage(addNum)
@@ -129,11 +119,9 @@ averageFn(addNum.value)
 
 Vue3自定义Hooks可以灵活传递任何参数来改变它的逻辑，参数不限于其他hook的暴露出来的变量，这提高了Vue3在抽象逻辑方面的灵活性。
 
-
-
 ### 3、Mixin同名变量会被覆盖，Vue3自定义Hook可以在引入的时候对同名变量重命名
 
-```
+```js
 Vue3自定义Hooks
 //加法功能-自定义Hook（将响应式变量或者方法形式暴露出来）
 const { totalNum:addNum, addFn } = useAdd({ num1, num2 })
@@ -144,4 +132,5 @@ const { totalNum:subNum, subFn } = useSub({ num1, num2 })
 subFn(num1.value, num2.value)
 
 ```
+
 > 在Vue3自定义Hooks中，虽然加法和减法Hooks都返回了totalNum，但是利用ES6对象解构很轻松给变量重命名

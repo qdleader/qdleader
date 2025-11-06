@@ -19,14 +19,12 @@ vue cli + vue3 写法
 </el-select>
 ```
 
-
 ```js
 const changeSelectRef = ref<any>(null)
 const changeSelectPeople = () => {
   changeSelectRef.value.query = ""
 }
 ```
-
 
 vite + vue3 中 除了 上述写法还需要加  :reserve-keyword="false"
 

@@ -40,7 +40,6 @@ export default SimulationCbWithUseStateCustom
 
 ```
 
-
 ## Promise结合useState实现
 
 ```js
@@ -70,7 +69,4 @@ const SimulationCbWithUseState = () => {
 }
 export default SimulationCbWithUseState
 
-
 ```
-
-

@@ -2,7 +2,6 @@
 
 # auto-fit 和minmax去掉右侧空白
 
-
 ```css
 /* # auto-fit 和minmax去掉右侧空白
 grid-template-columns: repeat(auto-fit minmax(200px,1fr));

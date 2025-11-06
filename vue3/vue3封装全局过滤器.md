@@ -1,8 +1,8 @@
 # vue3封装全局过滤器
+
 vue3里面没有了全局的时间过滤器了，我给大家提供两种解决方案。
 
 ## 1. 挂载到全局属性globalProperties上面
-
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5fe9a4d586242ddb7f4a1df9e92ae06~tplv-k3u1fbpfcp-watermark.image?)
 在utils，新建filters文件。
@@ -39,7 +39,7 @@ app.mount('#app')
 ```
 
 在页面中用时候,直接用就好，还是比较方便的。
-```
+```json
 {{$filters.formatTime(lastEditTime)}}
 ```
 
@@ -47,13 +47,11 @@ app.mount('#app')
 
 下面呢，我来看另一种
 
-
 # 2. 结合 hooks来实现
 
 新建 一个 
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/96416649f3d844ffbaed140e5429dc93~tplv-k3u1fbpfcp-watermark.image?)
-
 
 ```js
 // useTime.ts
@@ -94,8 +92,6 @@ export function useTime(date?:any, type = 'yyyy-MM-dd hh:mm', isWrap?:Boolean) {
   </div>
 </template>
 
-
-
 <script lang="ts">
 import { defineComponent,onMounted,reactive,ref,toRefs} from "vue";
 import {useTime} from '@/hooks/useTime' 
@@ -120,12 +116,4 @@ export default defineComponent({
 
 </style>
 
-
 ```
-
-
-
-
-
-
-

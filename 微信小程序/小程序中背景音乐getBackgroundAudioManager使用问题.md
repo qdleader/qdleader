@@ -1,9 +1,7 @@
 # 小程序中背景音乐getBackgroundAudioManager使用问题
 
-## 小程序中背景音乐getBackgroundAudioManager使用问题
-
 ### 1. 当你在 onPlay方法中写入计时器时候，计时器会没两秒或三秒更新一次
-```
+```js
  var manager = wx.getBackgroundAudioManager();
       manager.title = that.data.audioList[that.data.audioIndex].trackCtitle || "音频标题";
       manager.epname = that.data.playlistName || "专辑名称";
@@ -13,8 +11,6 @@
       // 设置了 src 之后会自动播放
       manager.src = audio;
       manager.currentTime = 0;
-
-
 
       manager.onPlay(function () {
         console.log("======onPlay======");
@@ -30,10 +26,9 @@
 
 解决方法是把计时器提出来在别的事件中写
 
-
 eg：我在播放按钮时候启动计时器
 
-```
+```js
 //播放按钮
 playOrpause: function () {
   let manager = wx.getBackgroundAudioManager();
@@ -78,15 +73,14 @@ countTimeDownNew: function (manager, cancel) {
 ```
 
 ### 2.manager.onpause在暂停时候 会在手机上循环一直调用onpause方法，调试器上没事
+
 在苹果11上表现是图标一直会闪
-
-
 
 修复方案是在onPause方法里面加个
 pausedSwitch属性开关
 
 播放时候再打开
-```
+```js
 manager.onPause(function () {
           console.log("一致获取内容222")
           if(that.data.pausedSwitch) {

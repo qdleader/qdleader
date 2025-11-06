@@ -1,31 +1,27 @@
 # Vb002-props定义详细一些
-###prop定义尽量详细，
 
+###prop定义尽量详细，
 
 >细致的 prop 定义有两个好处：
 
 >它们写明了组件的 API，所以很容易看懂组件的用法；
 >在开发环境下，如果向一个组件提供格式不正确的 prop，Vue 将会告警，以帮助你捕获潜在的错误来源。
 
-
-
 #bad
 
 props:['status'],
 
-
 #good:
 
-```
+```js
 props:{
 	status:String
 }
 
-
 ```
 
 #better:
-```
+```js
 // 更好的做法！
 props: {
   status: {

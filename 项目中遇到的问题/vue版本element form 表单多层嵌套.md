@@ -139,11 +139,9 @@ const addOptions = (item: any) => {
   }
   ```
 
-
-
   ## 案例2
 
-```ts
+```
 
     <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
  
@@ -205,7 +203,7 @@ const addOptions = (item: any) => {
   }
 </script>
 　
-```
+```js
 
 　其中动态表单校验中用到了:prop="'domains.' + index + '.value'"  而domains 是一个数组。  常规来说这么写相当于是 domains.1.value 的写法,但这种写法肯定是有问题的。没看源码不是很理解这样的链式操作。
 
@@ -214,9 +212,9 @@ const addOptions = (item: any) => {
 
 2. :prop="'domains.' + index + '.value'"  和  :prop="'domains[' + index + '].value'"    这两种传值最终都是转换成了 domains.0.value  字符串，这是一个字符串 而不是通过 domains.0 来取domains数组的第一个元素
 
-
 数组某一项写法
-```js
+```
+
     <div
             class="form-box"
             :key="domain.key"
@@ -236,5 +234,5 @@ const addOptions = (item: any) => {
                   ></el-input>
                 </el-form-item>
 
-
+```js
 ```

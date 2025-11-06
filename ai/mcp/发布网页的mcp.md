@@ -2,11 +2,13 @@
 
 edgeone-pages-mcp-server
 
-https://github.com/TencentEdgeOne/edgeone-pages-mcp
+项目地址：https://github.com/TencentEdgeOne/edgeone-pages-mcp
 
+## 配置方式一：使用 npx
 
-```js
-// Tencent Cloud International (Default)
+### Tencent Cloud International（默认）
+
+```json
 {
   "mcpServers": {
     "edgeone-pages-mcp-server": {
@@ -16,8 +18,11 @@ https://github.com/TencentEdgeOne/edgeone-pages-mcp
     }
   }
 }
+```
 
-// Tencent Cloud China
+### Tencent Cloud China
+
+```json
 {
   "mcpServers": {
     "edgeone-pages-mcp-server": {
@@ -28,9 +33,10 @@ https://github.com/TencentEdgeOne/edgeone-pages-mcp
   }
 }
 ```
-或
 
-```js
+## 配置方式二：使用 URL
+
+```json
 {
   "mcpServers": {
     "edgeone-pages-mcp-server": {

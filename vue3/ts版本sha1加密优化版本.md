@@ -1,15 +1,13 @@
 # ts版本sha1加密优化版本
 ### 下载
-```
+```bash
 npm install jssha -D
 ```
 
 ### 使用
 
-```
+```js
  import jsSHA from "jssha"      //module
-
-
 
  // 大写的sha1 加密串
  function getsignUpper (sign: any) {
@@ -24,7 +22,6 @@ npm install jssha -D
      shaObj.update(sign);
      return shaObj.getHash("HEX") ;
  }
-
 
  console.log("加密好的内容":getsign("qdleader"))
 ```

@@ -1,4 +1,5 @@
 # css Module的global用法
+
 css Module的global用法
 
 ```css
@@ -9,13 +10,11 @@ css Module的global用法
       display:none;
   }
 
-
   
 <div className={styles.noDisplay}>1111</div>
   /* .playing仍未局部样式，rotate确不会被加上hash */
   .noDisplay :global {
       display:none;
   }
-
 
 ```

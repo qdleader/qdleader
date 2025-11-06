@@ -1,12 +1,9 @@
 # react+ts批量生成条形码
+
 react + ts 中添加条形码批量生成
-
-
 
 ```js
 import JsBarcode from 'jsbarcode';
-
-
 
        // 导出条形码
 
@@ -22,7 +19,6 @@ import JsBarcode from 'jsbarcode';
            setTimeout(() => {
              this.downloadBarPicture()
            },50)
-
 
            console.log("list", list);
 
@@ -49,8 +45,6 @@ downloadBarPicture() {
            }
        },500)
 }    
-
-
 
 <Button type='primary' onClick={() => {
                             this.exportDefaultBarList(admin.dev_id)

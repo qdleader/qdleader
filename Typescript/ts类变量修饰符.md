@@ -5,8 +5,7 @@ public 共有属性 都可以访问到
 protected 保护属性 只有这个类的内部和子类中可以访问到
 private 私有属性  只有这个类中可以访问到，子类都访问不到
 
-
-```
+```js
 class Parent {
     public name = 'qdleader'
     age = 18
@@ -27,12 +26,11 @@ console.log(p.name) // qdleader
 let c = new child()
 console.log(c.name)  // qdleader
 
-
 ```
 
 ## private
 
-```
+```js
 
 class Parent {
     private name = 'qdleader'
@@ -57,9 +55,8 @@ console.log(c.name)  // 报错 获取不到
 
 ```
 
-
 ## protected
-```
+```js
 
 class Parent {
     protected name = 'qdleader'
@@ -84,12 +81,6 @@ console.log(c.name)  // 报错 获取不到
 
 ```
 
-
-
-
-
-
-
 ## static
 
 class Person {
@@ -112,6 +103,3 @@ let p = new Person("张三"); //实例化
 Person.run(); //结果是20静态属性 调用静态方法
 console.log(p.work());
 console.log(Person.age); //调用静态属性
-
-
-

@@ -1,4 +1,5 @@
 #### windows本地搭建easy-mock环境
+
  　　起因：由于easy-mock官网很不稳定，所以想搭建自己本地的mock环境
 
        1、首先安装node.js 环境 (提供地址：https://nodejs.org/en/)
@@ -46,7 +47,4 @@
 
       ![](windows本地搭建easy-mock环境_files/3.jpg)
 
-  　 从http://localhost:7300/打开easymock 的页面 ，开始使用 
-  
-
-        
+  　 从http://localhost:7300/打开easymock 的页面 ，开始使用

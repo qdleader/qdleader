@@ -1,4 +1,5 @@
 # mac上安装windows虚拟机
+
 破解方法来自github上一个大佬 somebasj ，不过直接用他提供的脚本激活基本没法成功，所以我这边出个教程帮助大家成功激活。
 
 按照github上的描述，这个激活方式是全面支持intel和arm芯片的，不过我这边只有m1的mac，所以intel芯片的激活未测试。
@@ -15,10 +16,8 @@
 
 https://pan.luoxx.top/s/RdIN
 
-
 使用方法
 下载补丁后解压，然后cd进入解压后的目录，然后执行 chmod +x ./install.sh && sudo ./install.sh 命令即可。
 ps：执行该命令会需要输入密码以授权。
 ps: 如果你是把破解包下载到 下载 目录的话，那cd命令为 cd ~/Downloads/parallelsdesktopcrack
 ps：如果提示 Login failed: Unable to connect to Parallels Service… 忽略即可，这种一般都是已经激活成功了，可以直接去pd查看激活状态。
-

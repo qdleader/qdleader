@@ -2,8 +2,7 @@
 
 commit时候报错，Oops! Something went wrong! :(提交不上去
 
-
-```
+```bash
 $ git commit -m  '修改打包配置'
 husky > pre-commit (node v14.15.4)
 Stashing changes... [started]
@@ -18,10 +17,7 @@ Running tasks for src/**/*.{js,vue} [failed]
 →
 Running linters... [failed]
 
-
-
 × eslint --fix found some errors. Please fix them and try committing again.
-
 
 Oops! Something went wrong! :(
 
@@ -35,9 +31,9 @@ ESLint looked for configuration files in E:\20201010project\common_admin\src\uti
 If you think you already have a configuration file or if you need more help, please stop by the ESLint chat room: https://gitter.im/eslint/eslint
 husky > pre-commit hook failed (add --no-verify to bypass)
 ```
+
 ## 解决
 
-
-```
+```bash
 git commit --no-verify -m "添加登录名称配置"  
 ```

@@ -1,13 +1,11 @@
 # vue3中sha1加密的ts写法
 ```js
 
-
 const hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
 // const b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
 const chrsz = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
 
 // let binb2hex;
-
 
 // function b64_sha1(s: string): string { return binb2b64(coreSha1(str2binb(s), s.length * chrsz)); }
 // function str_sha1(s: string): string { return binb2str(coreSha1(str2binb(s), s.length * chrsz)); }
@@ -96,7 +94,6 @@ function coreSha1(x: number[], len: number): number[] {
  * iteration
  */
 
-
 /*
  * Calculate the HMAC-SHA1 of a key and some data
  */
@@ -119,11 +116,9 @@ function coreSha1(x: number[], len: number): number[] {
  * to work around bugs in some JS interpreters.
  */
 
-
 /*
  * Bitwise rotate a 32-bit number to the left.
  */
-
 
 /*
  * Convert an 8-bit or 16-bit string to an array of big-endian words

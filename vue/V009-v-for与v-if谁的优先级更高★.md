@@ -1,11 +1,9 @@
 # v-for与v-if谁的优先级更高★
 
-
 • 实践中不应该把v-for和v-if放一起
 • 在vue2中，v-for的优先级是高于v-if，把它们放在一起，输出的渲染函数中可以看出会先执行循环再判断条件，哪怕我们只渲染列表中一小部分元素，也得在每次重渲染的时候遍历整个列表，这会比较浪费；
 
 另外需要注意的是在vue3中则完全相反，v-if的优先级高于v-for，所以v-if执行时，它调用的变量还不存在，就会导致异常
-
 
 ## 优化方案
 
@@ -13,9 +11,8 @@
 
 • 为了避免渲染本应该被隐藏的列表 (比如 v-for="user in users" v-if="shouldShowUsers")。此时把 v-if 移动至容器元素上 (比如 ul、ol)或者外面包一层template即可
 
-
-
 ## vue2.x源码分析
+
 在vue模板编译的时候，会将指令系统转化成可执行的render函数
 编写一个p标签，同时使用v-if与 v-for
 ```js
@@ -41,6 +38,7 @@ const app = new Vue({
   }
 })
 ```
+
 模板指令的代码都会生成在render函数中，通过app.$options.render就能得到渲染函数
 ```js
 ƒ anonymous() {
@@ -61,6 +59,7 @@ const app = new Vue({
   </template>
 </div>
 ```
+
 再输出下render函数
 ```js
 ƒ anonymous() {
@@ -70,8 +69,8 @@ const app = new Vue({
     _l((items),function(item){return _c('p',[_v(_s(item.title))])})]:_e()],2)}
 }
 ```
-这时候我们可以看到，v-for与v-if作用在不同标签时候，是先进行判断，再进行列表的渲染
 
+这时候我们可以看到，v-for与v-if作用在不同标签时候，是先进行判断，再进行列表的渲染
 
 我们再在查看下vue源码
 ```js
@@ -97,5 +96,6 @@ export function genElement (el: ASTElement, state: CodegenState): string {
     ...
 }
 ```
+
 在进行if判断的时候，v-for是比v-if先进行判断
 最终结论：v-for优先级比v-if高

@@ -5,4 +5,3 @@
 > 沿着路径向上递归，直到根目录下的 node_modules 目录。
 > 
 > 在 node_modules中找到后，这个文件夹里面的 package.json 下 main 属性指向的文件，如果没有  package.json ，在 node 环境下会以此查找 index.js ，index.json ，index.node。
-

@@ -12,6 +12,7 @@ enum UserRole {
 // 使用的时候
 const role = UserRole.Admin
 ```
+
 看起来很正常对不对？但你知道编译成JavaScript后发生了什么吗？
 
 ```js
@@ -43,7 +44,6 @@ type UserRole = keyof typeof UserRole
 const role: UserRole = UserRole.Admin
 ```
 
-
 编译后发生了什么？
 ```js
 // 编译后的代码 - 简洁多了！
@@ -55,11 +55,10 @@ const UserRole = {
 ```
 
 ## 总结
+
     用const obj = { ... } as const代替enum
     用type Key = keyof typeof obj定义类型
     打包体积能小很多，构建速度也更快，代码更简洁
-
-
 
 数字枚举需要稍作调整：
 

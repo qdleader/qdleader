@@ -1,9 +1,10 @@
 # V003-mapActions如何传参
+
 mapActions如何传参
 
 调用页面
 
-```
+```js
 methods:{
   ...mapActions([
         'programPop'
@@ -14,10 +15,8 @@ methods:{
 }
 ```
 
-
-
 vuex中
-```
+```js
 actions.js
 
 // 展示节目单(...mapAction 传参写方法, str即为传入的参数)
@@ -26,8 +25,6 @@ actions.js
   },str) => {
       commit(types.PROGRAMPOP,str)
   },
-
-
 
 mutations.js
 

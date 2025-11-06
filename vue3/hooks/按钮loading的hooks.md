@@ -35,6 +35,7 @@ export function useAutoRequest<TData, TParams extends any[] = any[]>(fun: TApiFu
   return [requestLoading, run];
 }
 ```
+
 模拟接口的方法单独抽出一个文件
 api/index.ts
 ```js

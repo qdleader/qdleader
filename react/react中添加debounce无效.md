@@ -1,4 +1,5 @@
 # react中添加debounce无效
+
 useEffect中防抖为什么不起作用？react hooks中如何写防抖？
 
 一、发现问题，useEffect 中防抖无效：
@@ -25,6 +26,7 @@ export default function MyComponent(){
   )
 }
 ```
+
 效果如图所示，点击5次，打印5次（是无效的防抖）：
 
 点击5次 效果
@@ -47,6 +49,7 @@ export default function MyComponent(){
   export default useMyDebounce;
 
 ```
+
 第二步：在函数组件中使用：
 ```js
 import { Button } from 'antd';
@@ -83,6 +86,7 @@ export default function MyComponent(){
 }
 
 ```
+
 不停的点击按钮，效果图：
 
 点击 控制台打印

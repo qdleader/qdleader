@@ -2,10 +2,12 @@
 
 ## 原理
 #### 设计
+
 Flex排版的核心是display:flex和flex属性，它们配合使用。具有display:flex的元素可称为flex容器，它的子元素或者盒被称作flex项。
 flex项如果有flex属性，就会根据flex方向代替元素的宽和高，用剩余空间填充子元素尺寸，这就是典型的“根据外部容器决定内部尺寸”的思路。
 
 #### 实现
+
 首先，Flex布局支持横向和纵向，这样就需要做一个抽象，我们把Flex延伸的方向称为“主轴”，把跟它垂直的方向称为“交叉轴”。这样，flex项中的width和height就会称为交叉轴尺寸或者主轴尺寸。
 
 同时，Flex又支持反向排布，这样我们又需要抽象出交叉轴起点、交叉轴终点、主轴起点、主轴终点，它们可能是容器top、left、bottom、right。在实际代码中，是用flex-start和flex-end表示主轴和交叉轴的起点和终点。
@@ -35,4 +37,3 @@ flex项如果有flex属性，就会根据flex方向代替元素的宽和高，�
 交叉轴的计算首先是根据align-content计算每一行的位置，这跟justify-content类似。再根据align-items和flex项的align-self来确定每个元素在行内的位置。
 
 计算完主轴和交叉轴，每个flex项的坐标、尺寸就都确定了，这样就完成了整个的flex布局。
-

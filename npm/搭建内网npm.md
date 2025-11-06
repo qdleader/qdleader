@@ -15,7 +15,9 @@ Verdaccio 是一个 Node.js 创建的轻量级 npm 仓库（就是一个应用�
 提示：推荐使用 nvm 管理 node 版本；安装 nvm
 
 安装 Verdaccio
+
 # 必须要加 -g 全局安装
+
 npm install verdaccio -g
 安装成功之后随即在命令行输出 
 ``
@@ -41,43 +43,39 @@ verdaccio 默认启动：默认占用 4873 端口（使用云服务器的小伙�
 
 使用 vim 打开配置文件。在最后一行新增 listen 0.0.0.0:4873，端口可以任意指定。0.0.0.0 就是表示当前主机的 IPV4 地址；之后再重启服务就，在浏览器输入服务器 IP 加端口就可以访问了。
 
-
-
-
 使用 pm2 管理 verdaccio
 
 下载：npm install pm2 -g
 
-
-
-
 pm2 start verdaccio
 
 # 内存使用超过上限自动重启
+
 pm2 start verdaccio --name verdaccio --watch --max-memory-restart 16G  -i 0
 
-
-
 此时在浏览器访问 http://你服务器ip:4873  就可以看到欢迎页面了
-
-
-
-
 
 ## 配置文件解析
 
 ```shell
+
 # This is the default config file. It allows all users to do anything,
 # so don't use it on production systems.
+
 #
+
 # Look here for more config file examples: 这个 examples 404了。
 # https://github.com/verdaccio/verdaccio/tree/master/conf
+
 #
 
 # 仓库的包默认存储的位置，默认是不存在的，当发布私有包之后会在 /root/.config/verdaccio 中存在
 # path to a directory with all packages
+
 storage: ./storage
+
 # path to a directory with plugins to include
+
 plugins: ./plugins
 
 web:
@@ -104,6 +102,7 @@ web:
 # i18n:
 # 国际化相关，同样404了。
 # list of the available translations https://github.com/verdaccio/ui/tree/master/i18n/translations
+
   # 支持 zh_CN
   #   web: en-US
 
@@ -120,6 +119,7 @@ auth:
 
 # a list of other known repositories we can talk to
 # 如果私有库没有的话，去查找以下库。
+
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
@@ -156,6 +156,7 @@ packages:
 # You can specify HTTP/1.1 server keep alive timeout in seconds for incoming connections.
 # A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout.
 # WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
+
 server:
   keepAliveTimeout: 60
 
@@ -164,8 +165,10 @@ middlewares:
     enabled: true
 
 # log settings
+
 logs: { type: stdout, format: pretty, level: http }
 #experiments:
+
 #  # support for npm token command
 #  token: false
 #  # disable writing body size to logs, read more on ticket 1912
@@ -179,14 +182,13 @@ logs: { type: stdout, format: pretty, level: http }
 #  }
 
 # This affect the web and api (not developed yet)
+
 #i18n:
 #web: en-US
 
 listen: 0.0.0.0:4873
 
-
 ```
-
 
 根据上面的配置内容我们举个 
 ```shell

@@ -6,9 +6,6 @@ echart 绘制 地图数据
 中国及省份地图数据获取
 https://geojson.cn/
 
-
-
-
 ```ts
 
 <template>
@@ -130,9 +127,6 @@ const initEchart = async () => {
   charEch.setOption(option)
 }
 
-
-
-
 onMounted(() => {
   initEchart()
 })
@@ -145,6 +139,5 @@ onMounted(() => {
   margin: 0 auto;
 }
 </style>
-
 
 ```

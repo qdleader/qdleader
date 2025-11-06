@@ -3,7 +3,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-
 class Demo extends React.Component {
     state = {count :0}
     myRef = React.createRef()

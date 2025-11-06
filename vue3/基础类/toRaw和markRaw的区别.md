@@ -3,6 +3,7 @@
 在Vue 3中，toRaw和markRaw是两个用于处理响应式数据的方法，但它们有不同的用途和使用场景。以下是它们的详细解释和区别：
 
 ## toRaw
+
 toRaw用于获取一个响应式对象的原始（非响应式）版本。这对于调试或在某些情况下需要直接操作原始对象的数据时非常有用。
 
 ### 用法：
@@ -17,6 +18,7 @@ const state = reactive({
 
 console.log(toRaw(state)); // 输出原始对象：{ count: 0 }
 ```
+
 ### 用途：
 
 > 获取原始对象：在某些情况下，你可能需要直接访问或操作原始对象的数据，而不是响应式代理对象。
@@ -25,8 +27,6 @@ console.log(toRaw(state)); // 输出原始对象：{ count: 0 }
 ## markRaw
 
 markRaw用于标记一个对象，使其在Vue的响应式系统中被忽略。被标记为“raw”的对象将不会被转换为响应式对象。
-
-### 用法：
 
 ```js
 import { reactive, markRaw } from 'vue';
@@ -42,12 +42,11 @@ const state = reactive({
 console.log(state.raw); // 输出原始对象：{ foo: 'bar' }
 ```
 
-### 用途：
-
 > 性能优化：对于不需要响应式特性的对象，可以使用markRaw来避免不必要的性能开销。
 > 第三方库集成：在集成一些不需要响应式特性或可能与Vue的响应式系统产生冲突的第三方库时，使用markRaw可以避免潜在的问题。
 
 ## 区别
+
 功能不同：
 
 > toRaw：用于获取响应式对象的原始版本。
@@ -62,7 +61,6 @@ console.log(state.raw); // 输出原始对象：{ foo: 'bar' }
 
 **toRaw：不会改变对象本身，只是返回原始对象。**
 **markRaw：改变对象，使其在未来的Vue响应式处理过程中被忽略。**
-
 
 示例
 ```javascript

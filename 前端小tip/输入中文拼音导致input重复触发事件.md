@@ -4,8 +4,6 @@
 ```js
 <input type="text" />
 
-
-
 var inp = document.querySelector('input');
 let isComposing = false;
 
@@ -28,7 +26,6 @@ inp.addEventListener('compositionend', function () {
     
     search();
 });
-
 
 ```
 

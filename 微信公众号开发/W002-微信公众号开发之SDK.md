@@ -6,8 +6,7 @@
 
 首先在main.js中引入
 
-
-```
+```js
 // 每次切换路由时候，注册config(并解决ios的兼容问题)
 import { bUrlH5 } from "@/http/httpUrl.js";
 router.afterEach((to, from) => {
@@ -29,6 +28,7 @@ router.afterEach((to, from) => {
     store.commit('URLLINK', url)
 })
 ```
+
 这里引入的bUrlH5就是的网站的地址，比如http://www.baidu.com
 
 ios签名错误的根源就是，你传给服务器的地址是你首次进来的根地址，跟你的当前地址不同。这是微信浏览器在ios下的一个bug。
@@ -38,12 +38,13 @@ ios签名错误的根源就是，你传给服务器的地址是你首次进来�
 在vuex中
 首先维护types文件
 
-```
+```js
 export const URLLINK = 'URLLINK';
 ```
+
 然后在mutations文件中：
 
-```
+```js
 import {
     URLLINK,
 } from './types'
@@ -71,8 +72,7 @@ export default {
 重点来啦
 在项目中建一个wxSdk.js
 
-
-```
+```js
 // import wx from 'weixin-js-sdk'
 import wx from 'weixin-jsapi'
 import store from '@/store'
@@ -125,18 +125,14 @@ export default {
 * 1.引入sdk时候要npm weixin-jsapi  而不要用weixin-js-sdk，因为weixin-js-sdk不支持es6语法import 引入后，你打印wx会发现为undefined。
 * 2你传给后台的url要进行一次编码encodeURIComponent呀，base64呀都可以。
 
-
-
 好了，我都封装好了，那怎么调用呢。
 
 来喽来喽。。。
 
 调用的时候只需要在相应的页面引入你写的这个插件，
 
-
-```
+```js
 import wechatUtil from '@/common/js/wxSdk.js'
-
 
         setL() {
             let _this = this;
@@ -163,16 +159,11 @@ import wechatUtil from '@/common/js/wxSdk.js'
                     })
         },
 ```
+
 然后对照着，微信官网，直接粘锅来用，就可以啦，ios，android都ok啦。
-
-
-
-
 
 当你发现ios，android怎么都是签名错误呀，你先看看你的公众号上有没有配置安全域名呀，你服务器的ip有没有加到公众号的白名单呀。没配好，代码再怎么改也ok不了。。
 
-
 最后，前端有兴趣的可以关注下，也可以加群，一起成长。还有github[https://github.com/qdleader/qdleader](https://github.com/qdleader/qdleader)每日更新
-
 
 ![](https://user-gold-cdn.xitu.io/2020/5/24/17244bedd6ec15e5?w=972&h=902&f=jpeg&s=102579)

@@ -1,5 +1,7 @@
 # startTransition和useDeferredValue
+
 并发特性：
+
 ### 一、startTransition
 
 在v18中运行如下代码：
@@ -26,6 +28,7 @@ const App: React.FC = () => {
 
 export default App;
 ```
+
 由于 setList 在 startTransition 的回调函数中执行（使用了并发特性），所以 setList 会触发并发更新。
 startTransition，主要为了能在大量的任务下也能保持 UI 响应。这个新的 API 可以通过将特定更新标记为“过渡”来显著改善用户交互，简单来说，就是被 startTransition 回调包裹的 setState 触发的渲染被标记为不紧急渲染，这些渲染可能被其他紧急渲染所抢占。
 

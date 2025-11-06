@@ -5,8 +5,6 @@
 
 > ref是做的一个拷贝关系，修改对象msg的值，不会影响对象obj，视图会发生变化。
 
-
-
     import { ref } from "vue";
     let obj = { name: "你好", age: 16 };
     let msg = ref(obj.name);
@@ -53,7 +51,6 @@ export default {
 };
  
 
-
  
 
 ## 2. toRef的使用
@@ -75,12 +72,11 @@ export default {
         return { msg2,change2 }
     }
 
-
 ## 3. toRefs的使用
+
 >  toRefs用来把响应式对象转换成普通对象，把对象中的每一个属性，包裹成ref对象
 
 > toRefs就是toRef的升级版，只是toRefs是把响应式对象进行转换，其余的特性和toRef无二
-
 
 setup(){
     let msg = { name: 'zs', age: 16 }
@@ -96,7 +92,6 @@ setup(){
 }
 
  请求过来的数据封装了一下
-
 
 <script>
 import { reactive, toRefs } from "vue";
@@ -120,9 +115,7 @@ function getBan() {
 }
 </script>
 
-
 ### 这样写模板中直接写入 {{ list }}  就可以了 ， 不用 {{ obj.list }}，修改数据的时候还是 obj.list = 'aaa' 
-
 
   import { reactive, toRefs } from "vue";
   setup() {
@@ -135,8 +128,8 @@ function getBan() {
     return { ...toRefs(obj) };
   },
 
-
 ## 4.总结
+
 > ref、toRef、toRefs 都可以将某个对象中的属性变成响应式数据
 
 > ref的本质是拷贝，修改响应式数据，不会影响到原始数据，视图会更新

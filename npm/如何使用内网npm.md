@@ -5,9 +5,6 @@
 
 这种情况下我们还是开发一个包托管到 npm 比较靠谱，随用随下载。但是这些组件有一定的隐私性，我们又不想让别人看到。
 
-
-
-
 我们库里的组件，我们要怎么用呢
 
 很简单吃的太认真ym 
@@ -22,13 +19,7 @@ npm config set registry http://vuereact.top:4873
 
  npm i test
 
-
-
 结束
-
-
-
-
 
  常用的镜像地址
 
@@ -38,12 +29,8 @@ npm config set registry http://registry.npmmirror.com/
 -- 设置当前地址（设置为默认地址）
 npm config set registry https://registry.npmjs.org/
 
-
-
-
-
-
 ## nrm 管理 npm 源
+
 nrm 可以很简单的切换多个 npm 原地址。npm, cnpm ... ... 下面简单罗列 nrm 中常用的一些指令。
 
 ```shell
@@ -51,11 +38,9 @@ npm install -g nrm
 
 ```
 
-
 | 参数 | 默认值 | 示例描述| 
 | --------   | :-----:  | :----:  |
 | ls  | nrm ls | 列出所有的源地址 | 
 | use [source] | nrm use cnpm | 切换到指定的源 | 
 | add [resigtry] [url] | nrm add test http://localhost:8080 | 添加源 |
-| del [resigtry] | nrm del test | 删除源 | 
-
+| del [resigtry] | nrm del test | 删除源 |

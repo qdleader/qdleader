@@ -234,7 +234,6 @@ export function useWatermark(parentEl: Ref<HTMLElement | null> = bodyEl) {
 
 ```
 
-
 ## 使用
 ```ts
 import { useWatermark } from "@/hooks/useWatermark"

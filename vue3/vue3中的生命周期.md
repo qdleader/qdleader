@@ -40,18 +40,11 @@ setUp() {
   })
 }
 
-
-
-
-
-
-
-
 ```
 
 ## vue2与vue3生命周期对比
 
-```
+```js
 // beforeCreate -> use setup()
  // created -> use setup()
  // beforeMount -> onBeforeMount
@@ -63,11 +56,8 @@ setUp() {
  // errorCaptured -> onErrorCaptured
 ```
 
-
-
-
 ## vue3新增的两个函数
-```
+```js
 onRenderTracked((event) => {
     console.log("状态跟踪",onRenderTracked)
 })

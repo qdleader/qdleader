@@ -1,11 +1,11 @@
-```
+```js
 fatal: unable to access 'https://github.com/qdleader/qdleader.git/': Failed to connect to github.com port 443: Timed out
 
 ```
+
 # fatalunabletoaccess
 
 出现这个报错：
-
 
 #解决方式：
 
@@ -15,7 +15,7 @@ fatal: unable to access 'https://github.com/qdleader/qdleader.git/': Failed to c
 
 复制这几句到该文件最后
 
-```
+```js
 Host github.com
 
 User git
@@ -31,13 +31,11 @@ Port 443
 
 成功解决问题。
 
-
-
 ## git push时出现 fetal:unable to access “https://github.com/...“错误
 
 报 443时候
 
-```
+```bash
 git config --global --unset http.proxy   #取消http代理
 git config --global --unset https.proxy  #取消https代理
 

@@ -1,7 +1,6 @@
 # 子应用中用不了jsonp
 ## 简而言之 ，父应用中 引入 fetch-jsonp，传到子应用中
 
-
 父应用
 
 在父应用中：
@@ -9,6 +8,7 @@
 ```js
 npm i fetch-jsonp
 ```
+
 在registerApps.js（注册qiankun）文件中：
 
 ```js
@@ -31,8 +31,6 @@ registerMicroApps([
 ]);
 
 ```
-
-
 
 子应用
 
@@ -91,7 +89,6 @@ window
 ```
 
 结束
-
 
 再放一个可访问的地址的jq版 -.-
 ```js

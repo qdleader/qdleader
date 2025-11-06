@@ -3,16 +3,12 @@
 
 ```js
 
-
 本文就通过面向对象编程中，最基本的五种设计模式S.O.L.I.D.，如何在React当中应用，来告诉大家，其实他们是很简单的。
 
-
-
-
 ## S - SRP 单一职责原则
+
 基本含义：一个类只应该负责一件事
 在React当中，可以简单理解为一个组件、Hook只应该做一件事
-
 
 下面的代码中，是一个正常React组件：
 你不必看完这个低码，粗略看一下即可
@@ -60,8 +56,6 @@ export function Bad() {
   );
 }
 
-
-
 看起来也还不错，但实际上，他其实做了很多事情
 
 获取数据
@@ -103,7 +97,6 @@ export function Good() {
 在上面的代码中，数据获取在一个custom hook中，筛选数据也被单独放到了hook中，渲染产品列表也被单独封装为一个dummy component ， 即纯UI组件。
 怎么样是不是代码干净可读多了？
 
-
 ## O - OCP 开闭原则
 
 基本含义：类允许被扩展，但不允许被修改
@@ -119,7 +112,6 @@ export const MyFuncyButton = (props: IMyButtonProps) => {
 	</>
 }
 
-
 在上面的例子当中，按钮分为了三种类型，包括前进、后退、返回主页。一切良好，但如果有一天我想添加一个比如支付的按钮，那该怎么办么？
 **恐怕得有去改代码内部，这显然是与OCP原则不符的。**
 
@@ -133,7 +125,6 @@ js
  <el-button type="warning">警告按钮</el-button>
  <el-button type="danger">危险按钮</el-button>
 
-
 这里还要说明一点，开闭原则有一个超级经典的使用场景，就是装饰器
 @Entity()
 export class Blog {
@@ -144,8 +135,8 @@ export class Blog {
 以上是Nest.js的一个实体类，对于这个Blog类，如果我不添加@Entity()注解，那么这就是一个普通的类，但如果我添加了这个注解，他就是一个map到数据库的实体类。即为该类添加了功能，但并没有改变类本身的源代码
 我还可添加更多的注解，比如打印日志等等，可以实现同样的目的。
 
-
 ## L - LSP 里氏替换原则
+
 基本含义： 基类设定一系列的规范和契约，子类需要遵守
 这个原则比较抽象，但个人感觉，这无疑是强类型语言的基石。
 我举一个最简单的例子。
@@ -189,9 +180,10 @@ export const MyFuncyInput = (props: IMyFuncyInputProps) => {
 	return {isLargeInput ? <input type="text" style={...} {...restProps} /> : <input type="text" {...restProps} />
 }
 
-
 每当我们封装一个组件的时候，都应该想到，对于父组件本身原有的属性，我们应该怎样处理，去符合里氏替换原则。
+
 ## I - ISP 接口分离原则
+
 基本含义：客户端不应依赖于他不使用的接口
 这个是非常简单的，在React当中，他的意思一个不应向组件传入其不使用的Props
 有人可能觉得为什么要这样干？
@@ -202,11 +194,9 @@ export const MyFuncyInput = (props: IMyFuncyInputProps) => {
 thumbnail就是产品缩略图的意思，当上面的组件如果被其他任何人使用，是否会觉得会不清楚，为什么我需要传入一个完整的product对象进行。缩略图不应该是需要一个图片地址么？
 所以可以调整如下
 
-
 <Thumbnail imageUrl={product.imgUrl} />
 
 这是不是就清楚多了，其实很多时候，代码的干净整洁都是一点点积累出来的。关注每一个小点，可以最终让你的应用更容易维护。比如上边的情况，如果用户获取不到product对象，他只能获取到订单对象，订单上也包含缩略图，那么他就不能使用你的组件了么？
-
 
 ## D - DIP 依赖倒转原则
 
@@ -234,13 +224,10 @@ export const SubmitForm = (props: ISubmitFrom) => {
 	return <Form onSubmit={onSubmit}></From>
 }
 
-
 如上，即定义了一个接口，他会指定一个回调函数，就是onSubmit，任何使用这个组件的人，是需要是实现回调的逻辑就可以了。也就是所谓的面向接口编程
 其实，我们想象一下，在前后端开发联调的过程中，大家都是按照接口文档是实现。比如前端开发，你会去注意后端逻辑是怎么实现的么，你会关注，比如产品列表，后台是直接读MySQL数据库，还是走Redis缓存?
 
-
-
-
 ### good Demo
+
 https://github.com/ipenywis/react-solid/tree/main/src/principles
 ```

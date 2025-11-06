@@ -11,8 +11,6 @@
   @change="areaChange"
 />
 
-
-
 areaChange(data) {
   console.log("地区", data);
   console.log(this.$refs["refSubCat"].getCheckedNodes()[0].label);

@@ -1,8 +1,7 @@
 # 函数组件中如何实现forceUpdate
 ## 方法1:
 
-
-```
+```js
     const [,forceUpdate] = useReducer((x) => x + 1,0)
 
     const handleClick = () => {
@@ -10,14 +9,11 @@
     }
 ```
 
-
-
-
 ## 方法二
 
 自定义hook
 
-```
+```js
 function useForceUpdate() {
     const [state,setState] = setState(0);
     const update = useCallback(() => {
@@ -26,7 +22,3 @@ function useForceUpdate() {
     return update;
 }
 ```
-
-
-
-

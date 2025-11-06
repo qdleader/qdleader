@@ -1,5 +1,6 @@
 # React获取url后面参数的几种方式
 ## 1
+
 使用 window.location.search 获取 URL 中的查询字符串，然后使用 JavaScript 内置的 URLSearchParams 对象来解析查询字符串。例如：
 ```js
 const search = window.location.search; // 获取 URL 中的查询字符串，如 "?foo=bar"
@@ -8,6 +9,7 @@ const foo = params.get('foo'); // 获取参数 "foo" 的值
 ```
 
 ## 2
+
 使用 react-router 的 useParams hook 来获取路由中的参数。例如：
 
 ```js
@@ -34,10 +36,9 @@ export default withRouter(MyComponent);
 
 ```
 
-
 ## 4
-split 方法
 
+split 方法
 
 ```js
 
@@ -60,4 +61,5 @@ const user = getParams('https://www.baidu.com/s?ie=UTF-8&wd=%7B%20user%3A%20%27q
 <!-- const user = getParams('http://www.baidu.com?user=%E9%98%BF%E9%A12123%9E&age=18') -->
 console.log(user) // { user: 'qdleader', age: '18' }
 ```
+```js
 ```

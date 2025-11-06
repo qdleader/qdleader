@@ -19,12 +19,13 @@ npm config set registry https://registry.npmjs.org/
 npm --registry https://registry.npmmirror.com/ install
  
 # 使用nrm工具切换淘宝源
+
 npx nrm use taobao
  
 # 如果之后需要切换回官方源可使用
+
 npx nrm use npm
 ```
-
 
 淘宝镜像每15分钟更新一次
 

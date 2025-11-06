@@ -5,10 +5,7 @@ npm i typescript -g
 
 ```
 
-
 tsc --init
-
-
 
 将json 文件的
 

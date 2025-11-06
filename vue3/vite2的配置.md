@@ -1,14 +1,16 @@
 
 # vite2的配置
+
 创建项目
-```
+```bash
+
 # 如果需要交互式命令创建
+
 yarn create @vitejs/app
 ```
 
-
 ### vite.config.js
-```
+```js
 export default {
   alias: {
     "@": resolve("src"),
@@ -23,7 +25,6 @@ export default {
 }
 ```
 
-
 ## 载入不同模式下全局变量
 
 此外，我们也可以通过使用.env文件来载入不同环境下的全局变量，Vite中也使用了 dotenv来加载额外的环境变量，设置的全局变量必须以VITE_为前缀才可以正常被加载，使用方式如下：
@@ -31,26 +32,25 @@ export default {
 .env.development
 
 ### 以下变量在`development`被载入
+
 .env.production
-```
+```js
 VITE_APP_BASE_API = '/api/v1'
 
 ```
 
 ### 以下变量在`production`被载入
+
 .env.production
-```
+```js
 VITE_APP_BASE_API = 'http://192.168.9.212:8888/api/v1'
 
 ```
 
 全局变量使用方式：
-```
+```js
 import.meta.env.VITE_APP_BASE_API
 ```
-
-
-
 
 然后基于resolve写个小方法，方便以后新增别名使用(非必要)
 
@@ -59,7 +59,7 @@ function pathResolve(dir) {
 }
 接下来进入重要环节
 
-```
+```js
 export default defineConfig({
       plugins:[vue()], // 配置需要使用的插件列表，这里将vue添加进去
 
@@ -96,8 +96,9 @@ export default defineConfig({
 })
 
 ```
+
 以上就是vue.config.js文件的基本配置，需要更多配置的可以参考文档进行配置
-```
+```js
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import vue from '@vitejs/plugin-vue';
@@ -136,7 +137,7 @@ export default defineConfig({
 });
 ```
 
-```
+```js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 const path = require('path')

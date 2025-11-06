@@ -7,8 +7,6 @@ fn(ev){
 }
 ```
 
-
-
 ## 去掉默认事件
 
 ```js
@@ -16,5 +14,3 @@ fn(ev){
     ev.preventDefault()
 }
 ```
-
-

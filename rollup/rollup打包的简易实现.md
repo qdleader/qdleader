@@ -26,6 +26,7 @@ module.exports = rollup
 ```
 
 ## 1. Bundle
+
 bundle是整个构建中的下一阶段, rollup处理完毕入参, 插件等信息后会通过bundle来启动整个的构建流程
 ```js
 const path = require('path')
@@ -49,7 +50,6 @@ module.exports = Bundle
       生成目标代码
       写入目标文件
       在bundle对象中, 他们被实现在build函数中
-
 
 ```js
 const { readFileSync, writeFileSync } = require('fs')
@@ -103,8 +103,8 @@ class Bundle {
 module.exports = Bundle
 ```
 
-
 对于bundle来讲, 每个文件都是一个Module, rollup会将模块使用module类来进行包装处理
+
 ## 3. Module
 
 module会将源代码解析成为抽象语法树, 然后将源代码挂载到节点上, 并提供展开修改方法
@@ -171,6 +171,7 @@ module.exports = analyse
 这样就能够实现整个模块的解析处理, 并最终生成代码了
 
 # 打包阶段总结
+
   其实从以上的流程我们可以总结出rollup的打包阶段的运行流了
   1. rollup处理好入参出参等参数后, 通过bundle的build函数启动了整个的构建流程
   2. build函数中, 会获取到入口的文件代码, 将入口文件代码内容new了一个Module对象
@@ -179,7 +180,3 @@ module.exports = analyse
   5. 调用bundle的generate方法, 通过MagicString, 将_source中的代码内容进行拼接, 最终实现打包能力
   其实本质上来讲, 核心就是
   参数分析 > 通过依赖寻找模块 > 模块转AST > 进行依赖分析 > 拼接输出
-
-
-  
-

@@ -5,9 +5,6 @@
 解决：
 在package.json中新增：
 
-
-
-
 package.json
 ```js
  "dev:we": "taro build --type weapp --watch --env production",

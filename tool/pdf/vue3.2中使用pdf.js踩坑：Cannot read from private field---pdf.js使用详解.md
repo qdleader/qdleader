@@ -27,11 +27,7 @@ vue3是通过proxy来改变数据的。
 let pdfDoc =  null as PDFDocumentProxy | null;
 ```
 
-
 然后就可以啦
-
-
-
 
 eg:
 

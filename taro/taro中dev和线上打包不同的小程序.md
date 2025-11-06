@@ -1,6 +1,6 @@
 # taro中dev和线上打包不同的小程序
-新建一个 setProjectConfig.js
 
+新建一个 setProjectConfig.js
 
 ```js
 // import * as fs from 'fs';
@@ -20,8 +20,6 @@ switch (process.env.TARO_APP_API) {
   default:
     config.appid = testAppId
 }
-
-
 
 function writeJson () {
   fs.readFile('./project.config.json', function (err, data) {
@@ -45,8 +43,6 @@ writeJson()
 ```
 
 在package.json中 新增命令
-
-
 
 ```js
 "build:weapp": "cross-env TARO_APP_API=prod node ./setProjectConfig.js && taro build --type weapp ",

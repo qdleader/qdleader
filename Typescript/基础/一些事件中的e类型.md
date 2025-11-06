@@ -10,10 +10,7 @@ const onScroll = (event: UIEvent) => {
   }
 };
 
-
 ```
-
-
 
 antd 中 Button 中的e
 
@@ -23,7 +20,6 @@ import { ReactNode, MouseEvent } from "react";
 	const handleOpenAplly = (e: MouseEvent) => {
 		e.stopPropagation();
 	};
-
 
 <Button
 				type="primary"

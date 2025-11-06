@@ -16,8 +16,6 @@
 window['console']['log'] = function() {}; //关闭默认设置
 ```
 
-
-
 ## 方法3
 ```js
 在util写一个控制console.log的函数
@@ -31,8 +29,6 @@ function selfLog(x) {
 export default selfLog;
 ```
 
-
-
 在mainjs里面应用
 ```js
 import selfLog from './utils/selfLog'
@@ -45,9 +41,8 @@ Vue.prototype.selfLog = selfLog;
 this.selfLog()就等效于console.log()
 ```
 
-
-
 ## 方法四
+
 >在vue webpack打包时候去掉
 在 webpack.pro.conf.js中(35行左右)将设置改为：
 

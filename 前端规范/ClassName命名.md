@@ -3,7 +3,6 @@
 
 #### ClassName的命名应该尽量精短、明确，必须以字母开头命名，且全部字母为小写，单词之间统一使用中划线 “-” 连接
 
-
 #### 推荐：
 
 <div class="modulename">
@@ -36,13 +35,7 @@
 	<div class="modulename-info"></div>
 </div>
 
-
-
-
-
 当子孙模块超过4级或以上的时候，可以考虑在祖先模块内具有识辨性的独立缩写作为新的子孙模块
-
-#### 推荐：
 
 <div class="modulename">
 	<div class="modulename-cover"></div>
@@ -59,10 +52,6 @@
     	<div class="modulename-info-list"></div>
 	</div>
 </div>
-
-
-
-#### 不推荐：
 
 <div class="modulename">
 	<div class="modulename-cover"></div>
@@ -87,21 +76,22 @@
 
 #### 业务公共模块：以 业务名-mod- 开头
 
-```
+```html
 <div class="paipai-mod-yours"></div>
 ```
 
 #### 常用命名推荐
 
 注意：ad、banner、gg、guanggao 等有机会和广告挂勾的字眠不建议直接用来做ClassName，因为有些浏览器插件（Chrome的广告拦截插件等）会直接过滤这些类名，因此
-```
+```html
 <div class="ad"></div>
 ```
+
 这种广告的英文或拼音类名不应该出现
 
 另外，敏感不和谐字眼也不应该出现，如：
 
-```
+```html
 <div class="fuck"></div>
 <div class="jer"></div>
 <div class="sm"></div>
@@ -214,4 +204,3 @@ title	|标题
 video	|视频
 wrap	|容器，包，一般用于最外层
 wrapper	|容器，包，一般用于最外层
-

@@ -14,10 +14,6 @@ function query(name) {
 }
 ```
 
-
-
-
-
 ## URLSearchParams 方式
 ```js
 function query(name) {
@@ -28,8 +24,6 @@ function query(name) {
 
 console.log( query('name'))
 ```
-
-
 
 ## URLSearchParams 方式2
 ```js
@@ -42,7 +36,6 @@ function queryToObj() {
   return res
 }
 ```
-
 
 ## 传统方式
 

@@ -1,9 +1,6 @@
 # vue3中的teleport
+
 什么是Teleport？—— Teleport 是一种能够将我们的组件html结构移动到指定位置的技术。
-
-
-
-
 
 ```js
 <teleport to="body">
@@ -23,12 +20,11 @@
 ```js
 <teleport to="body">
 ```
-相当于  element的 append-to-body
 
+相当于  element的 append-to-body
 
 这里的移动位置可以是body，也可以是某些css选择器
 比如：
 ```js
 <teleport to="#app">
 ```
-

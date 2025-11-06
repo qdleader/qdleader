@@ -34,7 +34,6 @@
 </script>
 ```
 
-
 ## defineEmits
 
 子组件向父组件事件传递
@@ -61,7 +60,6 @@
 </style>
 
 ```
-
 
 ## defineExpose
 

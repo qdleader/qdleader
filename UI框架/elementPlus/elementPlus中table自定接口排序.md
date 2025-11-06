@@ -8,11 +8,6 @@
     </el-table-column>
     </el-table>
 
-
-
-
-
-
 <script lang="ts">
 export default defineComponent({
   name: "User",

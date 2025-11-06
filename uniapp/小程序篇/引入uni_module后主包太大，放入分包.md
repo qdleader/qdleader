@@ -4,7 +4,6 @@
 
 然后通过路径引入
 
-
 如封装的echartrs插件
 ```vue
 <script setup lang="ts">
@@ -20,8 +19,6 @@ const props = defineProps({
     default: () => ({}),
   },
 });
-
-
 
 const chartRef: any = ref(null);
 const myChart: any = ref(null);
@@ -74,7 +71,6 @@ onBeforeUnmount(() => {
 
 ```
 
-
 引用
 ```vue
 <script setup lang="ts">
@@ -100,8 +96,6 @@ const practiceList = ref([
   { id: 2, name: "练习卷-01", count: 20 },
   { id: 3, name: "练习卷-01", count: 20 },
 ]);
-
-
 
 const chartOption = ref({
   tooltip: {
@@ -140,7 +134,6 @@ const chartOption = ref({
     },
   ],
 });
-
 
 </script>
 

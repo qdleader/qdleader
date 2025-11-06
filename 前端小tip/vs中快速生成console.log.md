@@ -6,8 +6,7 @@
 
 > 可以看到有一段被注释的代码,我们将代码解除注释
 
-
-```
+```js
 {
   // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
   // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -31,6 +30,5 @@ $1表示生成代码后光标首次所在位置
 
 $2写在这个位置,表示在生成console.log()后,代码后面会空出一行,并且表再次按tab键时,光标会转到$2的位置 -->
 ```
-
 
 你在你打编辑器中，打个c然后tab就出来啦，一天怎么也能省个好多分钟。

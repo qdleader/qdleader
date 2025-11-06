@@ -1,4 +1,5 @@
 # react+ts父组件调用子组件方法
+
 父组件
 ```js
 child: any = {}  //主要加这个
@@ -10,14 +11,12 @@ showEditAdminModal = (admin?: IAdmin) => {
     this.child.getEnableProvinces()
  }
 
-
  <ChangeArea
           onRef={this.onRef}
           visible={this.state.showEditAdminModal}
           cancel={this.hideEditAdminModal}
       />
 ```
-
 
 子组件
 

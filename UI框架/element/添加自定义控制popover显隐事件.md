@@ -17,20 +17,16 @@
      </div>
    </el-popover>
 
-
-
    // 自定义一个 box
   <div @click.stop="doShowPopover">
     控制显隐
   </div>
 ```
 
-
 ```js
 doShowPopover(item, index) {
    this.$refs[`popoverBtn`].click();
  },
 ```
-
 
 关键点就是 你在自定义事件那加一个阻止默认事件。防止你已经触发popover 已经打开，但事件传递到document 上又被关闭了

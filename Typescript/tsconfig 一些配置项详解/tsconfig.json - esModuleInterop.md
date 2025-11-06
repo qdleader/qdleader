@@ -14,6 +14,7 @@ TypeScript 之前对于 CommonJs/AMD/UMD 模块与 ES6 模块处理方式相同�
 import Koa from 'koa';
 const app = new Koa();
 ```
+
 基于 --esModuleInterop 这两种问题都会被解决：
 
 > 命名空间导入 (即： import * as foo from "foo")现在会被正确标记为不可调用，调用就会报错。
@@ -46,4 +47,3 @@ exports.__esModule = true;
 var foo = __importStar(require("foo"));
 var bar_1 = __importDefault(require("bar"));
 ```
-

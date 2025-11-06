@@ -5,6 +5,7 @@
 description: Comprehensive guidelines for Vue.js development, covering code structure, performance, security, testing, and tooling best practices. This rule provides actionable guidance to enhance code quality, maintainability, and developer productivity in Vue.js projects.
 globs: *.vue, *.js, *.ts
 ---
+
 # Vue.js Best Practices and Coding Standards
 
 This document outlines best practices for Vue.js development, covering various aspects to ensure high-quality, maintainable, and performant code.
@@ -55,7 +56,6 @@ This document outlines best practices for Vue.js development, covering various a
     │   └── ...
     ├── App.vue
     └── main.js
-
 
 ### 1.2. File Naming Conventions
 
@@ -296,7 +296,6 @@ This document outlines best practices for Vue.js development, covering various a
 *   **Automated Builds:** Configure a CI/CD pipeline to automatically build and deploy the application whenever changes are pushed to the repository.
 *   **Automated Testing:** Run automated tests in the CI/CD pipeline to ensure code quality.
 *   **Automated Deployment:** Automate the deployment process to reduce manual effort and prevent errors.
-
 
 By following these best practices, you can create high-quality, maintainable, and performant Vue.js applications.
 ```

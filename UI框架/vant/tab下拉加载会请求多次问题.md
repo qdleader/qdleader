@@ -26,13 +26,11 @@
                          {{item.son_comment_count}}次回复 >
                      </div>
 
-
                  </div>
              </li>
          </ul>
  </van-list>
 ```
-
 
 ```js
 onLoad() {
@@ -115,9 +113,6 @@ onLoadDown() {
     this.onLoad();
 },
 ```
-
-
-
 
 你这么写就会发现，到页面底部时候，不再多请求数据了。
 

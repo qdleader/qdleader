@@ -6,7 +6,7 @@ vim ~/.bash_profile
 ```
 
 2、输入 i进入编辑模式，然后输入环境变量：
-```
+```js
 export M2_HOME="/Users/during/Documents/Software/apache-maven-3.5.0"
 export PATH="$M2_HOME/bin:$PATH"
 
@@ -18,14 +18,7 @@ export PATH="$M2_HOME/bin:$PATH"
 
 4、输入source .bash_profile 使环境变量生效
 
-
-
-
-
-
  echo $PATH 查看当前环境变量
-
-
 
 ## Mac默认是bash shell 配置变量在跟目录中，编辑：
 
@@ -37,6 +30,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 ⚠️ 注意： 变量与变量之间用:分割
 
 ## 给zsh shell 设置环境变量
+
 vi ~/.zshrc
 // 如果跟目录没有.zshrc的话，执行下面的命令
 cash  ~/.zshrc
@@ -45,4 +39,3 @@ vi ~/.zshrc
 
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-

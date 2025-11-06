@@ -1,9 +1,9 @@
 
 # react自定义进度占比条形组件
+
 新建ProgressBar.tsx组件
 
 ```js
-
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -100,14 +100,11 @@ interface IState {
 export default ProgressBar;
 ```
 
-
 在需要的组件直接引入即可
 
-```
+```js
 
 import ProgressBar from '../../componments/ProgressBar'
-
-
 
 <ProgressBar nums={40} data={50} progressColor="#000000"/>
 ```

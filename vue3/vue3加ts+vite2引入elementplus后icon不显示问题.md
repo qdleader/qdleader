@@ -1,23 +1,24 @@
 
 # vue3加ts+vite2引入elementplus后icon不显示问题
+
 直接 vite2创建vue3项目
 ```js
 yarn create @vitejs/app
 ```
+
 选择vue-ts
 直接引入elementplus 会发现icon 不显示
 
-
 ## 方法1
+
 在index.html中
 
 ```js
 <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
 ```
 
-
 ## 方法2
-```
+```js
 do this:
   yarn add sass -D
   yarn add vite-plugin-style-import -D
@@ -52,8 +53,7 @@ return element-plus/lib/${name};
 
 ```
 
-
 还不生效就在引入个
-```
+```js
 import 'element-plus/packages/theme-chalk/src/base.scss'
 ```
