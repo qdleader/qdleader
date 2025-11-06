@@ -2,8 +2,6 @@
 
 本质就是一个字符串书写规范，如下图，作用是用来在用户和服务器之间传递安全可靠的信息
 
-
-
 使用token鉴权机制用于身份验证是最常见的方案流程如下：
 
 服务器当验证用户账号和密码正确的时候，给用户颁发一个令牌，这个令牌作为后续用户访问一些接口的凭证
@@ -11,9 +9,8 @@
 
 Token，分成了三部分，头部（Header）、载荷（Payload）、签名（Signature），并以.进行拼接。其中头部和载荷都是以JSON格式存放数据，只是进行了编码
 
-
-
 ## #header
+
 每个JWT都会带有头部信息，这里主要声明使用的算法。声明算法的字段名为alg，同时还有一个typ的字段，默认JWT即可。以下示例中算法为HS256
 
 {  "alg": "HS256",  "typ": "JWT" } 
@@ -21,8 +18,8 @@ Token，分成了三部分，头部（Header）、载荷（Payload）、签名�
 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 
 
-
 ### #payload
+
 载荷即消息体，这里会存放实际的内容，也就是Token的数据声明，例如用户的id和name，默认情况下也会携带令牌的签发时间iat，通过还可以设置过期时间，如下：
 
 {
@@ -34,8 +31,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 
 eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
 
-
 ## #Signature
+
 签名是对头部和载荷内容进行签名，一般情况，设置一个secretKey，对前两个的结果进行HMACSHA25算法，公式如下：
 
 Signature = HMACSHA256(base64Url(header)+.+base64Url(payload),secretKey)
@@ -101,6 +98,7 @@ class UserController {
 module.exports = UserController;
 
 ```
+
 在前端接收到token后，一般情况会通过localStorage进行缓存，然后将token放到HTTP请求头Authorization 中，关于Authorization 的设置，前面要加上 Bearer ，注意后面带有空格
 ```js
 axios.interceptors.request.use(config => {
@@ -109,7 +107,6 @@ axios.interceptors.request.use(config => {
   return config;
 })
 ```
-
 
 #校验token
 使用 koa-jwt 中间件进行验证，方式比较简单

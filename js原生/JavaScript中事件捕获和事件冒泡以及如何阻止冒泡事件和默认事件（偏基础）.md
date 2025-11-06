@@ -1,5 +1,5 @@
 # JavaScript中事件捕获和事件冒泡以及如何阻止冒泡事件和默认事件
-```
+```html
 <div id='div1'>
   <div id='div2'>
     <div id='div3'></div>
@@ -7,7 +7,7 @@
 </div>
 ```
 
-```
+```js
 
 div1.οnclick=function(){
 	alert("div1")
@@ -22,9 +22,7 @@ div3.οnclick=function(){
 
 当单击中间的div3时，先后弹出div3, div2, div1，此为事件冒泡的过程。
 
-
-
-```
+```js
 div1.addEventListener('click',function(obj){
 	alert("div1")
 },true);//如果未false则为事件冒泡，不填的话，默认false
@@ -36,17 +34,14 @@ div3.addEventListener('click',function(obj){
 },true);
 ```
 
-
 这里将第三个参数设为true，指定事件处理机制为事件捕获。此时再次单击div3时，会依次弹出div1, div2, div3
 
 顺序是由外到里。
 
 而IE中只有事件冒泡，且没有addEventListener事件，取而代之的是attachEvent。
 
-
-
 # 阻止冒泡方法1
-```
+```js
 function stopBubble(event) {
 	if(window.event) {
 		window.event.cancelBubble = true
@@ -57,11 +52,9 @@ function stopBubble(event) {
 
 ```
 
-
-
 # 方法2不阻止，直接判断当前点击的是那个元素（不推荐）
 
-```
+```js
 window.onload = function() {
 	document.getElementById("div1").addEventListener("click", function() {
 		if(event.target == event.currentTarget) {
@@ -81,10 +74,9 @@ window.onload = function() {
 }
 ```
 
-
 # 方法3 div1下面的所有都在这里统一处理
 
-```
+```js
 window.onload = function() {
 	document.getElementById("div").addEventListener("click", function() {
 		let eTarget = event.target;
@@ -108,15 +100,11 @@ window.onload = function() {
 
 > 其实这种元素本身触发事件，但是事件执行的方法不在元素本身，而是在其父元素的某个节点上，这种“偷懒”的模式，叫做事件委托。
 
-
-
-
 # 拓展 (阻止默认事件)
 
 > 像submit这类的表单元素，都会绑定默认事件，如果不阻止默认事件，则绑定的其他方法也会无效。使用方法如下（兼容IE）：
 
-
-```
+```js
 function stopDefaultEvent(event) {
 	if(window.event) {
 		window.event.returnValue = false

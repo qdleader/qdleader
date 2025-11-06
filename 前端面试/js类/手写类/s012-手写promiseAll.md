@@ -23,7 +23,6 @@ function promiseAll(arr) {
   })
 }
 
-
 // 测试
 
 let pro1 = new Promise((resolve,reject) => {

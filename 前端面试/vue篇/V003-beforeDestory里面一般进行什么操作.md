@@ -10,7 +10,7 @@ beforedestoryed是组件销毁之前执行的一个生命周期，在这个生�
 日期在我点击查询的时候要存储,刷新就读内存,但是我点击其他页面再进来的时候,这个内存要清空
 
 <!-- 搜索时候存储 -->
-```
+```js
 search(){
       let time = { 
         start: this.formSearch.beginSearchTime,
@@ -23,7 +23,7 @@ search(){
 ```
 
 <!-- 刷新时候判断有没有搜索过，有的话直接在缓存中取 -->
-```
+```js
  created () {  
     let searchCarTime = JSON.parse(localStorage.getItem('initTime'))
     if (searchCarTime) {
@@ -35,9 +35,8 @@ search(){
   },
 ```
 
-
 <!-- 离开页面时候销毁 -->
-```
+```js
  beforeDestroy(){
     localStorage.removeItem('initTime')
   }

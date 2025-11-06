@@ -1,7 +1,6 @@
 # S030-获取url参数的方法
 ## URLSearchParams 方法
 
-
 ```js
 // 创建一个URLSearchParams实例
 const urlSearchParams = new URLSearchParams(window.location.search);
@@ -9,7 +8,6 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 
 ```
-
 
 ### split 方法
 

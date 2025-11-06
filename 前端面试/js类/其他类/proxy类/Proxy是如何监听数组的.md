@@ -39,10 +39,10 @@ proxy.push('2')
 // set的key为 ===>length 4
 
 ```
+
 可以看到，get方法走了两次，set方法走了两次。因为push方法其实做了两步，第一次更新的是数组中的第4项，第二次更新的是数组的length
 如何避免多次执行呢
 用的hasOwProperty, set肯定会出发多次，但是通知只出去一次， 比如数组修改length的时候，hasOwProperty是true， 那就不触发
-
 
 ```js
 function hasOwn(target,key){
@@ -74,9 +74,8 @@ function hasOwn(target,key){
 
 proxy.push('2')
 ```
+
 这样 set 就执行了一次啦
-
-
 
 ```js
   let arr = [1,2,3]
@@ -103,12 +102,3 @@ console.log(arr, 'arr的length=' + arr.length)
 从console的结果所以可以看出，这里的proxy就是个类数组。那么可以猜想，如果proxy第一个参数传的是数组时，proxy就会转化成类数组，也可以调用数组的方法，length、push等，找不到的方法就去原型链上找。
 
 所以，如果调用push等方法，key就是push，数组长度改变，key值就是length。
-
-
-
-
-
-
-
-
-

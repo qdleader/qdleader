@@ -31,18 +31,11 @@ class Example extends React.Component {
 };
 ```
 
-
-
 结果 0 0 2 3 
-
-
-
 
 ## 解析
 
-
-
-```
+```js
 1.第一次 和 第二次都是在react 生命周期内，触发时isBatchingUpdates 为true，
 所以并不会直接执行更新state，而是加入了dirtyComponents，，所以打印时获取的更新前的状态0
 
@@ -51,6 +44,5 @@ class Example extends React.Component {
 3、setTimeout 中的代码，触发时 isBatchingUpdates 为 false，所以能够直接进行更新，所以连着输出 2，3。
 ```
 
-
-
+```js
 ```

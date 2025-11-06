@@ -16,8 +16,8 @@ function test() {
 }
 test()
 ```
-一秒时候，同时输出 1 4 9
 
+一秒时候，同时输出 1 4 9
 
 为什么会这样呢？
 
@@ -40,10 +40,7 @@ test()
 
 他们之间是相互不影响的，所以会同时输出1，4，9
 
-
 那么如何让改写呢？
-
-
 
 方1
 
@@ -57,7 +54,6 @@ async function test() {
 await test()
 ```
 
-
 方法 2
 
 ```js
@@ -69,8 +65,6 @@ async function test() {
 }
 await test()
 ```
-
-
 
 方法3
 

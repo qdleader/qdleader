@@ -7,7 +7,6 @@
   按钮
 </div>
 
-
     <script type="text/javascript">
         var btn = document.getElementById('btn')
 
@@ -49,7 +48,7 @@
 ```
 
 结果
-```
+```js
 1, window
 5, bb
 2, window
@@ -57,10 +56,8 @@
 7, bb
 ```
 
-
-
 如果用户点击了按钮再输出
-```
+```html
 3,<div id="btn">
   按钮
 </div>

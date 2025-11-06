@@ -4,7 +4,7 @@
 
 ### 短文案（适合社交媒体）
 
-```
+```js
 🎉 QDLeader MCP Server 正式发布！
 
 让 AI 助手（Cursor/Claude）直接访问我的前端知识库！
@@ -24,6 +24,7 @@ GitHub: github.com/qdleader/qdleader
 ### 中文详细版
 
 ```markdown
+
 # 🚀 QDLeader MCP Server 发布了！
 
 大家好！
@@ -79,6 +80,7 @@ QDLeader MCP 是一个连接器，让 Cursor、Claude Desktop 等 AI 助手能�
 ### 英文版
 
 ```markdown
+
 # 🚀 Introducing QDLeader MCP Server!
 
 Hello everyone!
@@ -134,9 +136,11 @@ Try it out and let me know what you think! ⭐
 ## 📱 公众号推文大纲
 
 ### 标题
+
 《AI 增强！让 Cursor 直接搜索我的前端知识库》
 
 ### 开头
+
 你是否遇到过这样的困扰：
 - AI 助手回答的内容不够准确
 - 想让 AI 学习你的个人笔记
@@ -145,6 +149,7 @@ Try it out and let me know what you think! ⭐
 今天，我来分享一个解决方案 - MCP Server！
 
 ### 正文
+
 1. **什么是 MCP？**
    - Model Context Protocol 简介
    - 让 AI 访问外部数据源
@@ -171,6 +176,7 @@ Try it out and let me know what you think! ⭐
    - 欢迎贡献
 
 ### 结尾
+
 关注公众号「qdleader」，回复「MCP」获取详细教程和配置文件！
 
 ## 🎬 视频脚本
@@ -199,6 +205,7 @@ Try it out and let me know what you think! ⭐
 ## 📊 推广渠道
 
 ### 国内平台
+
 - [ ] 掘金文章
 - [ ] CSDN 博客
 - [ ] 知乎专栏
@@ -210,6 +217,7 @@ Try it out and let me know what you think! ⭐
 - [ ] B站视频
 
 ### 国外平台
+
 - [ ] Reddit (r/webdev, r/programming)
 - [ ] Hacker News
 - [ ] Dev.to
@@ -219,6 +227,7 @@ Try it out and let me know what you think! ⭐
 - [ ] Product Hunt
 
 ### 技术社区
+
 - [ ] GitHub Discussions
 - [ ] Discord 社区
 - [ ] Telegram 群组
@@ -227,7 +236,7 @@ Try it out and let me know what you think! ⭐
 ## 💬 回复模板
 
 ### 用户询问如何安装
-```
+```js
 感谢关注！安装很简单：
 
 1. 在 Cursor 设置中找到 MCP Servers
@@ -246,7 +255,7 @@ Try it out and let me know what you think! ⭐
 ```
 
 ### 用户反馈问题
-```
+```js
 感谢反馈！请提供以下信息以便我帮助你：
 1. 使用的 AI 工具（Cursor/Claude）
 2. 具体错误信息
@@ -257,7 +266,7 @@ https://github.com/qdleader/qdleader/issues
 ```
 
 ### 用户想贡献
-```
+```js
 太好了！欢迎贡献！
 
 你可以：
@@ -324,4 +333,3 @@ https://github.com/qdleader/qdleader/issues
 ---
 
 **祝推广顺利！🚀**
-

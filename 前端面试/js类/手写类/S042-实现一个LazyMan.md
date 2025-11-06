@@ -1,11 +1,11 @@
 # S042-实现一个LazyMan
 
 ## 实现以一个 lazyMan 类,他具有 sleep 和 sleepFist 和 eat方法
+
 eat 输出正在吃 xx
 sleep 输出睡了 xxx s
 sleepFist 输出 首先睡了 xxx s
 ```js
-
 
 let joe = new LazyMan('joe')
 joe.eat('apple')
@@ -16,8 +16,6 @@ joe.eat('apple')
     .eat("pear")
  // 应该 等待 10s 输出 apple bananan  orange 等待 20s pear
 ```
-
-
 
 ```js
 
@@ -75,7 +73,5 @@ class LazyMan {
                 .eat("orange")
                 .sleep(5)
                 .eat("pear")
-
-
 
 ```

@@ -6,7 +6,6 @@
 
 > try...catch 可捕获异常，代替Promise的catch
 
-
 eg1:
 
 ```js
@@ -20,13 +19,9 @@ res1.then(data => {
     console.log('data', data)
 })
 
-
 结果打印：
 100
 ```
-
-
-
 
 eg2:
 ```js
@@ -39,7 +34,6 @@ const res1 = fn1() //执行 async 函数，返回的是一个Promise对象
 res1.then(data => {
     console.log('data', data)
 })
-
 
 结果打印：
 200
@@ -74,8 +68,6 @@ eg3:
 })()
 //打印400
 
-
-
 ```
 
 await 可以 跟别的async 函数
@@ -93,7 +85,6 @@ async function fn1() {
 //打印 200
 ```
 
-
 eg4：
 ```js
 async function fn() {
@@ -109,7 +100,6 @@ async function fn() {
 
 ```
 
-
 答案：
 ```js
 Promise {}
@@ -117,8 +107,6 @@ Promise {}
 100
 
 ```
-
-
 
 如果不使用await  那么async函数返回的就是一个promise对象，
 

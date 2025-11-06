@@ -6,6 +6,7 @@
 ```shell
 yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 ```
+
 上面命令，用于在yum软件包管理器中安装一些开发工具和依赖库。命令中各个参数的含义如下：
 
 yum：是Linux系统常用的软件包管理工具；
@@ -17,8 +18,8 @@ gcc-c++：是C++编译器，可以编译C++程序；
 libtool：是一个构建工具，在Linux平台上使用较多，能够简化动态库、静态库的构建流程；
 openssl、openssl-devel：是一个开源的加密库，提供了很多加密和解密函数。
 
-
 ## 二、安装PCRE
+
 在nginx中，PCRE库被用来解析和匹配HTTP请求的URL、header、body等内容，并进行相关的操作，如重定向、路由转发、用户身份验证等。Nginx使用PCRE库能够实现更加灵活和高效的请求匹配和处理，同时也能节省开发者的时间和精力，提高Web应用的性能。因此，可将PCRE视为Nginx的一个重要组件。
 
 #### 1、进入/usr/local/src/文件夹下执行命令下载pcre8.45压缩包。
@@ -32,48 +33,53 @@ wget http://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.gz
 ```shell
 tar zxvf pcre-8.45.tar.gz
 
-
 chmod -R 777 pcre-8.45
 ```
 
-
 #### 3、编译安装
+
 进入pcre-8.45目录，进行编译安装
 shell复制代码#
  cd pcre-8.45
+
 # ./configure
+
 yum -y install gcc-c++
+
 # make 
 
  make install
 
 #### 4、安装完成
+
 输入命令，如果显示对应版本号表示安装成功。
 
 ```js
 pcre-config --version
 ```
 
-
-
-
 ## 三、安装nginx
 #### 1、下载
+
 进入/usr/local/src/目录，使用以下命令下载nginx并解压。
 ```shell
  cd /usr/local/src/
+
 # wget http://nginx.org/download/nginx-1.28.0.tar.gz
+
 wget http://nginx.org/download/nginx-1.23.4.tar.gz
+
 # tar zxvf nginx-1.23.4.tar.gz
 ```
 
 #### 2、编译安装
+
 进入nginx-1.23.4文件夹输入下面命令编译安装。
 
 ```shell
 cd nginx-1.23.4
+
 # ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.45
-# make
 # make install
 ```
 
@@ -90,6 +96,7 @@ shell复制代码# /usr/local/webserver/nginx/sbin/nginx -v
 4、配置nginx
 使用以下命令在Linux系统中创建一个名为"ngx"的用户。
 shell复制代码# /usr/sbin/groupadd ngx 
+
 # /usr/sbin/useradd -g ngx ngx
 
 配置nginx.conf ，将/usr/local/webserver/nginx/conf/nginx.conf替换为以下内容：
@@ -164,12 +171,6 @@ shell复制代码# /usr/local/webserver/nginx/sbin/nginx
 
 使用浏览器访问我们配置的网站ip，页面显示 Welcome to Nginx！，恭喜您已经成功启动nginx。
 
-
-
-
-
-
-
 // 修改配置文件
 vim /usr/local/webserver/nginx/conf/nginx.conf
 
@@ -177,4 +178,4 @@ vim /usr/local/webserver/nginx/conf/nginx.conf
 /usr/local/webserver/nginx/sbin/nginx -s stop
 
 // 启动
-/usr/local/webserver/nginx/sbin/nginx  
+/usr/local/webserver/nginx/sbin/nginx

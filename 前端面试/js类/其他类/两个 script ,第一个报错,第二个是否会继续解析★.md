@@ -8,6 +8,7 @@ throw new Error('error')
 console.log(1)
 </script>
 ```
+
 在运行的时候 我们发现1是会正常输出的，再看下一段代码：
 ```js
 <script>

@@ -9,10 +9,7 @@ server {
 }
 ```
 
-
-
 ## 负载均衡
-
 
 ```ts
 upstream targetserver {  # upstream 可以定义一组服务器
@@ -29,6 +26,7 @@ server {
 ```
 
 ## 负载均衡策略
+
 ｜名称｜  说明｜
 ｜--｜--｜
 ｜轮询｜  默认是｜ 
@@ -36,4 +34,4 @@ server {
 ｜ip_hash｜  依据ip分配方式｜ 
 ｜least_conn｜  依据最少链接方式｜ 
 ｜url_hash｜  依据url分配方式｜ 
-｜fair｜  依据响应时间方式｜ 
+｜fair｜  依据响应时间方式｜

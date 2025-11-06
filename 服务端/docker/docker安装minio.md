@@ -6,7 +6,6 @@ docker pull minio/minio
 2、查看minio镜像是否拉取成功
 docker images
 
-
 3、启动docker容器
 ```ts
 docker run -d --name minio   #-d后台运行 --name 容器的名称
@@ -37,6 +36,5 @@ docker run -d \
 
 4、查看容器是否正常启动
 docker ps
-
 
 5、启动正常后即可通过公网ip+静态端口号访问控制台

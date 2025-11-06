@@ -45,5 +45,6 @@ function myAwait(genner, ...args) {
     });
 }
 ```
+
 -----------------------------------
 手写一个async/await的实现

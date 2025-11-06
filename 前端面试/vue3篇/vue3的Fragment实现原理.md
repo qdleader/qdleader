@@ -3,17 +3,12 @@
 
 在 Vue 2 中，每个组件必须有一个根元素。而在 Vue 3 中，引入了 Fragment 特性，允许组件具有多个根节点。这为开发人员提供了更多灵活性，简化了组件模板的结构。
 
-
 ## Vue3支持多个根节点，通过Fragment来实现，原理比较容易
+
 我们用一个Fragment容器来渲染多个节点
 
-
-
-
-
-
-
 ### 分析
+
 1. 首先，在runtime-core模块中的vnode.ts里文件里新加一个类型Fragment
 
 ```js
@@ -24,6 +19,7 @@ export const Fragment = Symbol.for('v-fgt') as any as {
   }
 }
 ```
+
 1. 那么我在调runtime-core中的在我们调用render方法时，又会走到patch方法里，
 2. 如果老的虚拟节点不存在，那么就是创建操作，否则就走更新流程
 ```js
@@ -52,9 +48,7 @@ export const Fragment = Symbol.for('v-fgt') as any as {
     }
   }
 
-
 ```
-
 
 走到patch 方法里
 ```js
@@ -314,8 +308,6 @@ Fragment的原理比较简单，其实底层就是新增加了一个类型，用
 
 在 Vue3 的编译过程中，如果组件的模板存在多个节点，Vue3 会将这些节点放入一个片段中，然后作为组件的根节点。
 
-
-
 ## 总结
 
 Vue3 之所以能够支持多节点的 Fragment，是因为在内部采用了 Virtual DOM 和片段的机制。Vue3 会将多个节点放入一个片段中，然后作为组件的根节点进行 Virtual DOM 操作。使用片段的方式，可以方便地处理多节点的情况，并提高渲染效率
@@ -325,4 +317,3 @@ Vue3 之所以能够支持多节点的 Fragment，是因为在内部采用了 Vi
 #### Fragment 的优点
 
 通过这种方式，Vue 3 的 Fragment 实现了对多个根节点的支持，同时保持了与 DOM 规范的兼容性。这使得开发人员能够编写更简洁、灵活的组件模板，提高了组件的可维护性和可读性。
-

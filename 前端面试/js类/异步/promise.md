@@ -2,7 +2,7 @@
 
 ## promise 的三种状态
 
-```
+```js
 pengding
 
 resolved
@@ -11,20 +11,17 @@ rejected
 
 ```
 
-
-
 ## then 和 catch 改变状态
 
-```
+```js
 then 正常返回 resolved， 里面报错返回 rejected
 
 catch 正常返回 resolved，里面报错返回 rejected
 ```
 
-
 eg:
 1.
-```
+```js
 Promise.resolve().then(() => {
   console.log(1)
 }).catch(() => {
@@ -35,13 +32,14 @@ Promise.resolve().then(() => {
 ```
 
 答案：
-```
+```js
 1,3
 ```
+
 解析：
 > then 里面没有报错，所以不会走catch方法，直接走then方法。打印1,3
 2.
-```
+```js
 Promise.resolve().then(() => {
   console.log(1)
   throw new Error('error1')
@@ -53,7 +51,7 @@ Promise.resolve().then(() => {
 ```
 
 答案：
-```
+```js
 1,2,3
 ```
 
@@ -62,7 +60,7 @@ Promise.resolve().then(() => {
 
 3.
 
-```
+```js
 Promise.resolve().then(() => {
   console.log(1)
   throw new Error('error1')
@@ -74,12 +72,11 @@ Promise.resolve().then(() => {
 ```
 
 答案：
-```
+```js
 1,2
 ```
 
 解析：
 > then 里面有报错，返回rejected，所以会走catch方法，catch里面没有报错，返回resolved，所以不会走catch方法，所以打印1,2
-
 
 未完待续

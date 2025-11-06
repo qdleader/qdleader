@@ -17,9 +17,10 @@
 
  typeof console.log //function
 
-
  typeof Symbol(); // symbol 
 
  typeof new RegExp(); //object 
 
  ```
+
+```

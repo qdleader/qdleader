@@ -1,7 +1,7 @@
 # cold-003判断一个对象有环引用
 ## 判断一个对象有环引用
 
-```
+```js
 var obj = {
     a: {
         c: [
@@ -14,7 +14,7 @@ obj.a.c.d = obj
 console.log(cycleDetector(obj)) // true
 ```
 
-```
+```js
 function cycleDetector(obj) {
     const arr = [obj]
     let flag = false

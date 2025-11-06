@@ -82,7 +82,7 @@ Search for documents in the knowledge base.
 - `category` (optional): Filter by category
 
 **Examples:**
-```
+```js
 Search for Vue related documents
 Find React hooks content
 Search for Promise in interview category
@@ -96,7 +96,7 @@ Read the full content of a specific document.
 - `path` (required): Relative path to the document (returned from search_knowledge)
 
 **Examples:**
-```
+```js
 Read vue/vue生命周期.md
 Read react/hooks/useState.md
 ```
@@ -108,7 +108,7 @@ List all available categories with document counts.
 **Parameters:** None
 
 **Examples:**
-```
+```js
 List all categories
 Show all tech stack categories
 ```
@@ -121,7 +121,7 @@ Get a list of all documents in a specific category.
 - `category` (required): Category name
 
 **Examples:**
-```
+```js
 Get all documents in vue category
 List contents in interview category
 ```
@@ -171,20 +171,26 @@ When chatting with AI assistants:
 ## 🛠️ Local Development
 
 ```bash
+
 # Clone the repository
+
 git clone https://github.com/qdleader/qdleader.git
 cd qdleader/mcp-server
 
 # Install dependencies
+
 npm install
 
 # Build
+
 npm run build
 
 # Development mode (watch for changes)
+
 npm run dev
 
 # Run
+
 npm start
 ```
 
@@ -227,4 +233,3 @@ If this MCP server helps you, please give the main repository a Star!
 **Made with ❤️ by QDLeader**
 
 Explore front-end knowledge with AI as your best learning companion 🚀
-

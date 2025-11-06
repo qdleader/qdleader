@@ -6,6 +6,7 @@ DOM事件分为3个级别：DOM0级事件处理，DOM2级事件处理和DOM3级�
 > 由于DOM1级中没有事件的相关内容，所以没有DOM1级事件。
 
 ## 1、DOM0级事件
+
 DOM0级处理事件就是将一个函数赋值给一个事件处理属性。
 <button id="btn" type="button"></button> 
  
@@ -15,7 +16,6 @@ btn.onclick = function() {
 }
 // 将一个函数赋值给了一个事件处理属性onclick 这样的方法就是DOM0级。
 // 可以通过给事件处理属性赋值null来解绑事件。
-
 
 // ## 2、DOM2级事件
 DOM2级处理事件是在DOM0级处理事件的基础上再添加了一些处理程序。
@@ -56,7 +56,6 @@ btn.removeEventListener('click', showFn);
 
 同时DOM3级事件也允许使用者自定义一些事件。
 
-
 // ## 四、DOM事件流
 DOM2级事件中规定了一个事件流包括3个阶段：事件捕获阶、处于目标阶段、事件冒泡阶段。
 <!DOCTYPE html>
@@ -96,7 +95,6 @@ son.addEventListener('click', () => {
 总结
 事件流的执行顺序是：事件捕获阶 -> 处于目标阶段 -> 事件冒泡阶段，且当事件处于目标阶段时，事件调用顺序决定于绑定事件的书写顺序。
 需要注意的是IE8以下版本不支持 addEventlistener 和 removeEventListerner，需要使用attachEvent 和 detachEvent 实现：
-
 
 // 绑定事件 
 btn.attachEvent('onclick', fn); 

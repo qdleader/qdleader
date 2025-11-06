@@ -3,8 +3,6 @@
 
 在移动端，inputmode 会影响弹出的键盘布局
 
-
-
 ```js
 // 默认值
 <input type="text" inputmode="text"/>
@@ -23,6 +21,7 @@
 ```
 
 ```js
+
 ### a 元素的 download 属性
 
 <a> 元素的 download 属性
@@ -33,13 +32,10 @@
 
 <a href="/example.pdf" download="my-download.pdf">Download File</a>
 
-
-
-
 ### spellcheck 
+
 该属性可以启用拼写检查，通常用于富文本编辑
 <div contenteditable spellcheck="true"></div>
-
 
 ### translate
 

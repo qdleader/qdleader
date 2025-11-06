@@ -1,7 +1,6 @@
 
 # http四次挥手示意图
 
-
                    客户端                     服务端
          ESTABLISTHED|                         | ESTABLISTHED 
                      |                         |
@@ -28,4 +27,4 @@
    （等待2MSL CLOSED）|                         |
                      |                         |
                      |                         |
-                     |                         |    
+                     |                         |

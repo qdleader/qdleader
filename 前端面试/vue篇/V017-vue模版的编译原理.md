@@ -10,7 +10,7 @@ Vue 的编译过程就是将 template 转化为 render 函数的过程 分为以
 
 相关代码如下
 
-```
+```js
 export function compileToFunctions(template) {
   // 我们需要把html字符串变成render函数
   // 1.把html代码转成ast语法树  ast用来描述代码本身形成树结构 不仅可以描述html 也能描述css以及js语法

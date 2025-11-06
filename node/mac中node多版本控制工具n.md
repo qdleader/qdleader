@@ -1,10 +1,10 @@
 ## n 的安装 相比nvm 简单的多
-```
+```bash
 sudo npm install -g n
 ```
 
 ## 基本操作
-```
+```js
 
 n x.x.x 安装某个版本
 

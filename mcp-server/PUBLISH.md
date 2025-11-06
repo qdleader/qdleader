@@ -80,10 +80,13 @@ npm run build
 在发布前本地测试：
 
 ```bash
+
 # 创建本地链接
+
 npm link
 
 # 在其他项目中测试
+
 cd /path/to/test-project
 npm link qdleader-mcp
 ```
@@ -115,10 +118,13 @@ npm publish --access public
 **后续更新：**
 
 ```bash
+
 # 更新版本号
+
 npm version patch
 
 # 发布
+
 npm publish
 ```
 
@@ -163,34 +169,42 @@ npm publish
 每次更新后的发布流程：
 
 ```bash
+
 # 1. 拉取最新代码
+
 cd /Users/icourt/github/qdleader/mcp-server
 git pull
 
 # 2. 安装依赖
+
 npm install
 
 # 3. 构建项目
+
 npm run build
 
 # 4. 测试功能
 # 确保 MCP 服务器正常工作
 
 # 5. 更新版本号
+
 npm version patch  # 或 minor/major
 
 # 6. 更新 CHANGELOG.md
 # 记录本次更新的内容
 
 # 7. 提交更改
+
 git add .
 git commit -m "chore: bump version to x.x.x"
 git push
 
 # 8. 发布到 npm
+
 npm publish
 
 # 9. 创建 GitHub Release（可选）
+
 git tag v1.0.1
 git push --tags
 ```
@@ -206,16 +220,23 @@ git push --tags
 ### 示例
 
 ```bash
+
 # 修复 bug
+
 npm version patch
+
 # 1.0.0 -> 1.0.1
 
 # 添加新功能（向后兼容）
+
 npm version minor
+
 # 1.0.1 -> 1.1.0
 
 # 重大更改（不兼容旧版本）
+
 npm version major
+
 # 1.1.0 -> 2.0.0
 ```
 
@@ -224,14 +245,19 @@ npm version major
 测试新功能时发布 beta 版本：
 
 ```bash
+
 # 创建 beta 版本
+
 npm version prerelease --preid=beta
+
 # 1.0.0 -> 1.0.1-beta.0
 
 # 发布 beta 版本
+
 npm publish --tag beta
 
 # 用户安装 beta 版本
+
 npx qdleader-mcp@beta
 ```
 
@@ -241,7 +267,7 @@ npx qdleader-mcp@beta
 
 确保不发布不必要的文件：
 
-```
+```js
 src/
 tsconfig.json
 *.log
@@ -277,7 +303,7 @@ npm profile enable-2fa auth-and-writes
 
 在用户目录创建 `~/.npmrc`：
 
-```
+```js
 //registry.npmjs.org/:_authToken=YOUR_AUTH_TOKEN
 ```
 
@@ -338,16 +364,19 @@ npm unpublish qdleader-mcp@1.0.0
 echo "🚀 Starting publish process..."
 
 # 1. 检查是否有未提交的更改
+
 if [[ -n $(git status -s) ]]; then
   echo "❌ You have uncommitted changes. Please commit first."
   exit 1
 fi
 
 # 2. 构建
+
 echo "📦 Building..."
 npm run build
 
 # 3. 询问版本类型
+
 echo "Select version bump type:"
 echo "1) patch (x.x.X)"
 echo "2) minor (x.X.0)"
@@ -362,10 +391,12 @@ case $choice in
 esac
 
 # 4. 发布
+
 echo "📤 Publishing to npm..."
 npm publish --access public
 
 # 5. 推送到 Git
+
 echo "⬆️  Pushing to Git..."
 git push && git push --tags
 
@@ -387,4 +418,3 @@ chmod +x publish.sh
 ---
 
 **祝发布顺利！🎉**
-

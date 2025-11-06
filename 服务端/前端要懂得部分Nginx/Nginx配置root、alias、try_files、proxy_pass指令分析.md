@@ -15,12 +15,10 @@ server {
     }
 }
 ```
+
 结果
 访问路径：http://127.0.0.1:80/index.html  实际访问/data/index.html
 访问路径：http://127.0.0.1:80/a/index.html  实际访问/data/a/index.html
-
-
-
 
 ## 示例二
 ```js
@@ -35,14 +33,14 @@ location /a {
 访问路径：http://127.0.0.1:80/a/index.html  实际访问/data/a/index.html
 访问路径：http://127.0.0.1:80/aaab/index.html  实际访问/data/aaab/index.html
 
-
 # 结论
+
 root指令实际访问的文件路径是root路径+location路径
 
 # alias指令
+
 我个人建议alias指令后面的路径都加上/，因为大多数我们配置的都是指定到固定文件夹，除非你的location匹配的是固定的文件，那么你alias也可以指定固定文件路径
 
-## 示例一
 配置指定的文件路径
 
 ```js
@@ -53,12 +51,11 @@ server {
     }
 }
 ```
+
 结果
 访问路径：http://127.0.0.1:80/index.html  实际访问/data/index.html
 访问其他地址都会报`404 Not Found`
 
-
-## 示例二
 ```js
 server {
     listen       80;
@@ -69,16 +66,15 @@ server {
     }
 }
 ```
+
 结果
 访问路径：http://192.168.137.110:8060/a/index.html  实际访问/data/index.html
 访问路径：http://192.168.137.110:8060/a/a/index.html  实际访问/data/a/index.html
 
-
-
-## 结论
 alias指令会把location上配置的值去掉，然后把后缀拼接到alias指令后面，就像上面访问/a/index.html，而location是/a，最终的访问文件地址是/data/index.html。
 
 # try_files指令
+
 按指定的file顺序查找存在的文件，并使用第一个找到的文件进行请求处理。
 
 ```js
@@ -91,15 +87,19 @@ server {
     }
 }
 ```
+
 比如请求http://192.168.137.110:8060/a/qdleader.html
 
 ### $uri
+
 查找文件/data/a/qdleader.html
 
 ### $uri/
+
 查找文件夹/data/a/qdleader.html/qdleader.html文件
 
 ### /index.html
+
 请求http://192.168.137.110:8060/index.html路径
 
 针对alias的多个location指令的try_files配置
@@ -122,6 +122,7 @@ server {
 ```
 
 ## proxy_pass指令
+
 该指令用于反向代理使用
 
 #### 案例一( 有/结尾)
@@ -133,9 +134,9 @@ server {
     }
 }
 ```
+
 结果
 访问`http://192.168.137.110:8060/apis-config1/abc`    实际访问的是`http://192.168.137.2:5021/abc`
-
 
 #### 案例二（无/结尾）
 ```js
@@ -164,8 +165,6 @@ server {
 结果
 访问`http://192.168.137.110:8060/apis-config3/abc`    实际访问的是`http://192.168.137.2:5021/apis/abc`
 
-
-
 #### 案例四
 ```js
 server {
@@ -179,12 +178,11 @@ server {
     }
 }
 ```
+
 结果
 访问`http://192.168.137.110:8060/apis-config4-1/abc`    实际访问的是`http://192.168.137.2:5021/apisabc`
 
 访问`http://192.168.137.110:8060/apis-config4-2/abc`    实际访问的是`http://192.168.137.2:5021/apis/abc`
-
-
 
 #### 案例五
 ```js

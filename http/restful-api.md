@@ -1,15 +1,10 @@
 # restful api
 
-
-
 REST：英文representational state transfer直译为表现层状态转移，或者表述性状态转移；Rest是web服务的一种架构风格，一种设计风格，是一种思想；同时Rest不是针对某一种编程语言的。
-
-
 
 ## 传统的API设计： 把每一个url当做一个功能
 
 ## restful API设计：把每一个url 当做一个唯一的资源。
-
 
 ## restful 特点：
 
@@ -21,7 +16,7 @@ REST：英文representational state transfer直译为表现层状态转移，或
 
 ## 2.用method 表示操作类型
 
-```
+```js
 post /api/blog   （新建）
 
 put/patch /api/blog/100（更新数据，用put多一些）
@@ -32,9 +27,10 @@ delete api/blog/100 （删除数据）
 ```
 
 ## 3.版本号
+
 我们会在url中保留版本号，并兼容多个版本
 
-```
+```js
 /v1/users/{user_id}
 
 /v2/users/{user_id}
@@ -43,7 +39,7 @@ delete api/blog/100 （删除数据）
 ## 4. 资源路径
 
 URI 不能包含动词，只能是名词（命名名词时候用小写，数字，下划线区分多个单词）
-```
+```js
 资源的路径应该从根到子依次如下:
 
 /{resources}/{resource_id}/{sub_resources}/{sub_resource_id}/{sub_resource_property}
@@ -56,7 +52,6 @@ URI 不能包含动词，只能是名词（命名名词时候用小写，数字�
 
 【PUT】 /v1/users/{user_id}/password/actions/modify // 密码修改
 
-
 ```
 
 ## 5.响应的参数
@@ -64,6 +59,7 @@ URI 不能包含动词，只能是名词（命名名词时候用小写，数字�
 json格式（code， data ，msg）
 
 ## 6.状态码
+
 使用适合的状态码很重要，而不应该全部都返回状态码 200
 
 状态码，可根据以下标准按照项目扩展自身状态码：

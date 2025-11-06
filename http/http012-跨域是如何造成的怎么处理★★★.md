@@ -1,9 +1,7 @@
 
 # 跨域是怎么造成的？
 
-
 ## 跨域是因为浏览器的同源策略所导致的
-
 
 ```js
 本域（同源）指的是（下面三者都具备）？
@@ -13,10 +11,6 @@
 ```
 
 所谓同源是指"协议+域名+端口"三者相同，即便两个不同的域名指向同一个ip地址，也非同源。浏览器引入同源策略主要是为了防止XSS，CSRF攻击。
-
-
-
-
 
 ## 跨域解决方案
 
@@ -32,10 +26,9 @@
   9、 WebSocket协议跨域
 ```
 
-
 ## 同源策略限制以下几种行为：
 
-```
+```js
 Cookie、LocalStorage 和 IndexDB 无法读取
 DOM和JS对象无法获得
 AJAX 请求不能发送
@@ -44,7 +37,6 @@ AJAX 请求不能发送
 ## 常用的跨域解决方案
 
 ### 1、JSONP跨域
-
 
   jsonp的原理就是利用script标签没有跨域限制，通过script标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。
 
@@ -78,6 +70,7 @@ $.ajax({
     data: {}
 });
 ```
+
 3）Vue 写法
 ```js
 this.$http = axios;
@@ -107,7 +100,6 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
         head
         get
         post
-
 
 (2)请求的Heder是
 
@@ -213,12 +205,11 @@ $.ajax({
     ...
 });
 ```
-#### 3.vue中引入 http-proxy-middleware 中间件作为代理,实现跨域
 
+#### 3.vue中引入 http-proxy-middleware 中间件作为代理,实现跨域
 
 >如果要使用axios直接进行跨域访问是不可以的，这是就需要配置代理了，为什么要配置代理呢？
 原因就是因为客户端请求服务端的数据是存在跨域问题的，而服务器和服务器之间可以相互请求数据，是没有跨域的概念（如果服务器没有设置禁止跨域的权限问题），也就是说，我们可以配置一个代理的服务器可以请求另一个服务器中的数据，然后把请求出来的数据返回到我们的代理服务器中，代理服务器再返回数据给我们的客户端，这样我们就可以实现跨域访问数据啦。
-
 
 ```js
 module.exports = {
@@ -241,12 +232,10 @@ module.exports = {
 
 ```
 
-
-
-
 #### 其他跨域
 
 ## 1、nginx代理跨域
+
   nginx代理跨域，实质和CORS跨域原理一样，通过配置文件设置请求响应头Access-Control-Allow-Origin…等字段。
 
   1）nginx配置解决iconfont跨域
@@ -282,6 +271,7 @@ server {
 ```
 
 ## 2、document.domain + iframe跨域
+
   此方案仅限主域相同，子域不同的跨域应用场景。实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。
 
 ```js
@@ -400,8 +390,8 @@ proxy('http://www.baidu.com/b.html', function(data){
 
 ```
 
-
 ## 4、postMessage跨域
+
   postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：
 
 页面和其打开的新窗口的数据传递
@@ -451,6 +441,7 @@ origin： 协议+主机+端口号，也可以设置为"*"，表示可以传递�
 ```
 
 ## 5、WebSocket协议跨域
+
   WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。
 原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
 
@@ -483,10 +474,9 @@ document.getElementsByTagName('input')[0].onblur = function() {
 
 ## 总结
 
-
-
 ```
 
   以上就是9种常见的跨域解决方案，jsonp（只支持get请求，支持老的IE浏览器）适合加载不同域名的js、css，img等静态资源；CORS（支持所有类型的HTTP请求，但浏览器IE10以下不支持）适合做ajax各种跨域请求；Nginx代理跨域和nodejs中间件跨域原理都相似，都是搭建一个服务器，直接在服务器端请求HTTP接口，这适合前后端分离的前端项目调后端接口。document.domain+iframe适合主域名相同，子域名不同的跨域请求。postMessage、websocket都是HTML5新特性，兼容性不是很好，只适用于主流浏览器和IE10+。
 
+```js
 ```

@@ -5,9 +5,9 @@
 ```js
 brew install docker --cask
 ```
+
 安装 成功后会提示
 🍺  docker was successfully installed!
-
 
 如果此时报
 ```js
@@ -18,5 +18,5 @@ brew install docker --cask
 ```js
 sudo chown -R $(whoami) /usr/local
 ```
-然后再执行一下安装命令即可
 
+然后再执行一下安装命令即可

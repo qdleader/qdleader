@@ -6,21 +6,20 @@ nginx -t
 ```
 
 ## nginx 重启
+
 nginx -s reload
 
 #### 停止nginx
+
 nginx -s stop
 
-
 #### 启动nginx
-nginx 
 
+nginx 
 
 #### 查看当前nginx进程
 
 ps -ef | grep nginx
-
-
 
 找到你的nginx的 nginx.conf文件 vim 去查看和修改这文件
 
@@ -51,23 +50,19 @@ server {
 
 ```
 
-
 按esc键退出输入模式，然后输入:wq保存退出之后再在命令行输入下面指令重启nginx服务
 
 重启nginx
 
 nginx -s reload
 
-
 或者（可以看到我的安装路径是在 /www/server/nginx，默认在这个目录下，有一个sbin目录，它下面有个nginx文件，这个nginx是个可执行文件，
 执行启动命令：
 
 /www/server/nginx/sbin/nginx）
 
-
-
-
 # 端口、防火墙
+
 CentOS7默认安装了firewalld防火墙，如果系统开启了防火墙，那我们就要手动去开放端口号
 
 查看防火墙是否开启
@@ -87,7 +82,6 @@ systemctl enable firewalld
 
 systemctl disable firewalld
 
-
 查看目前已开放端口
 
 netstat -anp
@@ -97,14 +91,13 @@ firewall-cmd --query-port=9090/tcp
 对外开放端口号
 
 firewall-cmd --add-port=123/tcp --permanent # permanent表示永久开放，没有此参数重启后失效
+
 ## 重新加载添加的端口
+
 firewall-cmd --reload
 关闭开放端口号
 
 firewall-cmd --permanent --remove-port=9090/tcp
-
-
-
 
 ```conf
 
@@ -122,12 +115,10 @@ pid /usr/local/webserver/nginx/nginx.pid;
 
 #pid        logs/nginx.pid;
 
-
 events {
     worker_connections  1024;
      use epoll;
 }
-
 
 http {
 
@@ -140,8 +131,6 @@ http {
         server 127.0.0.1:8080;
         server 127.0.0.1:8081;
     }
-
-
 
   # server 开始
 server {
@@ -160,6 +149,7 @@ server {
             alias  /usr/local/webserver/nginx/html/admin/assets/;
     }
 }
+
 # server 结束
 
     server {
@@ -173,7 +163,6 @@ server {
         alias  /usr/local/webserver/nginx/html/admin/;
         index  index.html index.html;
     }
-
 
    # 重点：解决二级目录部署时，访问css、js等静态资源报404的问题
 

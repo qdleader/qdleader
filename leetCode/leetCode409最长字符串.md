@@ -1,8 +1,6 @@
 
 # leetCode409最长字符串
 
-
-
 ## 题目
 
 >给定一个包含大写字母和小写字母的字符串，找到通过这些字母构造成的最长的回文串。
@@ -23,9 +21,6 @@
 > 解释:
 我们可以构造的最长的回文串是"dccaccd", 它的长度是 7。
 
-
-
-
 ## 解析
 
 > 偶数的最长 把每个字母都对应的放到数组里面，对象里面放对应的个数
@@ -34,10 +29,7 @@
 
 > 最总生成的num一定是偶数，如果num小于s的长度，那么num + 1即可
 
-
-
-
-```
+```js
 var longestPalindrome = function(s) {
     if(s.length > 1010) {
         return
@@ -72,15 +64,11 @@ console.log(longestPalindrome("cccdd"))
 
 ```
 
-
-
-
-
 #拓展
 
 js实现找出字符串中的最长回文串
 
-```
+```js
 var longestPalindrome = function(s) {
         if(s.length > 1010) {
             return

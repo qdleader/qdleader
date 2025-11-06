@@ -4,7 +4,6 @@ Object.is不会转换被比较的两个值的类型，这点和===更为相似�
     1. NaN在===中是不相等的，而在Object.is中是相等的
     2. +0和-0在===中是相等的，而在Object.is中是不相等的
 
-
 ```js
 Object.is = function (x, y) {
   if (x === y) {

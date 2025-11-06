@@ -27,6 +27,7 @@ const compose = (...args) => x => args.reduceRight((res, cb) => cb(res), x);
 Redux的中间件就是用compose实现的，webpack中loader的加载顺序也是从右往左，这是因为他也是compose实现的。
 
 ## pipe函数
+
 pipe函数跟compose函数的左右是一样的，也是将参数平铺，只不过他的顺序是从左往右。我们来实现下，只需要将reduceRight改成reduce就行了：
 ```js
 const pipe = function(){
@@ -42,6 +43,7 @@ let res = calculate(10);
 console.log(res);    // 结果还是200
 
 ```
+
 ES6写法：
 ```js
 
@@ -49,18 +51,8 @@ const pipe = (...args) => x => args.reduce((res, cb) => cb(res), x)
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
 ## compose函数
+
 compose函数可以将需要嵌套执行的函数平铺，嵌套执行就是一个函数的返回值将作为另一个函数的参数。我们考虑一个简单的需求：
 
 给定一个输入值x，先给这个值加10，然后结果乘以10

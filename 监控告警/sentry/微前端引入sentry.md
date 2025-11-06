@@ -2,7 +2,6 @@
 
 ## 主应用中
 
-
 main.ts
 ```ts
 import { sentryInitForVueSubApp } from "./sentry.ts"
@@ -36,8 +35,6 @@ if (process.env.VUE_APP_SENTRY_ENV === "prod") {
     // }
   });
 }
-
-
 
 registerMicroApps([
   {
@@ -80,10 +77,7 @@ export function sentryInitForVueSubApp(app: any, options: any) {
 
 ```
 
-
-
 ## 子应用
-
 
 main.ts
 ```ts
@@ -104,14 +98,11 @@ function render(props = {} as Record<string, any>) {
     history: createWebHistory(window.__POWERED_BY_QIANKUN__ ? "/rock-app1" : "/")
   })
 
-
-
   // 注册APP实例
   instance = createApp(App)
 
   instance.use(router)
   instance.use(store)
-
 
   if (process.env.VUE_APP_SENTRY_ENV === "prod") {
     sentryInit?.(instance, {
@@ -134,5 +125,3 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 ```
-
-

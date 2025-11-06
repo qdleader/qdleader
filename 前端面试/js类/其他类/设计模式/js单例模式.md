@@ -2,7 +2,6 @@
 
 概述: 使生成的对象只有一个（他生成的对象永远只有一个）
 
-
 ```js
 function Person(){
 	
@@ -11,6 +10,7 @@ let person1 = new Person()
 let person2 = new Person()
 console.log(person1===person2) //生成的俩个对象 地址不是一个 false
 ```
+
 实现
 1.用一个变量来判断是否存在这个对象
 2.如果不存在 创建 这个变量要重新赋值
@@ -36,8 +36,6 @@ let person = created() //产生一个新的对象
 let person1 = created() //产生一个新的对象
 console.log(person === person1) //true
 ```
-
-
 
 原型实现单例
 ```js

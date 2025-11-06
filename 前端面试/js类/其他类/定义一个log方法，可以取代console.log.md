@@ -11,6 +11,7 @@ log("hello qdleader")
 ```
 
 ## 2.真香版
+
 版本1虽然实现，但是实现不了传多个参数。
 ```js
 function log() {

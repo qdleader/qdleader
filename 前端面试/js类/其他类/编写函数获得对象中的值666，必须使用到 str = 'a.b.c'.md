@@ -23,5 +23,4 @@ let getData = (obj,str) => {
   return obj
 }
 
-
 ```

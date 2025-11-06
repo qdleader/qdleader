@@ -24,6 +24,7 @@
 
 转化为真实dom
 ```
+
 <div id="app">
   <span>
     <a></a>
@@ -33,12 +34,10 @@
     <a></a>
   </span>
 </div>
+```js
+
 ```
 
-
-
-
-```js
 // 真正的渲染函数
 function _render(vnode) {
   // 如果是数字类型转化为字符串
@@ -63,4 +62,5 @@ function _render(vnode) {
   return dom;
 }
 
+```js
 ```

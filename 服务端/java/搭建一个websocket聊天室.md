@@ -15,7 +15,6 @@ pom.xml 中引入 spring-boot-starter-websocket
 
 package com.adminapi.adminapi.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -39,7 +38,6 @@ Endpoint 具体实现
 ```java
 package com.adminapi.adminapi.webSocket;
 
-
 import jakarta.websocket.*;
 import jakarta.websocket.server.PathParam;
 import jakarta.websocket.server.ServerEndpoint;
@@ -60,8 +58,6 @@ public class ChatRoomServerEndpoint {
         sendMessageToAll(userName + "加入聊天室");
     }
 
-
-
     /**
      * 收到客户端消息的回调方法
      *
@@ -72,7 +68,6 @@ public class ChatRoomServerEndpoint {
     public void onMessage(String message, Session session, @PathParam("userName") String userName) {
         sendMessageToAll(userName + " : " + message);
     }
-
 
     /**
      * 发生错误的回调方法
@@ -95,7 +90,6 @@ public class ChatRoomServerEndpoint {
         sendMessageToAll(userName + " 退出聊天室");
     }
 
-
     /**
      * 单独发送消息
      *
@@ -110,7 +104,6 @@ public class ChatRoomServerEndpoint {
             e.printStackTrace();
         }
     }
-
 
     /**
      * 群发消息
@@ -213,7 +206,6 @@ public class ChatRoomServerEndpoint {
             wx.close();
         }
 
-
         //发送消息
         $('#btn_send').click(function () {
             sendMessage($('#send_text').val())
@@ -226,6 +218,3 @@ public class ChatRoomServerEndpoint {
     })
 </script>
 ```
-
-
-

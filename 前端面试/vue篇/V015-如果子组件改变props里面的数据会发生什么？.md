@@ -12,9 +12,7 @@ created() {
     this.num = 999
   }
 
-
 ```
-
 
 ## 改变的props数据是引用类型
 
@@ -31,6 +29,5 @@ created() {
     // 会报错，跟基础类型报错一样
     this.item = 'sss'
   },
-
 
 ```

@@ -6,13 +6,12 @@
 > 1、使用 Object.defineProprety实现响应式原理
 > 2、 data属性代理到vm(即是Vue实例)上
 
-
 ## Object.defineProperty 是如何使用的？
 
 >Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
 >因为 Object.defineProperty() 是ES6新增的一个方法，所有我们使用vue不支持IE低版本浏览器
 
-```
+```js
  /*----------  defineProperty 基本使用  ------------*/
         let obj = {}
         let name = 'qdleader'
@@ -36,9 +35,10 @@
         // set
 		
 ```
+
 > defineProperty这个原理就是拦截对象，给对象的属性增加 set 和 get方法，因为核心是 defineProperty所以还需要对数组的方法进行拦截
 
-```
+```js
 对对象进行拦截
 function observer(target){
   // 如果不是对象数据类型直接返回即可
@@ -76,8 +76,7 @@ update view
 
 ```
 
-
-```
+```js
 
 数组方法劫持
 const oldProtoMehtods = Array.prototype
@@ -139,7 +138,6 @@ update view
 [ { name: [Getter/Setter] }, 'qdleader' ]
 ```
 
-
 ## Object.defineProperty缺点：
 
 > 无法监听数组的变化
@@ -148,7 +146,7 @@ update view
 
 # 模拟实现Vue响应式
 
-```
+```js
 // 模拟实现Vue响应式
        let vm = {} // 我们把这个看做是Vue的一个实例
         // data看作是Vue实例的data属性
@@ -156,7 +154,6 @@ update view
             price:100,
             name:'qdleader'
         }
-
 
         let key, value
 
@@ -177,7 +174,6 @@ update view
                 
             }
         }
-
 
         console.log(vm.name)
 ```

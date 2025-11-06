@@ -11,7 +11,6 @@ let result = Fn.call(fn);
 4.判断Fn的返回值类型，如果是值类型，返回fn，如果是引用类型，就返回这个引用类型的对象
 ```
 
-
 关于第四点，如果不是很清楚的话，我们来看下面的两个例子
 
 ```js
@@ -24,7 +23,6 @@ function Person(name){
 let p = new Person('哈哈');
 console.log(p); // { name:'哈哈' }
 
-
 //第二种
 function Person(name){
   this.name = name;
@@ -32,4 +30,5 @@ function Person(name){
 }
 let p = new Person('哈哈');
 ```
+
 但是我们一般使用这种构造函数，不会有返回值。如果没有写return，相当于return undefined，JavaScript中的函数都是这样。undefined是值类型的，因此丢弃它，返回obj。

@@ -19,12 +19,8 @@ cd /usr/local/
 mkdir -p soft/mongodb
 ```
 
-
-
 ```js
 cd  /soft/mongodb
-
-
 
 ```
 
@@ -33,17 +29,11 @@ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel80-5.0.4.tgz
 
 tar -zxvf mongodb-linux-x86_64-rhel80-5.0.4.tgz  
 
-
 ```
-
-
-
-
 
 ```js
 mv mongodb-linux-x86_64-rhel80-5.0.4  /usr/local/mongodb/
 ```
-
 
 5.配置环境变量 
    命令如下：
@@ -58,8 +48,6 @@ export PATH=$MONGODB_HOME/bin:$PATH
 source /etc/profile
 
 ```
-
-
 
 添加 MongoDB 配置文件 
 常用的配置选项：
@@ -88,7 +76,6 @@ processManagement.fork：指定是否在后台运行MongoDB进程。默认为tru
 
 touch /usr/local/mongodb/etc/mongodb.conf
 
-
 mongodb.conf的内容
  ```js
 dbpath=/usr/local/mongodb/data
@@ -106,44 +93,46 @@ fork=true
 #auth=true 
  
 #bind_ip=0.0.0.0 
-```
+```js
 
 7.启动mongodb服务
 命令如下：
 cd usr/local/mongodb/mongodb-linux-x86_64-rhel80-5.0.4/bin
-```js
-./mongod --config /usr/local/mongodb/etc/mongodb.conf
-```
-如果报错的话
-```js
-./mongod: error while loading shared libraries: libcrypto.so.1.1: cannot open shared object file: No such file or directory
-```
-```js
-[root@iv-ye39k0b2805i3z5gsheu bin]# yum install -y libcrypto.so.*
 ```
 
+./mongod --config /usr/local/mongodb/etc/mongodb.conf
+```js
+如果报错的话
+```
+
+./mongod: error while loading shared libraries: libcrypto.so.1.1: cannot open shared object file: No such file or directory
+```js
+```
+
+[root@iv-ye39k0b2805i3z5gsheu bin]# yum install -y libcrypto.so.*
+```js
 
 启动服务之后测试，进入数据库:
 ./mongo localhost:27017
 
 开放防火墙的 27017 端口
 
-
-
 四、MongoDB用户管理
 创建用户
 切换到admin数据库：
-```js
-use admin
 ```
-创建管理员admin：
+
+use admin
 ```js
+创建管理员admin：
+```
+
 db.createUser({ user: "admin", pwd: "123456", roles: [
   { role: "readWriteAnyDatabase", db: "admin" },
   { role: "userAdminAnyDatabase", db: "admin" },
   { role: "dbAdminAnyDatabase", db: "admin" }
 ]});
-```
+```js
 
 - 参数释义：
     * roles：数组形式，配置具体权限
@@ -154,24 +143,26 @@ db.createUser({ user: "admin", pwd: "123456", roles: [
 - **注意**：只有`admin`数据库，才有`readWriteAnyDatabase`权限，如果是自己创建的数据库，无法为用户设置`readWriteAnyDatabase`权限，会报错该数据库没有这个权限的用户。
 
 创建超级管理员root：
-```js
+```
+
 db.createUser({ user: "root", pwd: "123456", roles: [
   { role: "root", db: "admin" }
 ]});
-```
+```js
 
 - `root`权限也只能放在`admin`数据库内才能生效
 - `root`是最高权限，可以做任何事情
 
 创建普通用户zhangsan：
-```js
+```
+
 db.createUser({ user: "zhangsan", pwd: "123456", roles: [
   { role: "readWrite", db: "school" },
   { role: "userAdmin", db: "school" },
   { role: "readWrite", db: "myBlog" },
   { role: "userAdmin", db: "myBlog" }
 ]});
-```
+```js
 
 MongoDB常用权限
 read：允许读取指定数据库中数据的权限。
@@ -190,11 +181,14 @@ dbAdminAnyDatabase：
 root：
 只对admin数据库可用。超级账号，超级权限。
 修改密码
-```js
-db.updateUser("用户名", {pwd: "新密码"})
 ```
 
-删除用户
+db.updateUser("用户名", {pwd: "新密码"})
 ```js
+
+删除用户
+```
+
 db.dropUser("用户名")
+```js
 ```

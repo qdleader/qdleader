@@ -40,15 +40,10 @@ import * as Sentry from "sentry-miniapp";
       ],
     });
 
-
   },
-
 
 ```
 
 打开微信开发工具-工具-构建npm即可
 
-
 在项目里写个报错，去后台看看吧
-
-

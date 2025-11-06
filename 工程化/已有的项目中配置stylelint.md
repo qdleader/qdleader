@@ -26,7 +26,6 @@
   }
 ```
 
-
 删除掉node_modules和package.lock.json 重新 install
 
 然后在根目录创建一个.stylelintrc.js文件
@@ -167,9 +166,7 @@ module.exports = {
   }
 };
 
-
 ```
-
 
 在你的 vscode 的settings.json
 
@@ -187,6 +184,5 @@ module.exports = {
   }
 }
 ```
-
 
 配置完后重启vscode ，保存一下试试即可

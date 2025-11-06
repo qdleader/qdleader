@@ -6,15 +6,13 @@
 对于这种情况，我们可以使用一对 provide 和 inject。无论组件层次结构有多深，父组件都可以作为其所有子组件的依赖提供者。
 这个特性有两个部分：父组件有一个 provide 选项来提供数据，子组件有一个 inject 选项来开始使用这些数据。
 
-
 ## 使用
+
 假设有一个组件A，A组件引入B组件（A为B的父组件） ，B组件引入C组件（B为C的父组件），即A为C的祖先组件，此时二者可以使用provide / inject进行通信。
 
 eg:
 
 ### A.vue
-
-
 
 <template>
   <div>
@@ -32,9 +30,7 @@ export default {
 };
 </script>
 
-
 B.vue
-
 
 <template>
   <div>
@@ -63,7 +59,6 @@ export default {
   name: "C"
 };
 </script>
-
 
 A与C使用provide / inject方式进行通信
 
@@ -173,7 +168,6 @@ export default {
 </script>
 C使用inject
 
-
 <template>
   <div>
     <span>{{obj.name}}</span>
@@ -193,7 +187,6 @@ export default {
 我们这里不让C直接改变A中的数据，而是将A改变数据的方法通过provide传给C，C执行该方法，触发改变A中的数据。
 
 A使用provide传入一个方法
-
 
 <template>
   <div>
@@ -250,6 +243,7 @@ export default {
 以上就是在vue2中对provide / inject的基本使用。
 
 ## vue3中使用
+
 Provide
 
 在 setup() 中使用 provide 时，我们首先从 vue 显式导入 provide 方法。这使我们能够调用 provide 来定义每个 property。
@@ -259,7 +253,6 @@ provide 函数允许你通过两个参数定义 property：
 name ( 类型)
 value
 使用A组件，provide 的值可以按如下方式重构：
-
 
 <template>
   <C />
@@ -339,7 +332,6 @@ export default {
 
 同样的，需要在C中修改它的祖先组件的数据，需像vue2一样在provide传入一个方法
 
-
 <template>
   <C />
 </template>
@@ -389,7 +381,6 @@ export default {
 }
 </script>
 最后，如果要确保通过 provide 传递的数据不会被 inject 的组件更改，我们建议对提供者的 property 使用 readonly。
-
 
 <template>
   <C />

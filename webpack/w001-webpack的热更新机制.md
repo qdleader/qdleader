@@ -22,7 +22,6 @@ module.exports = {
 
 通过上述这种配置，如果我们修改并保存css文件，确实能够以不刷新的形式更新到页面中
 
-
 ## 原理
 
  Webpack-complier ：webpack 的编译器，将 JavaScript 编译成 bundle（就是最终的输出文件）
@@ -48,10 +47,7 @@ mainfest文件包含重新build生成的hash值，以及变化的模块，
 
 浏览器根据 manifest 文件获取模块变化的内容，从而触发render流程，实现局部模块更新
 
-
-
 ## 总结
-
 
 通过webpack-dev-server创建两个服务器：提供静态资源的服务(express)和Socket服务
 express server 负责直接提供静态资源的服务(打包后的资源直接被浏览器请求和解析)
@@ -61,6 +57,7 @@ socket server 是一个 websocket 的长连接，双方可以通信
 浏览器拿到两个新的文件后，通过HMR runtime机制，加载这两个文件，并且针对修改的模块进行更新
 
 ## 详细版
+
 在 webpack 的运行时中 __webpack__modules__ 用以维护所有的模块。
 
 而热模块替换的原理，即通过 chunk 的方式加载最新的 modules，找到 __webpack__modules__ 中对应的模块逐一替换，并删除其上下缓存。

@@ -23,12 +23,11 @@
 给定的节点为非末尾节点并且一定是链表中的一个有效节点。
 不要从你的函数中返回任何结果。
 
-
 ## 解析
+
 把下一个节点值赋值给当前节点，删除下一个节点。
 
-
-```
+```js
 var deleteNode = function(node) {
   node.val = node.next.val;
   node.next = node.next.next

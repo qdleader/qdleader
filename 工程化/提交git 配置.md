@@ -1,12 +1,8 @@
 ## Git Hooks
 
-
 在我们开始进行组件开发之前，还有一节是关于配置的。 请记住，如果你要长期构建该项目，你将希望该项目尽可能坚如磐石，尤其是与其他开发人员团队合作时。 花时间在一开始就把它做好是值得的。
 我们将使用一个叫做 Husky 的工具
 Husky 是一个用于在 git 进程的不同阶段运行脚本的工具，例如 add、commit、push 等。我们希望能够设置某些条件，并且只有在我们的代码满足这些条件时才允许提交和推送之类的事情成功，假设这表明我们的项目质量是可以接受的。
-
-
-
 
 ### 安装 Husky
 ```js
@@ -14,6 +10,7 @@ npm install -D husky
 
 npx husky install
 ```
+
 第二个命令将在你的项目中创建一个 .husky 目录。这就是你的 hooks 存放的地方。确保此目录包含在你的代码仓库中，因为它也适用于其他开发人员，而不仅仅是你自己。
 在 package.json 文件中添加 script
 package.json
@@ -39,14 +36,14 @@ npx husky add .husky/pre-commit "npm run   lint"
 ```js
 npx husky add .husky/pre-push "npm run   build"
 ```
+
 以上确保我们只有在代码构建成功的时候才可以将代码推送到远程仓库中。 这似乎是一个相当合理的条件，不是吗？ 通过提交此更改并尝试推送来随意测试它。
 最后，我们将再添加一个工具。 到目前为止，我们一直在遵循所有提交消息的标准约定，让我们确保团队中的每个人都遵循它们（包括我们自己！）。 我们可以为我们的提交消息添加一个 linter：
-
-
 
 ```js
 npm i -D @commitlint/config-conventional @commitlint/cli
 ```
+
 要配置它，我们将使用一组标准默认值，但我喜欢将该列表显式包含在 commitlint.config.js 文件中，因为我有时会忘记可用的前缀：
 commitlint.config.js
 
@@ -215,7 +212,6 @@ module.exports = {
   },
 };
 
-
 ```
 
 然后使用 Husky 启用 commitlint：
@@ -227,4 +223,3 @@ npx husky add .husky/commit-msg \"npx --no -- commitlint --edit '$1'\"
 npx husky add .husky/commit-msg "npx --no -- commitlint --edit $1"
 
 ```
-

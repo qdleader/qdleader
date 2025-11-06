@@ -1,10 +1,8 @@
 # implements和extends的区别
 
-
 ## extends
+
 继承，一个新的接口或者类，从父类或者接口继承所有的属性和方法，不可以重写属性，但可以重写方法
-
-
 
 ts 中 extends 可以理解为 es6 class 对应的 extends
 可以实现类的继承 
@@ -31,7 +29,6 @@ interface IPerson extends IPeople {
 ## implements
 
 实现，一个新的类，从父类或者接口实现所有的属性和方法，同时可以重写属性和方法，包含一些新的功能
-
 
 implements 理解为实现，A implements B，A 上要有 B 对应的属性和方法,不能用于两个 interface 之间
 类和类之间
@@ -62,6 +59,3 @@ class Roles extends User{
 }
 
 ```
-
-
-

@@ -20,7 +20,4 @@ ES6 对数值进行了扩展，提供了静态方法 isInteger() 来判断参数
   Number.isInteger(true) // false
 ```
 
-
 JavaScript能够准确表示的整数范围在 -2^53 到 2^53 之间（不含两个端点），超过这个范围，无法精确表示这个值。ES6 引入了Number.MAX_SAFE_INTEGER 和 Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限，并提供了 Number.isSafeInteger() 来判断整数是否是安全型整数。
-
-

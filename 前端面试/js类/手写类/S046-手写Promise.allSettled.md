@@ -1,7 +1,6 @@
 
 # S046-手写Promise.allSettled
 
-
 基于 promise.all 实现 
 ```js
 
@@ -18,7 +17,6 @@ if (Promise && !Promise.allSettled) {
 }
 
 ```
-
 
 ```js
 
@@ -51,5 +49,3 @@ if (Promise && !Promise.allSettled) {
     }
 
 ```
-
-

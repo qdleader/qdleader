@@ -1,6 +1,7 @@
 
  
 ## 环境准备
+
 基于阿里云服务器Linux的CentOS7
 
 且确保已经安装了gcc相关环境
@@ -29,7 +30,6 @@ yum remove docker \
 yum install -y yum-utils
 ```
 
-
 ### 3、配置阿里云镜像仓库
 # 使用国内阿里云的
 ```js
@@ -57,7 +57,6 @@ systemctl start docker
 docker version #查看版本信息，是否安装成功
 ```
 
-
 ### 8、运行hello world
 ```js
 docker run hello-world
@@ -68,10 +67,6 @@ docker run hello-world
 docker images
 ```
 
-
-
-
-
 ### 其他命令
 ```js
 
@@ -81,6 +76,4 @@ systemctl restart docker   #重启Docker守护进程
 systemctl enable docker    #设置Docker开机自启动
 systemctl status docker    #查看Docker的运行状态
 
-
 ```
-

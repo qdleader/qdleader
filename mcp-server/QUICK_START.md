@@ -55,10 +55,13 @@ npm publish --access public
 每次更新代码后：
 
 ```bash
+
 # 1. 构建
+
 npm run build
 
 # 2. 更新版本并发布
+
 ./publish.sh
 ```
 
@@ -91,13 +94,17 @@ npm unpublish qdleader-mcp@1.0.0
 ### Q: 如何更新已发布的包？
 
 ```bash
+
 # 修复 bug
+
 npm version patch && npm publish
 
 # 新功能
+
 npm version minor && npm publish
 
 # 重大更新
+
 npm version major && npm publish
 ```
 
@@ -112,4 +119,3 @@ npm version major && npm publish
 ---
 
 **祝发布成功！🎉**
-

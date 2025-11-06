@@ -42,7 +42,6 @@ mergePromise([ajax1, ajax2, ajax3]).then(data => {
 // [1, 2, 3]
 ```
 
-
 ```ts
 const mergePromise = ajaxArray => {
   let data = [];
@@ -85,4 +84,3 @@ const mergePromise = ajaxArray => {
 };
 
 ```
-

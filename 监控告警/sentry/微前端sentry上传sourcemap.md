@@ -38,15 +38,13 @@ module.exports = defineConfig({
 SENTRY_AUTH_TOKEN=sntrys_token
 ```
 
-
 ## 子应用
+
 vue.config.js
 ```js
 const { defineConfig } = require("@vue/cli-service")
 const packageName = require("./package.json").name
 const { sentryWebpackPlugin } = require("@sentry/webpack-plugin")
-
-
 
 module.exports = defineConfig({
   publicPath: isLocal ? "/" : "/cem-app/",

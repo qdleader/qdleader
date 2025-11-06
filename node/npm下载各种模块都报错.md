@@ -1,8 +1,6 @@
 # npm安装任何包都报错的解决办法
 
-
-
-```
+```bash
 解决办法：
 
 1、执行：
@@ -14,21 +12,17 @@ npm config get https-proxy
 npm config set proxy null
 npm config set https-proxy null
 
-
 2、执行：
 npm config set registry http://registry.cnpmjs.org/
 ```
 
-
 然后你就可以愉快的安装cnpm了
 
-```
+```bash
 npm install -g cnpm --registry=https://registry.npmmirror.com/
 ```
 
 然后你就可以更加愉快的用cnpm安任何东西了
-
-
 
 现在基本就可以了，若cnpm 现在也任然报错呢，可以再检查一下是否配置了
 git的系统变量

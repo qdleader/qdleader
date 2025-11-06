@@ -1,4 +1,5 @@
 # cold-005实现lazyMan函数
+
 题目描述：
 
 实现一个LazyMan，可以按照以下方式调用:
@@ -21,7 +22,6 @@ LazyMan(“Hank”).eat(“supper”).sleepFirst(5)输出
 Wake up after 5
 Hi This is Hank!
 Eat supper
-
 
 实现如下：
 ```js

@@ -14,9 +14,6 @@ wait(5000).then(() => {
 });
 ```
 
-
-
-
 可中止版本
 ```js
 function wait(time: number, signal?: AbortSignal) {
@@ -44,6 +41,5 @@ wait(5000, abortController.signal)
   .catch(() => {
     console.log('Waiting was interrupted');
   });
-
 
 ```

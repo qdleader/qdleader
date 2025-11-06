@@ -4,10 +4,6 @@
 npm install unplugin-auto-import@0.16.1
 ```
 
-
-
-
-
 2. ## vue.config.js 中引入
 ```js
 
@@ -41,7 +37,6 @@ module.exports = defineConfig({
 })
 
 ```
-
 
 3. ## .eslintrc
 ```js
@@ -84,8 +79,5 @@ ts.config.json文件引入声明文件: include中引入auto-imports.d.ts
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
-
-
-
 
 https://github.com/unplugin/unplugin-auto-import

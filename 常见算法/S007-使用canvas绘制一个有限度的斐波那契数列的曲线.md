@@ -1,10 +1,9 @@
 
 斐波那契数列，又称黄金分割数列，指的是0 1 1 2 3 5 8 13 21 
 
-
 <!-- 生成数组的方法 -->
 
-```
+```js
 function getFibonacci(n) {
 	var fibarr = [];
 	var i = 0;
@@ -20,10 +19,8 @@ function getFibonacci(n) {
 }
 ```
 
-
-
 #具体实现：
-```
+```js
 var canvas = document.querySelector('canvas');
 
 canvas.width = 600;
@@ -82,8 +79,6 @@ function draw(r, n ,prevR) {
   ctx.strokeStyle = '#fff';
   ctx.stroke();
 }
-
-
 
 function getFibonacci(n) {
   var fibarr = [];

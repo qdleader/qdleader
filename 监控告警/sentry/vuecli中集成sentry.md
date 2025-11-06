@@ -2,7 +2,6 @@
 
 npm install --save @sentry/vue
 
-
 ```js
 import { createApp } from "vue";
 import { createRouter } from "vue-router";
@@ -35,21 +34,12 @@ app.use(router);
 app.mount("#app");
 ```
 
-
-
-
-
-
-
 上传source-map文件：
+
 ## 自动配置
 ```shell
 npx @sentry/wizard@latest -i sourcemaps
 ```
-
-
-
-
 
 ## 手动配置的话
 
@@ -82,7 +72,6 @@ module.exports = defineConfig({
 })
 
 ```
-
 
 修改npm run build命令在打包上传完成后删除source-map文件：
 ```js

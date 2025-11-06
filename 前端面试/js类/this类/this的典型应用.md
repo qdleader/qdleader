@@ -23,13 +23,11 @@ function people(name) {
 ```js
 <input type="button" id="text" value="点击"/>
 
-
 let btn = document.getElementById("text");
 btn.onclick = function() {
   alert(this.value)
 }
 ```
-
 
 ## 4. call 和 apply
 

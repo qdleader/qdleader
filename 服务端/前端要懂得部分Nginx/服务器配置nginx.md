@@ -4,9 +4,6 @@
 /usr/local/webserver/nginx/sbin/nginx -t
 ```
 
-
-
-
 ```js
 #error_log  logs/error.log;
 #error_log  logs/error.log  notice;
@@ -14,12 +11,10 @@
 
 #pid        logs/nginx.pid;
 
-
 events {
     worker_connections  1024;
      use epoll;
 }
-
 
 http {
 
@@ -32,8 +27,6 @@ http {
         server 127.0.0.1:8080;
         server 127.0.0.1:8081;
     }
-
-
 
   # server 开始
 server {
@@ -52,6 +45,7 @@ server {
             alias  /usr/local/webserver/nginx/html/admin/assets/;
     }
 }
+
 # server 结束
 
     server {

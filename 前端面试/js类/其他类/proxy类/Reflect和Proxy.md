@@ -28,7 +28,6 @@ p.bar; // 输出：我被读取了bar属性
 
 ```
 
-
 在上述代码中我们定义了一个foo属性和bar属性，其中bar属性是一个访问器属性，通过get函数 return this.foo获取得到 的，因此按理来说我们在读取bar属性时候会触发读取foo属性，也同样会被get的trap所拦截到，但实际代码运行结果并没有拦截到foo属性。这是为什么呢，答案的关键在于bar访问器里的this指向。梳理下代码运行过程：p.bar 实际上会被handler的get捕获 返回 target['bar']，而这里的target实际上就是obj，所以这时候bar访问器里的this指向obj，this.foo，实际就是obj.foo。而obj并不是proxy对象p，所以访问其foo属性并不会被拦截到。
 
 那么如何也能触发到foo属性的拦截呢，这时候Reflect就派上用场了，有以下代码：

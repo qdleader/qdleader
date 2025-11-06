@@ -1,4 +1,5 @@
 ## 3. 无重复字符的最长子串
+
 中等
 9.8K
 相关企业
@@ -29,8 +30,6 @@
 0 <= s.length <= 5 * 104
 s 由英文字母、数字、符号和空格组成
 
-
-
 ```js
 用left和right两个指针, right指针前移的时候, 去检测max值, left指针前移的时候，直接进去下一个循环
 
@@ -53,9 +52,7 @@ var lengthOfLongestSubstring = function(str) {
       return max
 };
 
-
 ```
-
 
 ```js
 
@@ -81,9 +78,7 @@ const lengthOfLongestSubstring = s => {
     return max;
 };
 
-
 ```
-
 
 ```js
 var lengthOfLongestSubstring = function(s) {

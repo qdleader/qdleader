@@ -2,8 +2,8 @@
 
 ## React18有哪些更新？
 
-
 #### 1. 更新 render API
+
 v18 使用 ReactDOM.createRoot() 创建一个新的根元素进行渲染，使用该 API，会自动启用并发模式。
 使用旧的 API 仍然兼容，只有在使用 createRoot 了之后才会有 React 18 的新特性。
 
@@ -31,8 +31,6 @@ ReactDOM.createRoot(root).render(<App/>)
 root.unmount()  
 ```
 
-
-
 ## 2. setState自动批处理
 
 在react17中，只有react事件会进行批处理，原生js事件、promise，setTimeout、setInterval不会
@@ -50,7 +48,6 @@ setTimeout(() => {
    setCount((c) => c + 1)
    setFlag((f) => !f)
 }, 0)
-
 
 // v18
 const handleBatching = () => {
@@ -98,10 +95,8 @@ const App=()=>{
 export default App
 ```
 
-
-
-
 ### 3. Suspense 支持 SSR
+
 SSR 一次页面渲染的流程：
 
 服务器获取页面所需数据
@@ -117,22 +112,16 @@ v18 中使用并发渲染特性扩展了Suspense的功能，使其支持流式 S
 </Suspense>
 ```
 
-
 ### 4. startTransition
 
 startTransition API 允许将更新标记为非紧急事件处理，被startTransition包裹的会延迟更新的state，期间可能被其他紧急渲染所抢占。因为 React 会在高优先级更新渲染完成之后，才会渲染低优先级任务的更新
-
-
 
 ### 5. useDeferredValue
 
 useDeferredValue 和 useTransition 一样，都是标记了一次非紧急更新。useTransition是处理一段逻辑，而useDeferredValue是产生一个新状态，它是延时状态，这个新的状态则叫 DeferredValue。所以使用useDeferredValue可以推迟状态的渲染
 
-
-
 这样一看，useDeferredValue直观就是延迟显示状态，那用防抖节流有什么区别呢？
 如果使用防抖节流，比如延迟300ms显示则意味着所有用户都要延时，在渲染内容较少、用户CPU性能较好的情况下也是会延迟300ms，而且你要根据实际情况来调整延迟的合适值；但是useDeferredValue是否延迟取决于计算机的性能。
-
 
 ```ts
 
@@ -177,7 +166,6 @@ function List(props) {
 
 ```
 
-
 useTransition直接控制更新状态的代码，而useDeferredValue控制一个受状态变化影响的值。它们做的是同样的事,帮助提高用户体验(UX)，
 
 ### 6.支持useId
@@ -186,10 +174,8 @@ useTransition直接控制更新状态的代码，而useDeferredValue控制一个
 
 ## 7.react组件返回值更新
 
-
 在react17中，返回空组件只能返回null，显式返回undefined会报错
 在react18中，支持null和undefined返回
-
 
 ### 8.去掉了对IE浏览器的支持，react18引入的新特性全部基于现代浏览器，如需支持需要退回到react17版本
 
@@ -198,7 +184,6 @@ useTransition直接控制更新状态的代码，而useDeferredValue控制一个
 当你使用严格模式时，React会对每个组件返回两次渲染，以便你观察一些意想不到的结果,在react17中去掉了一次渲染的控制台日志，以便让日志容易阅读。react18取消了这个限制，第二次渲染会以浅灰色出现在控制台日志
 
 Suspense不再需要fallback捕获
-
 
 ## 6.useSyncExternalStore
 
@@ -214,4 +199,3 @@ Suspense不再需要fallback捕获
 它可以帮助应用保持响应，根据用户的设备性能和网速进行调整，它通过渲染可中断来修复阻塞渲染机制。在concurrent模式中，React可以同时更新多个状态
 区别就是使同步不可中断更新变成了异步可中断更新
 useDeferredValue和startTransition用来标记一次非紧急更新
-

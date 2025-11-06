@@ -2,7 +2,6 @@
 
 # r005-介绍Redux数据流的流程
 
-
 1. 当用户触摸界面时，调用store.dispatch(action)捕捉具体的action动作。
 2. 然后Redux的store自动调用reducer函数，store传递两个参数给reducer函数：当前state和收到的action。其中，reducer函数必须是一个纯函数，该函数会返回一个新的state。
 3. 根reducer会把多个子reducer的返回结果合并成最终的应用状态，在这一过程中，可以使用Redux提供的combineReducers方法。使用combineReducers方法时，action会传递给每个子的reducer进行处理，在子reducer处理后会将结果返回给根reducer合并成最终的应用状态。

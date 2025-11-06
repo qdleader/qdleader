@@ -12,16 +12,13 @@ $ yum makecache
 $ yum -y install docker
 ```
 
-
 ## 启动docker
 ```js
 $ sudo service docker start
 $ docker --version
 ```
+
 Docker version 18.09.0, build c0d3c43
-
-
-
 
 ## 开机自启动
 ```js
@@ -47,4 +44,3 @@ systemctl restart docker
 ```js
 $ sudo yum remove docker-ce docker-ce-cli containerd.io
 ```
-    

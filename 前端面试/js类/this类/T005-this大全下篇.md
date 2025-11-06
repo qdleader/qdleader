@@ -1,6 +1,6 @@
 # T005-this大全下篇
-this详解下
 
+this详解下
 
 3.显示绑定： （使用某些方法，改变函数内部的this的指向。） 通过call(),apply()或bind方法直接指定this绑定的对象，如foo.call(obj).
 
@@ -13,9 +13,9 @@ var obj = {
     a:2
 }
 
-
 foo.call(obj) //2
 ```
+
 通过this.call,我们可以调用foo时强制把foo的this绑定到obj上。
 另外，call， apply ，bind接受第一个参数是空，或者null，undefined的话，则会忽略如下
 ```js
@@ -28,11 +28,6 @@ foo.call();
 foo.call(null);
 foo.call(undefined)
 ```
-
-
-
-
-
 
 结果：
 2
@@ -61,14 +56,10 @@ obj2.foo1()
 obj2.foo2()
 ```
 
-
 结果：
 2
 window
 3
-
-
-
 
 setTimeout 调用的其实是window
 
@@ -100,14 +91,11 @@ obj2.foo2()
 
 ```
 
-
 结果
 
 2
 {a: 1}
 1
-
-
 
 ```js
 
@@ -133,14 +121,10 @@ obj2.foo2()
 
 ```
 
-
-
 结果为
 2
 window{...}
 3
-
-
 
 因为调用函数的依然是window
 下面说一个面试中最常见的
@@ -156,25 +140,15 @@ foo.call(obj)
 foo().call(obj)
 ```
 
-
-
 结果为
 2
 1
 2
 uncaught TypeError
 
-
 解释一下最后这个报错
 
 因为foo()执行，然后打印里面的2没啥问题，但是由于foo返回的是undefined，因此undefiend。call（）就会报错
-
-
-
-
-
-
-
 
 ```js
 function foo () {
@@ -191,25 +165,12 @@ foo.call(obj)
 foo().call(obj)
 ```
 
-
-
-
-
-
-
 2
 1
 2
 1
-
 
 虽然foo返回一个匿名函数，但没调用。只有foo()() 才算调用哟
-
-
-
-
-
-
 
 ```js
 function foo () {
@@ -224,19 +185,11 @@ var a = 2
 foo.call(obj)()
 ```
 
-
-
-
-
 结果是
 1
 2
 
 foo()函数内的this虽然指定了是为obj，但是调用最后调用匿名函数的却是window。
-
-
-
-
 
 ```js
 var obj = {
@@ -256,21 +209,12 @@ obj.foo.call(obj2)()
 obj.foo().call(obj2)
 ```
 
-
-
 答案是：
 foo: obj和inner: window
 
 foo: obj2和inner: window
 
 foo: obj和inner: obj2
-
-
-
-
-
-
-
 
 ```js
 var obj = {
@@ -289,26 +233,13 @@ obj.foo(a).call(obj2, 1)
 obj.foo.call(obj2)(1)
 ```
 
-
-
-
-
-
-
-
-
 结果为：
 6
 6
 
-
 第一个6为3 + 2 + 1 
 
 第二个6为2+ 3 + 1
-
-
-
-
 
 # 硬绑定
 
@@ -339,7 +270,7 @@ obj.foo.call(obj2)(1)
     首先我们创建了函数bar();并且在它的内部手动调用了foo.call(obj),因此就强制把foo的this绑定到了obj上。无论之后如何调用函数的bar，它总会手动在obj上调用foo。这种绑定是一种显试的强制绑定，称之为硬绑定。
 
     硬绑定的典型应用场景就是创建一个包裹函数，传入所有的参数并返回接受到的所有值：
-```js
+```
    function foo(something) {
         console.log(this.a , something)
         return this.a + something;
@@ -356,9 +287,10 @@ obj.foo.call(obj2)(1)
     var b = bar(3) // 2 3
     console.log(b); // 5
 
-```
-由于硬绑定是一种非常常用的模式，所以在ES5中提供了内置的方法Function.prototype.bind，它的用法如下：
 ```js
+
+由于硬绑定是一种非常常用的模式，所以在ES5中提供了内置的方法Function.prototype.bind，它的用法如下：
+```
 function foo(something) {
         console.log(this.a , something)
         return this.a + something;
@@ -374,14 +306,9 @@ function foo(something) {
 
     console.log(b); // 5
 
+```js
 
 ```
-
-
-
-
-
-```js
 var obj = {
       a: 1,    // a是定义在对象obj中的属性
       fire: function () {
@@ -396,12 +323,9 @@ var fireInGrobal = function () {
 }
        
 fireInGrobal(); // 输出1
-```
-
-
+```js
 
 这样能够能够一次性 返回一个this被永久绑定到obj的fireInGrobal函数，这样我们就不必每次调用fireInGrobal都要在尾巴上加上call那么麻烦了。
-
 
 var fireInGrobal = function () {
     fn.call(obj)   //硬绑定
@@ -410,10 +334,7 @@ var fireInGrobal = function () {
 或者
 var fireInGrobal = fn.bind(obj);
 
-
-
-
-```js
+```
 function foo1 () {
   console.log(this.a)
 }
@@ -432,12 +353,11 @@ foo2.call(window)
 答案：
 2
 2
-```
-
+```js
 
 这里foo2函数内部的函数foo1我们使用call来显式绑定obj，就算后面再用call来绑定window也没有用了
 
-```js
+```
 function foo1 (b) {
   console.log(`${this.a} + ${b}`)
   return this.a + b
@@ -454,24 +374,15 @@ var foo2 = function () {
 var num = foo2(3)
 console.log(num)
 
-
-```
-
-
-
+```js
 
 答案：
 
 '2 + 3'
 5
 
-
-
-
-
-
 还有forEach，map，filter，它们的第二个参数也是能绑定this的
-```js
+```
 function foo (item) {
   console.log(item, this.a)
 }
@@ -488,14 +399,13 @@ arr.filter(function (i) {
   return i > 2
 }, obj)
 
-```
+```js
 
 答案：
 
 1 "obj"
 2 "obj"
 3 "obj"
-
 
 如果我们没有传递第二个参数obj的话，this.a打印出来的肯定就是window下的a了，但是传入了之后将obj显示绑定到第一个参数函数上。
 (关于arr.filter为什么也会打印出1, 2, 3，那是因为虽然我们使用了return i > 2，不过在执行阶段filter还是把每一项都打印出来)
@@ -511,28 +421,18 @@ this 永远指向最后调用它的那个对象 匿名函数的this永远指向w
 ## new绑定
 
 使用new调用某个构造函数，代码如下：
-```js
+```
 function Foo(a) {
   this.a = a;
   console.log(this.a);
 }
 var obj = new Foo(2);
 
-
-
-
-
 console.log(obj.a) // 2
 
+```js
+
 ```
-
-
-
-
-
-
-
-```ts
 
 function Person (name) {
   this.name = name
@@ -548,20 +448,16 @@ function Person (name) {
 var person1 = new Person('person1')
 person1.foo1()
 person1.foo2()()
-```
-
-
-
+```js
 
 结果为：
 ‘person1'
 ''
 
-
 第二个this.name打印的应该就是window下的name了，但是这里window对象中并不存在name属性，所以打印出的是空。
  
 
-```js
+```
 var name = 'window'
 function Person (name) {
   this.name = name
@@ -585,7 +481,7 @@ var person2 = {
 var person1 = new Person('person1')
 person1.foo()()
 person2.foo()()
-```
+```js
 
 答案：
 
@@ -594,11 +490,7 @@ person2.foo()()
 'person2'
 'window'
 
-
-
-
-
-```ts
+```
 
 var name = 'window'
 function Person (name) {
@@ -616,21 +508,13 @@ var person2 = new Person('person2')
 person1.foo.call(person2)()
 person1.foo().call(person2)
 
-
-
-```
-
-
-
-
+```js
 
 答案是：
 'person2'
 'window'
 'person1'
 'person2'
-
-
 
 ----】=--百花竞开了云5人体 2345678b n 8 m
 
@@ -647,7 +531,7 @@ var person1 = {
 person1.foo.call(person2)()将foo()函数内的this指向了person2，所以打印出person2，而内部返回的匿名函数是由window调用的，所以打印出window。(类似题目4.9)
 person1.foo().call(person2)是将匿名函数的this显式绑定到了person2上，所以打印出来的会是person2
 
-```ts
+```
 var obj = {
       a: 1,
       obj2: {
@@ -662,4 +546,5 @@ var obj = {
 }
  
 obj.obj2.obj3.getA();  // 输出3
+```js
 ```

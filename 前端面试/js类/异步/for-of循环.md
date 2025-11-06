@@ -19,8 +19,6 @@ nums.forEach(async (i) => {
 
 这个打印的结果是：过一秒后：1,4,9同时打印
 
-
-
 ```js
 !(async function () {
     for (let i of nums) {
@@ -29,6 +27,7 @@ nums.forEach(async (i) => {
     }
 })
 ```
+
 过一秒后：1,
 再过一秒打印：4,
 再过一秒打印：9

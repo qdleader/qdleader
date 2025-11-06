@@ -1,4 +1,5 @@
 # S018-手写数组中第一个没出现的最小正整数
+
 手写-如何找到数组中第一个没出现的最小正整数 怎么优化
 ```js
 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
@@ -21,6 +22,7 @@
 ```
 
 ### 第一版
+
 O(n^2) 的方法
 
 ```js
@@ -40,6 +42,7 @@ const firstMissingPositive = (nums) => {
 ```
 
 ### 第二版
+
 时间空间均为 O(n)
 ```js
 const firstMissingPositive = (nums) => {
@@ -55,7 +58,9 @@ const firstMissingPositive = (nums) => {
 };
 
 ```
+
 ### 最终版
+
 时间复杂度为 O(n) 并且只使用常数级别空间
 ```js
 const firstMissingPositive = (nums) => {

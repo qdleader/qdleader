@@ -1,9 +1,8 @@
 # for in 和for of 的区别
 
 ## 1.for...in
+
 for...in可以遍历对象、数组。
-
-
 
 #### 遍历数组：
 ```js
@@ -24,7 +23,6 @@ for (let index in arr) {
 使用for in会遍历数组所有的可枚举属性，包括原型。
 所以for...in更适合遍历对象，不要使用for in遍历数组。
 
-
 #### 遍历对象：
 ```js
 Object.prototype.method = function () {
@@ -41,6 +39,7 @@ for (let key in obj) {
 ```
 
 ## 2.for...of
+
 for-of可以简单、正确地遍历数组（不遍历原型method和name）。
 遍历数组：
 ```js
@@ -52,7 +51,6 @@ for (let value of myArray) {
     console.log(typeof value)
 }
 ```
-
 
 .JavaScript中可迭代对象
 ```js
@@ -68,6 +66,7 @@ NodeList
 ```js
 Array.prototype.hasOwnProperty(Symbol.iterator)
 ```
+
 ## 4.总结
 
 > for...in可以遍历对象和数组，for...of不能遍历对象
@@ -78,4 +77,3 @@ Array.prototype.hasOwnProperty(Symbol.iterator)
 具有迭代器对象才可以使用for...of
 
 总结一句话就是遍历数组使用for...of，遍历对象使用for...in。
-

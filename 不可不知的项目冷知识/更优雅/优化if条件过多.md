@@ -18,7 +18,6 @@ if (obj.radio1 || obj.checkbox1.length > 0 || obj.input1 || obj.inputNumber1 > 0
 
 优化后的代码如下：
 
-
 ```js
 // 多条件判断开始，如下
 
@@ -75,5 +74,5 @@ function shouldShowSpinner(fsm, listNode) {
      // ...
    }
 ```
-    在正确的写法中我们封装了条件判断的逻辑成一个独立函数。这种写法比较可读，我们从函数名就能知道做了一个什么判断。
 
+    在正确的写法中我们封装了条件判断的逻辑成一个独立函数。这种写法比较可读，我们从函数名就能知道做了一个什么判断。

@@ -4,7 +4,7 @@
 
 querySelectorAll等原生提供DOM查找函数。
 
-```
+```js
 function queryClassName(node, name) {
 	var starts = '(^|[ \n\r\t\f])',
 		ends = '([\n\r\t\f]|$)';
@@ -30,7 +30,7 @@ function queryClassName(node, name) {
 
 方式2：
 
-```
+```js
 function getAllClassName(attr) {
 	let  arr = [];
 	let  doms = document.getElementsByTagName("*");

@@ -1,15 +1,13 @@
 #des 加密
 
-
-
 ##先下载crypto-js
-```
+```bash
 npm install crypto-js --save-dev
 ```
 
 #新建一个单独的aes.js文件
 
-```
+```js
 import CryptoJS from 'crypto-js';
 //DES加密
 export const encryptBy = (message) => {
@@ -41,21 +39,15 @@ export const decryptBy = (message) => {
     return decryptByDES(message, key);
 }
 
-
 // console.log(encryptBy('123456'));//加密
 //  console.log(decryptBy('103e702e0737327c'));//解密
 
 ```
 
-
-
-
 在引入的页面
 
-```
+```js
 import { encryptBy, decryptBy } from "@/common/js/des.js";
-
-
 
     // console.log(encryptBy("羊羊羊呀"))
     // console.log(decryptBy("Hxr4/Ulnanpb9tB38sSLJVGZQ5ccB+rkNZM4ujfNZC8="))

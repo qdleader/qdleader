@@ -1,5 +1,7 @@
 ```js
+
 ## Turbopack
+
 首先是最引入注目的，在 Next13 中加入了全新的打包工具 Turbopack， 它是出自 Webpack 作者 TobiasKoppers 之手，官方描述是：开发时更新速度比 Webpack 快 700 倍、比 Vite 快 10 倍，是不是有点迫不及待，想要熟手体验了呢？我们直接使用官方提供的 cli 创建一个 Next.js 工程。
 npx create-next-app --example with-turbopack
 复制代码
@@ -14,7 +16,6 @@ Turbopack 特点
 增量计算： Turbopack 是建立在 Turbo 之上的，Turbo 是基于 Rust 的开源、增量记忆化框架，除了可以缓存代码，还可以缓存函数运行结果。
 懒编译：例如，如果访问 localhost:3000，它将仅打包 pages/index.jsx，以及导入的模块。
 
-
 ## 创建项目
 
 js
@@ -23,14 +24,10 @@ js
   cd nextApp
   npm run dev		//运行项目
 
-
 #### 创建 ts 模板
-
 
 js
 npx create-next-app@latest --typescript
-
-
 
 目录结构介绍：
 > components文件夹: 这里是专门放置自己写的组件的，这里的组件不包括页面，指公用的或者有专门用途的组件。
@@ -39,7 +36,6 @@ npx create-next-app@latest --typescript
 > static文件夹： 这个是静态文件夹，比如项目需要的图片、图标和静态资源都可以放到这里。
 > .gitignore文件： 这个主要是控制git提交和上传文件的，简称就是忽略提交。
 > package.json文件：定义了项目所需要的文件和项目的配置信息（名称、版本和许可证），最主要的是使用npm install 就可以下载项目所需要的所有包。
-
 
 ## 路由
 
@@ -55,22 +51,19 @@ import Router from 'next/router'
     })
   }
 
-
       <div><Link href="/pageDetail">详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
-
-
 
 注意：用<Link>标签进行跳转是非常容易的，但是又一个小坑需要你注意一下，就是他不支持兄弟标签并列的情况。
 
 就是得加个根标签
-
 
 #### 参数的传递和接收
 
 在Next.js中只能通过通过query（?id=1）来传递参数，而不能通过(path:id)的形式传递参数。
 
 ###### 拼接方式传递
+
 js
 import Link from 'next/link'
 import Router from 'next/router'
@@ -82,8 +75,6 @@ import Router from 'next/router'
     })
   }
 
-
-
       <div><Link href="/pageDetail">详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
 
@@ -92,7 +83,6 @@ import Router from 'next/router'
 js
     import Link from 'next/link'
     import Router from 'next/router'
-
 
     const goDetail = () => {
       Router.push({
@@ -105,9 +95,6 @@ js
 
       <div><Link href={pathname:"/pageDetail",query:{ name:"icourt"}}>详情页</Link></div>
       <div onClick={goDetail}>去详情页面</div>
-
-
-
 
 js
 //PageDetail.js
@@ -125,23 +112,17 @@ const PageDetail = ({router})=>{
 //withRouter是Next.js框架的高级组件，用来处理路由用的
 export default withRouter(PageDetail)
 
-
-
-
 <!-- 动态路由 -->
 js
 
 pages/post/[pid].js
 route : /post/abc  -->  query : { "pid": "abc" }
 
-
 pages/post/[pid]/[comment].js
 route : /post/abc/a-comment  -->  query : { "pid": "abc", "comment": "a-comment" }
 
-
-
-
 ## 数据请求
+
 使用 react 的 use 函数加 fetch API 来实现：静态站点生成（SSG）、服务器端渲染（SSR）和增量静态再生（ISR）
 在 Page 页面使用 fetch：
 js
@@ -162,8 +143,6 @@ export default function Page() {
   return '...';
 }
 
-
-
 js
 fetch 的缓存策略
 // 请求被缓存
@@ -181,9 +160,8 @@ fetch(URL, { next: { revalidate: 10 } });
 
 使用这种方式的优点是，当请求数据的增加，打包后前端 JavaScript 的大小不会增加。
 
-
-
 ## CSS-in-JS
+
 可以使用任何现有的 CSS-in-JS 解决方案。 最简单的一种是内联样式：
 <p style={{ color: 'red' }}>hi there</p>
 
@@ -218,10 +196,8 @@ function HelloWorld() {
 
 export default HelloWorld
 
-
-
-
 ## @next/font
+
 加入了一个新的包，可以在构建时直接引用 google 字体和本地字体，实现字体的托管和预加载，这点对英文网站很有用，中文网站一般不加载字体，图标建议使用 svg。
 
 加载谷歌字体
@@ -236,11 +212,8 @@ import localFont from '@next/font/local';
 const myFont = localFont({ src: './my-font.woff2' });
 <html className={myFont.className}>
 
-
-
-
-
 ## next/image
+
 我们知道在 Next.js 12 之前，使用 <img>标签，eslint 会有一个警告，提示我们必须使用 next/image 组件， 因为 next/image 帮我们做了几点优化
 
 > 1. 自动优化图片格式
@@ -260,19 +233,13 @@ function Home() {
   return <Image alt="leeerob" src={avatar} placeholder="blur" />;
 }
 
-
-
 ts 版本时候图片需放在 public文件夹下
 js
 如/public/assets/logo.png
   <Image alt="leeerob" src="/assets/logo.png" placeholder="blur" />
 
-
-
-
 网站部署 netlify
 搭建好的next网站项目可以直接在放到github或netlify[https://www.netlify.com/]免费部署访问
-
 
 新的 next/image
 我们知道在 Next.js 12 之前，使用 <img>标签，eslint 会有一个警告，提示我们必须使用 next/image 组件， 因为 next/image 帮我们做了几点优化
@@ -293,7 +260,6 @@ function Home() {
   return <Image alt="leeerob" src={avatar} placeholder="blur" />;
 }
 
-
 在 Next13 中 ， 在 app 目录下，如要使用 useState 等状态管理的 hook，那么该组件只在客户端执行，需要在首行加入 'use client' 指令。
 js 
 'use client';
@@ -312,10 +278,6 @@ export default function Counter() {
 }
 
 该区分服务端组件和客户端组件，下表列出了常用使用场景
-
-
-
-
 
 使用场景服务端组件客户端组件fetch 请求数据。✅[⚠️]访问后端资源（直接）✅❌在服务器上保留敏感信息（访问令牌、API 密钥等）✅❌保持对服务器的大量依赖/减少客户端 JavaScript✅❌添加交互和事件侦听器（onClick(),onChange()等）❌✅使用状态和生命周期效果（useState(), useReducer(), useEffect(), 等）❌✅使用仅限浏览器的 API(window)❌✅使用依赖于状态、效果或仅浏览器 API 的自定义 hooks❌✅使用React 类组件
 

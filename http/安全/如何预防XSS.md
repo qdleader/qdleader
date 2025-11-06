@@ -2,11 +2,10 @@
 
 XSS，是跨站脚本(Cross-site scripting)的简称
 
-
-
 XSS攻击可以分为两类：反射型和存储型，两类的划分依据是“数据存储在服务器与否”
 
 ## 反射型XSS（非持久型XSS）
+
 又称非持久型XSS。之所以称为反射型XSS，是因为这种攻击方式的注入代码是从目标服务器通过错误信息、搜索结果等等方式“反射”回来的：发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。这个过程像一次反射，故叫反射型XSS。 而称为非持久型XSS，则是因为这种攻击方式具有一次性，由于代码注入的是一个动态产生的页面而不是永久的页面，因此这种攻击方式只在点击链接的时候才产生作用。
 
 攻击者通过电子邮件等方式给别人发送带有恶意脚本代码参数的 URL，当 URL 地址被打开时，注入脚本被传输到目标服务器上，然后服务器将注入脚本“反射”到受害者的浏览器上，特有的恶意代码参数被 HTML 解析、执行。
@@ -28,15 +27,15 @@ http://www.dvwa.com/vulnerabilities/xss_r/?name=<scr<script>ipt>alert(document.c
 
 更高级别的代码可能会使用preg_replace函数来过滤删除所有关于<script>标签，但使用<IMG src=1 onerror=alert(document.cookie)>也可以得到同样的结果。
 
-
-
 ## 非持久型 XSS 漏洞攻击的四大特点：
+
     ① 即时性。不经过服务器存储，直接通过 HTTP 的 GET 和 POST 请求就能完成一次攻击，拿到用户隐私数据；
     ②攻击者需要诱骗点击；
     ③反馈率低，所以较难发现和响应修复；
     ④盗取用户敏感保密信息。
 
 ## 防止出现非持久型 XSS 漏洞的五大措施：
+
     ① Web 页面渲染的所有内容或者渲染的数据都必须来自于服务端；
     ②尽量不要从 URL，document.referrer，document.forms 等这种 DOM API 中获取数据直接渲染；
     ③尽量不要使用 eval, new Function()，document.write()，document.writeln()，window.setInterval()，window.setTimeout()，innerHTML，document.creteElement() 等可执行字符串的方法；
@@ -44,6 +43,7 @@ http://www.dvwa.com/vulnerabilities/xss_r/?name=<scr<script>ipt>alert(document.c
     ⑤ 前端渲染的时候对任何的字段都需要做 escape 转义编码。
 
 ## 存储型XSS（持久型XSS）
+
 存储型XSS，又称持久型XSS，他和反射型XSS最大的不同就是，攻击脚本将被永久地存放在目标服务器端（数据库，内存，文件系统等），下次请求目标页面时不用再提交XSS代码。
 
 一般存在于 Form 表单提交等交互功能，如发帖留言，提交文本信息等，黑客利用的 XSS 漏洞，将内容经正常功能提交进入数据库持久保存，当前端页面获得后端从数据库中读出的注入代码时，恰好将其渲染执行。
@@ -60,12 +60,13 @@ http://www.dvwa.com/vulnerabilities/xss_r/?name=<scr<script>ipt>alert(document.c
 
 利用存储型XSS可实现劫持访问，盗取访问者cookie或者配合csrf攻击完成恶意请求等攻击。
 
-
 ## 持久型 XSS 的三大特点：
+
     ①持久性，植入在数据库中；
     ②危害面广，甚至可以让用户机器变成 DDoS 攻击的肉鸡；
     ③ 盗取用户敏感私密信息。
 
 ## 防止持久型 XSS 漏洞的三大措施： 
+
     ①后端在入库前应该选择不相信任何前端数据，将所有的字段统一进行转义处理；
     ②后端在输出给前端数据统一进行转义处理；③前端在渲染页面 DOM 的时候应该选择不相信任何后端数据，任何字段都需要做转义处理。

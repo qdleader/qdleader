@@ -45,6 +45,7 @@ AI助手
 beforeEnter有三个参数：to/from/next
 
 ```js
+
 {
       path: '/',
       name: 'Login',
@@ -67,7 +68,8 @@ beforeRouteEnter+beforeRouteUpdate+beforeRouteLeave
 
 特别注意：
 
-```js
+```
+
 beforeRouteUpdate：再本路由的下级路由切换才会触发 beforeRouteUpdate
     methods:{
       success:function(){
@@ -89,4 +91,5 @@ beforeRouteUpdate：再本路由的下级路由切换才会触发 beforeRouteUpd
       console.log("离开这个组建更新3333333");
       next()
     },
+```js
 ```

@@ -2,7 +2,7 @@
 
 >less允许我们将已有的class和id的样式应用到另一个不同的选择器上。
 
-```
+```css
 #circle {
 	background-color:#333333;
 	border-radius:100%;
@@ -15,7 +15,7 @@
 }
 ```
 
-```
+```css
 #写法2：
 #circle {
 	background-color:#333333;
@@ -29,10 +29,9 @@
 }
 ```
 
-
 #Mixin 比较酷就是可以传参
 
-```
+```css
 写法3：
 
 #circle(@size: 25px) {
@@ -50,7 +49,6 @@
 	#circle(100px)
 }
 
-
-
 ```
+
 [Mixin](http://lesscss.org/features/#mixins-feature)

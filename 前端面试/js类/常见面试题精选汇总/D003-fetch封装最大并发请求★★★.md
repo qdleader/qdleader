@@ -1,7 +1,7 @@
 # D003-fetch封装最大并发请求★★★
 
 ## 方法1
-```
+```js
 function sendResquest(urls, max, callback) {
     let urlsCopy = [... urls];//防止影响外部urls变量
     function request() {
@@ -26,9 +26,8 @@ function sendResquest(urls, max, callback) {
 }
 ```
 
-
 ## 方法2
-```
+```js
 
 function handleFetchQueue(urls, max, callback) {
   const urlCount = urls.length;
@@ -79,21 +78,9 @@ const callback = () => {
 handleFetchQueue(urls, max, callback);
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
 # 拓展用 promise 的方式封装呢
 
-```
+```js
 
 //Promise方式
 function sendResquest(urls, max, callback) { 

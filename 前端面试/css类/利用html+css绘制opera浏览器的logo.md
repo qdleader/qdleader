@@ -1,8 +1,7 @@
 
 # 利用html+css绘制opera浏览器的logo
 
-```
-
+```html
 
 <style>
 .opera_fa {
@@ -22,10 +21,6 @@
   top:35px;
 }
 </style>
-
-
-
-
 
 <div class="opera_fa">
   <div class="opera"></div>

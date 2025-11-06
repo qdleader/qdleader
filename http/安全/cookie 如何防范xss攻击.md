@@ -1,6 +1,7 @@
 #  cookie 如何防范xss攻击
 
 ## 防御策略
+
 > 对用户输入进行严格的输入验证和过滤，确保只有符合预期格式的数据可以被接受和使用。
 > 使用HttpOnly标记来设置cookie，使得cookie只能被服务器访问，而不能通过JavaScript访问。
 > 使用Secure标记来设置cookie，确保cookie只能在加密的HTTPS连接下传输。

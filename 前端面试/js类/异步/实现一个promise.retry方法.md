@@ -3,11 +3,7 @@
 
 在规定的次数内，没成功就重复调用异步方法
 
-
-
-
 ```js
-
 
 function fn() {
     let n = Math.random();

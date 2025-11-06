@@ -39,9 +39,6 @@ mounted(){
 
 ```
 
-
-
-
 （2）callHook函数源码
 
 ```js
@@ -61,6 +58,7 @@ export function callHook (vm: Component, hook: string) {
   popTarget()
 }
 ```
+
 即每个生命周期钩子函数执行函数为：vm.$emit('hook:' + hook)，前提条件是_hasHookEvent值为true。
 
 （3）_hasHookEvent标志位源码
@@ -86,11 +84,9 @@ Vue.prototype.$on = function (event: string | Array<string>, fn: Function): Comp
 
 ```
 
-
 原码解析：
 
 eventsMixin方法是检查v-on监听的事件名是否以hook:开头，如果是则将对应生命同期的`_hasHookEvent`值设置为true；
-
 
 如果_hasHookEvent为true，则会触发$emit('hook:' + 对应的生命周期钩子)
 

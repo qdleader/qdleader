@@ -3,8 +3,6 @@
 
 axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，本质上也是对原生XHR的封装，只不过它是Promise的实现版本，符合最新的ES规范，它本身具有以下特征：
 
-
-
 1. 从浏览器中创建 XMLHttpRequest
 2. 支持 Promise API
 3. 客户端支持防止CSRF
@@ -15,10 +13,6 @@ axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，本�
 8. 取消请求
 9. 自动转换JSON数据
 
-
-
 PS:防止CSRF:就是让你的每个请求都带一个从cookie中拿到的key, 根据浏览器同源策略，假冒的网站是拿不到你cookie中得key的，这样，后台就可以轻松辨别出这个请求是否是用户在假冒网站上的误导输入，从而采取正确的策略。
-
-
 
 axios既提供了并发的封装，也没有fetch的各种问题，而且体积也较小，当之无愧现在最应该选用的请求的方式。

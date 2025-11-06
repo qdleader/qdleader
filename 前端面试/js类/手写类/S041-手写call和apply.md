@@ -26,8 +26,6 @@
   Person.say.call(Person1,18)//我叫Tom1我今年18
 ```
 
-
-
 ## apply
 ```js
 // apply原理一致  只是第二个参数是传入的数组

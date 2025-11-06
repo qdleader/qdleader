@@ -124,12 +124,9 @@ disabled 可选，用于禁用Teleport的功能，不会移动到任何位置。
     }
 </style>
 
-
 ```
 
 Teleport的to目标必须已经存在于DOM中，在挂载Teleport前，to目标的元素必须挂载完成，否则会报错。
-
-
 
 ## 实现原理
 
@@ -157,9 +154,11 @@ const Teleport = {
 
 }
 ```
+
 上面代码中，process 方法负责组件的创建和更新逻辑，remove 方法负责组件删除逻辑。
 
 ## 组件创建
+
 模版渲染会最后会转换成render函数，再调用createBlock方法，最终组件的创建都会调用 patch 方法。
 
 ```js
@@ -413,6 +412,7 @@ Teleport 组件更新无非就是做几件事情：更新子节点，处理 disa
 如果新节点 disabled 为 false，那么先通过 to 属性是否改变来判断目标元素 target 有没有变化，如果有变化，则把 Teleport 的子节点移动到新的 target 内部；如果目标元素没变化，则判断旧节点的 disabled 是否为 true，如果是则把 Teleport 的子节点从主视图内部移动到目标元素内部了。
 
 ### 组件移除
+
 当组件移除的时候会执行 unmount 方法，它的内部会判断如果移除的组件是一个 Teleport 组件，就会执行组件的 remove 方法。
 
 ```js
@@ -485,8 +485,7 @@ Teleport 组件更新无非就是做几件事情：更新子节点，处理 disa
     }
   },
 ```
+
 Teleport 的 remove 方法实现很简单，首先通过 hostRemove 移除主视图渲染的锚点 teleport start 注释节点，然后再去遍历 Teleport 的子节点执行 unmount 移除。
 
 执行完 Teleport 的 unmount 方法，会执行 hostRemove 方法移除 Teleport 主视图的元素 teleport end 注释节点，至此，Teleport 组件完成了移除。
-
-

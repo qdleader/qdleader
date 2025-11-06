@@ -37,4 +37,3 @@ Observer.prototype.observeArray = function observeArray(items) {  
 ```
 
 Vue 通过原型拦截的方式重写了数组的 7 个方法,首先获取到这个数组的ob,也就是它的 Observer 对象,如果有新的值,就调用 observeArray 对新的值进行监听,然后手动调用 notify,通知 render watcher,执行 update
-

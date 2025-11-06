@@ -11,7 +11,6 @@ Function.prototype.bind1 = function() {
 }
 ```
 
-
 ```js
 Function.prototype.bind1 = function () { // 这块不可以使用箭头函数，因为 this 的指向不同
   // arguments 可以获取一个函数的所有参数，arguments 是一个伪数组

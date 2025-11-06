@@ -47,12 +47,8 @@ class EventEmitter {
 }
 ```
 
-
 ```js
 // 使用如下
-
-
-
 
 // const event = new EventEmitter();
 

@@ -16,9 +16,6 @@ static PromiseRace(arr) {
   })
 }
 
-
-
-
 let p1 = new Promise((resolve,reject) => {
   setTimeout(() => {
     resolve(1)
@@ -30,8 +27,6 @@ let p2 = new Promise((resolve,reject) => {
     reject(2)
   },200)
 })
-
-
 
 PromiseRace([p1,p2]).then(res => {
   console.log(res)

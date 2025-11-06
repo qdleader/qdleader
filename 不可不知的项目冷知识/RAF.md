@@ -1,6 +1,6 @@
 RAF 是 what ？
 
-```
+```js
 RAF 是 HTML5新增的定时器requestAnimationFrame
 
 ```
@@ -13,12 +13,7 @@ RAF 是 HTML5新增的定时器requestAnimationFrame
 
 > 后台标签或隐藏在iframe中，RAF 会暂停， 而setTimeout依然可以执行
 
-
-
-
-
-
-```
+```js
 //settimeout 写法
 let oDiv = document.getElementById('oDiv');
 
@@ -35,13 +30,12 @@ function animate() {
 
 animate()
 ```
-setTimeout 时间需要自己调整，调整不好会有卡顿。。
 
+setTimeout 时间需要自己调整，调整不好会有卡顿。。
 
 RAF会自动匹配浏览器最流畅模式。
 
-
-```
+```js
 // RAF
 let oDiv = document.getElementById('oDiv');
 
@@ -60,16 +54,13 @@ animate()
 
 ```
 
-
-
-
 有关RAF的面试题
 
 用js实现一个无限循环的动画。
 
 定时器 写法
 
-```
+```js
 let e = document.getElementById('e');
 let flag = true;
 let left = 0;
@@ -95,7 +86,7 @@ setInterval(function() {
 
 RAF 写法
 
-```
+```js
 let e = document.getElementById('e');
 let flag = true;
 let left = 0;
@@ -121,20 +112,16 @@ function render() {
 
 ```
 
-
 ##requestAnimationFrame 比起 setTimeout、setInterval的优势
 
 > 1、requestAnimationFrame 会把每一帧中的所有DOM操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
 > 2、在隐藏或不可见的元素中，requestAnimationFrame将不会进行重绘或回流，这当然就意味着更少的的cpu，gpu和内存使用量。
 
-
-
 1、怎么停止requestAnimationFrame？是否有类似clearInterval这样的类似方法？
 
 第一个问题：答案是确定的 必须有：cancelAnimationFrame()接收一个参数 requestAnimationFrame默认返回一个id，cancelAnimationFrame只需要传入这个id就可以停止了。
 
-
-```
+```js
 
 let e = document.getElementById('e');
 let flag = true;
@@ -163,7 +150,6 @@ function render() {
      }
  })();
 ```
-
 
 ## 兼容
 

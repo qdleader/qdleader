@@ -4,8 +4,6 @@
 curl https://get.volta.sh | bash
 ```
 
-
-
 您可以使用两个命令控制由 Volta 工具链管理的工具：volta install和volta uninstall。
 
 安装节点引擎
@@ -21,7 +19,6 @@ volta install node@14
 
 volta install node
 
-
 固定节点引擎
 该volta pin命令允许您为项目选择 Node 引擎和包管理器版本：
 
@@ -34,26 +31,19 @@ Volta 将其存储在您的文件中package.json，因此您可以将您选择�
   "yarn": "1.19.2"
 }
 
-
 这样，使用 Volta 处理项目的每个人都会自动获得您选择的相同版本。
 node --version # 12.20.2
 yarn --version # 1.19.2
 
-
-
-
 volta list // 查看当前环境依赖
 volta list all // 查看所有环境依赖
 
-
-
-
 volta 官网[https://docs.volta.sh/guide/getting-started]
-
 
 如在mac 上重启 zsh 后还一直报  volta command is not found  试试如下：
 
 ## 给zsh shell 设置环境变量
+
 vi ~/.zshrc
 // 如果跟目录没有.zshrc的话，执行下面的命令
 cash  ~/.zshrc
@@ -63,7 +53,6 @@ vi ~/.zshrc
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 ```
-
 
 重新打开 shell 窗口或重载shell
 即可

@@ -3,7 +3,6 @@
 docker network create qdnet
 ```
 
-
 ```js
 sudo su
 cd /Users
@@ -42,9 +41,6 @@ elasticsearch:7.12.1
 --network qd-net ：加入一个名为qd-net的网络中
 -p 9200:9200：端口映射配置
 
-
-
-
 ## 安装 kibana
 
 ```js
@@ -73,9 +69,6 @@ docker run -d \
 kibana:7.12.1
 ```
 
-
-
-
 Kibana中文配置
 
 ```js
@@ -97,12 +90,9 @@ exit
 #并重启容器
 docker restart kibana
 
-
 ```
 
-
 ## IK分词器安装
-
 
 ```js
 GET /_analyze
@@ -112,16 +102,12 @@ GET /_analyze
 }
 ```
 
-
-
 IK分词器集成ElasticSearch下载地址[https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.12.1]
-
 
 我们只需要将上面elasticsearch-analysis-ik-7.12.1拷贝到ElasticSearch的plugins目录中即可，但由于当前服务采用的是docker安装，所以需要将文件拷贝到docker容器的plugins目录才行。
 
 操作如下：
 properties复制代码#为了方便配置，我们将elasticsearch-analysis-ik-7.12.1改成ik文件夹
-
 
 ```js
 mv elasticsearch-analysis-ik-7.12.1 ik
@@ -134,12 +120,9 @@ docker cp ik es:/usr/share/elasticsearch/plugins
 docker restart es
 ```
 
-
-
 有时候  docker restart es  在浏览器里面当闻不到了，那就试试
 
 docker start -a es  看看报错输出
-
 
 ## 分词测试
 
@@ -148,10 +131,8 @@ IK分词器包含两种模式：
 ```js
 ik_smart：最少切分
 
-
 ik_max_word：最细切分
 ```
-
 
 前面使用默认的standard分词器，对中文分词非常难用，安装IK分词器后，我们可以使用IK分词器测试，测试代码如下：
 ```js
@@ -162,4 +143,3 @@ GET /_analyze
 }
 
 ```
-

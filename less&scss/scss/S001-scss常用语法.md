@@ -35,7 +35,6 @@ body {
 }
 // SASS中引入片断时，可以缺省使用文件扩展名，因此上面代码中直接通过@import 'reset'引入，编译后生成的代码如下：
 
-
 html, body, ul, ol {
   margin: 0;
   padding: 0; }

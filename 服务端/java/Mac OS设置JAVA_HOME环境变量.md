@@ -1,9 +1,5 @@
 ## Mac OS设置JAVA_HOME环境变量
 
-
-
-
-
 获取JAVA的安装路径：
 
 /usr/libexec/java_home -V

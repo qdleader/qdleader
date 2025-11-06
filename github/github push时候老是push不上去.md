@@ -31,17 +31,13 @@ git config --global https.proxy 'socks5://127.0.0.1:7890'
 ```
 
 ##上面是别人的，如果你的代理是http类型的，如下设置：
-## 找到自己的代理的port的4个数字的端口就行，不一定是1080口的
+
 ```js
 git config --global http.proxy 127.0.0.1:7890
 git config --global https.proxy 127.0.0.1:7890
 ```
 
-
-
 配置http代理
-
-
 
 ## 查看代理命令
 ```js

@@ -24,14 +24,9 @@ new Promise(function(resolve) {
 console.log('script end');
 ```
 
-
-
-
-
-
 答案：
 
-```
+```js
 script start
 async1 start
 async2
@@ -41,7 +36,6 @@ async1 end
 promise2
 setTimeout
 ```
-
 
 首先，事件循环从宏任务（macrostack）队列开始，这个时候，宏任务(整体script、setTimeout、setInterval)队列中，只有一个 script (整体代码)任务 ()。
 首先执行 console.log('script start')，输出 ‘script start'
@@ -54,17 +48,15 @@ macrotask 执行完成会执行 microtask ，把 microtask quene 里面的 micro
  
 
 ## 涉及知识点：
+
     Promise 优先于 setTimeout 宏任务，所以 setTimeout 回调会最后执行
     Promise 一旦被定义就会立即执行
     Promise 的 resolve 和 reject  是异步执行的回调。所以 resolve() 会被放到回调队列中，在主函数执行完和 setTimeout 之前调用
     await 执行完后，会让出线程。async 标记的函数会返回一个 Promise 对象
 
-
-
-
 同理下面这个:
 
-```
+```js
     async function async1() {
     console.log('async1 start')
     await new Promise(resolve => {
@@ -77,11 +69,6 @@ macrotask 执行完成会执行 microtask ，把 microtask quene 里面的 micro
   async1().then(res => console.log(res))
   console.log('srcipt end')
 ```
-
-
-
-
-
 
 <!-- 答案： -->
 // srcipt start

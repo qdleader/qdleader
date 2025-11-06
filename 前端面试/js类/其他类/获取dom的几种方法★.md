@@ -1,14 +1,11 @@
 # 获取dom的几种方法★
 
-
 ## 1.通过id获取
 ```html
 <div id="box"></div>
 
-
 document.getElementById("box")
 ```
-
 
 ## 2.通过class获取
 
@@ -16,14 +13,11 @@ document.getElementById("box")
 <div class="box"></div>
 <div class="box"></div>
 
-
-
 let boxList = document.getElementsByClassName('box')
 let box1 = boxList[0]
 let box2 = boxList[1]
 
 ```
-
 
 ## 3.通过标签名获取
 ```js
@@ -36,7 +30,6 @@ let box2 = boxList[1]
     <p>段落6</p>
 </div>
 
-
 let pCollection = document.getElementsByTagName("p")
 ```
 
@@ -47,21 +40,16 @@ let pCollection = document.getElementsByTagName("p")
     <input type="text" name="user" />
 </div>
 
-
-
 let userInput = document.getElementsByName("user")
 ```
-
 
 ## 5.通过querySelector获取
 
 ```js
 <div id="box"></div>
 
-
 let box = document.querySelector("#box")
 ```
-
 
 ## 6.通过querySelectorAll获取
 ```js
@@ -74,35 +62,28 @@ let box = document.querySelector("#box")
     let box1= document.querySelector(".box");
     querySelector 只是获取的第一个
 
-
     let boxes= document.querySelectorAll(".box");
     querySelectorAll 获取的是全部。
 
 ``` 
 
-
-
 除了常用的还有
 
 ## 7.获取html的方法
 
-```js
+```
 document.documentElement
 
 是专门获取html这个标签的
 
-```
-
-
-
-
-
+```css
 
 ## 8.获取body的方法（document.body）
 
-```js
+```
 document.body
 
 是专门获取body这个标签的。
 
+```js
 ```

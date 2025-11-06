@@ -18,8 +18,6 @@ CSRF_COOKIE_SECURE = True
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 ```
 
-
-
 ## 最后重新启动compose
 ```shell
 docker-compose down
@@ -59,8 +57,8 @@ server
 }
 ```
 
-
 ## sentry 设置root url地址
+
 安装好sentry后我们查看后台会发现地址是改不了的
 
 根据图上提示是去conifg.yml中去修改，但是我去查看配置时并没有提示或者注释过的参数配置
@@ -70,7 +68,6 @@ server
 system.url-prefix: 'http://192.168.0.117:9001'
 加上配置即可
 
-
 ps：地址最后是没有 ‘‘/’’的，加了就会多一个，千万记得不能多，其中的地址也可以换成域名，需要自己用niginx做反向代理即可
 
 最后修改完成后，保存 重启
@@ -78,5 +75,3 @@ ps：地址最后是没有 ‘‘/’’的，加了就会多一个，千万记�
 docker-compose down
 docker-compose up -d
 ```
-
-

@@ -12,34 +12,8 @@ console.log(stoleSecretIdentify());
 console.log(hero.getSelectIdentify());
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 答案:
-```
+```js
 undefined
 
 'john Doe'
@@ -47,7 +21,7 @@ undefined
 
 解析:
 
-```
+```js
 因为我们在hero中提取的getSelectIdentify方法,在_name属性不存在的全局上下文中被调用,所以为undefined
 
 那我们能否改进能

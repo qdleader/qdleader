@@ -129,18 +129,21 @@ npm unpublish qdleader-mcp@1.0.0
 ### 需要更新已发布的包
 
 ```bash
+
 # 修改代码
 # 构建项目
+
 npm run build
 
 # 更新版本
+
 npm version patch
 
 # 重新发布
+
 npm publish
 ```
 
 ---
 
 **祝发布顺利！** 🚀
-

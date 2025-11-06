@@ -16,7 +16,6 @@
 	 2.对于Array,null等特殊对象使用Typeof 一律返回 object 这正是typeof的局限
  instanceof用于判断一个变量是否属于某个对象的实例
 
-
  var a = new Array();
  alert(a instanceof Object)  //true
  alert(a instanceof Array)  //true
@@ -72,19 +71,12 @@ typeof function(){} === 'function';
 typeof Math.sin === 'function';
 ```
 
-
-
 typeof来判断数据类型其实并不准确。比如数组、正则、日期、对象的typeof返回值都是object，这就会造成一些误差。
 
 所以在typeof判断类型的基础上，我们还需要利用Object.prototype.toString方法来进一步判断数据类型
 
-
-
-
-
-
-
 ## 当我们被问到怎么判断一个变量是否为数组时候。
+
 可以用
 ```js
 第一种方法是：instanceof
@@ -93,8 +85,6 @@ typeof来判断数据类型其实并不准确。比如数组、正则、日期�
 true
 
 这是es3的规定，但是这必须假定只有一个全局执行环境
-
-
 
 第二种方法是：isArray
 
@@ -105,15 +95,11 @@ true
 
 ```
 
-
-
 ## 再拓展用Object.prototype.slice.call
-
 
 ```js
 let obj = {};
 let arr = [];
-
 
 console.log(Object.prototype.toString.call(obj)) // [object Object]
 console,log(Object.prototype.toString.call(arr)) // [object Array]
@@ -132,7 +118,6 @@ Object.prototype.toString.call(new Date());      // => "[object Date]"
 Object.prototype.toString.call(document) ; // [object HTMLDocument]
 Object.prototype.toString.call(window) ; //[object global] window 是全局对象 global 的引用
 ```
-
 
 ## 拓展 手写instanceof
 

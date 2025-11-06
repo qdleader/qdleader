@@ -19,9 +19,6 @@ pointer-events属性主要用于以下几种场景：
 > 
 其他值: 还有一些其他值用于SVG元素，如visibleFill, visibleStroke, painted, 等。
 
-
-
-
 把mask当做一张图片，为了方便展示，为其设置了透明度，这样能看到具体按钮位置和展示层级关系。正常情况下点击按钮是不会触发click事件的，因为mask的层级更高，完全遮住了按钮，鼠标只会点击到mask，但若此时为其加上pointer-events: none属性，点击事件会“穿透”该元素并可触发下面元素的事件，即按钮点击事件就可以被触发了！！！
 
 ```html
@@ -62,6 +59,5 @@ pointer-events属性主要用于以下几种场景：
   </script>
 </body>
 </html>
-
 
 ```

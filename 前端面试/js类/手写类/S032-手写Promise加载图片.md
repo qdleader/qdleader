@@ -28,6 +28,5 @@ getData(url1).then(data1 => {
   console.error(err)
 )
 
-
  
 ```

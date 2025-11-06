@@ -4,12 +4,10 @@
 npm install anywhere -g
 ```
 
-
 cd 到打包目录
 ```js
 anywhere
 ```
-
 
 ```js
  anywhere --help

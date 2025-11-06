@@ -26,17 +26,18 @@ user-scalable 属性是布尔值，表示是否允许用户进行缩放，值为
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no">
 
 ```
+
 默认视图宽度 为 设备宽度
 默认缩放比为 1
 最大、最小缩放比为 1
 不允许用户手动缩放
 
-
-
 #### 解决视图上移问题
+
 正如前面所示，视图发生偏移只在 IOS 系统 中的 企微环境 出现，这就表明了 微信 webview 渲染 和 企微 webview 渲染 还是存在差异。
 
 #### viewport-fit — iOS11 新增特性
+
 viewport-fit 是为了适配 iPhoneX 对现有 <meta name="viewport" /> 标签的一个扩展，用于设置网页在可视窗口的布局方式，具有三个属性值：
 auto
 默认值，跟 contain 表现一致
@@ -46,7 +47,6 @@ contain
 
 cover
 网页内容 完全覆盖 可视窗口
-
 
 既然看起来 企微 webview 中视图高度没法覆盖，那我们就可以通过 <meta name="viewport" /> 设置网页在可视区域的布局方式将视图内容，新增 viweport-fit: cover 使得页面内容完全覆盖整个窗口，即可解决问题：
 
