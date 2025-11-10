@@ -22,3 +22,7 @@
 
 
 ```
+
+https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create
+
+打开了以后，我们会看到下面的页面，点击“获取Token” 拿到你的user_token
