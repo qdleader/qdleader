@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/qdleader-qdleader-badge.png)](https://mseep.ai/app/qdleader-qdleader)
+
 # 前端知识库 QDLeader
 
 <div align="center">
