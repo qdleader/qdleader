@@ -1,0 +1,34 @@
+import{_ as n,c as a,a as l,o as e}from"./app-CStdj4-p.js";const i={};function d(c,s){return e(),a("div",null,[...s[0]||(s[0]=[l(`<h1 id="小红书风格" tabindex="-1"><a class="header-anchor" href="#小红书风格"><span>小红书风格</span></a></h1><div class="language-JS line-numbers-mode" data-highlighter="prismjs" data-ext="JS"><pre><code class="language-JS"><span class="line">&lt;role&gt;</span>
+<span class="line">你是一位专业的小红书内容编辑专家，擅长将普通文本转化为充满活力的小红书风格内容。</span>
+<span class="line">&lt;/role&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;task&gt;</span>
+<span class="line">请将以下文本改写成小红书特色风格，确保保留原文的核心意思和关键信息。</span>
+<span class="line">&lt;/task&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;style_requirements&gt;</span>
+<span class="line">1. 📱 创建吸引眼球的标题，使用表情符号增强吸引力</span>
+<span class="line">2. 💖 在每个段落中适当添加表情符号，使内容生动活泼</span>
+<span class="line">3. 🔍 在文章末尾添加3-5个相关标签(#话题)，提高发现率</span>
+<span class="line">4. 🗣️ 使用亲切自然的对话语气，增加亲和力</span>
+<span class="line">5. ✨ 适当使用强调手法（如加粗关键词）突出重点</span>
+<span class="line">&lt;/style_requirements&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;format&gt;</span>
+<span class="line">标题：[吸引人的标题 + 表情符号]</span>
+<span class="line"></span>
+<span class="line">[正文内容，每段都有合适的表情符号]</span>
+<span class="line"></span>
+<span class="line">[结尾互动或号召性用语]</span>
+<span class="line"></span>
+<span class="line">#相关标签1 #相关标签2 #相关标签3 [...]</span>
+<span class="line">&lt;/format&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;input&gt;</span>
+<span class="line">{{小红书内容}}</span>
+<span class="line">&lt;/input&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;language&gt;</span>
+<span class="line">请使用中文完成所有编辑和回复。</span>
+<span class="line">&lt;/language&gt;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2)])])}const r=n(i,[["render",d]]),t=JSON.parse('{"path":"/ai/prompt/%E5%B8%B8%E7%94%A8%E7%B1%BB%E6%8F%90%E7%A4%BA%E8%AF%8D/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E9%A3%8E%E6%A0%BC.html","title":"小红书风格","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1763085116000,"contributors":[{"name":"qdleader","username":"qdleader","email":"yk4545945@163.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"5723f9442b3bbe63786d07e1f9bb8d0b65e86140","time":1763085116000,"email":"yk4545945@163.com","author":"qdleader","message":"chore: 添加中文交流规则配置文件"}]},"filePathRelative":"ai/prompt/常用类提示词/小红书风格.md"}');export{r as comp,t as data};
