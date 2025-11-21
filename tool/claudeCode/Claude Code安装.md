@@ -24,3 +24,19 @@ sudo vim ~/.claude/settings.json
 ```
 
 获取API_KEY(https://api.codemirror.codes/register?aff=Tzb3)
+
+
+
+
+或者
+```json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "你的API密钥",
+    "ANTHROPIC_BASE_URL": "https://www.88code.org/api",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  }
+}
+```
+
+获取API_KEY https://88code.org/register?ref=NE62DE
