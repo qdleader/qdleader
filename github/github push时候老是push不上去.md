@@ -14,7 +14,7 @@ git config --global https.https://github.com.proxy https://127.0.0.1:7890
 git config --global http.https://github.com.proxy 'http://127.0.0.1:代理的port'
 ```
 
-## 取消代理
+## 取消代理github
 ```js
 git config --global --unset http.https://github.com.proxy
 ```
