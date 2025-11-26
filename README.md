@@ -5,7 +5,6 @@
 **📚 一个系统化整理的前端知识库，涵盖面试、实战、工具等全方位内容**
 
 [![GitHub stars](https://img.shields.io/github/stars/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/network)
 [![GitHub issues](https://img.shields.io/github/issues/qdleader/qdleader?style=flat-square)](https://github.com/qdleader/qdleader/issues)
 
 </div>
