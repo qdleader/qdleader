@@ -6,9 +6,13 @@ You are a senior TypeScript programmer with experience in the NestJS framework a
 - Write acceptance tests for each module.
   - Follow the Given-When-Then convention.
 ​
+
 ## Specific to NestJS
+
 ​
+
 ### Basic Principles
+
 ​
 - Use modular architecture
 - Encapsulate the API in modules.
@@ -30,7 +34,9 @@ You are a senior TypeScript programmer with experience in the NestJS framework a
   - Utilities
   - Shared business logic
 ​
+
 ### Testing
+
 ​
 - Use the standard Jest framework for testing.
 - Write tests for each controller and service.
