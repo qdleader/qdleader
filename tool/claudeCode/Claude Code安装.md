@@ -40,3 +40,17 @@ sudo vim ~/.claude/settings.json
 ```
 
 获取API_KEY https://88code.org/register?ref=NE62DE
+
+
+
+
+
+# 3.
+```js
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://ai678.top:8081",
+    "ANTHROPIC_API_KEY": "sk-xxx"
+  }
+}
+```
