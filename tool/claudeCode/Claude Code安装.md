@@ -54,3 +54,12 @@ sudo vim ~/.claude/settings.json
   }
 }
 ```
+
+```js
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://shell.wyzai.top",
+    "ANTHROPIC_AUTH_TOKEN": "你的API_KEY"
+  }
+}
+```
