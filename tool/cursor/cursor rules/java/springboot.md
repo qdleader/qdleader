@@ -15,7 +15,6 @@ This document outlines best practices and coding standards for developing applic
 
 Adopt a layered architecture to separate concerns and improve maintainability. A recommended directory structure is:
 
-
 src/
  ├── main/
  │   ├── java/
@@ -41,7 +40,6 @@ src/
      │       └── repository/      (Repository tests)
      └── resources/
          ├── application.properties/application.yml (Test-specific configuration)
-
 
 - Root Package: Choose a meaningful root package name (e.g., com.yourcompany.appname).
 - Modularization: For larger applications, consider breaking down the application into modules (e.g., using Maven or Gradle modules) based on business domains or features.
