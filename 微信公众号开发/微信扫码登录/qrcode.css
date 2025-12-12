@@ -1,7 +1,7 @@
 .impowerBox .qrcode {width: 200px;border-radius: 12px;}
 .impowerBox .title {display: none;}
 .impowerBox .info {width: 200px;}
-.status_icon {display: none}
+/* .status_icon {display: none} */
 .impowerBox .status {text-align: center;} 
 /* .impowerBox .status.status_browser {
     display: none;
