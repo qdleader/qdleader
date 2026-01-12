@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as o,r as c,o as n}from"./app-KfnfuIf0.js";const l={};function r(s,_){const t=c("Catalog");return n(),a("div",null,[o(t)])}const m=e(l,[["render",r]]),p=JSON.parse('{"path":"/tool/mac%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/","title":"Mac常用技巧","lang":"zh-CN","frontmatter":{"title":"Mac常用技巧"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

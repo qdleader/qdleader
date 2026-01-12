@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const p=e(r,[["render",l]]),m=JSON.parse('{"path":"/ai/prompt/%E6%8F%90%E7%A4%BA%E8%AF%8D/","title":"提示词","lang":"zh-CN","frontmatter":{"title":"提示词"},"git":{},"filePathRelative":null}');export{p as comp,m as data};

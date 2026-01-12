@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/","title":"常见算法","lang":"zh-CN","frontmatter":{"title":"常见算法"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

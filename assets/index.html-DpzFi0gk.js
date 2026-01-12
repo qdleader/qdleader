@@ -1,0 +1,1 @@
+import{_ as t,c as s,e as o,r as a,o as c}from"./app-KfnfuIf0.js";const n={};function l(r,_){const e=a("Catalog");return c(),s("div",null,[o(e)])}const m=t(n,[["render",l]]),p=JSON.parse('{"path":"/less_scss/","title":"Less Scss","lang":"zh-CN","frontmatter":{"title":"Less Scss"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

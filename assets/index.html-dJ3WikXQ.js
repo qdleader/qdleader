@@ -1,0 +1,1 @@
+import{_ as o,c as t,e as n,r as a,o as s}from"./app-KfnfuIf0.js";const c={};function l(m,r){const e=a("Catalog");return s(),t("div",null,[n(e)])}const i=o(c,[["render",l]]),d=JSON.parse('{"path":"/es6/commonjs%E4%B8%8Eesmodule/","title":"Commonjs与esmodule","lang":"zh-CN","frontmatter":{"title":"Commonjs与esmodule"},"git":{},"filePathRelative":null}');export{i as comp,d as data};

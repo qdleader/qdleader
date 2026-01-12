@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as c,o as n}from"./app-KfnfuIf0.js";const s={};function r(l,m){const e=c("Catalog");return n(),o("div",null,[a(e)])}const i=t(s,[["render",r]]),p=JSON.parse('{"path":"/mock%E6%95%B0%E6%8D%AE/easymock/","title":"Easymock","lang":"zh-CN","frontmatter":{"title":"Easymock"},"git":{},"filePathRelative":null}');export{i as comp,p as data};

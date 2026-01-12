@@ -1,0 +1,22 @@
+import{_ as n,c as a,a as e,o as l}from"./app-KfnfuIf0.js";const p={};function t(c,s){return l(),a("div",null,[...s[0]||(s[0]=[e(`<p>嵌套方式写css，跟写html时候比较类似，减少了冲突的机会。eg：</p><div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css"><pre><code class="language-css"><span class="line"><span class="token selector">ul</span><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token property">background-color</span><span class="token punctuation">:</span> #03A9F4<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token selector">li</span><span class="token punctuation">{</span></span>
+<span class="line">        <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token property">margin</span><span class="token punctuation">:</span> 10px 0<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>就像其他的高级语言，less的变量根据范围接受她们的值。如果在指定范围内没有关于变量值的声明，less会一直往上查找，直到找到离它最近的声明。</p><p>eg:</p><div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css"><pre><code class="language-css"><span class="line"><span class="token atrule"><span class="token rule">@text-color</span><span class="token punctuation">:</span>#000<span class="token punctuation">;</span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token selector">ul</span> <span class="token punctuation">{</span></span>
+<span class="line">	<span class="token atrule"><span class="token rule">@text-color</span><span class="token punctuation">:</span>#fff<span class="token punctuation">;</span></span></span>
+<span class="line">	<span class="token selector">li</span> <span class="token punctuation">{</span></span>
+<span class="line">		<span class="token property">color</span><span class="token punctuation">:</span><span class="token atrule"><span class="token rule">@text-color</span><span class="token punctuation">;</span></span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">编译后的li的color为#fff</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,5)])])}const o=n(p,[["render",t]]),u=JSON.parse('{"path":"/less_scss/L004-%E5%B5%8C%E5%A5%97.html","title":"","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1768183010000,"contributors":[{"name":"qdleader","username":"qdleader","email":"yk4545945@163.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"c3ab6d103d428cdd6a361e045add7154fc9253f1","time":1768183010000,"email":"yk4545945@163.com","author":"qdleader","message":"docs(mcp): 新增Mastergo MCP配置文档，包含token获取方法"}]},"filePathRelative":"less&scss/L004-嵌套.md"}');export{o as comp,u as data};

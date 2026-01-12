@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as o,r as c,o as n}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=c("Catalog");return n(),a("div",null,[o(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/react%E7%AF%87/","title":"React篇","lang":"zh-CN","frontmatter":{"title":"React篇"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const p=e(r,[["render",l]]),m=JSON.parse('{"path":"/http/%E8%AF%B7%E6%B1%82/","title":"请求","lang":"zh-CN","frontmatter":{"title":"请求"},"git":{},"filePathRelative":null}');export{p as comp,m as data};

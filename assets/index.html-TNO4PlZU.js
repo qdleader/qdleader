@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/","title":"前端规范","lang":"zh-CN","frontmatter":{"title":"前端规范"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

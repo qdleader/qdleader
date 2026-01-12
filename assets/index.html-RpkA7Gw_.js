@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const l={};function r(s,_){const e=n("Catalog");return c(),o("div",null,[a(e)])}const d=t(l,[["render",r]]),m=JSON.parse('{"path":"/leetCode/","title":"Leet Code","lang":"zh-CN","frontmatter":{"title":"Leet Code"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

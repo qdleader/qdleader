@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,p){const e=n("Catalog");return c(),o("div",null,[a(e)])}const i=t(r,[["render",l]]),m=JSON.parse('{"path":"/vue3/setup/","title":"Setup","lang":"zh-CN","frontmatter":{"title":"Setup"},"git":{},"filePathRelative":null}');export{i as comp,m as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as n,e as a,r as o,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=o("Catalog");return c(),n("div",null,[a(t)])}const d=e(r,[["render",l]]),m=JSON.parse('{"path":"/UI%E6%A1%86%E6%9E%B6/antd5/","title":"Antd5","lang":"zh-CN","frontmatter":{"title":"Antd5"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

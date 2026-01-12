@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as o,r,o as n}from"./app-KfnfuIf0.js";const c={};function l(s,_){const t=r("Catalog");return n(),a("div",null,[o(t)])}const m=e(c,[["render",l]]),p=JSON.parse('{"path":"/tool/cursor/cursor%20rules/java/","title":"Java","lang":"zh-CN","frontmatter":{"title":"Java"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

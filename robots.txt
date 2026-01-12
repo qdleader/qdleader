@@ -1,0 +1,24 @@
+User-agent: *
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-image
+Allow: /
+
+User-agent: Baiduspider-news
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou News Spider
+Allow: /
+
+User-agent: Sosospider
+Allow: /
+
+Sitemap: https://qdleader.github.io/qdleader/qdleader/sitemap.xml

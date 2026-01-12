@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const l={};function r(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const i=e(l,[["render",r]]),p=JSON.parse('{"path":"/tool/pdf/","title":"Pdf","lang":"zh-CN","frontmatter":{"title":"Pdf"},"git":{},"filePathRelative":null}');export{i as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as l}from"./app-KfnfuIf0.js";const c={};function r(s,_){const e=n("Catalog");return l(),a("div",null,[o(e)])}const m=t(c,[["render",r]]),p=JSON.parse('{"path":"/%E5%B7%A5%E7%A8%8B%E5%8C%96/babel/","title":"Babel","lang":"zh-CN","frontmatter":{"title":"Babel"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

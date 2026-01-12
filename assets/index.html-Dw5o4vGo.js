@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,i){const e=n("Catalog");return c(),o("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/vue3/vite/","title":"Vite","lang":"zh-CN","frontmatter":{"title":"Vite"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

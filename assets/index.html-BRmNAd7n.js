@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as l}from"./app-KfnfuIf0.js";const c={};function r(s,_){const e=n("Catalog");return l(),a("div",null,[o(e)])}const m=t(c,[["render",r]]),p=JSON.parse('{"path":"/ai/rules/","title":"Rules","lang":"zh-CN","frontmatter":{"title":"Rules"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

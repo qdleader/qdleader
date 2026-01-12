@@ -1,0 +1,11 @@
+import{_ as s,c as e,a as n,o as l}from"./app-KfnfuIf0.js";const t={};function r(c,a){return l(),e("div",null,[...a[0]||(a[0]=[n(`<h1 id="工作空间优化" tabindex="-1"><a class="header-anchor" href="#工作空间优化"><span>工作空间优化</span></a></h1><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"></span>
+<span class="line"># 设置项目模板</span>
+<span class="line">claude<span class="token operator">-</span>code template create my<span class="token operator">-</span>react<span class="token operator">-</span>template src<span class="token operator">/</span>templates<span class="token operator">/</span></span>
+<span class="line"></span>
+<span class="line"># 配置代码风格</span>
+<span class="line">claude<span class="token operator">-</span>code style set <span class="token operator">--</span>formatter prettier <span class="token operator">--</span>linter eslint</span>
+<span class="line"></span>
+<span class="line"># 设置输出格式</span>
+<span class="line">claude<span class="token operator">-</span>code config <span class="token keyword">set</span> output<span class="token operator">-</span>format <span class="token string">&quot;detailed&quot;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2)])])}const o=s(t,[["render",r]]),p=JSON.parse('{"path":"/tool/claudeCode/%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.html","title":"工作空间优化","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1768183010000,"contributors":[{"name":"qdleader","username":"qdleader","email":"yk4545945@163.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"c3ab6d103d428cdd6a361e045add7154fc9253f1","time":1768183010000,"email":"yk4545945@163.com","author":"qdleader","message":"docs(mcp): 新增Mastergo MCP配置文档，包含token获取方法"}]},"filePathRelative":"tool/claudeCode/高级技巧/工作空间优化.md"}');export{o as comp,p as data};

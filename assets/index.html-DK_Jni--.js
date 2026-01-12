@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as l}from"./app-KfnfuIf0.js";const c={};function r(s,m){const t=n("Catalog");return l(),o("div",null,[a(t)])}const i=e(c,[["render",r]]),p=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/html%E7%B1%BB/","title":"Html类","lang":"zh-CN","frontmatter":{"title":"Html类"},"git":{},"filePathRelative":null}');export{i as comp,p as data};

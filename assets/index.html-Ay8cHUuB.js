@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const p=e(r,[["render",l]]),B=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E5%B0%8Ftip/%E6%95%B0%E7%BB%84%E7%B1%BB/","title":"数组类","lang":"zh-CN","frontmatter":{"title":"数组类"},"git":{},"filePathRelative":null}');export{p as comp,B as data};

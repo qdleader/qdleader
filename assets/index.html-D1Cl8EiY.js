@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const e=n("Catalog");return c(),a("div",null,[o(e)])}const d=t(r,[["render",l]]),m=JSON.parse('{"path":"/react/redux/","title":"Redux","lang":"zh-CN","frontmatter":{"title":"Redux"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

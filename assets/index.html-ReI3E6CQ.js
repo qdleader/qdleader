@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as l,r as a,o as n}from"./app-KfnfuIf0.js";const c={};function s(r,i){const e=a("Catalog");return n(),o("div",null,[l(e)])}const m=t(c,[["render",s]]),p=JSON.parse('{"path":"/tool/claudeCode/skills/","title":"Skills","lang":"zh-CN","frontmatter":{"title":"Skills"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

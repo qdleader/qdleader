@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function s(l,i){const e=n("Catalog");return c(),o("div",null,[a(e)])}const d=t(r,[["render",s]]),m=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/redis/","title":"Redis","lang":"zh-CN","frontmatter":{"title":"Redis"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const e=n("Catalog");return c(),o("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/vue/vue%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/","title":"Vue最佳实践","lang":"zh-CN","frontmatter":{"title":"Vue最佳实践"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as r}from"./app-KfnfuIf0.js";const c={};function s(l,i){const t=n("Catalog");return r(),o("div",null,[a(t)])}const d=e(c,[["render",s]]),m=JSON.parse('{"path":"/css/grid/","title":"Grid","lang":"zh-CN","frontmatter":{"title":"Grid"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

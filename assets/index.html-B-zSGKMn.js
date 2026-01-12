@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,r as c,o as n}from"./app-KfnfuIf0.js";const r={};function l(s,p){const e=c("Catalog");return n(),a("div",null,[o(e)])}const i=t(r,[["render",l]]),m=JSON.parse('{"path":"/webpack/","title":"Webpack","lang":"zh-CN","frontmatter":{"title":"Webpack"},"git":{},"filePathRelative":null}');export{i as comp,m as data};

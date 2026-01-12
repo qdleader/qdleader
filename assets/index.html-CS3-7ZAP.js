@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as c,o as n}from"./app-KfnfuIf0.js";const s={};function l(r,_){const e=c("Catalog");return n(),o("div",null,[a(e)])}const d=t(s,[["render",l]]),m=JSON.parse('{"path":"/tool/vscode/","title":"Vscode","lang":"zh-CN","frontmatter":{"title":"Vscode"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

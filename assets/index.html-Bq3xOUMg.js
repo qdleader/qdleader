@@ -1,0 +1,1 @@
+import{_ as e,c as n,e as a,r as o,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,i){const t=o("Catalog");return c(),n("div",null,[a(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E5%BE%AE%E5%89%8D%E7%AB%AF/qiankun/","title":"Qiankun","lang":"zh-CN","frontmatter":{"title":"Qiankun"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

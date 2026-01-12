@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const l={};function r(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const m=e(l,[["render",r]]),p=JSON.parse('{"path":"/tool/%E6%B5%8F%E8%A7%88%E5%99%A8/","title":"浏览器","lang":"zh-CN","frontmatter":{"title":"浏览器"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

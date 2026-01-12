@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const e=n("Catalog");return c(),o("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/vue%E7%AF%87/","title":"Vue篇","lang":"zh-CN","frontmatter":{"title":"Vue篇"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

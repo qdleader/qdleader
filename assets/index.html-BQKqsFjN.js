@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const e=n("Catalog");return c(),o("div",null,[a(e)])}const m=t(r,[["render",l]]),p=JSON.parse('{"path":"/es6/%E8%BE%83%E5%86%B7%E9%97%A8/","title":"较冷门","lang":"zh-CN","frontmatter":{"title":"较冷门"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

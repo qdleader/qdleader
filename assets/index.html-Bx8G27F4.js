@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const l={};function r(s,i){const t=n("Catalog");return c(),o("div",null,[a(t)])}const d=e(l,[["render",r]]),m=JSON.parse('{"path":"/css3/loading/","title":"Loading","lang":"zh-CN","frontmatter":{"title":"Loading"},"git":{},"filePathRelative":null}');export{d as comp,m as data};

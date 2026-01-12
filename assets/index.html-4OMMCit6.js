@@ -1,0 +1,1 @@
+import{_ as e,c as n,e as o,r as a,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,i){const t=a("Catalog");return c(),n("div",null,[o(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/Linux/","title":"Linux","lang":"zh-CN","frontmatter":{"title":"Linux"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=n("Catalog");return c(),o("div",null,[a(t)])}const m=e(r,[["render",l]]),p=JSON.parse('{"path":"/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/","title":"设计原则","lang":"zh-CN","frontmatter":{"title":"设计原则"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

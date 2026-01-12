@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as s,r as a,o as n}from"./app-KfnfuIf0.js";const c={};function r(l,_){const t=a("Catalog");return n(),o("div",null,[s(t)])}const m=e(c,[["render",r]]),p=JSON.parse('{"path":"/css/css%E5%B0%8F%E6%8A%80%E5%B7%A7/","title":"Css小技巧","lang":"zh-CN","frontmatter":{"title":"Css小技巧"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const l={};function r(s,_){const e=n("Catalog");return c(),o("div",null,[a(e)])}const m=t(l,[["render",r]]),p=JSON.parse('{"path":"/tool/claudeCode/%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/","title":"高级技巧","lang":"zh-CN","frontmatter":{"title":"高级技巧"},"git":{},"filePathRelative":null}');export{m as comp,p as data};

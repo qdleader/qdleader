@@ -1,0 +1,1 @@
+import{_ as e,c as a,e as o,r as n,o as s}from"./app-KfnfuIf0.js";const c={};function l(r,_){const t=n("Catalog");return s(),a("div",null,[o(t)])}const B=e(c,[["render",l]]),m=JSON.parse('{"path":"/react/Class%E7%B1%BB%E7%BB%84%E5%BB%BA/","title":"Class类组建","lang":"zh-CN","frontmatter":{"title":"Class类组建"},"git":{},"filePathRelative":null}');export{B as comp,m as data};

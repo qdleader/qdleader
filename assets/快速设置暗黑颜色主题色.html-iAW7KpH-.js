@@ -1,0 +1,24 @@
+import{_ as s,c as a,a as e,o as p}from"./app-KfnfuIf0.js";const t={};function l(c,n){return p(),a("div",null,[...n[0]||(n[0]=[e(`<h1 id="快速设置暗黑颜色主题色" tabindex="-1"><a class="header-anchor" href="#快速设置暗黑颜色主题色"><span>快速设置暗黑颜色主题色</span></a></h1><div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css"><pre><code class="language-css"><span class="line"><span class="token selector">html</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">/*图片、视频等元素不需要处理*/</span></span>
+<span class="line">img<span class="token punctuation">,</span> </span>
+<span class="line">video<span class="token punctuation">,</span></span>
+<span class="line">.logo<span class="token punctuation">,</span></span>
+<span class="line">.icon <span class="token comment">/*可继续添加可以不用处理的元素*/</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css"><pre><code class="language-css"><span class="line"><span class="token comment">/*对设置data-theme=&#39;dark&#39;下的所有元素进行反转*/</span></span>
+<span class="line"><span class="token selector">[data-theme=&quot;dark&quot;]</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token comment">/*对不需要反转的元素进行复原，可按照自己需求追加*/</span></span>
+<span class="line">  <span class="token selector">img,</span>
+<span class="line">  video,</span>
+<span class="line">  .avatar,</span>
+<span class="line">  .image,</span>
+<span class="line">  .thumb .icon</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token property">filter</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3)])])}const o=s(t,[["render",l]]),u=JSON.parse('{"path":"/css3/%E5%BF%AB%E9%80%9F%E8%AE%BE%E7%BD%AE%E6%9A%97%E9%BB%91%E9%A2%9C%E8%89%B2%E4%B8%BB%E9%A2%98%E8%89%B2.html","title":"快速设置暗黑颜色主题色","lang":"zh-CN","frontmatter":{},"git":{"updatedTime":1768183010000,"contributors":[{"name":"qdleader","username":"qdleader","email":"yk4545945@163.com","commits":1,"url":"https://github.com/qdleader"}],"changelog":[{"hash":"c3ab6d103d428cdd6a361e045add7154fc9253f1","time":1768183010000,"email":"yk4545945@163.com","author":"qdleader","message":"docs(mcp): 新增Mastergo MCP配置文档，包含token获取方法"}]},"filePathRelative":"css3/快速设置暗黑颜色主题色.md"}');export{o as comp,u as data};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as l}from"./app-KfnfuIf0.js";const r={};function c(s,i){const e=n("Catalog");return l(),o("div",null,[a(e)])}const m=t(r,[["render",c]]),d=JSON.parse('{"path":"/UI%E6%A1%86%E6%9E%B6/element/slider/","title":"Slider","lang":"zh-CN","frontmatter":{"title":"Slider"},"git":{},"filePathRelative":null}');export{m as comp,d as data};

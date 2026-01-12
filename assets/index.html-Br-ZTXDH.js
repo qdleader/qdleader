@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as r,r as a,o as l}from"./app-KfnfuIf0.js";const n={};function s(c,_){const e=a("Catalog");return l(),o("div",null,[r(e)])}const u=t(n,[["render",s]]),m=JSON.parse('{"path":"/tool/cursor/cursor%20rules/%E5%A5%BD%E7%9A%84rules/","title":"好的rules","lang":"zh-CN","frontmatter":{"title":"好的rules"},"git":{},"filePathRelative":null}');export{u as comp,m as data};

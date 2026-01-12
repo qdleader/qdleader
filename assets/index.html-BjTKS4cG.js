@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as n,r as a,o as c}from"./app-KfnfuIf0.js";const r={};function l(s,_){const t=a("Catalog");return c(),o("div",null,[n(t)])}const m=e(r,[["render",l]]),d=JSON.parse('{"path":"/%E6%9C%8D%E5%8A%A1%E7%AB%AF/mongodb/","title":"Mongodb","lang":"zh-CN","frontmatter":{"title":"Mongodb"},"git":{},"filePathRelative":null}');export{m as comp,d as data};

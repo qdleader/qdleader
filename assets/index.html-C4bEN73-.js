@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as r,r as a,o as s}from"./app-KfnfuIf0.js";const n={};function c(l,_){const e=a("Catalog");return s(),o("div",null,[r(e)])}const i=t(n,[["render",c]]),m=JSON.parse('{"path":"/tool/cursor/cursor%20rules/","title":"Cursor Rules","lang":"zh-CN","frontmatter":{"title":"Cursor Rules"},"git":{},"filePathRelative":null}');export{i as comp,m as data};

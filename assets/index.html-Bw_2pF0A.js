@@ -1,0 +1,1 @@
+import{_ as e,c as o,e as a,r as n,o as r}from"./app-KfnfuIf0.js";const c={};function l(s,p){const t=n("Catalog");return r(),o("div",null,[a(t)])}const _=e(c,[["render",l]]),i=JSON.parse('{"path":"/ai/prompt/","title":"Prompt","lang":"zh-CN","frontmatter":{"title":"Prompt"},"git":{},"filePathRelative":null}');export{_ as comp,i as data};

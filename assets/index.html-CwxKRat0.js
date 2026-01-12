@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,r as n,o as c}from"./app-KfnfuIf0.js";const r={};function i(l,s){const e=n("Catalog");return c(),o("div",null,[a(e)])}const d=t(r,[["render",i]]),m=JSON.parse('{"path":"/video_audio/","title":"Video Audio","lang":"zh-CN","frontmatter":{"title":"Video Audio"},"git":{},"filePathRelative":null}');export{d as comp,m as data};
