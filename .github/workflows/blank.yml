@@ -34,5 +34,5 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: .vuepress/dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN_HOME }}
+        #env:
+          #GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN_HOME }}
